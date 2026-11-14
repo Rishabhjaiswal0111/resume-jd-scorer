@@ -8,13 +8,15 @@ export type CriterionView = components['schemas']['CriterionView']
 export type Point = components['schemas']['Point']
 
 export interface ScoreInput {
-  jd: File
+  /** A PDF file, or the job description pasted as text. */
+  jd: File | string
   resume: File
 }
 
 export function scoreRun({ jd, resume }: ScoreInput): Promise<RunDetail> {
   const body = new FormData()
-  body.append('jd', jd)
+  if (typeof jd === 'string') body.append('jd_text', jd)
+  else body.append('jd', jd)
   body.append('resume', resume)
   // No Content-Type header: the browser sets the multipart boundary itself.
   return apiFetch<RunDetail>('/score', { method: 'POST', body })

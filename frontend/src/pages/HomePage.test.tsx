@@ -20,7 +20,7 @@ function pdf(name: string) {
 }
 
 function chooseFiles() {
-  fireEvent.change(screen.getByLabelText('Job description (PDF)'), {
+  fireEvent.change(screen.getByLabelText('Job description PDF'), {
     target: { files: [pdf('jd.pdf')] },
   })
   fireEvent.change(screen.getByLabelText('Resume (PDF)'), {
@@ -37,6 +37,31 @@ afterEach(() => {
 })
 
 describe('HomePage scoring flow', () => {
+  it('sends pasted JD text as jd_text once it is long enough', async () => {
+    const fetchMock = vi.fn().mockResolvedValue(json(run))
+    vi.stubGlobal('fetch', fetchMock)
+    renderPage()
+    fireEvent.click(screen.getByRole('radio', { name: 'Paste text' }))
+    fireEvent.change(screen.getByLabelText('Resume (PDF)'), {
+      target: { files: [pdf('cv.pdf')] },
+    })
+    const textarea = screen.getByLabelText('Job description text')
+    const button = screen.getByRole('button', { name: 'Score' })
+
+    fireEvent.change(textarea, { target: { value: 'Python developer' } })
+    expect(button).toBeDisabled()
+    expect(screen.getByText(/16 \/ 200 characters minimum/)).toBeInTheDocument()
+
+    const jdText = 'Senior Backend Engineer. '.repeat(10)
+    fireEvent.change(textarea, { target: { value: jdText } })
+    fireEvent.click(button)
+
+    expect(await screen.findByText('90.88')).toBeInTheDocument()
+    const body = (fetchMock.mock.calls[0] as [string, RequestInit])[1].body as FormData
+    expect(body.get('jd_text')).toBe(jdText)
+    expect(body.get('jd')).toBeNull()
+  })
+
   it('keeps Score disabled until both PDFs are chosen', () => {
     renderPage()
     const button = screen.getByRole('button', { name: 'Score' })

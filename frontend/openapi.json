@@ -4,10 +4,29 @@
       "Body_score_api_v1_score_post": {
         "properties": {
           "jd": {
-            "contentMediaType": "application/octet-stream",
+            "anyOf": [
+              {
+                "contentMediaType": "application/octet-stream",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
             "description": "Job description PDF",
-            "title": "Jd",
-            "type": "string"
+            "title": "Jd"
+          },
+          "jd_text": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Job description as pasted text",
+            "title": "Jd Text"
           },
           "model": {
             "anyOf": [
@@ -28,7 +47,6 @@
           }
         },
         "required": [
-          "jd",
           "resume"
         ],
         "title": "Body_score_api_v1_score_post",
@@ -587,7 +605,7 @@
     },
     "/api/v1/score": {
       "post": {
-        "description": "One-shot: upload a JD and a resume, get the completed run back.",
+        "description": "One-shot: a JD (PDF or pasted text) and a resume PDF -> the completed run.",
         "operationId": "score_api_v1_score_post",
         "requestBody": {
           "content": {

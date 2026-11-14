@@ -34,7 +34,7 @@ Open http://localhost:5173 — the header badge shows **API: ok** when the front
 
 ## Scoring a JD and a resume
 
-Open http://localhost:5173, choose the two PDFs and press **Score**. The page shows the score, pros, cons, every criterion with its points and reasoning, and the LLM cost of the run. The same flow is available from the terminal: `make score jd=JD.pdf resume=RESUME.pdf`.
+Open http://localhost:5173, add the job description (upload a PDF, or switch to **Paste text** and paste it straight from a job portal), choose the resume PDF and press **Score**. The page shows the score, pros, cons, every criterion with its points and reasoning, and the LLM cost of the run. The same flow is available from the terminal: `make score jd=JD.pdf resume=RESUME.pdf`.
 
 Which model does the grading is set by `LLM_DEFAULT_MODEL` in `.env`:
 

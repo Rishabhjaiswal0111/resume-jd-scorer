@@ -66,7 +66,7 @@ export interface paths {
         put?: never;
         /**
          * Score
-         * @description One-shot: upload a JD and a resume, get the completed run back.
+         * @description One-shot: a JD (PDF or pasted text) and a resume PDF -> the completed run.
          */
         post: operations["score_api_v1_score_post"];
         delete?: never;
@@ -85,7 +85,12 @@ export interface components {
              * Jd
              * @description Job description PDF
              */
-            jd: string;
+            jd?: string | null;
+            /**
+             * Jd Text
+             * @description Job description as pasted text
+             */
+            jd_text?: string | null;
             /** Model */
             model?: string | null;
             /**

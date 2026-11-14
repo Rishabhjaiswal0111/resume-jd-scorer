@@ -6,7 +6,7 @@ from fastapi import APIRouter, Depends, File, Form, UploadFile
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.config import Settings, get_settings
-from app.core.errors import PdfTooLargeError
+from app.core.errors import PdfTooLargeError, ValidationFailedError
 from app.db.session import get_session, get_sessionmaker
 from app.llm.client import LLMClient
 from app.schemas.runs import RunDetail
@@ -39,17 +39,25 @@ async def _read_pdf(upload: UploadFile, settings: Settings) -> PdfInput:
 
 @router.post("/score", response_model=RunDetail)
 async def score(
-    jd: UploadFile = File(description="Job description PDF"),
     resume: UploadFile = File(description="Resume PDF"),
+    jd: UploadFile | None = File(default=None, description="Job description PDF"),
+    jd_text: str | None = Form(default=None, description="Job description as pasted text"),
     model: str | None = Form(default=None),
     service: ScoringService = Depends(get_scoring_service),
     session: AsyncSession = Depends(get_session),
     settings: Settings = Depends(get_settings),
 ) -> RunDetail:
-    """One-shot: upload a JD and a resume, get the completed run back."""
-    run = await service.score_pdfs(
-        await _read_pdf(jd, settings), await _read_pdf(resume, settings), model=model
-    )
+    """One-shot: a JD (PDF or pasted text) and a resume PDF -> the completed run."""
+    jd_input: PdfInput | str
+    if jd is not None and not (jd_text and jd_text.strip()):
+        jd_input = await _read_pdf(jd, settings)
+    elif jd is None and jd_text and jd_text.strip():
+        jd_input = jd_text
+    else:
+        raise ValidationFailedError(
+            "Send the job description as either a PDF (jd) or text (jd_text), not both"
+        )
+    run = await service.score_pdfs(jd_input, await _read_pdf(resume, settings), model=model)
     return await run_detail(session, run.id)
 
 

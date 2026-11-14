@@ -19,7 +19,8 @@ export function HomePage() {
       <div>
         <h1 className="text-2xl font-semibold tracking-tight">Score a resume against a JD</h1>
         <p className="text-muted-foreground">
-          Upload a job description and a resume (PDF) to get a score, pros, cons and the run cost.
+          Add a job description (PDF or pasted text) and a resume PDF to get a score, pros, cons and
+          the run cost.
         </p>
       </div>
       <ScoreForm onSubmit={submit} pending={scoring.isPending} />

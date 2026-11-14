@@ -29,7 +29,7 @@ from app.repositories import rubrics as rubrics_repo
 from app.repositories import runs as runs_repo
 from app.schemas.evaluation import EvaluationOutput
 from app.schemas.rubric import Criterion
-from app.services.document_service import ingest_pdf, load_text
+from app.services.document_service import ingest_pdf, ingest_text, load_text
 from app.services.rubric_service import get_or_create_rubric
 from app.storage.base import Storage
 
@@ -60,21 +60,27 @@ class ScoringService:
     # ------------------------------------------------------------------ public
 
     async def score_pdfs(
-        self, jd: PdfInput, resume: PdfInput, *, model: str | None = None
+        self, jd: PdfInput | str, resume: PdfInput, *, model: str | None = None
     ) -> ScoringRun:
-        """One-shot: JD PDF + resume PDF -> completed run (or failed run + raised AppError)."""
+        """One-shot: JD (PDF or pasted text) + resume PDF -> completed run.
+
+        On failure the run is stored as failed and the AppError is raised.
+        """
         model = model or self._settings.llm_default_model
 
         async def steps(session: AsyncSession, run: ScoringRun, started: float) -> None:
             await self._set_status(session, run, "extracting")
-            jd_doc = await ingest_pdf(
-                session,
-                self._storage,
-                self._settings,
-                kind="jd",
-                filename=jd.filename,
-                data=jd.data,
-            )
+            if isinstance(jd, str):
+                jd_doc = await ingest_text(session, self._storage, kind="jd", text=jd)
+            else:
+                jd_doc = await ingest_pdf(
+                    session,
+                    self._storage,
+                    self._settings,
+                    kind="jd",
+                    filename=jd.filename,
+                    data=jd.data,
+                )
             resume_doc = await ingest_pdf(
                 session,
                 self._storage,

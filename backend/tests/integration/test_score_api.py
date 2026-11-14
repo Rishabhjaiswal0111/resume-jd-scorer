@@ -85,3 +85,82 @@ async def test_unknown_run_is_404(db: DbContext) -> None:
         res = await http.get("/api/v1/runs/00000000-0000-0000-0000-000000000000")
     assert res.status_code == 404
     assert res.json()["error"]["code"] == "NOT_FOUND"
+
+
+# ---------------------------------------------------------------- pasted JD text
+
+JD_TEXT = """Senior Backend Engineer (Python)
+Acme Analytics - Remote (EU time zones)
+
+•\tDesign and operate the APIs behind our analytics platform.
+•\t5+ years of professional software engineering experience
+•\t3+ years building production APIs in Python (FastAPI or Django)
+•\tStrong PostgreSQL skills: schema design, query tuning, migrations
+"""
+
+
+async def post(db: DbContext, fake: FakeAnthropic, data: dict[str, str], with_pdf_jd: bool):  # type: ignore[no-untyped-def]
+    db.settings.anthropic_api_key = SecretStr("k")
+    db.settings.llm_default_model = HAIKU
+    app = create_app(db.settings)
+    client = LLMClient(db.settings, db.sessionmaker, db.storage, anthropic_transport=fake.transport)
+    app.dependency_overrides[get_scoring_service] = lambda: ScoringService(
+        db.settings, db.sessionmaker, db.storage, client
+    )
+    upload = files() if with_pdf_jd else {"resume": files()["resume"]}
+    async with AsyncClient(transport=ASGITransport(app=app), base_url="http://test") as http:
+        return await http.post("/api/v1/score", files=upload, data=data)
+
+
+async def test_score_with_pasted_jd_text(db: DbContext) -> None:
+    await seed_haiku_price(db.sessionmaker)
+    rubric = json.loads((FIXTURES / "llm" / "synthetic_jd_backend.rubric.json").read_text())
+    evaluation = json.loads(
+        (FIXTURES / "llm" / "synthetic_resume_single.evaluation.json").read_text()
+    )
+    fake = FakeAnthropic(claude_message(rubric), claude_message(evaluation))
+    res = await post(db, fake, {"jd_text": JD_TEXT}, with_pdf_jd=False)
+    assert res.status_code == 200, res.text
+    assert res.json()["score"] == "89.88"
+    # The pasted text (tabs normalized) is what the JD-parse prompt received.
+    prompt = fake.requests[0]["messages"][0]["content"]
+    assert "• Design and operate the APIs" in prompt
+    assert "\t" not in prompt
+
+
+async def test_same_pasted_text_reuses_the_document_and_rubric(db: DbContext) -> None:
+    await seed_haiku_price(db.sessionmaker)
+    rubric = json.loads((FIXTURES / "llm" / "synthetic_jd_backend.rubric.json").read_text())
+    evaluation = json.loads(
+        (FIXTURES / "llm" / "synthetic_resume_single.evaluation.json").read_text()
+    )
+    fake = FakeAnthropic(claude_message(rubric), claude_message(evaluation))
+    first = await post(db, fake, {"jd_text": JD_TEXT}, with_pdf_jd=False)
+    # Same text with different whitespace: same normalized document, cached rubric and
+    # evaluation, so no new LLM calls are scripted or needed.
+    second = await post(
+        db, fake, {"jd_text": JD_TEXT.replace("\t", "   ") + "\n\n"}, with_pdf_jd=False
+    )
+    assert second.status_code == 200, second.text
+    assert second.json()["score"] == first.json()["score"]
+    assert len(fake.requests) == 2
+
+
+@pytest.mark.parametrize(
+    ("data", "with_pdf_jd"),
+    [({}, False), ({"jd_text": JD_TEXT}, True), ({"jd_text": "   "}, False)],
+    ids=["neither", "both", "blank-text"],
+)
+async def test_jd_must_be_exactly_one_of_pdf_or_text(
+    db: DbContext, data: dict[str, str], with_pdf_jd: bool
+) -> None:
+    res = await post(db, FakeAnthropic(), data, with_pdf_jd)
+    assert res.status_code == 422
+    assert res.json()["error"]["code"] == "VALIDATION_FAILED"
+
+
+async def test_too_short_jd_text_is_rejected(db: DbContext) -> None:
+    await seed_haiku_price(db.sessionmaker)
+    res = await post(db, FakeAnthropic(), {"jd_text": "Python developer wanted"}, with_pdf_jd=False)
+    assert res.status_code == 422
+    assert res.json()["error"]["details"]["min_chars"] == 200

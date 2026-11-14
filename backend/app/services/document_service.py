@@ -7,10 +7,10 @@ from sqlalchemy.exc import IntegrityError
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.config import Settings
-from app.core.errors import PdfTooLargeError
+from app.core.errors import PdfTooLargeError, ValidationFailedError
 from app.core.logging import get_logger
 from app.db.models import Document
-from app.pipeline.extract import extract_pdf
+from app.pipeline.extract import extract_pdf, normalize_text
 from app.repositories import documents as documents_repo
 from app.storage.base import Storage
 
@@ -78,6 +78,58 @@ async def ingest_pdf(
         pages=document.page_count,
         chars=document.char_count,
     )
+    return document
+
+
+# Pasted text: below this it is almost certainly not a whole job description; above it,
+# about 20 dense PDF pages, matching the PDF page limit.
+MIN_TEXT_CHARS = 200
+MAX_TEXT_CHARS = 60_000
+
+
+async def ingest_text(session: AsyncSession, storage: Storage, *, kind: str, text: str) -> Document:
+    """Store pasted text (e.g. a JD copied from a job portal), deduplicated by content."""
+    normalized = normalize_text(text)
+    if len(normalized) < MIN_TEXT_CHARS:
+        raise ValidationFailedError(
+            f"Pasted text is too short ({len(normalized)} characters, need {MIN_TEXT_CHARS}+)",
+            details={"chars": len(normalized), "min_chars": MIN_TEXT_CHARS},
+        )
+    if len(normalized) > MAX_TEXT_CHARS:
+        raise ValidationFailedError(
+            f"Pasted text is too long ({len(normalized)} characters, max {MAX_TEXT_CHARS})",
+            details={"chars": len(normalized), "max_chars": MAX_TEXT_CHARS},
+        )
+    data = normalized.encode("utf-8")
+    sha256 = hashlib.sha256(data).hexdigest()
+    existing = await documents_repo.get_by_hash(session, kind, sha256)
+    if existing is not None:
+        return existing
+
+    key = f"documents/{kind}/{sha256}.txt"
+    await storage.put(key, data)
+    document = Document(
+        kind=kind,
+        original_filename="pasted.txt",
+        sha256=sha256,
+        size_bytes=len(data),
+        storage_key=key,
+        page_count=0,  # not a PDF
+        extractor="pasted_text",
+        text_storage_key=key,
+        char_count=len(normalized),
+        is_scanned=False,
+    )
+    try:
+        await documents_repo.insert(session, document)
+        await session.commit()
+    except IntegrityError:
+        await session.rollback()
+        winner = await documents_repo.get_by_hash(session, kind, sha256)
+        if winner is None:  # pragma: no cover
+            raise
+        return winner
+    log.info("document_stored", kind=kind, document_id=str(document.id), chars=len(normalized))
     return document
 
 
