@@ -18,6 +18,11 @@ PHONE_TOKEN = "[PHONE]"  # noqa: S105
 URL_TOKEN = "[URL]"  # noqa: S105
 NAME_TOKEN = "[CANDIDATE]"  # noqa: S105
 
+# "+44 7700..." / "+1 (415)..." / "+91-98...": the country dialing code before the first
+# separator. Kept in the placeholder ("[PHONE +44]") because it is often the resume's
+# only location signal; the number itself is removed. No separator => code is ambiguous.
+_COUNTRY_CODE = re.compile(r"^\+(\d{1,3})[\s(.-]")
+
 _EMAIL = re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}")
 _URL = re.compile(
     r"""(?ix)
@@ -129,7 +134,8 @@ def redact(text: str) -> Redaction:
     def phone(match: re.Match[str]) -> str:
         if _is_phone(match.group(0)):
             counts["phone"] += 1
-            return PHONE_TOKEN
+            code = _COUNTRY_CODE.match(match.group(0).strip())
+            return f"[PHONE +{code.group(1)}]" if code else PHONE_TOKEN
         return match.group(0)
 
     text = _PHONE_CANDIDATE.sub(phone, text)

@@ -15,7 +15,8 @@ def test_real_resume_fixture_is_redacted() -> None:
     assert "7700 900123" not in result.text
     assert "linkedin.com" not in result.text
     assert "Jordan" not in result.text and "Avery" not in result.text
-    assert result.text.startswith("[CANDIDATE]\n[EMAIL] | [PHONE] | [URL]")
+    # Country code survives (only location signal in this resume); the number does not.
+    assert result.text.startswith("[CANDIDATE]\n[EMAIL] | [PHONE +44] | [URL]")
     assert result.counts == {"email": 1, "url": 1, "phone": 1, "name": 1}
     # Facts the scorer needs must survive.
     for keep in [
@@ -40,11 +41,22 @@ def test_two_column_fixture() -> None:
 
 
 @pytest.mark.parametrize(
-    "phone",
-    ["+1 (415) 555-0132", "415.555.0132", "+44 20 7946 0958", "020 7946 0958", "+919876543210"],
+    ("phone", "token"),
+    [
+        ("+1 (415) 555-0132", "[PHONE +1]"),
+        ("+44 20 7946 0958", "[PHONE +44]"),
+        ("+91-98765-43210", "[PHONE +91]"),
+        ("+353.1.555.0199", "[PHONE +353]"),
+        ("+919876543210", "[PHONE]"),  # no separator: can't tell where the code ends
+        ("415.555.0132", "[PHONE]"),
+        ("020 7946 0958", "[PHONE]"),
+        ("(555) 010-4477", "[PHONE]"),
+    ],
 )
-def test_phone_formats(phone: str) -> None:
-    assert redact(f"Call {phone} today").text == "Call [PHONE] today"
+def test_phone_formats(phone: str, token: str) -> None:
+    result = redact(f"Call {phone} today")
+    assert result.text == f"Call {token} today"
+    assert result.counts["phone"] == 1
 
 
 @pytest.mark.parametrize(
