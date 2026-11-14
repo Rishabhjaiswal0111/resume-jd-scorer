@@ -1,6 +1,6 @@
 import { NavLink, Outlet, useLocation } from 'react-router'
 
-import { uiConfig } from '@/config/ui'
+import { Logo } from '@/components/brand/logo'
 import { HealthBadge } from '@/features/health/HealthBadge'
 import { cn } from '@/lib/utils'
 
@@ -18,7 +18,9 @@ export function Layout() {
     <div className="flex min-h-screen flex-col">
       <header className="sticky top-0 z-10 border-b bg-background/85 backdrop-blur">
         <div className="mx-auto flex h-14 max-w-6xl items-center gap-3 px-4 sm:gap-6">
-          <span className="truncate font-semibold whitespace-nowrap">{uiConfig.appName}</span>
+          <NavLink to="/" aria-label="Home" className="shrink-0">
+            <Logo />
+          </NavLink>
           <nav className="flex gap-1 text-sm">
             {NAV.map((item) => (
               <NavLink

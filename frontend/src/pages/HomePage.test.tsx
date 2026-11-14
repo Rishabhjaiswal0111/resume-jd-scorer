@@ -108,9 +108,31 @@ describe('HomePage scoring flow', () => {
     const table = screen.getByRole('table')
     expect(within(table).getAllByRole('row')).toHaveLength(run.criteria.length + 1)
     expect(within(table).getByText('Hands-on Kafka in production')).toBeInTheDocument()
-    expect(screen.getByRole('heading', { name: 'Pros' })).toBeInTheDocument()
-    // Shown in Cons, in the phone cards and in the desktop table (CSS picks which one).
-    expect(screen.getAllByText(/Neither dbt nor Airflow is mentioned/)).toHaveLength(3)
+    expect(screen.getByRole('heading', { name: 'Strengths' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'Concerns' })).toBeInTheDocument()
+    // Reasoning appears in Concerns, in the Requirements section, and in the scoring-details
+    // table (phone cards + desktop table; CSS picks which one).
+    expect(screen.getAllByText(/Neither dbt nor Airflow is mentioned/)).toHaveLength(4)
+    // Requirements are grouped by type, each with a colour-coded rating.
+    const niceToHave = screen.getByRole('region', { name: 'Nice to have' })
+    expect(within(niceToHave).getByText('1 of 3 met')).toBeInTheDocument()
+    expect(within(niceToHave).getAllByRole('img', { name: 'Does not meet' })).toHaveLength(2)
+    // Headline counts.
+    expect(screen.getByText('Must-haves').nextSibling).toHaveTextContent('3 / 4')
+    expect(screen.getByText('To verify').nextSibling).toHaveTextContent('2')
+    // Group counts match the headline (unknowns counted apart); red flags read "clear".
+    expect(screen.getByRole('region', { name: 'Must have' })).toHaveTextContent(
+      '3 of 4 met · 1 to verify',
+    )
+    expect(screen.getByRole('region', { name: 'Red flags checked' })).toHaveTextContent(
+      '1 to verify',
+    )
+    // The role-overlap sentence is the headline, not repeated under Strengths.
+    const overlap = run.role_overlap!.summary
+    expect(screen.getAllByText(overlap)).toHaveLength(1)
+    expect(screen.getByText('Strengths', { selector: 'dt' }).nextSibling).toHaveTextContent(
+      String(run.pros.filter((p) => p.source !== 'role_overlap').length),
+    )
     const cards = screen.getByRole('list', { name: 'Criteria' })
     expect(within(cards).getAllByRole('listitem')).toHaveLength(run.criteria.length)
     expect(within(cards).getByText(/Neither dbt nor Airflow is mentioned/)).toBeInTheDocument()
@@ -119,7 +141,7 @@ describe('HomePage scoring flow', () => {
     // Cost and model are admin data: not shown on the scoring page.
     expect(screen.queryByText(/LLM cost|JD parse share|manual\/claude-session/)).toBeNull()
     const screening = screen
-      .getByRole('heading', { name: 'Ask in screening' })
+      .getByRole('heading', { name: 'Questions for the screening call' })
       .closest('div')!.parentElement!
     expect(within(screening).getByText('Works from Berlin 2+ days a week')).toBeInTheDocument()
     expect(within(table).getAllByText('Ask in screening')).toHaveLength(2)

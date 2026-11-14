@@ -1,5 +1,7 @@
 # Design system: "Paper & Ink"
 
+References: hiring scorecards (key takeaways, strengths / concerns, colour-coded per-attribute ratings, evidence for every rating, questions for the next round) and clean SaaS UIs (whitespace over boxes, subtle borders, one accent, Inter).
+
 Simple, calm, readable. Every page is built from the shared pieces below; a new page should need **no new colours and few new components**.
 
 ## Principles
@@ -24,7 +26,7 @@ Simple, calm, readable. Every page is built from the shared pieces below; a new 
 | `score-strong` / `score-medium` / `score-weak` | scores ≥ 75 / ≥ 50 / below, outcomes, verdicts |
 | `--radius` 0.75 rem | all corners (`rounded-md/lg/xl` derive from it) |
 
-Fonts: the system UI stack (`font-sans`), headings `tracking-tight`. Dark-mode values exist for every token (`.dark`).
+Font: **Inter** (self-hosted via `@fontsource-variable/inter`, system UI stack as fallback), headings `tracking-tight`, weights 400 / 500 / 600 only. Dark-mode values exist for every token (`.dark`).
 
 **Rule:** components use these semantic classes only (`bg-primary`, `text-muted-foreground`, `bg-score-strong/12`, ...). No hex, rgb or Tailwind palette colours (`bg-blue-500`) in components. A restyle is an edit to `globals.css`.
 
@@ -40,6 +42,9 @@ Generic (`src/components/ui/`):
 | `PageHeader` | the title block at the top of every page |
 | `EmptyState` | any list with nothing in it, with the next action |
 | `Skeleton` | loading placeholders shaped like the content |
+| `FileDropzone` | every file input: drag and drop + keyboard/click fallback + file chip with remove |
+| `SegmentedControl` | 2-4 mutually exclusive options (e.g. PDF / Paste text) |
+| `Stat` | a labelled number in a `<dl>` (headline counts) |
 
 Score display (`src/components/score/`):
 
@@ -47,11 +52,19 @@ Score display (`src/components/score/`):
 |---|---|
 | `ScoreRing` (`size`: `sm` in lists, `lg` on a result) | every score shown anywhere |
 | `VerdictBadge` | every verdict tier |
+| `RatingIcon` + `ratingLabel()` | a criterion's outcome: green check / amber minus / red cross / grey question, with words ("Meets", "Partly meets", ...) |
 | `scoreBand()` | the band behind any score colour (thresholds match the backend verdicts) |
+
+Brand (`src/components/brand/`): `Logo` (mark + name) in the header.
 
 ## Patterns
 
-- **Page:** `PageHeader` → content `Card`s, `space-y-6`.
+- **Recruiter language, not engine language.** Strengths / Concerns (not pros / cons), "Questions for the screening call", "Meets / Partly meets / Does not meet". Engine details (points, weights, run id, engine version) live in the collapsed **Scoring details** section.
+- **Counts must agree everywhere.** Items still to verify are counted apart ("3 of 4 met · 1 to verify"); red-flag groups say "N clear", never "met".
+- **Status is quiet when healthy.** The API status shows only when the service is unreachable.
+- **Long work shows honest progress:** a spinner, a plain description of what is happening and a skeleton of the result. No fake percentages.
+- **Page:** `PageHeader` → content `Card`s, `space-y-6` (`space-y-8` on the score page).
+- **Result (scorecard):** summary card (`ScoreRing`, title, `VerdictBadge`, one-line summary, `Stat`s) → Strengths / Concerns → screening questions → requirements grouped by type with `RatingIcon`s → collapsed Scoring details.
 - **Lists:** a `Card` with `divide-y` rows; each row is one link with a `ScoreRing size="sm"`, title + muted meta line, a badge, and a chevron.
 - **Expandable groups:** a full-width button with `aria-expanded` and a rotating chevron.
 - **Loading / empty / error:** `Skeleton`s shaped like the content / `EmptyState` with an action / a one-line `role="alert"` message.

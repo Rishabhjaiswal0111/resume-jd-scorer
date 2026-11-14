@@ -1,54 +1,33 @@
-import { useState, type FormEvent } from 'react'
+import { ArrowRight } from 'lucide-react'
+import { useState, type FormEvent, type ReactNode } from 'react'
 
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
-import { cn } from '@/lib/utils'
+import { FileDropzone } from '@/components/ui/file-dropzone'
+import { SegmentedControl } from '@/components/ui/segmented-control'
 
 import type { ScoreInput } from './api'
 
 /** Matches the backend's minimum for pasted job descriptions. */
 export const MIN_JD_CHARS = 200
+const PDF_HINT = 'PDF · up to 10 MB'
 
 type JdMode = 'pdf' | 'text'
 
-function PdfField(props: { id: string; label: string; onChange: (file: File | null) => void }) {
+function Step(props: { n: number; title: string; aside?: ReactNode; children: ReactNode }) {
   return (
-    <label htmlFor={props.id} className="flex flex-col gap-2 text-sm font-medium">
-      {props.label}
-      <input
-        id={props.id}
-        type="file"
-        accept="application/pdf,.pdf"
-        onChange={(e) => props.onChange(e.target.files?.[0] ?? null)}
-        className="w-full min-w-0 rounded-md border p-2 text-sm font-normal file:mr-3 file:rounded file:border-0 file:bg-secondary file:px-3 file:py-1"
-      />
-    </label>
-  )
-}
-
-function ModeToggle({ mode, onChange }: { mode: JdMode; onChange: (mode: JdMode) => void }) {
-  const options: { value: JdMode; label: string }[] = [
-    { value: 'pdf', label: 'PDF' },
-    { value: 'text', label: 'Paste text' },
-  ]
-  return (
-    <div role="radiogroup" aria-label="Job description input" className="flex gap-1">
-      {options.map((o) => (
-        <button
-          key={o.value}
-          type="button"
-          role="radio"
-          aria-checked={mode === o.value}
-          onClick={() => onChange(o.value)}
-          className={cn(
-            'rounded-md px-2 py-1 text-xs',
-            mode === o.value ? 'bg-secondary font-medium' : 'text-muted-foreground',
-          )}
-        >
-          {o.label}
-        </button>
-      ))}
-    </div>
+    <section className="flex flex-col gap-3">
+      <div className="flex min-h-7 items-center justify-between gap-2">
+        <h2 className="flex items-center gap-2 text-sm font-medium">
+          <span className="grid size-5 place-items-center rounded-full bg-accent text-xs text-accent-foreground">
+            {props.n}
+          </span>
+          {props.title}
+        </h2>
+        {props.aside}
+      </div>
+      {props.children}
+    </section>
   )
 }
 
@@ -75,37 +54,69 @@ export function ScoreForm({
   return (
     <Card>
       <CardContent className="pt-6">
-        <form onSubmit={handleSubmit} className="grid gap-4 md:grid-cols-2">
-          <div className="flex flex-col gap-2">
-            <div className="flex items-center justify-between">
-              <span className="text-sm font-medium">Job description</span>
-              <ModeToggle mode={mode} onChange={setMode} />
-            </div>
-            {mode === 'pdf' ? (
-              <PdfField id="jd" label="Job description PDF" onChange={setJdFile} />
-            ) : (
-              <label className="flex flex-col gap-1 text-xs text-muted-foreground">
-                <span className="sr-only">Job description text</span>
-                <textarea
-                  aria-label="Job description text"
-                  value={jdText}
-                  onChange={(e) => setJdText(e.target.value)}
-                  placeholder="Paste the job description from the job portal…"
-                  rows={10}
-                  className="rounded-md border p-2 text-sm text-foreground"
+        <form onSubmit={handleSubmit} className="space-y-6">
+          {/* Locked while scoring so the inputs can't change under a running request. */}
+          <fieldset disabled={pending} className="grid gap-6 disabled:opacity-60 md:grid-cols-2">
+            <Step
+              n={1}
+              title="Job description"
+              aside={
+                <SegmentedControl
+                  label="Job description input"
+                  value={mode}
+                  onChange={setMode}
+                  options={[
+                    { value: 'pdf', label: 'PDF' },
+                    { value: 'text', label: 'Paste text' },
+                  ]}
                 />
-                {textLength < MIN_JD_CHARS && `${textLength} / ${MIN_JD_CHARS} characters minimum`}
-              </label>
-            )}
-          </div>
-          <div className="flex flex-col justify-between gap-4">
-            <PdfField id="resume" label="Resume (PDF)" onChange={setResume} />
+              }
+            >
+              {mode === 'pdf' ? (
+                <FileDropzone
+                  label="Job description PDF"
+                  hint={PDF_HINT}
+                  accept="application/pdf,.pdf"
+                  file={jdFile}
+                  onChange={setJdFile}
+                />
+              ) : (
+                <div className="space-y-1">
+                  <textarea
+                    aria-label="Job description text"
+                    value={jdText}
+                    onChange={(e) => setJdText(e.target.value)}
+                    placeholder="Paste the job description from the job portal…"
+                    rows={7}
+                    className="w-full rounded-lg border bg-card p-3 text-sm focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-ring/30 focus-visible:outline-none"
+                  />
+                  {textLength < MIN_JD_CHARS && (
+                    <p className="text-xs text-muted-foreground">
+                      {textLength} / {MIN_JD_CHARS} characters minimum
+                    </p>
+                  )}
+                </div>
+              )}
+            </Step>
+            <Step n={2} title="Resume">
+              <FileDropzone
+                label="Resume (PDF)"
+                hint={PDF_HINT}
+                accept="application/pdf,.pdf"
+                file={resume}
+                onChange={setResume}
+              />
+            </Step>
+          </fieldset>
+          <div className="flex justify-end">
             <Button
               type="submit"
+              size="lg"
               disabled={!jd || !resume || pending}
-              className="w-full md:w-auto md:self-end"
+              className="w-full md:w-auto"
             >
               {pending ? 'Scoring…' : 'Score'}
+              {!pending && <ArrowRight aria-hidden />}
             </Button>
           </div>
         </form>

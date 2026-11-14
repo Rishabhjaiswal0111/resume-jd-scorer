@@ -1,5 +1,5 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import { render, screen } from '@testing-library/react'
+import { render, screen, waitFor } from '@testing-library/react'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 
 import { HealthBadge } from './HealthBadge'
@@ -18,7 +18,7 @@ afterEach(() => {
 })
 
 describe('HealthBadge', () => {
-  it('shows ok with version when the API responds', async () => {
+  it('stays visually silent (screen-reader text only) when the API responds', async () => {
     vi.stubGlobal(
       'fetch',
       vi.fn().mockResolvedValue(
@@ -28,14 +28,15 @@ describe('HealthBadge', () => {
       ),
     )
     renderWithQuery()
-    // The version sits in its own span (hidden on phones), so check the badge's full text.
-    await screen.findByText(/API: ok/)
-    expect(screen.getByRole('status')).toHaveTextContent('API: ok · v0.1.0')
+    await waitFor(() =>
+      expect(screen.getByRole('status')).toHaveTextContent('Service available, version 0.1.0'),
+    )
+    expect(screen.getByRole('status')).toHaveClass('sr-only')
   })
 
-  it('shows unreachable when the API is down', async () => {
+  it('shows a visible notice when the API is down', async () => {
     vi.stubGlobal('fetch', vi.fn().mockRejectedValue(new TypeError('Failed to fetch')))
     renderWithQuery()
-    expect(await screen.findByText(/API: unreachable/)).toBeInTheDocument()
+    expect(await screen.findByText('Service unreachable')).toBeVisible()
   })
 })

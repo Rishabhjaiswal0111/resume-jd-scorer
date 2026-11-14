@@ -25,9 +25,10 @@ describe('app shell', () => {
       </AppProviders>,
     )
     expect(
-      await screen.findByRole('heading', { name: 'Score a resume against a JD' }),
+      await screen.findByRole('heading', { name: 'Match a resume to a job' }),
     ).toBeInTheDocument()
-    expect(await screen.findByText(/API: ok/)).toBeInTheDocument()
+    expect(await screen.findByText(/Service available/)).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: 'Home' })).toHaveAttribute('href', '/')
     expect(screen.getByRole('button', { name: 'Score' })).toBeDisabled()
   })
 })
