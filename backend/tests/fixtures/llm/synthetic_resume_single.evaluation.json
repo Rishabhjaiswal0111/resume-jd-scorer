@@ -1,0 +1,15 @@
+{
+  "role_overlap": {"level": "Strong", "summary": "Seven years as a backend engineer building Python data APIs, closely matching this role."},
+  "core_requirement": {"level": "Clear", "summary": "Built FastAPI services on AWS ECS and led a PostgreSQL schema redesign."},
+  "criteria": [
+    {"key": "c_years_experience", "candidate_value": "7 years", "evidence_strength": "evidenced", "outcome": "Full Pass", "reasoning": "Summary states 7 years; roles span 2018 to present."},
+    {"key": "c_python_apis", "candidate_value": "FastAPI and Django REST APIs since 2018", "evidence_strength": "evidenced", "outcome": "Full Pass", "reasoning": "Built FastAPI services at 2k req/s and Django REST APIs."},
+    {"key": "c_postgresql", "candidate_value": "Led PostgreSQL schema redesign", "evidence_strength": "evidenced", "outcome": "Full Pass", "reasoning": "Led a PostgreSQL schema redesign that cut p95 latency 60%."},
+    {"key": "c_aws", "candidate_value": "AWS ECS", "evidence_strength": "evidenced", "outcome": "Full Pass", "reasoning": "Runs FastAPI services on AWS ECS."},
+    {"key": "c_written_english", "candidate_value": "not stated", "evidence_strength": "not_evidenced", "outcome": "Partial Pass", "reasoning": "Resume is clearly written but does not mention written communication."},
+    {"key": "c_kafka", "candidate_value": "Kafka consumers", "evidence_strength": "evidenced", "outcome": "Full Pass", "reasoning": "Built Kafka consumers for stock events."},
+    {"key": "c_open_source", "candidate_value": "none", "evidence_strength": "not_evidenced", "outcome": "Fail", "reasoning": "No open-source work mentioned."},
+    {"key": "c_mentoring", "candidate_value": "Mentored three juniors", "evidence_strength": "evidenced", "outcome": "Full Pass", "reasoning": "Mentored three junior engineers."},
+    {"key": "c_frontend_only", "candidate_value": "backend focus", "evidence_strength": "not_evidenced", "outcome": "Full Pass", "reasoning": "Backend-focused career; no sign of seeking a front-end only role."}
+  ]
+}

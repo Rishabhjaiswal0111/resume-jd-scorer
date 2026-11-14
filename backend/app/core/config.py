@@ -43,10 +43,31 @@ class Settings(BaseSettings):
     storage_backend: Literal["local", "s3"] = "local"
     storage_local_root: Path = Path("./var/storage")
 
-    # --- LLM (used from Phase 1) ---
-    llm_default_model: str = "openrouter/deepseek/deepseek-flash"
+    # --- uploads (PLAN.md §11.8) ---
+    max_upload_bytes: int = 10 * 1024 * 1024
+    max_pdf_pages: int = 20
+
+    # --- LLM ---
+    # "<provider>/<model as the provider names it>": anthropic/claude-haiku-5-5 or
+    # openrouter/deepseek/deepseek-v4.1-flash
+    llm_default_model: str = "anthropic/claude-haiku-5-5"
     llm_timeout_seconds: float = 90.0
-    llm_max_retries: int = 3
+    llm_max_retries: int = 3  # retries for timeouts / 429 / 5xx (attempts = retries + 1)
+    llm_retry_base_seconds: float = 1.0
+    llm_temperature: float = 0.0  # OpenRouter only; Claude models reject sampling params
+    llm_seed: int = 7  # OpenRouter only
+    llm_max_output_tokens: int = 16000  # Claude: includes thinking tokens
+    llm_effort: Literal["low", "medium", "high", "xhigh", "max"] = "medium"  # Claude only
+    llm_cache_enabled: bool = True
+    # OpenRouter provider routing: never send resumes to providers that keep prompts.
+    openrouter_base_url: str = "https://openrouter.ai/api/v1"
+    openrouter_data_collection: Literal["allow", "deny"] = "deny"
+    # manual/<name>: prompts are written here and answers are read back (no API, $0).
+    manual_llm_dir: Path = Path("./var/manual_llm")
+
+    # --- scoring (PLAN.md §7) ---
+    scoring_hard_fail_penalty: bool = True
+    anthropic_api_key: SecretStr | None = None
     openrouter_api_key: SecretStr | None = None
     deepseek_api_key: SecretStr | None = None
     gemini_api_key: SecretStr | None = None

@@ -13,11 +13,16 @@ import structlog
 from structlog.typing import EventDict, FilteringBoundLogger, WrappedLogger
 
 _SECRET_MARKERS = ("key", "token", "secret", "password", "authorization")
+# Counters such as `input_tokens` / `output_tokens` are usage numbers, not credentials.
+_SAFE_SUFFIXES = ("_tokens",)
 
 
 def _redact_secrets(_: WrappedLogger, __: str, event_dict: EventDict) -> EventDict:
     for name in list(event_dict):
-        if any(marker in name.lower() for marker in _SECRET_MARKERS):
+        lowered = name.lower()
+        if lowered.endswith(_SAFE_SUFFIXES):
+            continue
+        if any(marker in lowered for marker in _SECRET_MARKERS):
             event_dict[name] = "***"
     return event_dict
 

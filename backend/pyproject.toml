@@ -13,6 +13,9 @@ dependencies = [
   "alembic>=1.14",
   "structlog>=24.4",
   "python-multipart>=0.0.17",
+  "pypdfium2==5.14.0",
+  "pdfplumber==0.11.10",
+  "anthropic==2.3.0",
 ]
 
 [dependency-groups]
@@ -24,10 +27,13 @@ dev = [
   "ruff>=0.8",
   "mypy>=1.13",
   "pre-commit>=4.0",
+  "reportlab==5.1.0",
 ]
 
 [tool.uv]
 package = false
+# Supply-chain guard: hold this transitive dep (via anthropic) to a release >= 2 weeks old.
+exclude-newer-package = { jiter = "2026-10-31T00:00:00Z" }
 
 # ---------------- ruff ----------------
 [tool.ruff]
@@ -51,7 +57,7 @@ select = [
 ignore = ["B008"]  # FastAPI Depends() in defaults is idiomatic
 
 [tool.ruff.lint.per-file-ignores]
-"tests/**" = ["S101", "S105", "S106"]  # asserts + fake secrets are fine in tests
+"tests/**" = ["S101", "S105", "S106", "PT018", "ASYNC240"]  # asserts + fake secrets are fine in tests
 
 # ---------------- mypy ----------------
 [tool.mypy]
@@ -61,7 +67,7 @@ plugins = ["pydantic.mypy"]
 warn_unreachable = true
 
 [[tool.mypy.overrides]]
-module = ["asyncpg.*"]
+module = ["asyncpg.*", "pypdfium2.*"]
 ignore_missing_imports = true
 
 # ---------------- pytest ----------------

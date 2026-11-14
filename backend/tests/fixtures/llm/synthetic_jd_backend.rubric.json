@@ -1,0 +1,16 @@
+{
+  "title": "Senior Backend Engineer (Python)",
+  "role_summary": "Designs and operates the APIs behind an analytics platform, owning services end to end including observability and on-call.",
+  "core_requirement": "Building and running production Python APIs backed by PostgreSQL.",
+  "criteria": [
+    {"key": "c_years_experience", "name": "5+ years software engineering", "attribute": "experience", "operator": "must_have", "importance": "normal", "values": ["5+ years"], "source_excerpt": "5+ years of professional software engineering experience"},
+    {"key": "c_python_apis", "name": "Production Python APIs", "attribute": "hard_skills", "operator": "must_have", "importance": "high", "values": ["Python", "FastAPI", "Django", "3+ years"], "source_excerpt": "3+ years building production APIs in Python (FastAPI or Django)"},
+    {"key": "c_postgresql", "name": "PostgreSQL depth", "attribute": "hard_skills", "operator": "must_have", "importance": "high", "values": ["PostgreSQL", "schema design", "query tuning", "migrations"], "source_excerpt": "Strong PostgreSQL skills: schema design, query tuning, migrations"},
+    {"key": "c_aws", "name": "Services on AWS", "attribute": "hard_skills", "operator": "must_have", "importance": "normal", "values": ["AWS", "ECS", "Kubernetes"], "source_excerpt": "Experience running services on AWS (ECS or Kubernetes)"},
+    {"key": "c_written_english", "name": "Clear written English", "attribute": "soft_skills", "operator": "must_have", "importance": "normal", "values": ["written communication", "English"], "source_excerpt": "Clear written communication in English"},
+    {"key": "c_kafka", "name": "Event streaming", "attribute": "hard_skills", "operator": "nice_to_have", "importance": "normal", "values": ["Kafka", "data pipelines"], "source_excerpt": "Experience with event streaming (Kafka) and data pipelines"},
+    {"key": "c_open_source", "name": "Open-source contributions", "attribute": "other", "operator": "nice_to_have", "importance": "normal", "values": ["open source"], "source_excerpt": "Open-source contributions"},
+    {"key": "c_mentoring", "name": "Mentoring", "attribute": "soft_skills", "operator": "nice_to_have", "importance": "normal", "values": ["mentoring"], "source_excerpt": "Experience mentoring junior engineers"},
+    {"key": "c_frontend_only", "name": "Front-end only focus", "attribute": "other", "operator": "must_avoid", "importance": "normal", "values": ["front-end only"], "source_excerpt": "Candidates looking for a front-end only role"}
+  ]
+}

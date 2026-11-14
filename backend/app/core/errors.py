@@ -51,6 +51,92 @@ class ValidationFailedError(AppError):
     http_status = status.HTTP_422_UNPROCESSABLE_CONTENT
 
 
+# ---- Domain errors (PLAN.md §11.4) ----
+
+
+class PdfUnreadableError(AppError):
+    code = "PDF_UNREADABLE"
+    http_status = status.HTTP_422_UNPROCESSABLE_CONTENT
+
+
+class PdfScannedError(AppError):
+    code = "PDF_SCANNED"
+    http_status = status.HTTP_422_UNPROCESSABLE_CONTENT
+
+
+class PdfTooLargeError(AppError):
+    code = "PDF_TOO_LARGE"
+    http_status = status.HTTP_413_CONTENT_TOO_LARGE
+
+
+class RubricEmptyError(AppError):
+    code = "RUBRIC_EMPTY"
+    http_status = status.HTTP_422_UNPROCESSABLE_CONTENT
+
+
+class LLMError(AppError):
+    """Base for LLM failures. `retryable` drives the client's backoff loop."""
+
+    code = "LLM_PROVIDER_ERROR"
+    http_status = status.HTTP_502_BAD_GATEWAY
+    retryable = True
+
+
+class LLMTimeoutError(LLMError):
+    code = "LLM_TIMEOUT"
+    http_status = status.HTTP_504_GATEWAY_TIMEOUT
+
+
+class LLMRateLimitedError(LLMError):
+    code = "LLM_RATE_LIMITED"
+    http_status = status.HTTP_503_SERVICE_UNAVAILABLE
+
+
+class LLMProviderError(LLMError):
+    code = "LLM_PROVIDER_ERROR"
+
+
+class LLMRequestRejectedError(LLMError):
+    """4xx other than 429 (bad request, auth, no provider for params). Retrying won't help."""
+
+    code = "LLM_REQUEST_REJECTED"
+    retryable = False
+
+
+class LLMRefusedError(LLMError):
+    """The model declined the request (Claude `stop_reason: "refusal"`)."""
+
+    code = "LLM_REFUSED"
+    http_status = status.HTTP_422_UNPROCESSABLE_CONTENT
+    retryable = False
+
+
+class LLMInvalidOutputError(LLMError):
+    code = "LLM_INVALID_OUTPUT"
+    retryable = False
+    # The raw model text, so a caller can send it back in a repair prompt.
+    raw_text: str | None = None
+
+
+class LLMResponsePendingError(LLMError):
+    """manual provider: the prompt was written to disk and is waiting for an answer file."""
+
+    code = "LLM_RESPONSE_PENDING"
+    http_status = status.HTTP_503_SERVICE_UNAVAILABLE
+    retryable = False
+
+
+class LLMNotConfiguredError(LLMError):
+    code = "LLM_NOT_CONFIGURED"
+    http_status = status.HTTP_500_INTERNAL_SERVER_ERROR
+    retryable = False
+
+
+class PriceMissingError(AppError):
+    code = "PRICE_MISSING"
+    http_status = status.HTTP_500_INTERNAL_SERVER_ERROR
+
+
 def _request_id(request: Request) -> str | None:
     value = request.scope.get("state", {}).get("request_id")
     return str(value) if value is not None else None
