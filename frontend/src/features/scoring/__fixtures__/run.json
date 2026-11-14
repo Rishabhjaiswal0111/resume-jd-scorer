@@ -1,0 +1,257 @@
+{
+  "id": "72e81240-40fb-4093-a5ec-0960a68f1e89",
+  "status": "completed",
+  "error_code": null,
+  "error_message": null,
+  "score": "90.88",
+  "role_title": "Senior Backend Engineer (Python)",
+  "model": "manual/claude-session",
+  "engine_version": "1.0.0",
+  "role_overlap": {
+    "level": "Strong",
+    "summary": "Seven-plus years as a backend engineer building Python APIs and data services, currently in a senior role closely matching this one."
+  },
+  "core_requirement": {
+    "level": "Clear",
+    "summary": "Builds FastAPI services at 2k requests/second on AWS ECS and led a PostgreSQL schema redesign that cut p95 query latency by 60%."
+  },
+  "pros": [
+    {
+      "text": "Seven-plus years as a backend engineer building Python APIs and data services, currently in a senior role closely matching this one.",
+      "source": "role_overlap",
+      "operator": null,
+      "importance": null,
+      "outcome": "Strong"
+    },
+    {
+      "text": "Builds FastAPI services at 2k requests/second on AWS ECS and led a PostgreSQL schema redesign that cut p95 query latency by 60%.",
+      "source": "core_requirement",
+      "operator": null,
+      "importance": null,
+      "outcome": "Clear"
+    },
+    {
+      "text": "Production Python APIs since 2018: Django REST APIs, then FastAPI services handling 2k requests/second.",
+      "source": "c_python_apis",
+      "operator": "must_have",
+      "importance": "high",
+      "outcome": "Full Pass"
+    },
+    {
+      "text": "Led a PostgreSQL schema redesign that cut p95 query latency 60%, showing schema design and tuning. Migrations not mentioned explicitly.",
+      "source": "c_postgresql",
+      "operator": "must_have",
+      "importance": "high",
+      "outcome": "Full Pass"
+    },
+    {
+      "text": "Summary states 7 years of experience; dated roles run from 2018 to present.",
+      "source": "c_years_experience",
+      "operator": "must_have",
+      "importance": "normal",
+      "outcome": "Full Pass"
+    },
+    {
+      "text": "Runs FastAPI services on AWS ECS in the current role.",
+      "source": "c_aws_services",
+      "operator": "must_have",
+      "importance": "normal",
+      "outcome": "Full Pass"
+    },
+    {
+      "text": "Built Kafka consumers for stock events at Contoso Retail.",
+      "source": "c_event_streaming",
+      "operator": "nice_to_have",
+      "importance": "normal",
+      "outcome": "Full Pass"
+    },
+    {
+      "text": "Mentored three junior engineers at Northwind Data.",
+      "source": "c_mentoring",
+      "operator": "nice_to_have",
+      "importance": "normal",
+      "outcome": "Full Pass"
+    },
+    {
+      "text": "Entire career is backend work; nothing suggests seeking a front-end only role.",
+      "source": "c_frontend_only",
+      "operator": "must_avoid",
+      "importance": "normal",
+      "outcome": "Full Pass"
+    }
+  ],
+  "cons": [
+    {
+      "text": "No explicit mention of written communication; the resume itself is clear and in English.",
+      "source": "c_written_english",
+      "operator": "must_have",
+      "importance": "normal",
+      "outcome": "Partial Pass"
+    },
+    {
+      "text": "Only signal is a +44 (UK) phone code, which suggests a UK-based candidate within EU time zones; location is not stated.",
+      "source": "c_eu_timezone",
+      "operator": "must_have",
+      "importance": "normal",
+      "outcome": "Partial Pass"
+    },
+    {
+      "text": "No open-source contributions mentioned.",
+      "source": "c_open_source",
+      "operator": "nice_to_have",
+      "importance": "normal",
+      "outcome": "Fail"
+    }
+  ],
+  "criteria": [
+    {
+      "key": "c_years_experience",
+      "name": "5+ years professional software engineering",
+      "operator": "must_have",
+      "importance": "normal",
+      "outcome": "Full Pass",
+      "llm_outcome": "Full Pass",
+      "evidence_strength": "evidenced",
+      "candidate_value": "7 years stated; roles from 2018 to present",
+      "reasoning": "Summary states 7 years of experience; dated roles run from 2018 to present.",
+      "weight": "5.63",
+      "earned": "5.63",
+      "forced": null
+    },
+    {
+      "key": "c_python_apis",
+      "name": "3+ years production Python APIs",
+      "operator": "must_have",
+      "importance": "high",
+      "outcome": "Full Pass",
+      "llm_outcome": "Full Pass",
+      "evidence_strength": "evidenced",
+      "candidate_value": "FastAPI (2021-present), Django REST (2018-2021)",
+      "reasoning": "Production Python APIs since 2018: Django REST APIs, then FastAPI services handling 2k requests/second.",
+      "weight": "11.23",
+      "earned": "11.23",
+      "forced": null
+    },
+    {
+      "key": "c_postgresql",
+      "name": "Strong PostgreSQL",
+      "operator": "must_have",
+      "importance": "high",
+      "outcome": "Full Pass",
+      "llm_outcome": "Full Pass",
+      "evidence_strength": "evidenced",
+      "candidate_value": "Led PostgreSQL schema redesign; 60% p95 latency cut",
+      "reasoning": "Led a PostgreSQL schema redesign that cut p95 query latency 60%, showing schema design and tuning. Migrations not mentioned explicitly.",
+      "weight": "11.25",
+      "earned": "11.25",
+      "forced": null
+    },
+    {
+      "key": "c_aws_services",
+      "name": "Running services on AWS",
+      "operator": "must_have",
+      "importance": "normal",
+      "outcome": "Full Pass",
+      "llm_outcome": "Full Pass",
+      "evidence_strength": "evidenced",
+      "candidate_value": "Services on AWS ECS",
+      "reasoning": "Runs FastAPI services on AWS ECS in the current role.",
+      "weight": "5.63",
+      "earned": "5.63",
+      "forced": null
+    },
+    {
+      "key": "c_written_english",
+      "name": "Clear written English",
+      "operator": "must_have",
+      "importance": "normal",
+      "outcome": "Partial Pass",
+      "llm_outcome": "Partial Pass",
+      "evidence_strength": "partial_evidence",
+      "candidate_value": "Resume written clearly in English",
+      "reasoning": "No explicit mention of written communication; the resume itself is clear and in English.",
+      "weight": "5.63",
+      "earned": "2.82",
+      "forced": null
+    },
+    {
+      "key": "c_eu_timezone",
+      "name": "Works in EU time zones",
+      "operator": "must_have",
+      "importance": "normal",
+      "outcome": "Partial Pass",
+      "llm_outcome": "Partial Pass",
+      "evidence_strength": "partial_evidence",
+      "candidate_value": "UK phone dialing code (+44); no stated location",
+      "reasoning": "Only signal is a +44 (UK) phone code, which suggests a UK-based candidate within EU time zones; location is not stated.",
+      "weight": "5.63",
+      "earned": "2.82",
+      "forced": null
+    },
+    {
+      "key": "c_event_streaming",
+      "name": "Event streaming and data pipelines",
+      "operator": "nice_to_have",
+      "importance": "normal",
+      "outcome": "Full Pass",
+      "llm_outcome": "Full Pass",
+      "evidence_strength": "evidenced",
+      "candidate_value": "Kafka consumers for stock events",
+      "reasoning": "Built Kafka consumers for stock events at Contoso Retail.",
+      "weight": "1.66",
+      "earned": "1.66",
+      "forced": null
+    },
+    {
+      "key": "c_open_source",
+      "name": "Open-source contributions",
+      "operator": "nice_to_have",
+      "importance": "normal",
+      "outcome": "Fail",
+      "llm_outcome": "Fail",
+      "evidence_strength": "not_evidenced",
+      "candidate_value": "none",
+      "reasoning": "No open-source contributions mentioned.",
+      "weight": "1.67",
+      "earned": "0",
+      "forced": null
+    },
+    {
+      "key": "c_mentoring",
+      "name": "Mentoring junior engineers",
+      "operator": "nice_to_have",
+      "importance": "normal",
+      "outcome": "Full Pass",
+      "llm_outcome": "Full Pass",
+      "evidence_strength": "evidenced",
+      "candidate_value": "Mentored three junior engineers",
+      "reasoning": "Mentored three junior engineers at Northwind Data.",
+      "weight": "1.67",
+      "earned": "1.67",
+      "forced": null
+    },
+    {
+      "key": "c_frontend_only",
+      "name": "Seeking a front-end only role",
+      "operator": "must_avoid",
+      "importance": "normal",
+      "outcome": "Full Pass",
+      "llm_outcome": "Full Pass",
+      "evidence_strength": "not_evidenced",
+      "candidate_value": "Backend-focused career",
+      "reasoning": "Entire career is backend work; nothing suggests seeking a front-end only role.",
+      "weight": "10",
+      "earned": "10",
+      "forced": null
+    }
+  ],
+  "warnings": [],
+  "cost": {
+    "run_llm_cost_usd": "0",
+    "rubric_cost_share_usd": "0",
+    "provider_reported_usd": null,
+    "llm_calls": 1
+  },
+  "latency_ms": 68,
+  "created_at": "2026-11-14T09:46:55.173426Z"
+}

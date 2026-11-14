@@ -32,6 +32,20 @@ make dev-web                  # UI  on http://localhost:5173  (in a second termi
 
 Open http://localhost:5173 — the header badge shows **API: ok** when the frontend can reach the backend.
 
+## Scoring a JD and a resume
+
+Open http://localhost:5173, choose the two PDFs and press **Score**. The page shows the score, pros, cons, every criterion with its points and reasoning, and the LLM cost of the run. The same flow is available from the terminal: `make score jd=JD.pdf resume=RESUME.pdf`.
+
+Which model does the grading is set by `LLM_DEFAULT_MODEL` in `.env`:
+
+| Value | Needs | Cost |
+|---|---|---|
+| `anthropic/claude-haiku-5-5` (default) | `ANTHROPIC_API_KEY` from console.anthropic.com | ~$0.001-0.003 per resume |
+| `openrouter/deepseek/deepseek-v4.1-flash` | `OPENROUTER_API_KEY` | below $0.001 per resume |
+| `manual/claude-session` | nothing | $0: each prompt is saved to `backend/var/manual_llm/<hash>.request.md`; write the JSON answer to the matching `.response.json` and press **Retry** |
+
+Run `make seed-prices` once per model so every call's cost can be computed.
+
 ## Everyday commands
 
 | Command | What it does |

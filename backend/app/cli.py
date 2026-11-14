@@ -26,16 +26,9 @@ from app.repositories import llm_calls as calls_repo
 from app.repositories import prices as prices_repo
 from app.repositories import rubrics as rubrics_repo
 from app.services import price_service
+from app.services.run_view import money
 from app.services.scoring_service import PdfInput, ScoringService
 from app.storage import get_storage
-
-
-def _money(value: Decimal | None) -> str | None:
-    """Plain decimal string (no exponent), e.g. 0.00026364, 0."""
-    if value is None:
-        return None
-    text = format(value, "f")
-    return text.rstrip("0").rstrip(".") if "." in text else text
 
 
 def _service(settings: Settings) -> ScoringService:
@@ -67,9 +60,9 @@ async def _run_summary(run: ScoringRun) -> dict[str, Any]:
         "criteria": (run.breakdown or {}).get("criteria", []),
         "warnings": run.warnings,
         "cost": {
-            "run_llm_cost_usd": _money(run.llm_cost_usd),
-            "run_provider_reported_usd": _money(provider_total),
-            "rubric_cost_share_usd": _money(run.rubric_cost_share_usd),
+            "run_llm_cost_usd": money(run.llm_cost_usd),
+            "run_provider_reported_usd": money(provider_total),
+            "rubric_cost_share_usd": money(run.rubric_cost_share_usd),
             "calls": [
                 {
                     "purpose": c.purpose,
@@ -77,8 +70,8 @@ async def _run_summary(run: ScoringRun) -> dict[str, Any]:
                     "cache_hit": c.cache_hit,
                     "input_tokens": c.input_tokens,
                     "output_tokens": c.output_tokens,
-                    "cost_usd": _money(c.cost_usd),
-                    "provider_reported_cost_usd": _money(c.provider_reported_cost_usd),
+                    "cost_usd": money(c.cost_usd),
+                    "provider_reported_cost_usd": money(c.provider_reported_cost_usd),
                 }
                 for c in calls
             ],

@@ -1,6 +1,19 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { useState } from 'react'
+
+import { useScoreRun, type ScoreInput } from '@/features/scoring/api'
+import { RunResult } from '@/features/scoring/RunResult'
+import { ScoreError } from '@/features/scoring/ScoreError'
+import { ScoreForm } from '@/features/scoring/ScoreForm'
 
 export function HomePage() {
+  const scoring = useScoreRun()
+  const [lastInput, setLastInput] = useState<ScoreInput | null>(null)
+
+  function submit(input: ScoreInput) {
+    setLastInput(input)
+    scoring.mutate(input)
+  }
+
   return (
     <div className="space-y-6">
       <div>
@@ -9,17 +22,11 @@ export function HomePage() {
           Upload a job description and a resume (PDF) to get a score, pros, cons and the run cost.
         </p>
       </div>
-      <Card>
-        <CardHeader>
-          <CardTitle>Coming in Phase 3</CardTitle>
-          <CardDescription>
-            The upload form and results page are built once the scoring API exists (Phases 1–2).
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="text-sm text-muted-foreground">
-          The badge in the header confirms the frontend can reach the backend.
-        </CardContent>
-      </Card>
+      <ScoreForm onSubmit={submit} pending={scoring.isPending} />
+      {scoring.isError && lastInput && (
+        <ScoreError error={scoring.error} onRetry={() => scoring.mutate(lastInput)} />
+      )}
+      {scoring.isSuccess && <RunResult run={scoring.data} />}
     </div>
   )
 }

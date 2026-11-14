@@ -177,6 +177,7 @@ class ScoringService:
                 return run
             except AppError as error:
                 await self._mark_failed(session, run_id, error.code, error.message)
+                error.details.setdefault("run_id", str(run_id))  # lets clients find the run
                 raise
             except Exception as error:
                 await self._mark_failed(session, run_id, "INTERNAL_ERROR", type(error).__name__)
