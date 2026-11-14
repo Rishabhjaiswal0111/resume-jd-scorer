@@ -46,6 +46,8 @@ Which model does the grading is set by `LLM_DEFAULT_MODEL` in `.env`:
 
 Run `make seed-prices` once per model so every call's cost can be computed.
 
+Debugging data loading in the UI: `VITE_SHOW_QUERY_DEVTOOLS=true make dev-web` shows the TanStack Query devtools button (bottom-left). It is off by default and never part of production builds.
+
 ## Everyday commands
 
 | Command | What it does |

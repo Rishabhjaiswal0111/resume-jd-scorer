@@ -2,6 +2,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { useState, type ReactNode } from 'react'
 
+import { uiConfig } from '@/config/ui'
 import { ApiError } from '@/lib/api/client'
 
 function makeQueryClient() {
@@ -24,7 +25,7 @@ export function AppProviders({ children }: { children: ReactNode }) {
   return (
     <QueryClientProvider client={queryClient}>
       {children}
-      {import.meta.env.DEV && <ReactQueryDevtools buttonPosition="bottom-left" />}
+      {uiConfig.showQueryDevtools && <ReactQueryDevtools buttonPosition="bottom-left" />}
     </QueryClientProvider>
   )
 }

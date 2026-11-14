@@ -6,6 +6,11 @@ export const uiConfig = {
   appName: 'JD × Resume Scorer',
   /** Show the Debug tab (raw prompt / response / ledger) on run pages. */
   showDebugTools: import.meta.env.DEV,
+  /**
+   * TanStack Query devtools button (request/cache inspector). Off by default; turn on with
+   * `VITE_SHOW_QUERY_DEVTOOLS=true make dev-web`. Never included in production builds.
+   */
+  showQueryDevtools: import.meta.env.DEV && import.meta.env.VITE_SHOW_QUERY_DEVTOOLS === 'true',
   /** How often the header polls API health, in ms. */
   healthPollMs: 30_000,
 } as const
