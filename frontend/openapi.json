@@ -267,6 +267,58 @@
         "title": "Holistic",
         "type": "object"
       },
+      "JdHistoryItem": {
+        "properties": {
+          "best_score": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Best Score"
+          },
+          "filename": {
+            "title": "Filename",
+            "type": "string"
+          },
+          "jd_document_id": {
+            "format": "uuid",
+            "title": "Jd Document Id",
+            "type": "string"
+          },
+          "last_scored_at": {
+            "format": "date-time",
+            "title": "Last Scored At",
+            "type": "string"
+          },
+          "run_count": {
+            "title": "Run Count",
+            "type": "integer"
+          },
+          "source": {
+            "title": "Source",
+            "type": "string"
+          },
+          "title": {
+            "title": "Title",
+            "type": "string"
+          }
+        },
+        "required": [
+          "jd_document_id",
+          "title",
+          "source",
+          "filename",
+          "run_count",
+          "best_score",
+          "last_scored_at"
+        ],
+        "title": "JdHistoryItem",
+        "type": "object"
+      },
       "Point": {
         "properties": {
           "importance": {
@@ -524,6 +576,61 @@
         "title": "RunDetail",
         "type": "object"
       },
+      "RunHistoryItem": {
+        "properties": {
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "id": {
+            "format": "uuid",
+            "title": "Id",
+            "type": "string"
+          },
+          "jd_document_id": {
+            "format": "uuid",
+            "title": "Jd Document Id",
+            "type": "string"
+          },
+          "resume_filename": {
+            "title": "Resume Filename",
+            "type": "string"
+          },
+          "score": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Score"
+          },
+          "verdict": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Verdict"
+          }
+        },
+        "required": [
+          "id",
+          "jd_document_id",
+          "resume_filename",
+          "score",
+          "verdict",
+          "created_at"
+        ],
+        "title": "RunHistoryItem",
+        "type": "object"
+      },
       "ScreeningQuestion": {
         "properties": {
           "key": {
@@ -616,6 +723,67 @@
         ]
       }
     },
+    "/api/v1/jds": {
+      "get": {
+        "description": "JDs that have completed runs, most recently scored first.",
+        "operationId": "list_jds_api_v1_jds_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 50,
+              "maximum": 200,
+              "minimum": 1,
+              "title": "Limit",
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "schema": {
+              "default": 0,
+              "minimum": 0,
+              "title": "Offset",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/JdHistoryItem"
+                  },
+                  "title": "Response List Jds Api V1 Jds Get",
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "List Jds",
+        "tags": [
+          "runs"
+        ]
+      }
+    },
     "/api/v1/readyz": {
       "get": {
         "operationId": "readyz_api_v1_readyz_get",
@@ -644,6 +812,84 @@
         "summary": "Readyz",
         "tags": [
           "health"
+        ]
+      }
+    },
+    "/api/v1/runs": {
+      "get": {
+        "description": "Completed runs, newest first; filter by JD with jd_document_id.",
+        "operationId": "list_runs_api_v1_runs_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "jd_document_id",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "format": "uuid",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Jd Document Id"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 50,
+              "maximum": 200,
+              "minimum": 1,
+              "title": "Limit",
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "schema": {
+              "default": 0,
+              "minimum": 0,
+              "title": "Offset",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/RunHistoryItem"
+                  },
+                  "title": "Response List Runs Api V1 Runs Get",
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "List Runs",
+        "tags": [
+          "runs"
         ]
       }
     },

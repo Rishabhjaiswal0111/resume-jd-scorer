@@ -6,6 +6,7 @@ from uuid import UUID
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.errors import NotFoundError
+from app.pipeline.scoring_math import verdict_for
 from app.repositories import llm_calls as calls_repo
 from app.repositories import rubrics as rubrics_repo
 from app.repositories import runs as runs_repo
@@ -18,6 +19,21 @@ from app.schemas.runs import (
     RunDetail,
     ScreeningQuestion,
 )
+
+
+def display_verdict(stored: str | None, score: Decimal | None) -> str | None:
+    """Engine 1.1+ stores the verdict; for older runs derive it from the score (they had no
+    knock-outs), so every run in the UI shows a tier."""
+    if stored is not None or score is None:
+        return stored
+    return verdict_for(score)
+
+
+def whole_score(value: Decimal | None) -> str | None:
+    """Scores display as whole numbers (engine 1.2.0+); older 2-dp scores round the same way."""
+    if value is None:
+        return None
+    return str(int(value.quantize(Decimal(1), rounding=ROUND_HALF_UP)))
 
 
 def money(value: Decimal | None) -> str | None:
@@ -50,13 +66,8 @@ async def run_detail(session: AsyncSession, run_id: UUID) -> RunDetail:
         status=run.status,
         error_code=run.error_code,
         error_message=run.error_message,
-        # Whole number since engine 1.2.0; older runs (2 dp) are rounded the same way.
-        score=(
-            str(int(run.score.quantize(Decimal(1), rounding=ROUND_HALF_UP)))
-            if run.score is not None
-            else None
-        ),
-        verdict=full_breakdown.get("verdict"),  # absent on engine 1.0.0 runs
+        score=whole_score(run.score),
+        verdict=display_verdict(full_breakdown.get("verdict"), run.score),
         role_title=rubric.title if rubric else None,
         model=run.model,
         engine_version=run.engine_version,

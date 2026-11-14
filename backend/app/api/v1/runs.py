@@ -2,14 +2,15 @@
 
 from uuid import UUID
 
-from fastapi import APIRouter, Depends, File, Form, UploadFile
+from fastapi import APIRouter, Depends, File, Form, Query, UploadFile
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.config import Settings, get_settings
 from app.core.errors import PdfTooLargeError, ValidationFailedError
 from app.db.session import get_session, get_sessionmaker
 from app.llm.client import LLMClient
-from app.schemas.runs import RunDetail
+from app.schemas.runs import JdHistoryItem, RunDetail, RunHistoryItem
+from app.services import history_service
 from app.services.run_view import run_detail
 from app.services.scoring_service import PdfInput, ScoringService
 from app.storage import get_storage
@@ -64,3 +65,26 @@ async def score(
 @router.get("/runs/{run_id}", response_model=RunDetail)
 async def get_run(run_id: UUID, session: AsyncSession = Depends(get_session)) -> RunDetail:
     return await run_detail(session, run_id)
+
+
+@router.get("/jds", response_model=list[JdHistoryItem])
+async def list_jds(
+    limit: int = Query(default=50, ge=1, le=200),
+    offset: int = Query(default=0, ge=0),
+    session: AsyncSession = Depends(get_session),
+) -> list[JdHistoryItem]:
+    """JDs that have completed runs, most recently scored first."""
+    return await history_service.list_jds(session, limit=limit, offset=offset)
+
+
+@router.get("/runs", response_model=list[RunHistoryItem])
+async def list_runs(
+    jd_document_id: UUID | None = None,
+    limit: int = Query(default=50, ge=1, le=200),
+    offset: int = Query(default=0, ge=0),
+    session: AsyncSession = Depends(get_session),
+) -> list[RunHistoryItem]:
+    """Completed runs, newest first; filter by JD with jd_document_id."""
+    return await history_service.list_runs(
+        session, jd_document_id=jd_document_id, limit=limit, offset=offset
+    )

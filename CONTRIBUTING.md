@@ -27,6 +27,8 @@ Migrations: `make revision m="…"`, **read the generated file**, then `make mig
 
 ## Frontend rules
 
+Look and feel: follow [`docs/design-system.md`](docs/design-system.md) ("Paper & Ink" theme, shared components, mobile-first).
+
 | Rule | Why |
 |---|---|
 | `pages/` compose features; `features/*` never import each other (ESLint-enforced) | Changing one screen can't break another |

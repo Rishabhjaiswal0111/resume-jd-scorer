@@ -1,22 +1,10 @@
+import { ScoreRing } from '@/components/score/score-ring'
+import { VerdictBadge } from '@/components/score/verdict-badge'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { cn } from '@/lib/utils'
 
 import type { Point, RunDetail } from './api'
 import { CriteriaTable } from './CriteriaTable'
 import { ScreeningCard } from './ScreeningCard'
-
-const VERDICT_TONE: Record<string, string> = {
-  'Strong fit': 'bg-score-strong',
-  'Possible fit': 'bg-score-medium',
-  'Weak fit': 'bg-score-weak',
-  'Not eligible': 'bg-destructive',
-}
-
-function scoreTone(score: number) {
-  if (score >= 75) return 'text-score-strong'
-  if (score >= 50) return 'text-score-medium'
-  return 'text-score-weak'
-}
 
 function PointList({ title, points, sign }: { title: string; points: Point[]; sign: string }) {
   return (
@@ -30,8 +18,8 @@ function PointList({ title, points, sign }: { title: string; points: Point[]; si
         ) : (
           <ul className="space-y-2 text-sm">
             {points.map((p) => (
-              <li key={p.source} className="flex gap-2">
-                <span aria-hidden className="text-muted-foreground">
+              <li key={p.source} className="flex gap-2.5">
+                <span aria-hidden className="font-medium text-muted-foreground">
                   {sign}
                 </span>
                 <span>{p.text}</span>
@@ -45,28 +33,18 @@ function PointList({ title, points, sign }: { title: string; points: Point[]; si
 }
 
 export function RunResult({ run }: { run: RunDetail }) {
-  const score = Number(run.score ?? 0)
   return (
     <div className="space-y-6">
       <Card>
-        <CardContent className="flex flex-wrap items-center gap-6 pt-6">
-          <div className={cn('text-4xl font-semibold tabular-nums sm:text-5xl', scoreTone(score))}>
-            {run.score}
-            <span className="text-lg text-muted-foreground"> / 100</span>
-          </div>
-          <div className="space-y-1">
-            <div className="flex items-center gap-2">
-              <span className="text-lg font-medium">{run.role_title}</span>
-              {run.verdict && (
-                <span
-                  className={cn(
-                    'rounded-full px-2 py-0.5 text-xs font-medium text-white',
-                    VERDICT_TONE[run.verdict] ?? 'bg-muted-foreground',
-                  )}
-                >
-                  {run.verdict}
-                </span>
-              )}
+        <CardContent className="flex flex-wrap items-center gap-5 pt-6 sm:gap-6">
+          <ScoreRing score={run.score} />
+          <div className="min-w-0 space-y-2">
+            <p className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
+              Score out of 100
+            </p>
+            <div className="flex flex-wrap items-center gap-2">
+              <h2 className="text-xl font-semibold">{run.role_title}</h2>
+              <VerdictBadge verdict={run.verdict} />
             </div>
             <div className="text-sm text-muted-foreground">
               Role overlap: {run.role_overlap?.level} · Core requirement:{' '}

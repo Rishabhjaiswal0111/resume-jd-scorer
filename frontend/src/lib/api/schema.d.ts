@@ -21,6 +21,26 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/api/v1/jds": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * List Jds
+         * @description JDs that have completed runs, most recently scored first.
+         */
+        get: operations["list_jds_api_v1_jds_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/api/v1/readyz": {
         parameters: {
             query?: never;
@@ -30,6 +50,26 @@ export interface paths {
         };
         /** Readyz */
         get: operations["readyz_api_v1_readyz_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v1/runs": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * List Runs
+         * @description Completed runs, newest first; filter by JD with jd_document_id.
+         */
+        get: operations["list_runs_api_v1_runs_get"];
         put?: never;
         post?: never;
         delete?: never;
@@ -174,6 +214,29 @@ export interface components {
             /** Summary */
             summary: string;
         };
+        /** JdHistoryItem */
+        JdHistoryItem: {
+            /** Best Score */
+            best_score: string | null;
+            /** Filename */
+            filename: string;
+            /**
+             * Jd Document Id
+             * Format: uuid
+             */
+            jd_document_id: string;
+            /**
+             * Last Scored At
+             * Format: date-time
+             */
+            last_scored_at: string;
+            /** Run Count */
+            run_count: number;
+            /** Source */
+            source: string;
+            /** Title */
+            title: string;
+        };
         /** Point */
         Point: {
             /** Importance */
@@ -245,6 +308,30 @@ export interface components {
             /** Warnings */
             warnings: string[];
         };
+        /** RunHistoryItem */
+        RunHistoryItem: {
+            /**
+             * Created At
+             * Format: date-time
+             */
+            created_at: string;
+            /**
+             * Id
+             * Format: uuid
+             */
+            id: string;
+            /**
+             * Jd Document Id
+             * Format: uuid
+             */
+            jd_document_id: string;
+            /** Resume Filename */
+            resume_filename: string;
+            /** Score */
+            score: string | null;
+            /** Verdict */
+            verdict: string | null;
+        };
         /** ScreeningQuestion */
         ScreeningQuestion: {
             /** Key */
@@ -296,6 +383,38 @@ export interface operations {
             };
         };
     };
+    list_jds_api_v1_jds_get: {
+        parameters: {
+            query?: {
+                limit?: number;
+                offset?: number;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["JdHistoryItem"][];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
     readyz_api_v1_readyz_get: {
         parameters: {
             query?: never;
@@ -321,6 +440,39 @@ export interface operations {
                 };
                 content: {
                     "application/json": components["schemas"]["ReadinessResponse"];
+                };
+            };
+        };
+    };
+    list_runs_api_v1_runs_get: {
+        parameters: {
+            query?: {
+                jd_document_id?: string | null;
+                limit?: number;
+                offset?: number;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["RunHistoryItem"][];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
                 };
             };
         };

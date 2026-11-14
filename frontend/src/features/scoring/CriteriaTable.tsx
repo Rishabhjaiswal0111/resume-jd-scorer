@@ -1,10 +1,12 @@
+import { Badge, type BadgeProps } from '@/components/ui/badge'
+
 import type { CriterionView } from './api'
 
-const OUTCOME_TONE: Record<string, string> = {
-  'Full Pass': 'text-score-strong',
-  'Partial Pass': 'text-score-medium',
-  Fail: 'text-score-weak',
-  Unknown: 'text-muted-foreground',
+const OUTCOME_TONE: Record<string, BadgeProps['tone']> = {
+  'Full Pass': 'strong',
+  'Partial Pass': 'medium',
+  Fail: 'weak',
+  Unknown: 'outline',
 }
 
 const OPERATOR_LABEL: Record<string, string> = {
@@ -27,10 +29,12 @@ function typeLabel(c: CriterionView) {
 
 function Outcome({ c }: { c: CriterionView }) {
   return (
-    <span className={OUTCOME_TONE[c.outcome]}>
-      {c.outcome === 'Unknown' ? 'Ask in screening' : c.outcome}
+    <span className="inline-flex flex-col items-start gap-0.5">
+      <Badge tone={OUTCOME_TONE[c.outcome] ?? 'neutral'}>
+        {c.outcome === 'Unknown' ? 'Ask in screening' : c.outcome}
+      </Badge>
       {c.forced && c.forced !== 'unknown_screen' && (
-        <span className="block text-xs text-muted-foreground">model said {c.llm_outcome}</span>
+        <span className="text-xs text-muted-foreground">model said {c.llm_outcome}</span>
       )}
     </span>
   )

@@ -1,6 +1,7 @@
-import { useMutation } from '@tanstack/react-query'
+import { useMutation, useQueryClient } from '@tanstack/react-query'
 
 import { apiFetch } from '@/lib/api/client'
+import { queryKeys } from '@/lib/api/query-keys'
 import type { components } from '@/lib/api/schema'
 
 export type RunDetail = components['schemas']['RunDetail']
@@ -23,5 +24,10 @@ export function scoreRun({ jd, resume }: ScoreInput): Promise<RunDetail> {
 }
 
 export function useScoreRun() {
-  return useMutation({ mutationFn: scoreRun })
+  const queryClient = useQueryClient()
+  return useMutation({
+    mutationFn: scoreRun,
+    // A new run changes History; refetch it next time it is shown.
+    onSuccess: () => queryClient.invalidateQueries({ queryKey: queryKeys.history }),
+  })
 }

@@ -1,5 +1,7 @@
 import { useState } from 'react'
 
+import { PageHeader } from '@/components/ui/page-header'
+
 import { useScoreRun, type ScoreInput } from '@/features/scoring/api'
 import { RunResult } from '@/features/scoring/RunResult'
 import { ScoreError } from '@/features/scoring/ScoreError'
@@ -16,12 +18,10 @@ export function HomePage() {
 
   return (
     <div className="space-y-6">
-      <div>
-        <h1 className="text-2xl font-semibold tracking-tight">Score a resume against a JD</h1>
-        <p className="text-muted-foreground">
-          Add a job description (PDF or pasted text) and a resume PDF to get a score, pros and cons.
-        </p>
-      </div>
+      <PageHeader
+        title="Score a resume against a JD"
+        description="Add a job description (PDF or pasted text) and a resume PDF to get a score, pros and cons."
+      />
       <ScoreForm onSubmit={submit} pending={scoring.isPending} />
       {scoring.isError && lastInput && (
         <ScoreError error={scoring.error} onRetry={() => scoring.mutate(lastInput)} />

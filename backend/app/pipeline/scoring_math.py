@@ -148,7 +148,7 @@ def _final_outcome(
     return result.outcome, None
 
 
-def _verdict(score: Decimal, knockout_failed: bool) -> Verdict:
+def verdict_for(score: Decimal, knockout_failed: bool = False) -> Verdict:
     if knockout_failed:
         return "Not eligible"
     if score >= VERDICT_STRONG:
@@ -292,7 +292,7 @@ def compute_score(
 
     # 7. clamp + round to a whole number, then verdict
     final = max(Decimal(0), min(_HUNDRED, after_penalty)).quantize(_WHOLE, rounding=ROUND_HALF_UP)
-    verdict = _verdict(final, bool(knockouts_failed))
+    verdict = verdict_for(final, bool(knockouts_failed))
     screening = [s.key for s in scored if s.outcome == "Unknown"]
 
     breakdown: dict[str, Any] = {

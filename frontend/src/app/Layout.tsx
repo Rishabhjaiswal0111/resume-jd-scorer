@@ -1,4 +1,4 @@
-import { NavLink, Outlet } from 'react-router'
+import { NavLink, Outlet, useLocation } from 'react-router'
 
 import { uiConfig } from '@/config/ui'
 import { HealthBadge } from '@/features/health/HealthBadge'
@@ -6,25 +6,31 @@ import { cn } from '@/lib/utils'
 
 import { ErrorBoundary } from './ErrorBoundary'
 
-const NAV = [
+const NAV: { to: string; label: string; alsoActiveOn?: string }[] = [
   { to: '/', label: 'Score' },
-  // Phase 3 adds: { to: '/runs', label: 'Runs' }, { to: '/costs', label: 'Costs' }
-] as const
+  // A past run is opened from History, so History stays highlighted there.
+  { to: '/history', label: 'History', alsoActiveOn: '/runs/' },
+]
 
 export function Layout() {
+  const { pathname } = useLocation()
   return (
     <div className="flex min-h-screen flex-col">
-      <header className="border-b">
+      <header className="sticky top-0 z-10 border-b bg-background/85 backdrop-blur">
         <div className="mx-auto flex h-14 max-w-6xl items-center gap-3 px-4 sm:gap-6">
           <span className="truncate font-semibold whitespace-nowrap">{uiConfig.appName}</span>
-          <nav className="flex gap-4 text-sm">
+          <nav className="flex gap-1 text-sm">
             {NAV.map((item) => (
               <NavLink
                 key={item.to}
                 to={item.to}
                 end
                 className={({ isActive }) =>
-                  cn('text-muted-foreground hover:text-foreground', isActive && 'text-foreground')
+                  cn(
+                    'rounded-md px-2 py-1 text-muted-foreground transition-colors hover:text-foreground',
+                    (isActive || (item.alsoActiveOn && pathname.startsWith(item.alsoActiveOn))) &&
+                      'bg-accent font-medium text-accent-foreground hover:text-accent-foreground',
+                  )
                 }
               >
                 {item.label}

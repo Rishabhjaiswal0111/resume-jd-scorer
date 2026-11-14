@@ -76,3 +76,22 @@ class RunDetail(BaseModel):
     cost: CostView
     latency_ms: int | None
     created_at: datetime
+
+
+class JdHistoryItem(BaseModel):
+    jd_document_id: UUID
+    title: str
+    source: str  # "pdf" | "text"
+    filename: str
+    run_count: int
+    best_score: str | None
+    last_scored_at: datetime
+
+
+class RunHistoryItem(BaseModel):
+    id: UUID
+    jd_document_id: UUID
+    resume_filename: str
+    score: str | None
+    verdict: str | None
+    created_at: datetime
