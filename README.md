@@ -3,7 +3,7 @@
 Upload a Job Description PDF and a Resume PDF → get a **score (0–100)**, **pros**, **cons**, a **per-criterion breakdown**, and the **exact LLM cost of the run**.
 
 Design rule: **the LLM grades criteria, deterministic code computes the score** (see `docs/adr/0001-llm-grades-code-scores.md`).
-Full roadmap: [`docs/PLAN.md`](docs/PLAN.md).
+Full roadmap: [`docs/PLAN.md`](docs/PLAN.md). What was built, decided and why: [`docs/PROJECT_LOG.md`](docs/PROJECT_LOG.md).
 
 ---
 

@@ -6,6 +6,7 @@
 - Commits follow **Conventional Commits**: `feat(scoring): add must_avoid handling`.
 - `make check` must pass before opening a PR. CI runs the same checks.
 - Squash-merge PRs. Decisions that are expensive to reverse get an ADR in `docs/adr/`.
+- Every major change adds an entry to [`docs/PROJECT_LOG.md`](docs/PROJECT_LOG.md): what changed, why, how it was checked, the commit, follow-ups.
 
 ## Backend rules
 
