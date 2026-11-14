@@ -109,8 +109,11 @@ describe('HomePage scoring flow', () => {
     expect(within(table).getAllByRole('row')).toHaveLength(run.criteria.length + 1)
     expect(within(table).getByText('Hands-on Kafka in production')).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: 'Pros' })).toBeInTheDocument()
-    // Shown in Cons and in the criteria table's reasoning column.
-    expect(screen.getAllByText(/Neither dbt nor Airflow is mentioned/)).toHaveLength(2)
+    // Shown in Cons, in the phone cards and in the desktop table (CSS picks which one).
+    expect(screen.getAllByText(/Neither dbt nor Airflow is mentioned/)).toHaveLength(3)
+    const cards = screen.getByRole('list', { name: 'Criteria' })
+    expect(within(cards).getAllByRole('listitem')).toHaveLength(run.criteria.length)
+    expect(within(cards).getByText(/Neither dbt nor Airflow is mentioned/)).toBeInTheDocument()
     // Engine 1.1.0: verdict badge and screening questions (silent resume -> ask, not fail).
     expect(screen.getByText('Strong fit')).toBeInTheDocument()
     // Cost and model are admin data: not shown on the scoring page.

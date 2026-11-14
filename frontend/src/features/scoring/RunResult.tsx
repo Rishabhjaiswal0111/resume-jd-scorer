@@ -50,7 +50,7 @@ export function RunResult({ run }: { run: RunDetail }) {
     <div className="space-y-6">
       <Card>
         <CardContent className="flex flex-wrap items-center gap-6 pt-6">
-          <div className={cn('text-5xl font-semibold tabular-nums', scoreTone(score))}>
+          <div className={cn('text-4xl font-semibold tabular-nums sm:text-5xl', scoreTone(score))}>
             {run.score}
             <span className="text-lg text-muted-foreground"> / 100</span>
           </div>

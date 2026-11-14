@@ -20,7 +20,7 @@ function PdfField(props: { id: string; label: string; onChange: (file: File | nu
         type="file"
         accept="application/pdf,.pdf"
         onChange={(e) => props.onChange(e.target.files?.[0] ?? null)}
-        className="rounded-md border p-2 text-sm font-normal file:mr-3 file:rounded file:border-0 file:bg-secondary file:px-3 file:py-1"
+        className="w-full min-w-0 rounded-md border p-2 text-sm font-normal file:mr-3 file:rounded file:border-0 file:bg-secondary file:px-3 file:py-1"
       />
     </label>
   )
@@ -100,7 +100,11 @@ export function ScoreForm({
           </div>
           <div className="flex flex-col justify-between gap-4">
             <PdfField id="resume" label="Resume (PDF)" onChange={setResume} />
-            <Button type="submit" disabled={!jd || !resume || pending} className="self-end">
+            <Button
+              type="submit"
+              disabled={!jd || !resume || pending}
+              className="w-full md:w-auto md:self-end"
+            >
               {pending ? 'Scoring…' : 'Score'}
             </Button>
           </div>

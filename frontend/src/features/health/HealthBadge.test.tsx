@@ -28,7 +28,9 @@ describe('HealthBadge', () => {
       ),
     )
     renderWithQuery()
-    expect(await screen.findByText(/API: ok · v0\.1\.0/)).toBeInTheDocument()
+    // The version sits in its own span (hidden on phones), so check the badge's full text.
+    await screen.findByText(/API: ok/)
+    expect(screen.getByRole('status')).toHaveTextContent('API: ok · v0.1.0')
   })
 
   it('shows unreachable when the API is down', async () => {

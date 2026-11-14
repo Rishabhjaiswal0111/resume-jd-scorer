@@ -7,7 +7,6 @@ export function HealthBadge() {
   const { data, isPending, isError } = useHealth()
 
   const version = data?.version ?? '?'
-  const label = isPending ? 'checking…' : isError ? 'unreachable' : `ok · v${version}`
   const tone = isPending ? 'bg-muted-foreground' : isError ? 'bg-score-weak' : 'bg-score-strong'
 
   return (
@@ -20,7 +19,11 @@ export function HealthBadge() {
       aria-live="polite"
     >
       <span className={cn('size-2 rounded-full', tone)} aria-hidden />
-      API: {label}
+      <span>
+        API: {isPending ? 'checking…' : isError ? 'unreachable' : 'ok'}
+        {/* Version is detail: only where there is room. */}
+        {!isPending && !isError && <span className="hidden sm:inline"> · v{version}</span>}
+      </span>
     </span>
   )
 }

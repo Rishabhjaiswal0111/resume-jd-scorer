@@ -15,8 +15,8 @@ export function Layout() {
   return (
     <div className="flex min-h-screen flex-col">
       <header className="border-b">
-        <div className="mx-auto flex h-14 max-w-6xl items-center gap-6 px-4">
-          <span className="font-semibold">{uiConfig.appName}</span>
+        <div className="mx-auto flex h-14 max-w-6xl items-center gap-3 px-4 sm:gap-6">
+          <span className="truncate font-semibold whitespace-nowrap">{uiConfig.appName}</span>
           <nav className="flex gap-4 text-sm">
             {NAV.map((item) => (
               <NavLink
@@ -31,12 +31,12 @@ export function Layout() {
               </NavLink>
             ))}
           </nav>
-          <div className="ml-auto">
+          <div className="ml-auto shrink-0">
             <HealthBadge />
           </div>
         </div>
       </header>
-      <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-8">
+      <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-6 sm:py-8">
         {/* Per-page boundary: a crash in one page keeps the header usable. */}
         <ErrorBoundary>
           <Outlet />
