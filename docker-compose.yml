@@ -1,0 +1,64 @@
+# Local infrastructure only. The API and frontend run on the host with hot reload.
+# Start: make up   ·  Stop: make down   ·  Wipe data: make nuke
+
+name: jd-scorer
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-jdscorer}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-jdscorer_dev_password}
+      POSTGRES_DB: ${POSTGRES_DB:-jdscorer}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-jdscorer} -d ${POSTGRES_DB:-jdscorer}"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  # MinIO is opt-in for now (STORAGE_BACKEND=local). Start with:
+  #   docker compose --profile s3 up -d --wait minio && docker compose --profile s3 up minio-init
+  minio:
+    image: minio/minio:latest
+    profiles: ["s3"]
+    restart: unless-stopped
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER:-minioadmin}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:-minioadmin_dev_password}
+    ports:
+      - "${MINIO_PORT:-9000}:9000"
+      - "${MINIO_CONSOLE_PORT:-9001}:9001"
+    volumes:
+      - miniodata:/data
+    healthcheck:
+      test: ["CMD", "mc", "ready", "local"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  # One-shot: creates the bucket, then exits.
+  minio-init:
+    image: minio/mc:latest
+    profiles: ["s3"]
+    depends_on:
+      minio:
+        condition: service_healthy
+    entrypoint: >
+      /bin/sh -c "
+      mc alias set local http://minio:9000 $${MINIO_ROOT_USER} $${MINIO_ROOT_PASSWORD} &&
+      mc mb --ignore-existing local/$${S3_BUCKET}
+      "
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER:-minioadmin}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:-minioadmin_dev_password}
+      S3_BUCKET: ${S3_BUCKET:-jd-scorer}
+
+volumes:
+  pgdata:
+  miniodata:
