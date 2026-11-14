@@ -1,103 +1,83 @@
 {
-  "id": "72e81240-40fb-4093-a5ec-0960a68f1e89",
+  "id": "f349fea5-e4c0-4557-84cd-09d6514905f8",
   "status": "completed",
   "error_code": null,
   "error_message": null,
-  "score": "90.88",
-  "role_title": "Senior Backend Engineer (Python)",
+  "score": "88.80",
+  "verdict": "Strong fit",
+  "role_title": "Data Platform Engineer",
   "model": "manual/claude-session",
-  "engine_version": "1.0.0",
+  "engine_version": "1.1.0",
   "role_overlap": {
     "level": "Strong",
-    "summary": "Seven-plus years as a backend engineer building Python APIs and data services, currently in a senior role closely matching this one."
+    "summary": "Platform engineer on a data platform since 2020, running Kubernetes services and a Kafka ingestion pipeline; very close to this role."
   },
   "core_requirement": {
     "level": "Clear",
-    "summary": "Builds FastAPI services at 2k requests/second on AWS ECS and led a PostgreSQL schema redesign that cut p95 query latency by 60%."
+    "summary": "Built a Kafka ingestion pipeline handling 1B events per day and is on-call lead for the data platform."
   },
   "pros": [
     {
-      "text": "Seven-plus years as a backend engineer building Python APIs and data services, currently in a senior role closely matching this one.",
+      "text": "Platform engineer on a data platform since 2020, running Kubernetes services and a Kafka ingestion pipeline; very close to this role.",
       "source": "role_overlap",
       "operator": null,
       "importance": null,
       "outcome": "Strong"
     },
     {
-      "text": "Builds FastAPI services at 2k requests/second on AWS ECS and led a PostgreSQL schema redesign that cut p95 query latency by 60%.",
+      "text": "Built a Kafka ingestion pipeline handling 1B events per day and is on-call lead for the data platform.",
       "source": "core_requirement",
       "operator": null,
       "importance": null,
       "outcome": "Clear"
     },
     {
-      "text": "Production Python APIs since 2018: Django REST APIs, then FastAPI services handling 2k requests/second.",
-      "source": "c_python_apis",
+      "text": "Built a production Kafka ingestion pipeline handling 1B events per day.",
+      "source": "c_kafka_production",
       "operator": "must_have",
       "importance": "high",
       "outcome": "Full Pass"
     },
     {
-      "text": "Led a PostgreSQL schema redesign that cut p95 query latency 60%, showing schema design and tuning. Migrations not mentioned explicitly.",
-      "source": "c_postgresql",
-      "operator": "must_have",
-      "importance": "high",
-      "outcome": "Full Pass"
-    },
-    {
-      "text": "Summary states 7 years of experience; dated roles run from 2018 to present.",
-      "source": "c_years_experience",
+      "text": "Platform engineer on a data platform from 2020 to present, over four years.",
+      "source": "c_years_data_platform",
       "operator": "must_have",
       "importance": "normal",
       "outcome": "Full Pass"
     },
     {
-      "text": "Runs FastAPI services on AWS ECS in the current role.",
-      "source": "c_aws_services",
+      "text": "Runs Python services in production and built Flask APIs from 2017 to 2020.",
+      "source": "c_python",
       "operator": "must_have",
       "importance": "normal",
       "outcome": "Full Pass"
     },
     {
-      "text": "Built Kafka consumers for stock events at Contoso Retail.",
-      "source": "c_event_streaming",
+      "text": "Runs Kubernetes services written in Go.",
+      "source": "c_go",
       "operator": "nice_to_have",
-      "importance": "normal",
-      "outcome": "Full Pass"
-    },
-    {
-      "text": "Mentored three junior engineers at Northwind Data.",
-      "source": "c_mentoring",
-      "operator": "nice_to_have",
-      "importance": "normal",
-      "outcome": "Full Pass"
-    },
-    {
-      "text": "Entire career is backend work; nothing suggests seeking a front-end only role.",
-      "source": "c_frontend_only",
-      "operator": "must_avoid",
       "importance": "normal",
       "outcome": "Full Pass"
     }
   ],
   "cons": [
     {
-      "text": "No explicit mention of written communication; the resume itself is clear and in English.",
-      "source": "c_written_english",
+      "text": "Kubernetes is clearly shown; Terraform appears only in the skills list with no described use.",
+      "source": "c_kubernetes_terraform",
       "operator": "must_have",
       "importance": "normal",
       "outcome": "Partial Pass"
     },
     {
-      "text": "Only signal is a +44 (UK) phone code, which suggests a UK-based candidate within EU time zones; location is not stated.",
-      "source": "c_eu_timezone",
-      "operator": "must_have",
+      "text": "Neither dbt nor Airflow is mentioned.",
+      "source": "c_dbt_airflow",
+      "operator": "nice_to_have",
       "importance": "normal",
-      "outcome": "Partial Pass"
+      "outcome": "Fail"
     },
     {
-      "text": "No open-source contributions mentioned.",
-      "source": "c_open_source",
+      "text": "GCP is not mentioned; the cloud provider at Fabrikam Cloud isn't named.",
+      "source": "c_gcp",
       "operator": "nice_to_have",
       "importance": "normal",
       "outcome": "Fail"
@@ -105,146 +85,163 @@
   ],
   "criteria": [
     {
-      "key": "c_years_experience",
-      "name": "5+ years professional software engineering",
+      "key": "c_years_data_platform",
+      "name": "4+ years data or platform engineering",
       "operator": "must_have",
       "importance": "normal",
       "outcome": "Full Pass",
       "llm_outcome": "Full Pass",
       "evidence_strength": "evidenced",
-      "candidate_value": "7 years stated; roles from 2018 to present",
-      "reasoning": "Summary states 7 years of experience; dated roles run from 2018 to present.",
-      "weight": "5.63",
-      "earned": "5.63",
-      "forced": null
+      "candidate_value": "Platform Engineer since 2020 (about 6 years)",
+      "reasoning": "Platform engineer on a data platform from 2020 to present, over four years.",
+      "weight": "9",
+      "earned": "9",
+      "forced": null,
+      "knockout": false,
+      "group": ""
     },
     {
-      "key": "c_python_apis",
-      "name": "3+ years production Python APIs",
+      "key": "c_python",
+      "name": "Strong Python",
+      "operator": "must_have",
+      "importance": "normal",
+      "outcome": "Full Pass",
+      "llm_outcome": "Full Pass",
+      "evidence_strength": "evidenced",
+      "candidate_value": "Python services on Kubernetes; Flask APIs",
+      "reasoning": "Runs Python services in production and built Flask APIs from 2017 to 2020.",
+      "weight": "9",
+      "earned": "9",
+      "forced": null,
+      "knockout": false,
+      "group": ""
+    },
+    {
+      "key": "c_kafka_production",
+      "name": "Hands-on Kafka in production",
       "operator": "must_have",
       "importance": "high",
       "outcome": "Full Pass",
       "llm_outcome": "Full Pass",
       "evidence_strength": "evidenced",
-      "candidate_value": "FastAPI (2021-present), Django REST (2018-2021)",
-      "reasoning": "Production Python APIs since 2018: Django REST APIs, then FastAPI services handling 2k requests/second.",
-      "weight": "11.23",
-      "earned": "11.23",
-      "forced": null
+      "candidate_value": "Kafka ingestion pipeline, 1B events/day",
+      "reasoning": "Built a production Kafka ingestion pipeline handling 1B events per day.",
+      "weight": "18",
+      "earned": "18",
+      "forced": null,
+      "knockout": false,
+      "group": ""
     },
     {
-      "key": "c_postgresql",
-      "name": "Strong PostgreSQL",
-      "operator": "must_have",
-      "importance": "high",
-      "outcome": "Full Pass",
-      "llm_outcome": "Full Pass",
-      "evidence_strength": "evidenced",
-      "candidate_value": "Led PostgreSQL schema redesign; 60% p95 latency cut",
-      "reasoning": "Led a PostgreSQL schema redesign that cut p95 query latency 60%, showing schema design and tuning. Migrations not mentioned explicitly.",
-      "weight": "11.25",
-      "earned": "11.25",
-      "forced": null
-    },
-    {
-      "key": "c_aws_services",
-      "name": "Running services on AWS",
-      "operator": "must_have",
-      "importance": "normal",
-      "outcome": "Full Pass",
-      "llm_outcome": "Full Pass",
-      "evidence_strength": "evidenced",
-      "candidate_value": "Services on AWS ECS",
-      "reasoning": "Runs FastAPI services on AWS ECS in the current role.",
-      "weight": "5.63",
-      "earned": "5.63",
-      "forced": null
-    },
-    {
-      "key": "c_written_english",
-      "name": "Clear written English",
+      "key": "c_kubernetes_terraform",
+      "name": "Kubernetes and Terraform",
       "operator": "must_have",
       "importance": "normal",
       "outcome": "Partial Pass",
       "llm_outcome": "Partial Pass",
       "evidence_strength": "partial_evidence",
-      "candidate_value": "Resume written clearly in English",
-      "reasoning": "No explicit mention of written communication; the resume itself is clear and in English.",
-      "weight": "5.63",
-      "earned": "2.82",
-      "forced": null
+      "candidate_value": "Runs 40 Kubernetes services; Terraform listed as a skill",
+      "reasoning": "Kubernetes is clearly shown; Terraform appears only in the skills list with no described use.",
+      "weight": "9",
+      "earned": "4.5",
+      "forced": null,
+      "knockout": false,
+      "group": ""
     },
     {
-      "key": "c_eu_timezone",
-      "name": "Works in EU time zones",
+      "key": "c_berlin_hybrid",
+      "name": "Works from Berlin 2+ days a week",
       "operator": "must_have",
       "importance": "normal",
-      "outcome": "Partial Pass",
-      "llm_outcome": "Partial Pass",
-      "evidence_strength": "partial_evidence",
-      "candidate_value": "UK phone dialing code (+44); no stated location",
-      "reasoning": "Only signal is a +44 (UK) phone code, which suggests a UK-based candidate within EU time zones; location is not stated.",
-      "weight": "5.63",
-      "earned": "2.82",
-      "forced": null
+      "outcome": "Unknown",
+      "llm_outcome": "Fail",
+      "evidence_strength": "not_evidenced",
+      "candidate_value": "Not stated",
+      "reasoning": "No location given; ask whether the candidate can work from Berlin two days a week.",
+      "weight": "0",
+      "earned": "0",
+      "forced": "unknown_screen",
+      "knockout": true,
+      "group": ""
     },
     {
-      "key": "c_event_streaming",
-      "name": "Event streaming and data pipelines",
+      "key": "c_go",
+      "name": "Go",
       "operator": "nice_to_have",
       "importance": "normal",
       "outcome": "Full Pass",
       "llm_outcome": "Full Pass",
       "evidence_strength": "evidenced",
-      "candidate_value": "Kafka consumers for stock events",
-      "reasoning": "Built Kafka consumers for stock events at Contoso Retail.",
+      "candidate_value": "Go services on Kubernetes",
+      "reasoning": "Runs Kubernetes services written in Go.",
       "weight": "1.66",
       "earned": "1.66",
-      "forced": null
+      "forced": null,
+      "knockout": false,
+      "group": ""
     },
     {
-      "key": "c_open_source",
-      "name": "Open-source contributions",
+      "key": "c_dbt_airflow",
+      "name": "dbt or Airflow",
       "operator": "nice_to_have",
       "importance": "normal",
       "outcome": "Fail",
       "llm_outcome": "Fail",
       "evidence_strength": "not_evidenced",
       "candidate_value": "none",
-      "reasoning": "No open-source contributions mentioned.",
+      "reasoning": "Neither dbt nor Airflow is mentioned.",
       "weight": "1.67",
       "earned": "0",
-      "forced": null
+      "forced": null,
+      "knockout": false,
+      "group": ""
     },
     {
-      "key": "c_mentoring",
-      "name": "Mentoring junior engineers",
+      "key": "c_gcp",
+      "name": "GCP experience",
       "operator": "nice_to_have",
       "importance": "normal",
-      "outcome": "Full Pass",
-      "llm_outcome": "Full Pass",
-      "evidence_strength": "evidenced",
-      "candidate_value": "Mentored three junior engineers",
-      "reasoning": "Mentored three junior engineers at Northwind Data.",
+      "outcome": "Fail",
+      "llm_outcome": "Fail",
+      "evidence_strength": "not_evidenced",
+      "candidate_value": "Cloud provider not named",
+      "reasoning": "GCP is not mentioned; the cloud provider at Fabrikam Cloud isn't named.",
       "weight": "1.67",
-      "earned": "1.67",
-      "forced": null
+      "earned": "0",
+      "forced": null,
+      "knockout": false,
+      "group": ""
     },
     {
-      "key": "c_frontend_only",
-      "name": "Seeking a front-end only role",
+      "key": "c_remote_only",
+      "name": "Only looking for a fully remote role",
       "operator": "must_avoid",
       "importance": "normal",
-      "outcome": "Full Pass",
+      "outcome": "Unknown",
       "llm_outcome": "Full Pass",
       "evidence_strength": "not_evidenced",
-      "candidate_value": "Backend-focused career",
-      "reasoning": "Entire career is backend work; nothing suggests seeking a front-end only role.",
-      "weight": "10",
-      "earned": "10",
-      "forced": null
+      "candidate_value": "Not stated",
+      "reasoning": "No stated work-mode preference; ask whether a hybrid role in Berlin is acceptable.",
+      "weight": "0",
+      "earned": "0",
+      "forced": "unknown_screen",
+      "knockout": false,
+      "group": ""
     }
   ],
+  "screening": [
+    {
+      "key": "c_berlin_hybrid",
+      "name": "Works from Berlin 2+ days a week",
+      "reasoning": "No location given; ask whether the candidate can work from Berlin two days a week."
+    },
+    {
+      "key": "c_remote_only",
+      "name": "Only looking for a fully remote role",
+      "reasoning": "No stated work-mode preference; ask whether a hybrid role in Berlin is acceptable."
+    }
+  ],
+  "group_adjustments": [],
   "warnings": [],
   "cost": {
     "run_llm_cost_usd": "0",
@@ -252,6 +249,6 @@
     "provider_reported_usd": null,
     "llm_calls": 1
   },
-  "latency_ms": 68,
-  "created_at": "2026-11-14T09:46:55.173426Z"
+  "latency_ms": 32,
+  "created_at": "2026-11-14T11:13:21.086799Z"
 }

@@ -3,6 +3,14 @@ import { cn } from '@/lib/utils'
 
 import type { Point, RunDetail } from './api'
 import { CriteriaTable } from './CriteriaTable'
+import { ScreeningCard } from './ScreeningCard'
+
+const VERDICT_TONE: Record<string, string> = {
+  'Strong fit': 'bg-score-strong',
+  'Possible fit': 'bg-score-medium',
+  'Weak fit': 'bg-score-weak',
+  'Not eligible': 'bg-destructive',
+}
 
 function scoreTone(score: number) {
   if (score >= 75) return 'text-score-strong'
@@ -48,7 +56,19 @@ export function RunResult({ run }: { run: RunDetail }) {
             <span className="text-lg text-muted-foreground"> / 100</span>
           </div>
           <div className="space-y-1">
-            <div className="text-lg font-medium">{run.role_title}</div>
+            <div className="flex items-center gap-2">
+              <span className="text-lg font-medium">{run.role_title}</span>
+              {run.verdict && (
+                <span
+                  className={cn(
+                    'rounded-full px-2 py-0.5 text-xs font-medium text-white',
+                    VERDICT_TONE[run.verdict] ?? 'bg-muted-foreground',
+                  )}
+                >
+                  {run.verdict}
+                </span>
+              )}
+            </div>
             <div className="text-sm text-muted-foreground">
               Role overlap: {run.role_overlap?.level} · Core requirement:{' '}
               {run.core_requirement?.level}
@@ -75,6 +95,8 @@ export function RunResult({ run }: { run: RunDetail }) {
         <p className="text-sm text-score-medium">Warnings: {run.warnings.join('; ')}</p>
       )}
 
+      <ScreeningCard items={run.screening} />
+
       <div className="grid gap-6 md:grid-cols-2">
         <PointList title="Pros" points={run.pros} sign="+" />
         <PointList title="Cons" points={run.cons} sign="−" />
@@ -85,6 +107,12 @@ export function RunResult({ run }: { run: RunDetail }) {
           <CardTitle>Criteria</CardTitle>
           <CardDescription>
             Each criterion is graded by the model; the score is computed from these grades.
+            {run.group_adjustments.map((g) => (
+              <span key={g.group} className="block">
+                Overlap adjustment +{g.relief} points: {g.criteria.length} criteria test the same
+                experience ({g.group.replaceAll('_', ' ')}), so only the biggest miss counts.
+              </span>
+            ))}
           </CardDescription>
         </CardHeader>
         <CardContent>

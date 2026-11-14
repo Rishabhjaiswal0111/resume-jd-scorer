@@ -120,10 +120,14 @@ export interface components {
             evidence_strength: string;
             /** Forced */
             forced: string | null;
+            /** Group */
+            group: string;
             /** Importance */
             importance: string;
             /** Key */
             key: string;
+            /** Knockout */
+            knockout: boolean;
             /** Llm Outcome */
             llm_outcome: string;
             /** Name */
@@ -136,6 +140,15 @@ export interface components {
             reasoning: string;
             /** Weight */
             weight: string;
+        };
+        /** GroupAdjustment */
+        GroupAdjustment: {
+            /** Criteria */
+            criteria: string[];
+            /** Group */
+            group: string;
+            /** Relief */
+            relief: string;
         };
         /** HTTPValidationError */
         HTTPValidationError: {
@@ -205,6 +218,8 @@ export interface components {
             error_code: string | null;
             /** Error Message */
             error_message: string | null;
+            /** Group Adjustments */
+            group_adjustments: components["schemas"]["GroupAdjustment"][];
             /**
              * Id
              * Format: uuid
@@ -221,10 +236,23 @@ export interface components {
             role_title: string | null;
             /** Score */
             score: string | null;
+            /** Screening */
+            screening: components["schemas"]["ScreeningQuestion"][];
             /** Status */
             status: string;
+            /** Verdict */
+            verdict: string | null;
             /** Warnings */
             warnings: string[];
+        };
+        /** ScreeningQuestion */
+        ScreeningQuestion: {
+            /** Key */
+            key: string;
+            /** Name */
+            name: string;
+            /** Reasoning */
+            reasoning: string;
         };
         /** ValidationError */
         ValidationError: {

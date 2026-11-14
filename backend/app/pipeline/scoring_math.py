@@ -2,17 +2,29 @@
 
 PURE: no I/O, no DB, no clock, no randomness. Same inputs => same output, forever.
 All arithmetic is Decimal. Any behaviour change here MUST bump ENGINE_VERSION.
+
+Engine 1.1.0 (changes from 1.0.0):
+- `verify_in_screening` criteria the resume is silent on become "Unknown": excluded from
+  the score (their bucket weight is re-split over the rest) and listed as screening items.
+- Criteria sharing a `group` lose at most the single biggest loss in that group, so one
+  missing theme (e.g. e-commerce payments) is not counted several times.
+- A failed `knockout` criterion caps the score at 49 and sets the verdict "Not eligible".
+- The flat -30 hard-fail penalty is off by default (still available via config).
+- Every result carries a verdict tier.
 """
 
 from collections.abc import Mapping, Sequence
 from dataclasses import dataclass, field
 from decimal import ROUND_HALF_UP, Decimal
-from typing import Any
+from typing import Any, Literal
 
 from app.schemas.evaluation import CoreLevel, CriterionResult, Outcome, RoleOverlapLevel
 from app.schemas.rubric import OPERATORS, Criterion, Operator
 
-ENGINE_VERSION = "1.0.0"
+ENGINE_VERSION = "1.1.0"
+
+FinalOutcome = Literal["Full Pass", "Partial Pass", "Fail", "Unknown"]
+Verdict = Literal["Strong fit", "Possible fit", "Weak fit", "Not eligible"]
 
 BUCKET_WEIGHTS: Mapping[str, Decimal] = {
     "must_have": Decimal(45),
@@ -25,10 +37,11 @@ BUCKET_WEIGHTS: Mapping[str, Decimal] = {
 }
 IMPORTANCE_FACTORS: Mapping[str, Decimal] = {"high": Decimal(2), "normal": Decimal(1)}
 
-OUTCOME_PCT: Mapping[Outcome, Decimal] = {
+OUTCOME_PCT: Mapping[str, Decimal] = {
     "Full Pass": Decimal(100),
     "Partial Pass": Decimal(50),
     "Fail": Decimal(0),
+    "Unknown": Decimal(0),  # weight is 0 too: excluded from the score
 }
 ROLE_OVERLAP_PCT: Mapping[RoleOverlapLevel, Decimal] = {
     "Strong": Decimal(100),
@@ -52,7 +65,10 @@ CORE_CAP: Mapping[CoreLevel, Decimal] = {
     "Weak": Decimal(59),
     "Partial": Decimal(79),
 }
+KNOCKOUT_CAP = Decimal(49)
 HARD_FAIL_PENALTY = Decimal(30)
+VERDICT_STRONG = Decimal(75)
+VERDICT_POSSIBLE = Decimal(50)
 NO_EVIDENCE = ("not_evidenced", "contradicted")
 
 _CENT = Decimal("0.01")
@@ -65,7 +81,7 @@ def _r2(value: Decimal) -> Decimal:
 
 @dataclass(frozen=True)
 class ScoringConfig:
-    hard_fail_penalty: bool = True
+    hard_fail_penalty: bool = False
 
 
 @dataclass(frozen=True)
@@ -74,11 +90,13 @@ class ScoredCriterion:
     operator: Operator
     importance: str
     llm_outcome: Outcome
-    outcome: Outcome
+    outcome: FinalOutcome
     evidence_strength: str
-    forced: str | None  # "fail_no_evidence" | "pass_absent" | None
+    forced: str | None  # "fail_no_evidence" | "pass_absent" | "unknown_screen" | None
     weight: Decimal
     earned: Decimal
+    knockout: bool = False
+    group: str = ""
 
     @property
     def was_forced_fail(self) -> bool:
@@ -89,6 +107,8 @@ class ScoredCriterion:
 class ScoreResult:
     score: Decimal
     criteria: list[ScoredCriterion]
+    verdict: Verdict = "Weak fit"
+    screening: list[str] = field(default_factory=list)  # criterion keys to ask about
     breakdown: dict[str, Any] = field(default_factory=dict)
     engine_version: str = ENGINE_VERSION
 
@@ -111,16 +131,27 @@ def split_bucket_weight(bucket_weight: Decimal, importances: Sequence[str]) -> l
     return shares
 
 
-def _apply_force_rules(criterion: Criterion, result: CriterionResult) -> tuple[Outcome, str | None]:
+def _final_outcome(
+    criterion: Criterion, result: CriterionResult
+) -> tuple[FinalOutcome, str | None]:
+    silent = result.evidence_strength == "not_evidenced"
+    if criterion.verify_in_screening and silent:
+        return "Unknown", "unknown_screen"
     if criterion.operator == "must_have" and result.evidence_strength in NO_EVIDENCE:
-        if result.outcome != "Fail":
-            return "Fail", "fail_no_evidence"
-        return "Fail", None
+        return "Fail", ("fail_no_evidence" if result.outcome != "Fail" else None)
     if criterion.operator == "must_avoid" and result.evidence_strength in NO_EVIDENCE:
-        if result.outcome != "Full Pass":
-            return "Full Pass", "pass_absent"
-        return "Full Pass", None
+        return "Full Pass", ("pass_absent" if result.outcome != "Full Pass" else None)
     return result.outcome, None
+
+
+def _verdict(score: Decimal, knockout_failed: bool) -> Verdict:
+    if knockout_failed:
+        return "Not eligible"
+    if score >= VERDICT_STRONG:
+        return "Strong fit"
+    if score >= VERDICT_POSSIBLE:
+        return "Possible fit"
+    return "Weak fit"
 
 
 def compute_score(
@@ -139,24 +170,27 @@ def compute_score(
     if missing:
         raise ValueError(f"missing results for criteria: {missing}")
 
-    # 1-3. weights, force rules, percentages, earned
+    outcomes = {c.key: _final_outcome(c, results[c.key]) for c in criteria}
+
+    # 1-3. weights (Unknown criteria get none), percentages, earned
     scored: list[ScoredCriterion] = []
     buckets: list[dict[str, Any]] = []
     forfeited = Decimal(0)
     for operator in OPERATORS:
-        in_bucket = [c for c in criteria if c.operator == operator]
         bucket_weight = BUCKET_WEIGHTS[operator]
-        if not in_bucket:
-            forfeited += bucket_weight
-            buckets.append(
-                {"bucket": operator, "weight": bucket_weight, "items": 0, "forfeited": True}
+        in_bucket = [c for c in criteria if c.operator == operator]
+        scorable = [c for c in in_bucket if outcomes[c.key][0] != "Unknown"]
+        weights = dict(
+            zip(
+                [c.key for c in scorable],
+                split_bucket_weight(bucket_weight, [c.importance for c in scorable]),
+                strict=True,
             )
-            continue
-        weights = split_bucket_weight(bucket_weight, [c.importance for c in in_bucket])
+        )
         bucket_earned = Decimal(0)
-        for criterion, weight in zip(in_bucket, weights, strict=True):
-            result = results[criterion.key]
-            outcome, forced = _apply_force_rules(criterion, result)
+        for criterion in in_bucket:
+            outcome, forced = outcomes[criterion.key]
+            weight = weights.get(criterion.key, Decimal(0))
             earned = weight * OUTCOME_PCT[outcome] / _HUNDRED
             bucket_earned += earned
             scored.append(
@@ -164,23 +198,41 @@ def compute_score(
                     key=criterion.key,
                     operator=criterion.operator,
                     importance=criterion.importance,
-                    llm_outcome=result.outcome,
+                    llm_outcome=results[criterion.key].outcome,
                     outcome=outcome,
-                    evidence_strength=result.evidence_strength,
+                    evidence_strength=results[criterion.key].evidence_strength,
                     forced=forced,
                     weight=weight,
                     earned=earned,
+                    knockout=criterion.knockout,
+                    group=criterion.group,
                 )
             )
+        if not scorable:
+            forfeited += bucket_weight
         buckets.append(
             {
                 "bucket": operator,
                 "weight": bucket_weight,
-                "items": len(in_bucket),
-                "forfeited": False,
+                "items": len(scorable),
+                "unknown": len(in_bucket) - len(scorable),
+                "forfeited": not scorable,
                 "earned": bucket_earned,
             }
         )
+
+    # Group relief: within a group only the single biggest loss counts.
+    group_adjustments: list[dict[str, Any]] = []
+    group_names = sorted({s.group for s in scored if s.group and s.weight > 0})
+    for name in group_names:
+        members = [s for s in scored if s.group == name and s.weight > 0]
+        losses = [s.weight - s.earned for s in members]
+        relief = sum(losses, Decimal(0)) - max(losses)
+        if len(members) > 1 and relief > 0:
+            group_adjustments.append(
+                {"group": name, "criteria": [s.key for s in members], "relief": relief}
+            )
+    group_relief = sum((g["relief"] for g in group_adjustments), Decimal(0))
 
     role_weight = BUCKET_WEIGHTS["role_overlap"]
     core_weight = BUCKET_WEIGHTS["core_requirement"]
@@ -208,21 +260,24 @@ def compute_score(
     ]
 
     # 4. forfeit empty buckets and rescale
-    earned_total = sum((s.earned for s in scored), Decimal(0)) + role_earned + core_earned
+    criteria_earned = sum((s.earned for s in scored), Decimal(0))
+    earned_total = criteria_earned + group_relief + role_earned + core_earned
     denominator = _HUNDRED - forfeited
     raw_score = earned_total / denominator * _HUNDRED
 
-    # 5. caps (lowest wins)
+    # 5. caps (lowest wins), including failed knock-outs
+    knockouts_failed = [s.key for s in scored if s.knockout and s.outcome == "Fail"]
     caps: list[dict[str, Any]] = []
     if role_cap is not None:
         caps.append({"source": "role_overlap", "level": role_overlap, "cap": role_cap})
     if core_cap is not None:
         caps.append({"source": "core_requirement", "level": core_requirement, "cap": core_cap})
-    cap_values = [c for c in (role_cap, core_cap) if c is not None]
-    effective_cap = min(cap_values) if cap_values else None
+    for key in knockouts_failed:
+        caps.append({"source": f"knockout:{key}", "level": "Fail", "cap": KNOCKOUT_CAP})
+    effective_cap = min((c["cap"] for c in caps), default=None)
     after_caps = raw_score if effective_cap is None else min(raw_score, effective_cap)
 
-    # 6. hard-fail penalty (not cumulative)
+    # 6. optional hard-fail penalty (off by default since 1.1.0)
     hard_fails = [
         s.key
         for s in scored
@@ -231,8 +286,10 @@ def compute_score(
     penalty_applied = config.hard_fail_penalty and bool(hard_fails)
     after_penalty = after_caps - (HARD_FAIL_PENALTY if penalty_applied else Decimal(0))
 
-    # 7. clamp + round
+    # 7. clamp + round, then verdict
     final = _r2(max(Decimal(0), min(_HUNDRED, after_penalty)))
+    verdict = _verdict(final, bool(knockouts_failed))
+    screening = [s.key for s in scored if s.outcome == "Unknown"]
 
     breakdown: dict[str, Any] = {
         "engine_version": ENGINE_VERSION,
@@ -251,13 +308,18 @@ def compute_score(
                 "llm_outcome": s.llm_outcome,
                 "outcome": s.outcome,
                 "forced": s.forced,
+                "knockout": s.knockout,
+                "group": s.group,
                 "weight": s.weight,
                 "pct": OUTCOME_PCT[s.outcome],
                 "earned": s.earned,
             }
             for s in scored
         ],
+        "group_adjustments": group_adjustments,
         "holistic": holistic,
+        "criteria_earned": criteria_earned,
+        "group_relief": group_relief,
         "earned_total": earned_total,
         "forfeited_weight": forfeited,
         "denominator": denominator,
@@ -275,8 +337,17 @@ def compute_score(
         },
         "score_after_penalty": after_penalty,
         "final_score": final,
+        "knockouts_failed": knockouts_failed,
+        "screening": screening,
+        "verdict": verdict,
     }
-    return ScoreResult(score=final, criteria=scored, breakdown=to_jsonable(breakdown))
+    return ScoreResult(
+        score=final,
+        criteria=scored,
+        verdict=verdict,
+        screening=screening,
+        breakdown=to_jsonable(breakdown),
+    )
 
 
 def to_jsonable(value: Any) -> Any:

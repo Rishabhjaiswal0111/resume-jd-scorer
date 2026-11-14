@@ -12,7 +12,7 @@ from app.schemas.rubric import Criterion, RubricOutput
 
 log = get_logger(__name__)
 
-PROMPT_VERSION = "jd_parse.v1"
+PROMPT_VERSION = "jd_parse.v2"
 
 
 @dataclass

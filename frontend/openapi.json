@@ -126,6 +126,10 @@
             ],
             "title": "Forced"
           },
+          "group": {
+            "title": "Group",
+            "type": "string"
+          },
           "importance": {
             "title": "Importance",
             "type": "string"
@@ -133,6 +137,10 @@
           "key": {
             "title": "Key",
             "type": "string"
+          },
+          "knockout": {
+            "title": "Knockout",
+            "type": "boolean"
           },
           "llm_outcome": {
             "title": "Llm Outcome",
@@ -171,9 +179,37 @@
           "reasoning",
           "weight",
           "earned",
-          "forced"
+          "forced",
+          "knockout",
+          "group"
         ],
         "title": "CriterionView",
+        "type": "object"
+      },
+      "GroupAdjustment": {
+        "properties": {
+          "criteria": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Criteria",
+            "type": "array"
+          },
+          "group": {
+            "title": "Group",
+            "type": "string"
+          },
+          "relief": {
+            "title": "Relief",
+            "type": "string"
+          }
+        },
+        "required": [
+          "group",
+          "criteria",
+          "relief"
+        ],
+        "title": "GroupAdjustment",
         "type": "object"
       },
       "HTTPValidationError": {
@@ -367,6 +403,13 @@
             ],
             "title": "Error Message"
           },
+          "group_adjustments": {
+            "items": {
+              "$ref": "#/components/schemas/GroupAdjustment"
+            },
+            "title": "Group Adjustments",
+            "type": "array"
+          },
           "id": {
             "format": "uuid",
             "title": "Id",
@@ -426,9 +469,27 @@
             ],
             "title": "Score"
           },
+          "screening": {
+            "items": {
+              "$ref": "#/components/schemas/ScreeningQuestion"
+            },
+            "title": "Screening",
+            "type": "array"
+          },
           "status": {
             "title": "Status",
             "type": "string"
+          },
+          "verdict": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Verdict"
           },
           "warnings": {
             "items": {
@@ -444,6 +505,7 @@
           "error_code",
           "error_message",
           "score",
+          "verdict",
           "role_title",
           "model",
           "engine_version",
@@ -452,12 +514,37 @@
           "pros",
           "cons",
           "criteria",
+          "screening",
+          "group_adjustments",
           "warnings",
           "cost",
           "latency_ms",
           "created_at"
         ],
         "title": "RunDetail",
+        "type": "object"
+      },
+      "ScreeningQuestion": {
+        "properties": {
+          "key": {
+            "title": "Key",
+            "type": "string"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "reasoning": {
+            "title": "Reasoning",
+            "type": "string"
+          }
+        },
+        "required": [
+          "key",
+          "name",
+          "reasoning"
+        ],
+        "title": "ScreeningQuestion",
         "type": "object"
       },
       "ValidationError": {

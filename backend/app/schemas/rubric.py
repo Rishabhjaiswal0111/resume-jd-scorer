@@ -29,6 +29,22 @@ class Criterion(BaseModel):
     importance: Importance
     values: list[str] = Field(description="concrete skills/values the criterion looks for")
     source_excerpt: str = Field(description="verbatim JD text this criterion came from")
+    # jd_parse.v2+. Defaults keep v1 rubrics (stored without these fields) valid.
+    knockout: bool = Field(
+        default=False,
+        description="true only for dealbreakers: work authorization, a mandatory license, "
+        "a non-negotiable location or 'do not apply unless' conditions",
+    )
+    verify_in_screening: bool = Field(
+        default=False,
+        description="true when resumes rarely state it (relocation, notice period, salary, "
+        "work authorization, travel): a silent resume means 'ask', not 'fail'",
+    )
+    group: str = Field(
+        default="",
+        description="short snake_case theme shared by criteria that test the same underlying "
+        "experience (e.g. 'ecommerce_payments'); empty string if none",
+    )
 
 
 class RubricOutput(BaseModel):

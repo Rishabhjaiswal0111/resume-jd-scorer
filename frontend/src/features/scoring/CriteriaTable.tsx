@@ -6,6 +6,7 @@ const OUTCOME_TONE: Record<string, string> = {
   'Full Pass': 'text-score-strong',
   'Partial Pass': 'text-score-medium',
   Fail: 'text-score-weak',
+  Unknown: 'text-muted-foreground',
 }
 
 const OPERATOR_LABEL: Record<string, string> = {
@@ -36,10 +37,11 @@ export function CriteriaTable({ criteria }: { criteria: CriterionView[] }) {
               <td className="py-2 pr-4 whitespace-nowrap text-muted-foreground">
                 {OPERATOR_LABEL[c.operator] ?? c.operator}
                 {c.importance === 'high' && ' · high'}
+                {c.knockout && ' · knock-out'}
               </td>
               <td className={cn('py-2 pr-4 whitespace-nowrap', OUTCOME_TONE[c.outcome])}>
-                {c.outcome}
-                {c.forced && (
+                {c.outcome === 'Unknown' ? 'Ask in screening' : c.outcome}
+                {c.forced && c.forced !== 'unknown_screen' && (
                   <span className="block text-xs text-muted-foreground">
                     model said {c.llm_outcome}
                   </span>

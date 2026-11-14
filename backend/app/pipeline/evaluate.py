@@ -22,7 +22,7 @@ from app.schemas.rubric import Criterion
 
 log = get_logger(__name__)
 
-PROMPT_VERSION = "evaluate.v1"
+PROMPT_VERSION = "evaluate.v2"
 NOT_EVALUATED = "Not evaluated"
 
 

@@ -96,9 +96,9 @@ def score(results: list[CriterionResult], role: str = "Strong", core: str = "Cle
             "None",
             "49.00",
         ),
-        # cap not binding: role Weak (cap 59), earned 0+0+0+2.5+10 = 12.5/85 = 14.71, then
-        # high must_have c_a failed -> -30 -> clamped to 0
-        ([res("c_a", "Fail"), res("c_b", "Fail"), res("c_c", "Fail")], "Weak", "Clear", "0.00"),
+        # cap not binding: role Weak (cap 59), earned 0+0+0+2.5+10 = 12.5/85 = 14.705... -> 14.71
+        # (no penalty: it is opt-in since engine 1.1.0)
+        ([res("c_a", "Fail"), res("c_b", "Fail"), res("c_c", "Fail")], "Weak", "Clear", "14.71"),
     ],
 )
 def test_score_table(results: list[CriterionResult], role: str, core: str, expected: str) -> None:
@@ -114,7 +114,8 @@ def test_force_fail_on_must_have_without_evidence_and_penalty() -> None:
             res("c_a", "Partial Pass", "not_evidenced"),
             res("c_b", "Full Pass"),
             res("c_c", "Full Pass"),
-        ]
+        ],
+        hard_fail_penalty=True,
     )
     assert result.score == Decimal("34.71")
     a = next(s for s in result.criteria if s.key == "c_a")
@@ -147,11 +148,11 @@ def test_llm_fail_without_evidence_is_not_flagged_as_forced() -> None:
     assert a.outcome == "Fail" and not a.was_forced_fail
 
 
-def test_penalty_can_be_disabled() -> None:
+def test_penalty_is_opt_in() -> None:
     results = [res("c_a", "Fail"), res("c_b", "Full Pass"), res("c_c", "Full Pass")]
-    # 0 + 15 + 20 + 10 + 10 = 55 / 85 = 64.71
-    assert score(results, hard_fail_penalty=False).score == Decimal("64.71")
-    assert score(results).score == Decimal("34.71")
+    # 0 + 15 + 20 + 10 + 10 = 55 / 85 = 64.71; with the penalty -30 = 34.71
+    assert score(results).score == Decimal("64.71")
+    assert score(results, hard_fail_penalty=True).score == Decimal("34.71")
 
 
 def test_must_avoid_passes_when_absent() -> None:

@@ -27,6 +27,20 @@ class CriterionView(BaseModel):
     weight: str
     earned: str
     forced: str | None
+    knockout: bool
+    group: str
+
+
+class ScreeningQuestion(BaseModel):
+    key: str
+    name: str
+    reasoning: str
+
+
+class GroupAdjustment(BaseModel):
+    group: str
+    criteria: list[str]
+    relief: str
 
 
 class Holistic(BaseModel):
@@ -47,6 +61,7 @@ class RunDetail(BaseModel):
     error_code: str | None
     error_message: str | None
     score: str | None
+    verdict: str | None
     role_title: str | None
     model: str
     engine_version: str
@@ -55,6 +70,8 @@ class RunDetail(BaseModel):
     pros: list[Point]
     cons: list[Point]
     criteria: list[CriterionView]
+    screening: list[ScreeningQuestion]
+    group_adjustments: list[GroupAdjustment]
     warnings: list[str]
     cost: CostView
     latency_ms: int | None

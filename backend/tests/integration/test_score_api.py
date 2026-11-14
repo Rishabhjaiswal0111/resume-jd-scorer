@@ -54,6 +54,8 @@ async def test_score_returns_full_run(db: DbContext) -> None:
     body = res.json()
     assert body["status"] == "completed"
     assert body["score"] == "89.88"
+    assert body["verdict"] == "Strong fit"
+    assert body["screening"] == [] and body["group_adjustments"] == []
     assert body["role_title"] == "Senior Backend Engineer (Python)"
     assert body["role_overlap"]["level"] == "Strong"
     assert [c["key"] for c in body["criteria"]][:2] == ["c_years_experience", "c_python_apis"]

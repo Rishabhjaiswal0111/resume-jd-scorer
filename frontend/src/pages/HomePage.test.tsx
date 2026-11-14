@@ -37,6 +37,24 @@ afterEach(() => {
 })
 
 describe('HomePage scoring flow', () => {
+  it('explains a group adjustment under the criteria table', async () => {
+    const withGroup = {
+      ...run,
+      group_adjustments: [
+        { group: 'ecommerce_payments', criteria: ['c_a', 'c_b', 'c_c'], relief: '11.5' },
+      ],
+    }
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue(json(withGroup)))
+    renderPage()
+    chooseFiles()
+    fireEvent.click(screen.getByRole('button', { name: 'Score' }))
+    expect(
+      await screen.findByText(
+        /Overlap adjustment \+11\.5 points: 3 criteria test the same experience \(ecommerce payments\)/,
+      ),
+    ).toBeInTheDocument()
+  })
+
   it('sends pasted JD text as jd_text once it is long enough', async () => {
     const fetchMock = vi.fn().mockResolvedValue(json(run))
     vi.stubGlobal('fetch', fetchMock)
@@ -56,7 +74,7 @@ describe('HomePage scoring flow', () => {
     fireEvent.change(textarea, { target: { value: jdText } })
     fireEvent.click(button)
 
-    expect(await screen.findByText('90.88')).toBeInTheDocument()
+    expect(await screen.findByText('88.80')).toBeInTheDocument()
     const body = (fetchMock.mock.calls[0] as [string, RequestInit])[1].body as FormData
     expect(body.get('jd_text')).toBe(jdText)
     expect(body.get('jd')).toBeNull()
@@ -77,8 +95,8 @@ describe('HomePage scoring flow', () => {
     chooseFiles()
     fireEvent.click(screen.getByRole('button', { name: 'Score' }))
 
-    expect(await screen.findByText('90.88')).toBeInTheDocument()
-    expect(screen.getAllByText('Senior Backend Engineer (Python)').length).toBeGreaterThan(0)
+    expect(await screen.findByText('88.80')).toBeInTheDocument()
+    expect(screen.getAllByText('Data Platform Engineer').length).toBeGreaterThan(0)
 
     const [url, init] = fetchMock.mock.calls[0] as [string, RequestInit]
     expect(url).toBe('/api/v1/score')
@@ -89,10 +107,18 @@ describe('HomePage scoring flow', () => {
 
     const table = screen.getByRole('table')
     expect(within(table).getAllByRole('row')).toHaveLength(run.criteria.length + 1)
-    expect(within(table).getByText('Works in EU time zones')).toBeInTheDocument()
+    expect(within(table).getByText('Hands-on Kafka in production')).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: 'Pros' })).toBeInTheDocument()
     // Shown in Cons and in the criteria table's reasoning column.
-    expect(screen.getAllByText(/No open-source contributions mentioned/)).toHaveLength(2)
+    expect(screen.getAllByText(/Neither dbt nor Airflow is mentioned/)).toHaveLength(2)
+    // Engine 1.1.0: verdict badge and screening questions (silent resume -> ask, not fail).
+    expect(screen.getByText('Strong fit')).toBeInTheDocument()
+    const screening = screen
+      .getByRole('heading', { name: 'Ask in screening' })
+      .closest('div')!.parentElement!
+    expect(within(screening).getByText('Works from Berlin 2+ days a week')).toBeInTheDocument()
+    expect(within(table).getAllByText('Ask in screening')).toHaveLength(2)
+    expect(within(table).getByText(/knock-out/)).toBeInTheDocument()
   })
 
   it('explains manual-mode pending and retries the same files', async () => {
@@ -118,7 +144,7 @@ describe('HomePage scoring flow', () => {
 
     expect(await screen.findByRole('alert')).toHaveTextContent(/Manual mode/)
     fireEvent.click(screen.getByRole('button', { name: 'Retry' }))
-    expect(await screen.findByText('90.88')).toBeInTheDocument()
+    expect(await screen.findByText('88.80')).toBeInTheDocument()
     expect(fetchMock).toHaveBeenCalledTimes(2)
   })
 })

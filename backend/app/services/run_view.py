@@ -9,7 +9,15 @@ from app.core.errors import NotFoundError
 from app.repositories import llm_calls as calls_repo
 from app.repositories import rubrics as rubrics_repo
 from app.repositories import runs as runs_repo
-from app.schemas.runs import CostView, CriterionView, Holistic, Point, RunDetail
+from app.schemas.runs import (
+    CostView,
+    CriterionView,
+    GroupAdjustment,
+    Holistic,
+    Point,
+    RunDetail,
+    ScreeningQuestion,
+)
 
 
 def money(value: Decimal | None) -> str | None:
@@ -26,7 +34,8 @@ async def run_detail(session: AsyncSession, run_id: UUID) -> RunDetail:
         raise NotFoundError(f"Run {run_id} not found")
     rubric = await rubrics_repo.get(session, run.rubric_id) if run.rubric_id else None
     names = {c["key"]: c["name"] for c in rubric.criteria} if rubric else {}
-    breakdown = {c["key"]: c for c in (run.breakdown or {}).get("criteria", [])}
+    full_breakdown = run.breakdown or {}
+    breakdown = {c["key"]: c for c in full_breakdown.get("criteria", [])}
     rows = await runs_repo.criterion_evaluations(session, run.id)
     calls = await calls_repo.list_for_run(session, run.id)
     reported = [c.provider_reported_cost_usd for c in calls if c.provider_reported_cost_usd]
@@ -42,6 +51,7 @@ async def run_detail(session: AsyncSession, run_id: UUID) -> RunDetail:
         error_code=run.error_code,
         error_message=run.error_message,
         score=str(run.score) if run.score is not None else None,  # always 2 dp: "55.20"
+        verdict=full_breakdown.get("verdict"),  # absent on engine 1.0.0 runs
         role_title=rubric.title if rubric else None,
         model=run.model,
         engine_version=run.engine_version,
@@ -63,8 +73,22 @@ async def run_detail(session: AsyncSession, run_id: UUID) -> RunDetail:
                 weight=money(r.weight) or "0",
                 earned=money(r.earned) or "0",
                 forced=breakdown.get(r.criterion_key, {}).get("forced"),
+                knockout=breakdown.get(r.criterion_key, {}).get("knockout", False),
+                group=breakdown.get(r.criterion_key, {}).get("group", ""),
             )
             for r in rows
+        ],
+        screening=[
+            ScreeningQuestion(
+                key=r.criterion_key,
+                name=names.get(r.criterion_key, r.criterion_key),
+                reasoning=r.reasoning,
+            )
+            for r in rows
+            if r.outcome == "Unknown"
+        ],
+        group_adjustments=[
+            GroupAdjustment(**g) for g in full_breakdown.get("group_adjustments", [])
         ],
         warnings=list(run.warnings or []),
         cost=CostView(

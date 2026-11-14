@@ -66,7 +66,8 @@ class Settings(BaseSettings):
     manual_llm_dir: Path = Path("./var/manual_llm")
 
     # --- scoring (PLAN.md §7) ---
-    scoring_hard_fail_penalty: bool = True
+    # Engine 1.1.0: off by default; knock-out criteria replace the flat -30 penalty.
+    scoring_hard_fail_penalty: bool = False
     anthropic_api_key: SecretStr | None = None
     openrouter_api_key: SecretStr | None = None
     deepseek_api_key: SecretStr | None = None

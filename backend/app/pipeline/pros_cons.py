@@ -2,6 +2,7 @@
 
 - Full Pass reasoning -> pros; Partial Pass / Fail -> cons.
 - Holistic summaries -> cons if their level carries a cap, else pros.
+- Unknown (verify-in-screening) criteria are neither; they become screening questions.
 - Sorted by operator (must_have first), then importance (high first), then rubric order.
 """
 
@@ -64,6 +65,8 @@ def derive_pros_cons(
         ranked.append(((_HOLISTIC_RANK, 0, i), not capped, point))
 
     for i, s in enumerate(scored):
+        if s.outcome == "Unknown":  # not a pro or a con: it is a screening question
+            continue
         point = Point(
             text=reasoning.get(s.key, ""),
             source=s.key,
