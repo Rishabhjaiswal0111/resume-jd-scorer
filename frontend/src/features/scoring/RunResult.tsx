@@ -46,7 +46,6 @@ function PointList({ title, points, sign }: { title: string; points: Point[]; si
 
 export function RunResult({ run }: { run: RunDetail }) {
   const score = Number(run.score ?? 0)
-  const providerCost = run.cost.provider_reported_usd
   return (
     <div className="space-y-6">
       <Card>
@@ -74,20 +73,6 @@ export function RunResult({ run }: { run: RunDetail }) {
               {run.core_requirement?.level}
             </div>
           </div>
-          <dl className="ml-auto grid grid-cols-2 gap-x-4 gap-y-1 text-sm">
-            <dt className="text-muted-foreground">LLM cost</dt>
-            <dd className="tabular-nums">${run.cost.run_llm_cost_usd}</dd>
-            <dt className="text-muted-foreground">JD parse share</dt>
-            <dd className="tabular-nums">${run.cost.rubric_cost_share_usd}</dd>
-            <dt className="text-muted-foreground">Model</dt>
-            <dd>{run.model}</dd>
-            {providerCost !== null && (
-              <>
-                <dt className="text-muted-foreground">Provider-reported</dt>
-                <dd className="tabular-nums">${providerCost}</dd>
-              </>
-            )}
-          </dl>
         </CardContent>
       </Card>
 

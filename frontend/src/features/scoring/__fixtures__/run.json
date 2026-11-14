@@ -3,7 +3,7 @@
   "status": "completed",
   "error_code": null,
   "error_message": null,
-  "score": "88.80",
+  "score": "89",
   "verdict": "Strong fit",
   "role_title": "Data Platform Engineer",
   "model": "manual/claude-session",

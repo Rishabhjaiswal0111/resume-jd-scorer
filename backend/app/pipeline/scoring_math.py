@@ -11,6 +11,9 @@ Engine 1.1.0 (changes from 1.0.0):
 - A failed `knockout` criterion caps the score at 49 and sets the verdict "Not eligible".
 - The flat -30 hard-fail penalty is off by default (still available via config).
 - Every result carries a verdict tier.
+
+Engine 1.2.0: the final score is a whole number (half up). Every intermediate value in
+the breakdown stays exact.
 """
 
 from collections.abc import Mapping, Sequence
@@ -21,7 +24,7 @@ from typing import Any, Literal
 from app.schemas.evaluation import CoreLevel, CriterionResult, Outcome, RoleOverlapLevel
 from app.schemas.rubric import OPERATORS, Criterion, Operator
 
-ENGINE_VERSION = "1.1.0"
+ENGINE_VERSION = "1.2.0"
 
 FinalOutcome = Literal["Full Pass", "Partial Pass", "Fail", "Unknown"]
 Verdict = Literal["Strong fit", "Possible fit", "Weak fit", "Not eligible"]
@@ -72,6 +75,7 @@ VERDICT_POSSIBLE = Decimal(50)
 NO_EVIDENCE = ("not_evidenced", "contradicted")
 
 _CENT = Decimal("0.01")
+_WHOLE = Decimal(1)
 _HUNDRED = Decimal(100)
 
 
@@ -286,8 +290,8 @@ def compute_score(
     penalty_applied = config.hard_fail_penalty and bool(hard_fails)
     after_penalty = after_caps - (HARD_FAIL_PENALTY if penalty_applied else Decimal(0))
 
-    # 7. clamp + round, then verdict
-    final = _r2(max(Decimal(0), min(_HUNDRED, after_penalty)))
+    # 7. clamp + round to a whole number, then verdict
+    final = max(Decimal(0), min(_HUNDRED, after_penalty)).quantize(_WHOLE, rounding=ROUND_HALF_UP)
     verdict = _verdict(final, bool(knockouts_failed))
     screening = [s.key for s in scored if s.outcome == "Unknown"]
 

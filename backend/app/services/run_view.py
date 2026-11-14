@@ -1,6 +1,6 @@
 """Assemble the API view of a run from its rows (no business logic, just shaping)."""
 
-from decimal import Decimal
+from decimal import ROUND_HALF_UP, Decimal
 from uuid import UUID
 
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -50,7 +50,12 @@ async def run_detail(session: AsyncSession, run_id: UUID) -> RunDetail:
         status=run.status,
         error_code=run.error_code,
         error_message=run.error_message,
-        score=str(run.score) if run.score is not None else None,  # always 2 dp: "55.20"
+        # Whole number since engine 1.2.0; older runs (2 dp) are rounded the same way.
+        score=(
+            str(int(run.score.quantize(Decimal(1), rounding=ROUND_HALF_UP)))
+            if run.score is not None
+            else None
+        ),
         verdict=full_breakdown.get("verdict"),  # absent on engine 1.0.0 runs
         role_title=rubric.title if rubric else None,
         model=run.model,

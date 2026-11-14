@@ -133,6 +133,6 @@ async def test_full_scoring_run_on_haiku(db: DbContext, monkeypatch: pytest.Monk
         model=HAIKU,
     )
     assert run.status == "completed"
-    assert run.score == Decimal("89.88")  # same grades as the OpenRouter flow test
+    assert run.score == Decimal("90")  # same grades as the OpenRouter flow test
     assert run.llm_cost_usd == Decimal("0.0006")  # (2000*0.10 + 800*0.50)/1e6
     assert run.model == HAIKU

@@ -72,7 +72,7 @@ def score(results: list[CriterionResult], role: str = "Strong", core: str = "Cle
             [res("c_a", "Full Pass"), res("c_b", "Partial Pass"), res("c_c", "Fail")],
             "Strong",
             "Clear",
-            "67.65",
+            "68",
         ),
         # role Moderate: 30+15+20+5+10 = 80 / 85 = 94.12 -> capped 79
         (
@@ -98,7 +98,7 @@ def score(results: list[CriterionResult], role: str = "Strong", core: str = "Cle
         ),
         # cap not binding: role Weak (cap 59), earned 0+0+0+2.5+10 = 12.5/85 = 14.705... -> 14.71
         # (no penalty: it is opt-in since engine 1.1.0)
-        ([res("c_a", "Fail"), res("c_b", "Fail"), res("c_c", "Fail")], "Weak", "Clear", "14.71"),
+        ([res("c_a", "Fail"), res("c_b", "Fail"), res("c_c", "Fail")], "Weak", "Clear", "15"),
     ],
 )
 def test_score_table(results: list[CriterionResult], role: str, core: str, expected: str) -> None:
@@ -117,7 +117,7 @@ def test_force_fail_on_must_have_without_evidence_and_penalty() -> None:
         ],
         hard_fail_penalty=True,
     )
-    assert result.score == Decimal("34.71")
+    assert result.score == Decimal("35")
     a = next(s for s in result.criteria if s.key == "c_a")
     assert (a.llm_outcome, a.outcome, a.was_forced_fail, a.earned) == (
         "Partial Pass",
@@ -137,7 +137,7 @@ def test_contradicted_must_have_is_forced_fail() -> None:
     # normal-importance must_have failing does not trigger the penalty:
     # 30 + 0 + 0 + 20 = 50 / 85 = 58.82
     assert result.breakdown["penalty"]["applied"] is False
-    assert result.score == Decimal("58.82")
+    assert result.score == Decimal("59")
 
 
 def test_llm_fail_without_evidence_is_not_flagged_as_forced() -> None:
@@ -151,8 +151,8 @@ def test_llm_fail_without_evidence_is_not_flagged_as_forced() -> None:
 def test_penalty_is_opt_in() -> None:
     results = [res("c_a", "Fail"), res("c_b", "Full Pass"), res("c_c", "Full Pass")]
     # 0 + 15 + 20 + 10 + 10 = 55 / 85 = 64.71; with the penalty -30 = 34.71
-    assert score(results).score == Decimal("64.71")
-    assert score(results, hard_fail_penalty=True).score == Decimal("34.71")
+    assert score(results).score == Decimal("65")
+    assert score(results, hard_fail_penalty=True).score == Decimal("35")
 
 
 def test_must_avoid_passes_when_absent() -> None:
@@ -184,7 +184,7 @@ def test_must_avoid_present_fails() -> None:
     rubric = [crit("c_x", "must_have"), crit("c_avoid", "must_avoid")]
     results = {"c_x": res("c_x", "Full Pass"), "c_avoid": res("c_avoid", "Fail", "evidenced")}
     # earned 45 + 0 + 10 + 10 = 65 / 75 = 86.666... -> 86.67
-    assert compute_score(rubric, results, "Strong", "Clear").score == Decimal("86.67")
+    assert compute_score(rubric, results, "Strong", "Clear").score == Decimal("87")
 
 
 def test_may_avoid_has_zero_weight() -> None:
@@ -246,7 +246,7 @@ def test_breakdown_is_json_serialisable_and_complete() -> None:
     assert bd["caps"]["triggered"] == [{"source": "role_overlap", "level": "Moderate", "cap": "79"}]
     # 30 + 7.5 + 0 + 5 + 10 = 52.5 / 85 = 61.76 -> cap 79 not binding
     assert bd["caps"]["binding"] is False
-    assert result.score == Decimal("61.76")
+    assert result.score == Decimal("62")
 
 
 def test_deterministic_and_bounded_over_all_outcome_combinations() -> None:

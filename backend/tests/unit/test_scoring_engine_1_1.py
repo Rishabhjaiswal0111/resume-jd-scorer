@@ -68,7 +68,7 @@ def test_screening_criterion_with_evidence_is_graded_normally() -> None:
     assert reloc.outcome == "Fail"
     assert result.screening == []
     # 22.5 + 0 + 10 + 10 = 42.5 / 65 = 65.38
-    assert result.score == Decimal("65.38")
+    assert result.score == Decimal("65")
 
 
 def test_bucket_of_only_unknowns_is_forfeited() -> None:
@@ -92,7 +92,7 @@ def test_group_loses_only_its_biggest_miss() -> None:
         {"group": "domain", "criteria": ["c_ecom", "c_pay"], "relief": "11.25"}
     ]
     # earned 22.5 + 11.25 relief + 10 + 10 = 53.75 / 65 = 82.69
-    assert result.score == Decimal("82.69")
+    assert result.score == Decimal("83")
 
 
 def test_single_member_group_gets_no_relief() -> None:
@@ -117,9 +117,9 @@ def test_verdict_tiers() -> None:
     weak = run(rubric, [res("c_a", "Fail"), res("c_b", "Fail")], role="Weak", core="Weak")
     assert (strong.score, strong.verdict) == (Decimal("100.00"), "Strong fit")
     # 22.5 + 20 = 42.5 / 65 = 65.38
-    assert (possible.score, possible.verdict) == (Decimal("65.38"), "Possible fit")
+    assert (possible.score, possible.verdict) == (Decimal("65"), "Possible fit")
     # 0 + 2.5 + 2.5 = 5 / 65 = 7.69
-    assert (weak.score, weak.verdict) == (Decimal("7.69"), "Weak fit")
+    assert (weak.score, weak.verdict) == (Decimal("8"), "Weak fit")
 
 
 def test_unknown_criteria_are_not_pros_or_cons() -> None:
@@ -150,3 +150,14 @@ def test_v1_rubric_without_new_fields_still_scores() -> None:
     )
     assert (legacy.knockout, legacy.verify_in_screening, legacy.group) == (False, False, "")
     assert run([legacy], [res("c_x", "Full Pass")]).score == Decimal("100.00")
+
+
+def test_final_score_is_a_whole_number_rounded_half_up() -> None:
+    # must_have 45 (Full) + nice_to_have 5 (Full) + must_avoid 0 (present -> Fail) + 10 + 10
+    # = 70; preferred forfeited (20) -> denominator 80; 70 / 80 = 87.5 exactly -> 88
+    rubric = [crit("c_a"), crit("c_n", "nice_to_have"), crit("c_v", "must_avoid")]
+    result = run(rubric, [res("c_a", "Full Pass"), res("c_n", "Full Pass"), res("c_v", "Fail")])
+    assert Decimal(result.breakdown["raw_score"]) == Decimal("87.5")
+    assert result.score == Decimal(88)
+    assert str(result.score) == "88"
+    assert result.engine_version == "1.2.0"

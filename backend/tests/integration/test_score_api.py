@@ -53,7 +53,7 @@ async def test_score_returns_full_run(db: DbContext) -> None:
     assert res.status_code == 200, res.text
     body = res.json()
     assert body["status"] == "completed"
-    assert body["score"] == "89.88"
+    assert body["score"] == "90"
     assert body["verdict"] == "Strong fit"
     assert body["screening"] == [] and body["group_adjustments"] == []
     assert body["role_title"] == "Senior Backend Engineer (Python)"
@@ -123,7 +123,7 @@ async def test_score_with_pasted_jd_text(db: DbContext) -> None:
     fake = FakeAnthropic(claude_message(rubric), claude_message(evaluation))
     res = await post(db, fake, {"jd_text": JD_TEXT}, with_pdf_jd=False)
     assert res.status_code == 200, res.text
-    assert res.json()["score"] == "89.88"
+    assert res.json()["score"] == "90"
     # The pasted text (tabs normalized) is what the JD-parse prompt received.
     prompt = fake.requests[0]["messages"][0]["content"]
     assert "• Design and operate the APIs" in prompt

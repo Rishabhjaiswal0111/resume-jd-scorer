@@ -74,7 +74,7 @@ describe('HomePage scoring flow', () => {
     fireEvent.change(textarea, { target: { value: jdText } })
     fireEvent.click(button)
 
-    expect(await screen.findByText('88.80')).toBeInTheDocument()
+    expect(await screen.findByText('89')).toBeInTheDocument()
     const body = (fetchMock.mock.calls[0] as [string, RequestInit])[1].body as FormData
     expect(body.get('jd_text')).toBe(jdText)
     expect(body.get('jd')).toBeNull()
@@ -95,7 +95,7 @@ describe('HomePage scoring flow', () => {
     chooseFiles()
     fireEvent.click(screen.getByRole('button', { name: 'Score' }))
 
-    expect(await screen.findByText('88.80')).toBeInTheDocument()
+    expect(await screen.findByText('89')).toBeInTheDocument()
     expect(screen.getAllByText('Data Platform Engineer').length).toBeGreaterThan(0)
 
     const [url, init] = fetchMock.mock.calls[0] as [string, RequestInit]
@@ -113,6 +113,8 @@ describe('HomePage scoring flow', () => {
     expect(screen.getAllByText(/Neither dbt nor Airflow is mentioned/)).toHaveLength(2)
     // Engine 1.1.0: verdict badge and screening questions (silent resume -> ask, not fail).
     expect(screen.getByText('Strong fit')).toBeInTheDocument()
+    // Cost and model are admin data: not shown on the scoring page.
+    expect(screen.queryByText(/LLM cost|JD parse share|manual\/claude-session/)).toBeNull()
     const screening = screen
       .getByRole('heading', { name: 'Ask in screening' })
       .closest('div')!.parentElement!
@@ -144,7 +146,7 @@ describe('HomePage scoring flow', () => {
 
     expect(await screen.findByRole('alert')).toHaveTextContent(/Manual mode/)
     fireEvent.click(screen.getByRole('button', { name: 'Retry' }))
-    expect(await screen.findByText('88.80')).toBeInTheDocument()
+    expect(await screen.findByText('89')).toBeInTheDocument()
     expect(fetchMock).toHaveBeenCalledTimes(2)
   })
 })

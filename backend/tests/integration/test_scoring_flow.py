@@ -48,7 +48,7 @@ async def test_score_replay_and_cost_invariant(db: DbContext) -> None:
     # penalty). nice_to_have 5 -> 1.66 / 1.67 / 1.67 (open source Fail). must_avoid 10.
     # preferred empty -> forfeit 20. earned 38.57 + 3.33 + 10 + 10 + 10 = 71.90 / 80 = 89.875
     assert run.status == "completed"
-    assert run.score == Decimal("89.88")
+    assert run.score == Decimal("90")
 
     async with db.sessionmaker() as session:
         rows = {

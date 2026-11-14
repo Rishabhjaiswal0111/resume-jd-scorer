@@ -1,4 +1,4 @@
-# Scoring spec (engine 1.1.0)
+# Scoring spec (engine 1.2.0)
 
 Authoritative description of `backend/app/pipeline/scoring_math.py`. Any change to the math bumps `ENGINE_VERSION`; every run stores the version that scored it, and replays re-score with the current engine.
 
@@ -23,7 +23,7 @@ Authoritative description of `backend/app/pipeline/scoring_math.py`. Any change 
 5. **Rescale**: empty buckets (or buckets of only Unknowns) are forfeited; `raw = (criteria earned + group relief + holistic) / (100 − forfeited) × 100`.
 6. **Caps** (lowest wins): role_overlap None 49 / Weak 59 / Moderate 79; core_requirement None 49 / Weak 59 / Partial 79; any failed knockout 49.
 7. **Optional penalty**: −30 if any high-importance must_have failed. Off by default since 1.1.0 (`SCORING_HARD_FAIL_PENALTY`).
-8. **Clamp** to 0–100, round 2 dp (half up).
+8. **Clamp** to 0–100 and round to a whole number (half up). Since 1.2.0; 1.0/1.1 rounded to 2 dp.
 9. **Verdict**: failed knockout → Not eligible; else ≥ 75 Strong fit; ≥ 50 Possible fit; otherwise Weak fit.
 
 Every intermediate value is written to `scoring_runs.breakdown`.
