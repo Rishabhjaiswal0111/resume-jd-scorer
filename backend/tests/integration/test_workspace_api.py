@@ -333,3 +333,124 @@ async def test_shutdown_mid_task_hands_the_claim_back(env: Env, tmp_path: Path) 
         with pytest.raises(asyncio.CancelledError):
             await task
         assert (await ok(await http.get(f"/api/v1/jobs/{job['id']}")))["status"] == "pending"
+
+
+# ---------------------------------------------------------------- timings
+
+
+async def _row(db: DbContext, sql: str, **params: object) -> Any:
+    from sqlalchemy import text
+
+    async with db.sessionmaker() as session:
+        return (await session.execute(text(sql), params)).mappings().one()
+
+
+async def test_every_stage_records_its_time(env: Env) -> None:
+    env.fake.add(claude_message(RUBRIC), claude_message(EVALUATION))
+    async with signed_in(env.db) as http:
+        job = await ok(await http.post("/api/v1/jobs", files={"jd": pdf("jd_backend.pdf")}), 201)
+        upload = await ok(
+            await http.post(
+                f"/api/v1/jobs/{job['id']}/candidates", files={"resumes": pdf("resume_single.pdf")}
+            ),
+            201,
+        )
+        await env.worker.run_until_idle()
+        await ok(await http.get("/api/v1/candidates/search", params={"q": "Python Django"}))
+        await ok(await http.get("/api/v1/candidates/search", params={"q": "cobol"}))
+
+    jc_id = upload["added"][0]["id"]
+    docs = await _row(env.db, "SELECT count(*) AS n, count(extraction_ms) AS timed FROM documents")
+    assert docs["n"] == 2 and docs["timed"] == 2  # the JD and the resume
+    assert (await _row(env.db, "SELECT parse_ms FROM rubrics"))["parse_ms"] is not None
+
+    j = await _row(env.db, "SELECT * FROM jobs WHERE id = :id", id=job["id"])
+    assert j["parse_queued_at"] <= j["parse_started_at"] <= j["parse_finished_at"]
+
+    c = await _row(env.db, "SELECT * FROM job_candidates WHERE id = :id", id=jc_id)
+    assert c["queued_at"] <= c["started_at"] <= c["finished_at"] and c["attempts"] == 1
+
+    run = await _row(env.db, "SELECT timings, latency_ms FROM scoring_runs")
+    assert {"redact_ms", "evaluate_ms", "score_ms", "save_ms", "total_ms"} <= set(run["timings"])
+    assert run["latency_ms"] == run["timings"]["total_ms"] >= run["timings"]["evaluate_ms"]
+
+    calls = await _row(env.db, "SELECT count(*) AS n, count(latency_ms) AS timed FROM llm_calls")
+    assert calls["n"] == calls["timed"] == 2
+
+    searches = await _row(
+        env.db,
+        "SELECT count(*) AS n, min(hit_count) AS min_hits, max(hit_count) AS max_hits, "
+        "bool_and(duration_ms >= 0) AS timed, max(term_count) AS terms FROM search_events",
+    )
+    assert searches == {"n": 2, "min_hits": 0, "max_hits": 1, "timed": True, "terms": 2}
+
+
+async def test_failed_run_keeps_the_time_spent(env: Env) -> None:
+    down = httpx.Response(500, json={"type": "error", "error": {"message": "overloaded"}})
+    env.fake.add(claude_message(RUBRIC), *[down] * (env.db.settings.llm_max_retries + 1))
+    async with signed_in(env.db) as http:
+        job = await ok(await http.post("/api/v1/jobs", data={"jd_text": JD_TEXT}), 201)
+        await ok(
+            await http.post(
+                f"/api/v1/jobs/{job['id']}/candidates", files={"resumes": pdf("resume_single.pdf")}
+            ),
+            201,
+        )
+        await env.worker.run_until_idle()
+    run = await _row(env.db, "SELECT status, timings, latency_ms FROM scoring_runs")
+    assert run["status"] == "failed"
+    assert "evaluate_ms" in run["timings"] and run["latency_ms"] == run["timings"]["total_ms"]
+    c = await _row(env.db, "SELECT status, finished_at FROM job_candidates")
+    assert c["status"] == "failed" and c["finished_at"] is not None
+
+
+async def test_manual_latency_is_prompt_to_answer_and_cancel_closes_the_run(
+    env: Env, tmp_path: Path
+) -> None:
+    """Manual mode: latency is the time until the answer file appeared. A worker cancelled
+    mid-scoring closes its run as CANCELLED and puts the candidate back in the queue."""
+    import os
+
+    manual = tmp_path / "manual"
+    env.db.settings.llm_default_model = "manual/test"
+    env.db.settings.manual_llm_dir = manual
+    env.db.settings.manual_llm_wait_seconds = 30
+    llm = LLMClient(env.db.settings, env.db.sessionmaker, env.db.storage)
+    worker = Worker(env.db.settings, env.db.sessionmaker, env.db.storage, llm)
+
+    async def prompt_written(n: int) -> Path:
+        for _ in range(100):
+            found = sorted(manual.glob("*.request.md"), key=lambda p: p.stat().st_mtime)
+            if len(found) >= n:
+                return found[n - 1]
+            await asyncio.sleep(0.05)
+        raise AssertionError("no prompt written")
+
+    async with signed_in(env.db) as http:
+        job = await ok(await http.post("/api/v1/jobs", data={"jd_text": JD_TEXT}), 201)
+        parse = asyncio.create_task(worker.run_once())
+        request = await prompt_written(1)
+        answer = request.with_name(request.name.replace(".request.md", ".response.json"))
+        answer.write_text(json.dumps(RUBRIC))
+        written = request.stat().st_mtime
+        os.utime(answer, (written + 42.5, written + 42.5))  # "answered" 42.5 s later
+        await parse
+        call = await _row(env.db, "SELECT latency_ms FROM llm_calls WHERE purpose = 'jd_parse'")
+        assert call["latency_ms"] == 42_500
+
+        await ok(
+            await http.post(
+                f"/api/v1/jobs/{job['id']}/candidates", files={"resumes": pdf("resume_single.pdf")}
+            ),
+            201,
+        )
+        score = asyncio.create_task(worker.run_once())
+        await prompt_written(2)
+        score.cancel()
+        with pytest.raises(asyncio.CancelledError):
+            await score
+    run = await _row(env.db, "SELECT status, error_code, timings FROM scoring_runs")
+    assert run["status"] == "failed" and run["error_code"] == "CANCELLED"
+    assert "evaluate_ms" in run["timings"]
+    c = await _row(env.db, "SELECT status, started_at, attempts FROM job_candidates")
+    assert c["status"] == "queued" and c["started_at"] is None and c["attempts"] == 1

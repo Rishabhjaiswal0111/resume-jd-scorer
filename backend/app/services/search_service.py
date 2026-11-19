@@ -11,6 +11,7 @@ Postgres full-text search (docs/plan-jobs-and-search.md):
 """
 
 import math
+import time
 from dataclasses import dataclass
 from typing import Any
 from uuid import UUID
@@ -20,12 +21,25 @@ from sqlalchemy.dialects.postgresql import ARRAY, TSQUERY
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.errors import ValidationFailedError
-from app.db.models import Candidate, Document, Job, JobCandidate, ScoringRun, User
+from app.core.logging import get_logger
+from app.core.timing import elapsed_ms
+from app.db.models import (
+    Candidate,
+    Document,
+    Job,
+    JobCandidate,
+    ScoringRun,
+    SearchEvent,
+    User,
+)
 from app.schemas.workspace import CandidateJobRef, SearchHit, SearchResult, SearchTerm
 from app.services.candidate_service import brief
 from app.services.run_view import whole_score
 
+log = get_logger(__name__)
+
 MAX_QUERY_CHARS = 20_000
+MAX_STORED_QUERY_CHARS = 2_000  # search_events keeps the start of long pasted queries
 MAX_TERMS = 200
 # ts_headline markers; never present in extracted resume text, rendered as <mark> in the UI.
 MARK_START, MARK_END = "\u0001", "\u0002"
@@ -72,6 +86,34 @@ def _or_query(lexemes: list[str]) -> Any:
 async def search(
     session: AsyncSession, owner: User, query: str, *, limit: int = 25
 ) -> SearchResult:
+    """Run the search and record it (query, terms, hits, top match, duration)."""
+    started = time.perf_counter()
+    result = await _search(session, owner, query, limit=limit)
+    duration_ms = elapsed_ms(started)
+    session.add(
+        SearchEvent(
+            owner_id=owner.id,
+            query=result.query[:MAX_STORED_QUERY_CHARS],
+            query_chars=len(result.query),
+            term_count=len(result.terms),
+            total_candidates=result.total_candidates,
+            hit_count=len(result.hits),
+            top_match=result.hits[0].match if result.hits else None,
+            duration_ms=duration_ms,
+        )
+    )
+    await session.commit()
+    log.info(
+        "search",
+        owner_id=str(owner.id),
+        terms=len(result.terms),
+        hits=len(result.hits),
+        duration_ms=duration_ms,
+    )
+    return result
+
+
+async def _search(session: AsyncSession, owner: User, query: str, *, limit: int) -> SearchResult:
     query = query.strip()
     if not query:
         raise ValidationFailedError("Type some keywords or paste text to search for")

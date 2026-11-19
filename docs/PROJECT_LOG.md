@@ -12,7 +12,8 @@ Related docs: [PLAN.md](PLAN.md) (roadmap) · [scoring-spec.md](scoring-spec.md)
 - **Demo:** `make demo` creates `demo@jdscorer.app` / `demo1234` with 3 jobs, 40 synthetic resumes and 10 shortlisted candidates, scored through the real prompts (the local database also has a DevOps job added during testing).
 - **Branch:** `feat/phase-1-core-pipeline`; no pull request yet, so CI has not run on it.
 - **LLM:** default Claude Haiku 5.5; the local `.env` stays on `manual/claude-session` (this Claude Code session answers prompts).
-- **Tests:** 164 backend + 14 frontend, plus a Selenium walk-through of every page (desktop and a true 390 px phone viewport).
+- **Timing:** every stage stores its duration; `make timings` reports p50/p95/max.
+- **Tests:** 167 backend + 14 frontend, plus a Selenium walk-through of every page (desktop and a true 390 px phone viewport).
 
 ## Standing rules (how we work)
 
@@ -29,6 +30,28 @@ Related docs: [PLAN.md](PLAN.md) (roadmap) · [scoring-spec.md](scoring-spec.md)
 ---
 
 ## Timeline (newest first)
+
+### 2026-11-19 · Every stage records its time; `make timings`
+- **What:** each stage stores how long it took, next to the work it measures (migration **0005**):
+
+  | Stage | Stored in |
+  |---|---|
+  | Text extraction (PDF or pasted text) | `documents.extraction_ms` |
+  | JD parse (model + repair + validation) | `rubrics.parse_ms`; `jobs.parse_queued_at / parse_started_at / parse_finished_at` |
+  | Resume scoring, per step (extract, JD parse, redact, evaluate, score, save, total), failed runs included | `scoring_runs.timings` (JSON) and `latency_ms` |
+  | Queue: wait for a worker, scoring time, attempts (reset on retry) | `job_candidates.queued_at / started_at / finished_at / attempts` |
+  | Every model call | `llm_calls.latency_ms` (manual mode: prompt written → answer file appeared; cache hits: real lookup time) |
+  | Every search: query (first 2,000 chars), terms, database size, hits, top match, duration | `search_events` |
+
+  `make timings [days=30]` prints p50 / p95 / max per stage, the slowest extractions and searches, failed runs by reason and retries.
+- **Why:** you asked to store the time of everything (extraction, JD parsing, each resume's scoring, search) so you can act on it.
+- **Found while doing it:**
+  - **All 49 model calls had `latency_ms = 0`:** manual mode hard-coded it. Now real; the old zeros became NULL (unknown, not instant).
+  - **Failed runs stored no time:** now they keep the time spent up to the failure.
+  - **8 runs stuck in `evaluating` forever:** a worker cancelled mid-run handed its queue row back but never closed the run. Now closed as `CANCELLED`; the 8 old ones were closed as `ABANDONED` by the migration.
+  - New `job_candidates` / `jobs` timestamp columns are backfilled from `created_at`; a plain column default would have stamped old rows with the migration time.
+- **Checked:** 3 new tests (every stage stored on a full job → score → search flow; a failed run keeps its timings; manual latency = 42.5 s from file times, and a cancelled worker closes its run). Real data through the running app: a new Sales job with 4 new resumes and 5 searches. Extraction is 2–5 ms per one-page PDF; JD parse took 23 s and scoring about 36 s each, both almost all model wait (manual mode = my answer time); with 3 workers the 4th resume waited 59 s in the queue; a pasted-JD search (89 terms) took 331 ms against 18–38 ms for keyword searches; 1 of 5 searches found nothing.
+- **Open:** a UI or admin view of these numbers (needs admin auth, PLAN 6.1); alerting on p95 (PLAN 6.7).
 
 ### 2026-11-19 · Accounts, Jobs workspace, candidate search, demo account
 - **What:** plan in [plan-jobs-and-search.md](plan-jobs-and-search.md).

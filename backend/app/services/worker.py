@@ -17,16 +17,18 @@ and the scoring service commits before each LLM step.
 
 import asyncio
 import contextlib
+import time
 from datetime import UTC, datetime, timedelta
 from functools import lru_cache
 from uuid import UUID
 
-from sqlalchemy import select, update
+from sqlalchemy import func, select, update
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker
 
 from app.core.config import Settings, get_settings
 from app.core.errors import AppError, LLMResponsePendingError
 from app.core.logging import get_logger
+from app.core.timing import elapsed_ms
 from app.db.models import Candidate, Document, Job, JobCandidate
 from app.db.session import get_sessionmaker
 from app.llm.client import LLMClient
@@ -122,10 +124,14 @@ class Worker:
         """Shutdown (deploy, dev reload) mid-task: hand the row back at once instead of
         leaving it claimed until the stale timeout. Shielded so the cancel can't stop it."""
 
+        started = "parse_started_at" if model is Job else "started_at"
+
         async def release() -> None:
             async with self._sessionmaker() as session:
                 await session.execute(
-                    update(model).where(model.id == row_id).values(status=to, claimed_at=None)
+                    update(model)
+                    .where(model.id == row_id)
+                    .values({"status": to, "claimed_at": None, started: None})
                 )
                 await session.commit()
 
@@ -162,7 +168,12 @@ class Worker:
                 await session.execute(
                     update(Job)
                     .where(Job.id == pick)
-                    .values(status="parsing", claimed_at=datetime.now(UTC))
+                    .values(
+                        status="parsing",
+                        claimed_at=func.now(),
+                        parse_started_at=func.now(),
+                        parse_finished_at=None,
+                    )
                     .returning(Job.id)
                 )
             ).scalar_one_or_none()
@@ -191,7 +202,13 @@ class Worker:
                 await session.execute(
                     update(JobCandidate)
                     .where(JobCandidate.id == pick)
-                    .values(status="scoring", claimed_at=datetime.now(UTC))
+                    .values(
+                        status="scoring",
+                        claimed_at=func.now(),
+                        started_at=func.now(),
+                        finished_at=None,
+                        attempts=JobCandidate.attempts + 1,
+                    )
                     .returning(JobCandidate.id)
                 )
             ).scalar_one_or_none()
@@ -218,6 +235,7 @@ class Worker:
                 return
             values: dict[str, object] = {"status": "ready", "rubric_id": result.rubric.id}
             values["title"] = result.rubric.title
+            values["parse_finished_at"] = func.now()
             await session.execute(update(Job).where(Job.id == job_id).values(**values))
             await session.commit()
             log.info("job_ready", job_id=str(job_id), criteria=len(result.rubric.criteria))
@@ -229,7 +247,12 @@ class Worker:
         await session.execute(
             update(Job)
             .where(Job.id == job_id)
-            .values(status="failed", error_code=error.code, error_message=message[:2000])
+            .values(
+                status="failed",
+                error_code=error.code,
+                error_message=message[:2000],
+                parse_finished_at=func.now(),
+            )
         )
         await session.commit()
         log.warning("job_parse_failed", job_id=str(job_id), error_code=error.code)
@@ -248,6 +271,7 @@ class Worker:
         if row is None or row.rubric_id is None:
             return
         log.info("candidate_scoring_started", job_candidate_id=str(job_candidate_id))
+        started = time.perf_counter()
         values: dict[str, object]
         try:
             run = await self._scoring.score_documents(row.rubric_id, row.resume_document_id)
@@ -270,13 +294,14 @@ class Worker:
             await session.execute(
                 update(JobCandidate)
                 .where(JobCandidate.id == job_candidate_id, JobCandidate.status == "scoring")
-                .values(**values)
+                .values(**values, finished_at=func.now())
             )
             await session.commit()
         log.info(
             "candidate_scoring_done",
             job_candidate_id=str(job_candidate_id),
             status=values["status"],
+            duration_ms=elapsed_ms(started),
         )
 
 

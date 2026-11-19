@@ -2,6 +2,7 @@
 
 import asyncio
 import hashlib
+import time
 
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -9,6 +10,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from app.core.config import Settings
 from app.core.errors import PdfTooLargeError, ValidationFailedError
 from app.core.logging import get_logger
+from app.core.timing import elapsed_ms
 from app.db.models import Document
 from app.pipeline.extract import extract_pdf, normalize_text
 from app.repositories import documents as documents_repo
@@ -60,6 +62,7 @@ async def ingest_pdf(
         text_storage_key=text_key,
         char_count=extraction.char_count,
         is_scanned=extraction.is_scanned,
+        extraction_ms=extraction.duration_ms,
     )
     try:
         # Savepoint, not a full rollback on conflict: rollback() would expire every object
@@ -91,7 +94,9 @@ MAX_TEXT_CHARS = 60_000
 
 async def ingest_text(session: AsyncSession, storage: Storage, *, kind: str, text: str) -> Document:
     """Store pasted text (e.g. a JD copied from a job portal), deduplicated by content."""
+    started = time.perf_counter()
     normalized = normalize_text(text)
+    extraction_ms = elapsed_ms(started)
     if len(normalized) < MIN_TEXT_CHARS:
         raise ValidationFailedError(
             f"Pasted text is too short ({len(normalized)} characters, need {MIN_TEXT_CHARS}+)",
@@ -121,6 +126,7 @@ async def ingest_text(session: AsyncSession, storage: Storage, *, kind: str, tex
         text_storage_key=key,
         char_count=len(normalized),
         is_scanned=False,
+        extraction_ms=extraction_ms,
     )
     try:
         async with session.begin_nested():  # see ingest_pdf

@@ -9,7 +9,7 @@ PNPM     := pnpm --dir $(FRONTEND)
 
 .PHONY: help setup up down nuke logs ps migrate revision dev-api dev-web \
         lint format typecheck test test-api test-web check gen-api clean \
-        seed-prices score start stop pending demo
+        seed-prices score start stop pending demo timings
 
 help: ## Show this help
 	@grep -hE '^[a-zA-Z_-]+:.*?## ' $(MAKEFILE_LIST) | awk 'BEGIN{FS=":.*?## "}{printf "  \033[36m%-12s\033[0m %s\n",$$1,$$2}'
@@ -54,6 +54,9 @@ score: ## Score a pair from the CLI: make score jd=path/jd.pdf resume=path/resum
 
 demo: ## Create/refresh the demo account (demo@jdscorer.app / demo1234): make demo [reset=1]
 	$(UV) run python -m app.cli demo $(if $(reset),--reset,)
+
+timings: ## How long each stage takes (extraction, JD parse, scoring, queue, search): make timings [days=30]
+	@$(UV) run python -m app.cli timings --days $(or $(days),30) 2>/dev/null
 
 # ---------- run the app ----------
 start: ## Start everything (Docker, Postgres, migrations, API, web), wait until ready, open the browser

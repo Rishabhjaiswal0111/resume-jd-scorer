@@ -24,6 +24,7 @@ from sqlalchemy import (
 )
 from sqlalchemy.dialects.postgresql import JSONB, TSVECTOR
 from sqlalchemy.orm import Mapped, mapped_column
+from sqlalchemy.sql import func
 
 from app.db.base import Base, TimestampMixin, UUIDPrimaryKeyMixin
 
@@ -65,6 +66,8 @@ class Document(UUIDPrimaryKeyMixin, TimestampMixin, Base):
     text_storage_key: Mapped[str] = mapped_column(Text)
     char_count: Mapped[int] = mapped_column(Integer)
     is_scanned: Mapped[bool] = mapped_column(Boolean, default=False)
+    # Wall time to turn the upload into text (PDF extraction or pasted-text normalisation).
+    extraction_ms: Mapped[int | None] = mapped_column(Integer)
 
 
 class Rubric(UUIDPrimaryKeyMixin, TimestampMixin, Base):
@@ -86,6 +89,8 @@ class Rubric(UUIDPrimaryKeyMixin, TimestampMixin, Base):
         ForeignKey("llm_calls.id", use_alter=True, name="fk_rubrics_llm_call_id_llm_calls")
     )
     created_by: Mapped[str] = mapped_column(String(64), default="llm")
+    # Wall time of the whole JD-parse step (model call(s), repair, validation).
+    parse_ms: Mapped[int | None] = mapped_column(Integer)
 
 
 class ScoringRun(UUIDPrimaryKeyMixin, TimestampMixin, Base):
@@ -117,6 +122,9 @@ class ScoringRun(UUIDPrimaryKeyMixin, TimestampMixin, Base):
     llm_cost_usd: Mapped[Decimal | None] = mapped_column(MONEY)
     rubric_cost_share_usd: Mapped[Decimal | None] = mapped_column(MONEY)
     latency_ms: Mapped[int | None] = mapped_column(Integer)
+    # Per-step wall times in ms, e.g. {"extract_resume_ms", "jd_parse_ms", "redact_ms",
+    # "evaluate_ms", "score_ms", "total_ms"}; also written for failed runs (up to the failure).
+    timings: Mapped[dict[str, Any] | None] = mapped_column(JSONB)
     replay_of_run_id: Mapped[uuid.UUID | None] = mapped_column(ForeignKey("scoring_runs.id"))
 
 
@@ -266,6 +274,12 @@ class Job(UUIDPrimaryKeyMixin, TimestampMixin, Base):
     error_code: Mapped[str | None] = mapped_column(String(64))
     error_message: Mapped[str | None] = mapped_column(Text)
     claimed_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+    # JD parse lifecycle: queue wait = started - queued, parse time = finished - started.
+    parse_queued_at: Mapped[datetime | None] = mapped_column(
+        DateTime(timezone=True), server_default=func.now()
+    )
+    parse_started_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+    parse_finished_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
 
 
 class Candidate(UUIDPrimaryKeyMixin, TimestampMixin, Base):
@@ -310,6 +324,30 @@ class JobCandidate(UUIDPrimaryKeyMixin, TimestampMixin, Base):
     error_code: Mapped[str | None] = mapped_column(String(64))
     error_message: Mapped[str | None] = mapped_column(Text)
     claimed_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+    # Scoring lifecycle (reset on retry): queue wait = started - queued,
+    # scoring time = finished - started; attempts counts claims (incl. stale re-claims).
+    queued_at: Mapped[datetime | None] = mapped_column(
+        DateTime(timezone=True), server_default=func.now()
+    )
+    started_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+    finished_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+    attempts: Mapped[int] = mapped_column(Integer, default=0, server_default="0")
+
+
+class SearchEvent(UUIDPrimaryKeyMixin, TimestampMixin, Base):
+    """One candidate search: what was asked, what came back, how long it took."""
+
+    __tablename__ = "search_events"
+    __table_args__ = (Index("ix_search_events_owner_id_created_at", "owner_id", "created_at"),)
+
+    owner_id: Mapped[uuid.UUID] = mapped_column(ForeignKey("users.id", ondelete="CASCADE"))
+    query: Mapped[str] = mapped_column(Text)  # first 2,000 characters
+    query_chars: Mapped[int] = mapped_column(Integer)
+    term_count: Mapped[int] = mapped_column(Integer)
+    total_candidates: Mapped[int] = mapped_column(Integer)
+    hit_count: Mapped[int] = mapped_column(Integer)
+    top_match: Mapped[int | None] = mapped_column(Integer)
+    duration_ms: Mapped[int] = mapped_column(Integer)
 
 
 __all__ = [
@@ -323,6 +361,7 @@ __all__ = [
     "ModelPrice",
     "Rubric",
     "ScoringRun",
+    "SearchEvent",
     "User",
     "UserSession",
 ]

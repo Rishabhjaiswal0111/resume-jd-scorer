@@ -10,6 +10,7 @@ Concurrency (ADR-0007, found by eval/stress):
 """
 
 import asyncio
+import time
 import weakref
 from dataclasses import dataclass
 from uuid import UUID
@@ -18,6 +19,7 @@ from sqlalchemy.exc import IntegrityError
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.logging import get_logger
+from app.core.timing import elapsed_ms
 from app.db.models import Document, Rubric
 from app.llm.client import LLMClient
 from app.pipeline import jd_parse
@@ -70,7 +72,9 @@ async def get_or_create_rubric(
             log.info("rubric_reused_after_wait", rubric_id=str(cached.id))
             return RubricResult(rubric=cached, cached=True)
 
+        parse_started = time.perf_counter()
         parsed = await jd_parse.parse_jd(client, await load_text(storage, jd), model=model)
+        parse_ms = elapsed_ms(parse_started)
         for attempt in range(1, _INSERT_ATTEMPTS + 1):
             rubric = Rubric(
                 jd_document_id=jd.id,
@@ -83,6 +87,7 @@ async def get_or_create_rubric(
                 model=model,
                 llm_call_id=parsed.call_ids[-1],
                 created_by="llm",
+                parse_ms=parse_ms,
             )
             try:
                 async with session.begin_nested():  # savepoint: a lost race undoes only this
@@ -103,6 +108,7 @@ async def get_or_create_rubric(
     log.info(
         "rubric_created",
         rubric_id=str(rubric.id),
+        parse_ms=parse_ms,
         criteria=len(rubric.criteria),
         warnings=parsed.warnings,
     )

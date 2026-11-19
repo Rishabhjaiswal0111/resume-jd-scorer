@@ -219,7 +219,9 @@ async def retry_job(session: AsyncSession, owner: User, job_id: UUID) -> Job:
     if job.status != "failed":
         raise ValidationFailedError("Only a job that failed to read can be retried")
     job.status, job.error_code, job.error_message, job.claimed_at = "pending", None, None, None
+    job.parse_queued_at, job.parse_started_at, job.parse_finished_at = func.now(), None, None
     await session.commit()
+    await session.refresh(job)
     return job
 
 
@@ -364,7 +366,15 @@ async def retry_job_candidate(
     await session.execute(
         update(JobCandidate)
         .where(JobCandidate.id == jc.id)
-        .values(status="queued", error_code=None, error_message=None, claimed_at=None)
+        .values(
+            status="queued",
+            error_code=None,
+            error_message=None,
+            claimed_at=None,
+            queued_at=func.now(),
+            started_at=None,
+            finished_at=None,
+        )
     )
     await session.commit()
 

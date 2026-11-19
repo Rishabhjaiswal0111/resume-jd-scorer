@@ -12,6 +12,7 @@ Strategy (validated against tests/fixtures/pdfs, see test_extract.py):
 import io
 import re
 import threading
+import time
 import unicodedata
 from dataclasses import dataclass
 
@@ -36,6 +37,7 @@ class Extraction:
     page_count: int
     extractor: str  # "pypdfium2" | "pdfplumber"
     is_scanned: bool
+    duration_ms: int = 0  # wall time of extract_pdf, incl. waiting for the PDFium lock
 
     @property
     def char_count(self) -> int:
@@ -112,6 +114,7 @@ def _unreadable(error: Exception) -> PdfUnreadableError:
 
 def extract_pdf(data: bytes, *, max_pages: int, allow_scanned: bool = False) -> Extraction:
     """Extract and normalize text. Raises PDF_UNREADABLE / PDF_TOO_LARGE / PDF_SCANNED."""
+    started = time.perf_counter()
     if not data.startswith(PDF_MAGIC):
         raise PdfUnreadableError("File is not a PDF", details={"reason": "bad_magic"})
 
@@ -147,8 +150,10 @@ def extract_pdf(data: bytes, *, max_pages: int, allow_scanned: bool = False) -> 
                 text, extractor = alt, "pdfplumber"
 
     is_scanned = _meaningful_chars(text) / page_count < SCANNED_CHARS_PER_PAGE
+    duration_ms = round((time.perf_counter() - started) * 1000)
     log.info(
         "pdf_extracted",
+        duration_ms=duration_ms,
         extractor=extractor,
         page_count=page_count,
         char_count=len(text),
@@ -159,4 +164,10 @@ def extract_pdf(data: bytes, *, max_pages: int, allow_scanned: bool = False) -> 
             "This looks like a scanned PDF (no text layer); OCR is not enabled yet",
             details={"page_count": page_count, "char_count": len(text)},
         )
-    return Extraction(text=text, page_count=page_count, extractor=extractor, is_scanned=is_scanned)
+    return Extraction(
+        text=text,
+        page_count=page_count,
+        extractor=extractor,
+        is_scanned=is_scanned,
+        duration_ms=duration_ms,
+    )

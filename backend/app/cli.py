@@ -5,6 +5,7 @@ uv run python -m app.cli replay RUN_ID
 uv run python -m app.cli prices sync [--model openrouter/...]
 uv run python -m app.cli prices list
 uv run python -m app.cli demo [--reset]
+uv run python -m app.cli timings [--days 30]
 """
 
 import argparse
@@ -179,6 +180,14 @@ async def _demo(args: argparse.Namespace) -> int:
     return 0
 
 
+async def _timings(args: argparse.Namespace) -> int:
+    from app.services import timing_report
+
+    async with get_sessionmaker()() as session:
+        print(timing_report.render(await timing_report.build(session, args.days), args.days))
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="python -m app.cli", description="JD x Resume scorer")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -205,6 +214,10 @@ def build_parser() -> argparse.ArgumentParser:
     demo = sub.add_parser("demo", help="create or refresh the demo account and its data")
     demo.add_argument("--reset", action="store_true", help="delete the demo data first")
     demo.set_defaults(handler=_demo)
+
+    timings = sub.add_parser("timings", help="how long each stage takes (from stored data)")
+    timings.add_argument("--days", type=int, default=30)
+    timings.set_defaults(handler=_timings)
     return parser
 
 

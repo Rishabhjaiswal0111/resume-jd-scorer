@@ -4,7 +4,7 @@ created -> extracting -> parsing_jd -> evaluating -> scoring -> completed
 Any step -> failed with error_code. Each transition is committed so it is observable.
 """
 
-import time
+import asyncio
 from collections.abc import Awaitable, Callable
 from dataclasses import dataclass
 from decimal import Decimal
@@ -16,6 +16,7 @@ from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker
 from app.core.config import Settings
 from app.core.errors import AppError, NotFoundError, ValidationFailedError
 from app.core.logging import get_logger
+from app.core.timing import Timings
 from app.db.models import CriterionEvaluation, Document, Rubric, ScoringRun
 from app.llm.client import LLMClient
 from app.llm.pricing import quantize_money
@@ -35,7 +36,7 @@ from app.storage.base import Storage
 
 log = get_logger(__name__)
 
-Steps = Callable[[AsyncSession, ScoringRun, float], Awaitable[None]]
+Steps = Callable[[AsyncSession, ScoringRun, Timings], Awaitable[None]]
 
 
 @dataclass(frozen=True)
@@ -68,35 +69,40 @@ class ScoringService:
         """
         model = model or self._settings.llm_default_model
 
-        async def steps(session: AsyncSession, run: ScoringRun, started: float) -> None:
+        async def steps(session: AsyncSession, run: ScoringRun, timings: Timings) -> None:
             await self._set_status(session, run, "extracting")
-            if isinstance(jd, str):
-                jd_doc = await ingest_text(session, self._storage, kind="jd", text=jd)
-            else:
-                jd_doc = await ingest_pdf(
+            # Includes storing the files; a re-upload (same bytes) skips extraction.
+            with timings.step("extract_jd_ms"):
+                if isinstance(jd, str):
+                    jd_doc = await ingest_text(session, self._storage, kind="jd", text=jd)
+                else:
+                    jd_doc = await ingest_pdf(
+                        session,
+                        self._storage,
+                        self._settings,
+                        kind="jd",
+                        filename=jd.filename,
+                        data=jd.data,
+                    )
+            with timings.step("extract_resume_ms"):
+                resume_doc = await ingest_pdf(
                     session,
                     self._storage,
                     self._settings,
-                    kind="jd",
-                    filename=jd.filename,
-                    data=jd.data,
+                    kind="resume",
+                    filename=resume.filename,
+                    data=resume.data,
                 )
-            resume_doc = await ingest_pdf(
-                session,
-                self._storage,
-                self._settings,
-                kind="resume",
-                filename=resume.filename,
-                data=resume.data,
-            )
             run.jd_document_id = jd_doc.id
             run.resume_document_id = resume_doc.id
             await self._set_status(session, run, "parsing_jd")
-            rubric = await get_or_create_rubric(
-                session, self._storage, self._client, jd_doc, model=model
-            )
+            with timings.step("jd_parse_ms"):
+                rubric = await get_or_create_rubric(
+                    session, self._storage, self._client, jd_doc, model=model
+                )
+            timings.note("jd_parse_cached", rubric.cached)
             run.rubric_id = rubric.rubric.id
-            await self._evaluate_and_score(session, run, rubric.rubric, resume_doc, started)
+            await self._evaluate_and_score(session, run, rubric.rubric, resume_doc, timings)
 
         return await self._run(model, steps)
 
@@ -106,7 +112,7 @@ class ScoringService:
         """Score an already-uploaded resume against an existing rubric."""
         model = model or self._settings.llm_default_model
 
-        async def steps(session: AsyncSession, run: ScoringRun, started: float) -> None:
+        async def steps(session: AsyncSession, run: ScoringRun, timings: Timings) -> None:
             rubric = await rubrics_repo.get(session, rubric_id)
             resume = await documents_repo.get(session, resume_document_id)
             if rubric is None:
@@ -115,7 +121,7 @@ class ScoringService:
                 raise NotFoundError(f"Resume document {resume_document_id} not found")
             run.rubric_id, run.resume_document_id = rubric.id, resume.id
             run.jd_document_id = rubric.jd_document_id
-            await self._evaluate_and_score(session, run, rubric, resume, started)
+            await self._evaluate_and_score(session, run, rubric, resume, timings)
 
         return await self._run(model, steps)
 
@@ -145,11 +151,12 @@ class ScoringService:
                 warnings=list(original.warnings),
             )
             await runs_repo.insert(session, replay)
-            started = time.perf_counter()
+            timings = Timings()
             evaluation = EvaluationOutput.model_validate(original.evaluation)
             pii_counts = (original.breakdown or {}).get("pii_redactions", {})
-            rows = self._apply_score(replay, rubric, evaluation, pii_counts)
-            await self._finish(session, replay, rubric, rows, started)
+            with timings.step("score_ms"):
+                rows = self._apply_score(replay, rubric, evaluation, pii_counts)
+            await self._finish(session, replay, rubric, rows, timings)
             log.info(
                 "run_replayed",
                 run_id=str(replay.id),
@@ -165,7 +172,7 @@ class ScoringService:
         model: str,
         steps: Steps,
     ) -> ScoringRun:
-        started = time.perf_counter()
+        timings = Timings()
         async with self._sessionmaker() as session:
             run = ScoringRun(
                 status="created",
@@ -179,14 +186,25 @@ class ScoringService:
             run_id = run.id
             log.info("run_created", run_id=str(run_id), model=model)
             try:
-                await steps(session, run, started)
+                await steps(session, run, timings)
                 return run
             except AppError as error:
-                await self._mark_failed(session, run_id, error.code, error.message)
+                await self._mark_failed(session, run_id, error.code, error.message, timings)
                 error.details.setdefault("run_id", str(run_id))  # lets clients find the run
                 raise
+            except asyncio.CancelledError:
+                # Worker shutdown mid-run: close the run instead of leaving it "evaluating"
+                # forever. Shielded so the cancellation can't interrupt the write.
+                await asyncio.shield(
+                    self._mark_failed_fresh(
+                        run_id, "CANCELLED", "Stopped before finishing", timings
+                    )
+                )
+                raise
             except Exception as error:
-                await self._mark_failed(session, run_id, "INTERNAL_ERROR", type(error).__name__)
+                await self._mark_failed(
+                    session, run_id, "INTERNAL_ERROR", type(error).__name__, timings
+                )
                 raise
 
     async def _set_status(self, session: AsyncSession, run: ScoringRun, status: str) -> None:
@@ -195,7 +213,7 @@ class ScoringService:
         log.info("run_status", run_id=str(run.id), status=status)
 
     async def _mark_failed(
-        self, session: AsyncSession, run_id: UUID, code: str, message: str
+        self, session: AsyncSession, run_id: UUID, code: str, message: str, timings: Timings
     ) -> None:
         await session.rollback()
         run = await runs_repo.get(session, run_id)
@@ -205,8 +223,16 @@ class ScoringService:
         run.error_code = code
         run.error_message = message[:2000]
         run.llm_cost_usd = await calls_repo.sum_cost_for_run(session, run_id)
+        run.timings = timings.as_dict()
+        run.latency_ms = timings.total_ms()
         await session.commit()
-        log.warning("run_failed", run_id=str(run_id), error_code=code)
+        log.warning("run_failed", run_id=str(run_id), error_code=code, total_ms=run.latency_ms)
+
+    async def _mark_failed_fresh(
+        self, run_id: UUID, code: str, message: str, timings: Timings
+    ) -> None:
+        async with self._sessionmaker() as session:
+            await self._mark_failed(session, run_id, code, message, timings)
 
     async def _evaluate_and_score(
         self,
@@ -214,28 +240,32 @@ class ScoringService:
         run: ScoringRun,
         rubric: Rubric,
         resume: Document,
-        started: float,
+        timings: Timings,
     ) -> None:
         await self._set_status(session, run, "evaluating")
-        redaction = redact(await load_text(self._storage, resume))
+        with timings.step("redact_ms"):
+            redaction = redact(await load_text(self._storage, resume))
         criteria = [Criterion.model_validate(c) for c in rubric.criteria]
-        result = await evaluate_step.evaluate_resume(
-            self._client,
-            evaluate_step.RubricView(
-                title=rubric.title,
-                role_summary=rubric.role_summary,
-                core_requirement=rubric.core_requirement,
-                criteria=criteria,
-            ),
-            redaction.text,
-            run_id=run.id,
-            model=run.model,
-        )
+        # The model call(s), incl. a repair round; in manual mode, the wait for the answer.
+        with timings.step("evaluate_ms"):
+            result = await evaluate_step.evaluate_resume(
+                self._client,
+                evaluate_step.RubricView(
+                    title=rubric.title,
+                    role_summary=rubric.role_summary,
+                    core_requirement=rubric.core_requirement,
+                    criteria=criteria,
+                ),
+                redaction.text,
+                run_id=run.id,
+                model=run.model,
+            )
         run.warnings = [*run.warnings, *result.warnings]
         run.evaluation = result.evaluation.model_dump()
         await self._set_status(session, run, "scoring")
-        rows = self._apply_score(run, rubric, result.evaluation, dict(redaction.counts))
-        await self._finish(session, run, rubric, rows, started)
+        with timings.step("score_ms"):
+            rows = self._apply_score(run, rubric, result.evaluation, dict(redaction.counts))
+        await self._finish(session, run, rubric, rows, timings)
 
     def _apply_score(
         self,
@@ -291,14 +321,16 @@ class ScoringService:
         run: ScoringRun,
         rubric: Rubric,
         rows: list[CriterionEvaluation],
-        started: float,
+        timings: Timings,
     ) -> None:
-        await runs_repo.replace_criterion_evaluations(session, run.id, rows)
+        with timings.step("save_ms"):
+            await runs_repo.replace_criterion_evaluations(session, run.id, rows)
         run.llm_cost_usd = await calls_repo.sum_cost_for_run(session, run.id)
         rubric_cost = await calls_repo.sum_cost_for_rubric(session, rubric.id)
         runs_on_rubric = max(1, await rubrics_repo.count_runs(session, rubric.id))
         run.rubric_cost_share_usd = quantize_money(rubric_cost / runs_on_rubric)
-        run.latency_ms = int((time.perf_counter() - started) * 1000)
+        run.timings = timings.as_dict()
+        run.latency_ms = run.timings["total_ms"]
         run.status = "completed"
         await session.commit()
         log.info(
@@ -307,4 +339,5 @@ class ScoringService:
             score=str(run.score),
             cost_usd=str(run.llm_cost_usd),
             latency_ms=run.latency_ms,
+            timings=run.timings,
         )

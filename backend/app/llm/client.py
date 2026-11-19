@@ -56,6 +56,7 @@ from app.core.errors import (
     PriceMissingError,
 )
 from app.core.logging import get_logger
+from app.core.timing import elapsed_ms
 from app.llm import cache
 from app.llm.ledger import Ledger, LedgerEntry
 from app.llm.pricing import PriceSnapshot, Usage, compute_cost, get_price, split_model_id
@@ -395,6 +396,14 @@ class LLMClient:
         call_id = Ledger.new_id()
         request_key, response_key = f"llm/{call_id}/request.json", f"llm/{call_id}/response.json"
         raw_text = answer_path.read_text(encoding="utf-8")
+        # The "model" here is a person / session: its latency is from the prompt being
+        # written to the answer file appearing, even if an earlier request wrote the prompt.
+        request_path = stem.with_suffix(".request.md")
+        latency_ms = (
+            max(0, round((answer_path.stat().st_mtime - request_path.stat().st_mtime) * 1000))
+            if request_path.exists()
+            else None
+        )
         await self._storage.put(request_key, json.dumps(body, indent=1).encode())
         await self._storage.put(response_key, raw_text.encode())
         entry = LedgerEntry(
@@ -403,7 +412,7 @@ class LLMClient:
             status="success",
             attempt=1,
             cost_usd=Decimal(0),
-            latency_ms=0,
+            latency_ms=latency_ms,
             request_key=request_key,
             response_key=response_key,
         )
@@ -438,6 +447,7 @@ class LLMClient:
     async def _try_cache[T: BaseModel](
         self, ctx: dict[str, Any], output_model: type[T]
     ) -> LLMResult[T] | None:
+        started = time.perf_counter()
         source = await cache.find_cached(self._sessionmaker, ctx["request_hash"])
         if source is None or source.response_key is None:
             return None
@@ -469,7 +479,7 @@ class LLMClient:
                 cost_usd=Decimal(0),
                 cache_hit=True,
                 cache_source_call_id=source.id,
-                latency_ms=0,
+                latency_ms=elapsed_ms(started),
                 request_key=source.request_key,
                 response_key=source.response_key,
             )
