@@ -1,0 +1,48 @@
+Promoted · Easy Apply · 213 applicants · Posted 3 days ago
+Apply now   Save   Share
+Salary: $95K/yr - $140K/yr (from job poster) · Full-time · Hybrid
+
+Mobile Engineer
+Thistle Security · New York, NY · Fully on-site · Full-time
+
+About us
+Thistle Security builds products for the fitness sector. We are a team of 3000 people with offices in New York, NY.
+
+About the role
+As our Mobile Engineer, you will own app performance and crash rate and build native iOS and Android features, working closely with operations.
+
+What you'll do
+• Own app performance and crash rate
+• Build native iOS and Android features
+• Work with backend teams on APIs
+• Write unit and UI tests
+
+Requirements
+• 3+ years of experience in mobile development
+• Swift (iOS) or Kotlin (Android)
+• mobile app architecture (MVVM)
+• publishing to App Store / Play Store
+• Bachelor's degree in a technical field
+
+Preferred qualifications
+• offline-first data
+• SwiftUI or Jetpack Compose
+
+Nice to have
+• React Native or Flutter
+• accessibility on mobile
+
+Good to know
+You must be legally authorised to work in the United States without visa sponsorship.
+This role is fully on-site in New York, NY; relocation support is available. Please state your notice period when applying.
+
+What we offer
+Competitive salary, health cover, learning budget, 25 days leave.
+
+We are an equal opportunity employer. We do not discriminate on the basis of race, religion, colour, national origin, gender, sexual orientation, age, marital status or disability.
+
+Show more
+Set alert for similar jobs
+See how you compare to 213 applicants. Try Premium for free
+Report this job
+People also viewed: Senior Analyst, Data Lead

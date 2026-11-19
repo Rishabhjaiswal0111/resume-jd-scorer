@@ -32,6 +32,7 @@ from collections.abc import Awaitable, Callable
 from dataclasses import dataclass
 from datetime import UTC, datetime
 from decimal import Decimal, InvalidOperation
+from pathlib import Path
 from typing import Any
 from uuid import UUID
 
@@ -195,6 +196,9 @@ class LLMClient:
         self._ledger = Ledger(sessionmaker)
         self._transport = transport
         self._anthropic_transport = anthropic_transport
+        # One SDK client (and connection pool) per LLMClient, created on first use and
+        # reused for every call, instead of a new client + TLS handshake per attempt.
+        self._anthropic_client: anthropic.AsyncAnthropic | None = None
         self._sleep = sleep
 
     # ------------------------------------------------------------------ public
@@ -298,6 +302,27 @@ class LLMClient:
             },
         }
 
+    def _anthropic(self, api_key: str) -> anthropic.AsyncAnthropic:
+        if self._anthropic_client is None:
+            http_client = (
+                httpx2.AsyncClient(transport=self._anthropic_transport)
+                if self._anthropic_transport is not None
+                else None
+            )
+            # max_retries=0: we retry ourselves so every attempt gets its own ledger row.
+            self._anthropic_client = anthropic.AsyncAnthropic(
+                api_key=api_key,
+                max_retries=0,
+                timeout=self._settings.llm_timeout_seconds,
+                http_client=http_client,
+            )
+        return self._anthropic_client
+
+    async def aclose(self) -> None:
+        if self._anthropic_client is not None:
+            await self._anthropic_client.close()
+            self._anthropic_client = None
+
     async def _send_anthropic(self, body: dict[str, Any], api_key: str) -> _Attempt:
         started = time.perf_counter()
 
@@ -306,20 +331,8 @@ class LLMClient:
         ) -> _Attempt:
             return _Attempt(status, data, error, int((time.perf_counter() - started) * 1000))
 
-        http_client = (
-            httpx2.AsyncClient(transport=self._anthropic_transport)
-            if self._anthropic_transport is not None
-            else None
-        )
         try:
-            # max_retries=0: we retry ourselves so every attempt gets its own ledger row.
-            async with anthropic.AsyncAnthropic(
-                api_key=api_key,
-                max_retries=0,
-                timeout=self._settings.llm_timeout_seconds,
-                http_client=http_client,
-            ) as client:
-                message = await client.messages.create(**body)
+            message = await self._anthropic(api_key).messages.create(**body)
         except anthropic.APITimeoutError:
             return done(None, None, LLMTimeoutError("LLM request timed out"))
         except anthropic.APIConnectionError as exc:
@@ -351,7 +364,7 @@ class LLMClient:
         folder = self._settings.manual_llm_dir
         stem = folder / ctx["request_hash"]
         answer_path = stem.with_suffix(".response.json")
-        if not answer_path.exists():
+        if not answer_path.exists() and not stem.with_suffix(".request.md").exists():
             folder.mkdir(parents=True, exist_ok=True)
             parts = [
                 f"# {ctx['purpose']} ({ctx['prompt_version']})\n",
@@ -367,11 +380,15 @@ class LLMClient:
                 "```",
             ]
             stem.with_suffix(".request.md").write_text("\n".join(parts), encoding="utf-8")
+        if not await self._wait_for(answer_path):
             raise LLMResponsePendingError(
                 f"Waiting for an answer: write {answer_path}",
                 details={
                     "request": str(stem.with_suffix(".request.md")),
                     "answer": str(answer_path),
+                    "purpose": ctx[
+                        "purpose"
+                    ],  # jd_parse | evaluate | repair: the UI names the step
                 },
             )
 
@@ -408,6 +425,16 @@ class LLMClient:
             value=value, call_id=call_id, cost_usd=Decimal(0), cache_hit=False, raw_text=raw_text
         )
 
+    async def _wait_for(self, path: Path) -> bool:
+        """Poll for a manual answer file for up to manual_llm_wait_seconds."""
+        waited = 0.0
+        while not await asyncio.to_thread(path.exists):
+            if waited >= self._settings.manual_llm_wait_seconds:
+                return False
+            await self._sleep(0.5)
+            waited += 0.5
+        return True
+
     async def _try_cache[T: BaseModel](
         self, ctx: dict[str, Any], output_model: type[T]
     ) -> LLMResult[T] | None:
@@ -431,6 +458,7 @@ class LLMClient:
                 cached_input_tokens=source.cached_input_tokens or 0,
                 output_tokens=source.output_tokens or 0,
                 reasoning_tokens=source.reasoning_tokens or 0,
+                cache_write_tokens=source.cache_write_tokens or 0,
             )
         call_id = await self._ledger.record(
             LedgerEntry(

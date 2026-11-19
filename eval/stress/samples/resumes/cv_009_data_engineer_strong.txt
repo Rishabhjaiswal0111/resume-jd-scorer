@@ -1,0 +1,73 @@
+Marcus Haddad
+Senior Data Engineer · 9 years in data engineering
+New York, NY · haddad.39@examplemail.com · +1 527 823 6170 · linkedin.com/in/haddad-996
+
+SUMMARY
+Senior Data Engineer · 9 years in data engineering. Known for stakeholder management, communication. Experienced in SQL, Python, Apache Spark.
+
+EXPERIENCE
+Senior Data Engineer — Larkspur Logistics
+Jun 2023 – Present
+• Introduced Great Expectations data-quality checks on 30 critical tables
+• Built Spark pipelines processing 50 TB/day into Snowflake
+
+Data Engineer — Everpeak Insurance
+Mar 2020 – Jun 2023
+• Cut warehouse spend by 30% by partitioning and clustering large tables
+• Streamed clickstream events through Kafka into BigQuery with under 5 minute latency
+
+Junior Data Engineer — Copperline Telecom
+Dec 2016 – Mar 2020
+• Set up Airflow DAGs with SLAs and alerting for 40 daily feeds
+• Rewrote 20 legacy SQL jobs as dbt models with tests and documentation
+
+Junior Data Engineer — Orbital Freight
+Jun 2014 – Dec 2016
+• Built Spark pipelines processing 2 TB/day into Snowflake. Build batch and streaming pipelines with measurable results across several quarters.
+• Rewrote 90 legacy SQL jobs as dbt models with tests and documentation. Partner with analysts and data scientists with measurable results across several quarters.
+• Cut warehouse spend by 39% by partitioning and clustering large tables. Build batch and streaming pipelines with measurable results across several quarters.
+• Introduced Great Expectations data-quality checks on 3 critical tables. Partner with analysts and data scientists with measurable results across several quarters.
+• Set up Airflow DAGs with SLAs and alerting for 7 daily feeds. Optimise spark jobs and warehouse cost with measurable results across several quarters.
+• Streamed clickstream events through Kafka into BigQuery with under 5 minute latency. Model data in the warehouse for analytics with measurable results across several quarters.
+
+Junior Data Engineer — Driftwood Travel
+Dec 2011 – Jun 2014
+• Built Spark pipelines processing 50 TB/day into Snowflake. Orchestrate jobs with airflow with measurable results across several quarters.
+• Rewrote 30 legacy SQL jobs as dbt models with tests and documentation. Optimise spark jobs and warehouse cost with measurable results across several quarters.
+• Cut warehouse spend by 38% by partitioning and clustering large tables. Partner with analysts and data scientists with measurable results across several quarters.
+• Introduced Great Expectations data-quality checks on 60 critical tables. Model data in the warehouse for analytics with measurable results across several quarters.
+• Set up Airflow DAGs with SLAs and alerting for 4 daily feeds. Own data quality checks and slas with measurable results across several quarters.
+• Streamed clickstream events through Kafka into BigQuery with under 5 minute latency. Build batch and streaming pipelines with measurable results across several quarters.
+
+Junior Data Engineer — Harbor Health
+Jun 2009 – Dec 2011
+• Built Spark pipelines processing 3 TB/day into Snowflake. Model data in the warehouse for analytics with measurable results across several quarters.
+• Rewrote 6 legacy SQL jobs as dbt models with tests and documentation. Model data in the warehouse for analytics with measurable results across several quarters.
+• Cut warehouse spend by 32% by partitioning and clustering large tables. Build batch and streaming pipelines with measurable results across several quarters.
+• Introduced Great Expectations data-quality checks on 9 critical tables. Partner with analysts and data scientists with measurable results across several quarters.
+• Set up Airflow DAGs with SLAs and alerting for 80 daily feeds. Build batch and streaming pipelines with measurable results across several quarters.
+• Streamed clickstream events through Kafka into BigQuery with under 5 minute latency. Optimise spark jobs and warehouse cost with measurable results across several quarters.
+
+Junior Data Engineer — Larkspur Logistics
+Dec 2006 – Jun 2009
+• Built Spark pipelines processing 70 TB/day into Snowflake. Optimise spark jobs and warehouse cost with measurable results across several quarters.
+• Rewrote 8 legacy SQL jobs as dbt models with tests and documentation. Orchestrate jobs with airflow with measurable results across several quarters.
+• Cut warehouse spend by 23% by partitioning and clustering large tables. Own data quality checks and slas with measurable results across several quarters.
+• Introduced Great Expectations data-quality checks on 90 critical tables. Orchestrate jobs with airflow with measurable results across several quarters.
+• Set up Airflow DAGs with SLAs and alerting for 50 daily feeds. Partner with analysts and data scientists with measurable results across several quarters.
+• Streamed clickstream events through Kafka into BigQuery with under 5 minute latency. Orchestrate jobs with airflow with measurable results across several quarters.
+
+Junior Data Engineer — Harbor Health
+Jun 2004 – Dec 2006
+• Built Spark pipelines processing 2 TB/day into Snowflake. Build batch and streaming pipelines with measurable results across several quarters.
+• Rewrote 80 legacy SQL jobs as dbt models with tests and documentation. Orchestrate jobs with airflow with measurable results across several quarters.
+• Cut warehouse spend by 42% by partitioning and clustering large tables. Own data quality checks and slas with measurable results across several quarters.
+• Introduced Great Expectations data-quality checks on 20 critical tables. Model data in the warehouse for analytics with measurable results across several quarters.
+• Set up Airflow DAGs with SLAs and alerting for 5 daily feeds. Build batch and streaming pipelines with measurable results across several quarters.
+• Streamed clickstream events through Kafka into BigQuery with under 5 minute latency. Build batch and streaming pipelines with measurable results across several quarters.
+
+EDUCATION
+Bachelor's in Computer Science, Engineering, Statistics — City College, 2016
+
+SKILLS
+SQL, Python, Apache Spark, data warehousing (Snowflake, BigQuery, Redshift), Airflow, dbt, Kafka, AWS, data modelling (Kimball), data governance tooling

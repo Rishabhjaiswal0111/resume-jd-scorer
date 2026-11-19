@@ -1,0 +1,37 @@
+Junior Frontend Developer
+Wrenfield Capital · New York, NY · Hybrid, 3 days in office · Full-time
+
+About us
+Wrenfield Capital builds products for the edtech sector. We are a team of 40 people with offices in New York, NY.
+
+About the role
+As our Junior Frontend Developer, you will build responsive web UIs in React and TypeScript and ensure accessibility (WCAG 2.1 AA), working closely with clients.
+
+What you'll do
+• Build responsive web UIs in React and TypeScript
+• Ensure accessibility (WCAG 2.1 AA)
+• Own the component library and design system
+• Write unit and end-to-end tests
+
+Requirements
+• 0-2 years of experience in frontend engineering
+• React
+• TypeScript
+• HTML/CSS
+• frontend testing (Jest, Testing Library)
+• Degree in Computer Science or a related field, or equivalent practical experience
+
+Preferred qualifications
+• accessibility (WCAG)
+• web performance optimisation
+• Storybook
+
+Nice to have
+• design tools (Figma)
+• React Native
+• Node.js
+
+What we offer
+Competitive salary, health cover, learning budget, 25 days leave.
+
+We are an equal opportunity employer. We do not discriminate on the basis of race, religion, colour, national origin, gender, sexual orientation, age, marital status or disability.

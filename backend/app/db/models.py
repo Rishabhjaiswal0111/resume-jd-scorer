@@ -164,6 +164,8 @@ class LLMCall(UUIDPrimaryKeyMixin, TimestampMixin, Base):
     cached_input_tokens: Mapped[int | None] = mapped_column(Integer)
     output_tokens: Mapped[int | None] = mapped_column(Integer)
     reasoning_tokens: Mapped[int | None] = mapped_column(Integer)
+    # Anthropic prompt-cache writes, billed at 1.25x input (migration 0003).
+    cache_write_tokens: Mapped[int | None] = mapped_column(Integer)
 
     price_input_per_m: Mapped[Decimal | None] = mapped_column(MONEY)
     price_cached_per_m: Mapped[Decimal | None] = mapped_column(MONEY)

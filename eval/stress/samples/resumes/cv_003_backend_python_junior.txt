@@ -1,0 +1,18 @@
+Mateo Lindqvist
+Recent graduate seeking a Junior Backend Engineer role
+New York, NY · lindqvist.66@examplemail.com · +1 514 582 8668 · linkedin.com/in/lindqvist-628
+
+SUMMARY
+Recent graduate seeking a Junior Backend Engineer role. Known for stakeholder management, communication. Experienced in PostgreSQL, automated testing (pytest), FastAPI.
+
+EXPERIENCE
+Junior Backend Engineer — Wrenfield Capital
+Dec 2025 – Present
+• Assisted senior colleagues to own services end to end from design to on-call
+• Project: applied Python and automated testing (pytest) in a B2B SaaS capstone
+
+EDUCATION
+Bachelor's degree in Computer Science — Institute of Technology, 2025
+
+SKILLS
+PostgreSQL, automated testing (pytest), FastAPI

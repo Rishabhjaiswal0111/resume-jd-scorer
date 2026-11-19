@@ -1,0 +1,25 @@
+Amara Okoye
+Data Engineer with 4 years of experience
+Austin, TX · okoye.87@examplemail.com · +1 561 498 6084 · linkedin.com/in/okoye-962
+
+SUMMARY
+Data Engineer with 4 years of experience. Known for stakeholder management, communication. Experienced in SQL, data warehousing (Snowflake, BigQuery, Redshift), Apache Spark.
+
+EXPERIENCE
+Data Engineer — Orbital Freight
+May 2024 – Present
+• Introduced Great Expectations data-quality checks on 8 critical tables
+• Cut warehouse spend by 44% by partitioning and clustering large tables
+• Built Spark pipelines processing 4 TB/day into Snowflake
+
+Junior Data Engineer — Juniper Learning
+Dec 2021 – May 2024
+• Rewrote 90 legacy SQL jobs as dbt models with tests and documentation
+• Set up Airflow DAGs with SLAs and alerting for 4 daily feeds
+• Streamed clickstream events through Kafka into BigQuery with under 5 minute latency
+
+EDUCATION
+Bachelor's in Computer Science, Engineering, Statistics — Institute of Technology, 2022
+
+SKILLS
+SQL, data warehousing (Snowflake, BigQuery, Redshift), Apache Spark, Kafka

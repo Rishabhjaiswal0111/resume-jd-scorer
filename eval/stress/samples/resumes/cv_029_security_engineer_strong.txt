@@ -1,0 +1,31 @@
+Mei Kaur
+Senior Security Engineer · 9 years in security engineering
+Manchester · kaur.83@examplemail.com · +44 245 718 7846 · linkedin.com/in/kaur-732
+
+SUMMARY
+Senior Security Engineer · 9 years in security engineering. Known for communication, stakeholder management. Experienced in application, vulnerability assessment and penetration testing, incident response.
+
+EXPERIENCE
+Senior Security Engineer — Everpeak Insurance
+Jul 2023 – Present
+• Built 40 Splunk detection rules mapped to MITRE ATT&CK
+• Ran 4 penetration tests on web apps and APIs, fixing all critical findings
+
+Security Engineer — Lumen Analytics
+Apr 2020 – Jul 2023
+• Prepared evidence for a SOC 2 Type II audit with zero exceptions
+• Led response to a credential-stuffing incident affecting 40k accounts
+
+Security Analyst — Foxglove Pharma
+Jan 2017 – Apr 2020
+• Hardened AWS accounts with GuardDuty, SCPs and least-privilege IAM
+
+EDUCATION
+Degree in Computer Science, Cybersecurity — Institute of Technology, 2016
+
+SKILLS
+application, vulnerability assessment and penetration testing, incident response, SIEM (Splunk, Sentinel, Elastic), AWS security services, threat modelling, Python scripting, SOC 2 / ISO 27001, OSCP
+
+CERTIFICATIONS
+OSCP
+CISSP

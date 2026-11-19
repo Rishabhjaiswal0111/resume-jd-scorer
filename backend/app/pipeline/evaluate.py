@@ -10,6 +10,7 @@ Validation (§7.2): every rubric key must appear exactly once.
 import json
 from collections.abc import Sequence
 from dataclasses import dataclass, field
+from datetime import date
 from typing import Any
 from uuid import UUID
 
@@ -22,7 +23,7 @@ from app.schemas.rubric import Criterion
 
 log = get_logger(__name__)
 
-PROMPT_VERSION = "evaluate.v2"
+PROMPT_VERSION = "evaluate.v3"  # v3: today's date in the prompt (ADR-0007)
 NOT_EVALUATED = "Not evaluated"
 
 
@@ -93,7 +94,9 @@ async def evaluate_resume(
     *,
     run_id: UUID | None = None,
     model: str | None = None,
+    today: date | None = None,
 ) -> EvaluationResult:
+    """`today` (default: the server's date) anchors "Present" in the resume's date ranges."""
     prompt = load_prompt(PROMPT_VERSION)
     keys = [c.key for c in rubric.criteria]
     schema = evaluation_schema(keys)
@@ -104,6 +107,7 @@ async def evaluate_resume(
             "content": render(
                 prompt.user,
                 {
+                    "today": (today or date.today()).isoformat(),
                     "title": rubric.title,
                     "role_summary": rubric.role_summary,
                     "core_requirement": rubric.core_requirement,

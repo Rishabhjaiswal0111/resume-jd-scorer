@@ -1,0 +1,41 @@
+Lead Backend Engineer
+Oakhaven Hospital · Bengaluru · Hybrid, 3 days in office · Full-time
+
+About us
+Oakhaven Hospital builds products for the logistics sector. We are a team of 3000 people with offices in Bengaluru.
+
+About the role
+As our Lead Backend Engineer, you will model data in PostgreSQL and tune slow queries and own services end to end from design to on-call, working closely with senior leadership.
+
+What you'll do
+• Model data in PostgreSQL and tune slow queries
+• Own services end to end from design to on-call
+• Work with product to scope features
+• Improve reliability and observability of services
+• Write automated tests and review code
+• Mentor engineers and run design reviews
+• Design and build REST and gRPC APIs in Python
+
+Qualifications
+- 8+ years of experience in backend engineering, including at least 2 years leading a team or function
+- Python
+- REST API design
+- PostgreSQL
+- automated testing (pytest)
+- Bachelor's degree in Computer Science or equivalent experience
+- FastAPI or Django
+- AWS
+- Redis
+- Docker
+
+Bonus points if you have
+- Go
+- Kubernetes
+
+Good to know
+This role is hybrid, 3 days in office in Bengaluru; relocation support is available. Please state your notice period when applying.
+
+What we offer
+Competitive salary, health cover, learning budget, 25 days leave.
+
+We are an equal opportunity employer. We do not discriminate on the basis of race, religion, colour, national origin, gender, sexual orientation, age, marital status or disability.

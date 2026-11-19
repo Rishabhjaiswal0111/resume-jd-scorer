@@ -1,0 +1,27 @@
+Yuki Delgado
+Senior Mobile Engineer · 8 years in mobile development
+Berlin · delgado.99@examplemail.com · +49 635 799 6047 · linkedin.com/in/delgado-747
+
+SUMMARY
+Senior Mobile Engineer · 8 years in mobile development. Known for communication, stakeholder management. Experienced in Swift (iOS), mobile app architecture (MVVM), publishing to App Store / Play Store.
+
+EXPERIENCE
+Senior Mobile Engineer — Foxglove Pharma
+Nov 2023 – Present
+• Automated builds and store releases with Fastlane
+• Rewrote onboarding in Jetpack Compose, raising activation by 33%
+
+Mobile Engineer — Juniper Learning
+Dec 2020 – Nov 2023
+• Built offline-first sync with Room and WorkManager
+• Shipped 80 releases of a 4.7-star iOS app (Swift, SwiftUI) with 2M installs
+
+Junior Mobile Developer — Juniper Learning
+Jan 2018 – Dec 2020
+• Cut Android crash rate by 19% using Crashlytics and Kotlin coroutines
+
+EDUCATION
+Bachelor's degree in a technical field — City College, 2017
+
+SKILLS
+Swift (iOS), mobile app architecture (MVVM), publishing to App Store / Play Store, SwiftUI, REST/GraphQL APIs, CI for mobile (Fastlane), offline-first data, React Native

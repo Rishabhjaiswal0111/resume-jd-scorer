@@ -1,0 +1,36 @@
+Junior Backend Engineer
+Riverstone Partners · Bengaluru · Fully on-site · Full-time
+
+About us
+Riverstone Partners builds products for the fintech payments sector. We are a team of 120 people with offices in Bengaluru.
+
+About the role
+As our Junior Backend Engineer, you will design and build REST and gRPC APIs in Python and mentor engineers and run design reviews, working closely with operations.
+
+What you'll do
+• Design and build REST and gRPC APIs in Python
+• Mentor engineers and run design reviews
+• Model data in PostgreSQL and tune slow queries
+• Work with product to scope features
+• Own services end to end from design to on-call
+• Write automated tests and review code
+• Improve reliability and observability of services
+
+Qualifications
+- 0-2 years of experience in backend engineering
+- Python
+- REST API design
+- PostgreSQL
+- automated testing (pytest)
+- Bachelor's degree in Computer Science or equivalent experience
+- AWS
+- Docker
+- event-driven systems (Kafka)
+
+Bonus points if you have
+- Go
+
+What we offer
+Competitive salary, health cover, learning budget, 25 days leave.
+
+We are an equal opportunity employer. We do not discriminate on the basis of race, religion, colour, national origin, gender, sexual orientation, age, marital status or disability.

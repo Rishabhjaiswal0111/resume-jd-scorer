@@ -1,0 +1,24 @@
+Lucas Iyer
+Senior Product Designer moving into frontend engineering
+Toronto · iyer.83@examplemail.com · +1 779 900 5607 · linkedin.com/in/iyer-963
+
+SUMMARY
+Senior Product Designer moving into frontend engineering. Known for communication, stakeholder management. Looking to bring product design experience into frontend engineering.
+
+EXPERIENCE
+Senior Product Designer — Solstice Media
+Apr 2024 – Present
+• Prototyped a new trading flow tested with 8 users
+• Redesigned onboarding, raising completion from 41% to 75%
+• Side project: completed a certificate course in frontend engineering and practised React
+
+Product Designer — Northwind Labs
+Oct 2021 – Apr 2024
+• Built a Figma design system with 80 components
+• Ran 50 usability studies and turned findings into roadmap items
+
+EDUCATION
+Degree in design, HCI — City College, 2021
+
+SKILLS
+product/UX design for digital products, Figma, user research and usability testing, a portfolio showing end-to-end design process, React

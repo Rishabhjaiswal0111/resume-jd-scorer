@@ -1,0 +1,25 @@
+Name: Kwame Okoye
+Frontend Engineer with 3 years of experience
+Austin, TX · okoye.51@examplemail.com · +1 895 695 4757 · linkedin.com/in/okoye-512
+
+SUMMARY
+Frontend Engineer with 3 years of experience. Known for stakeholder management, communication. Experienced in HTML/CSS, frontend testing (Jest, Testing Library), TypeScript.
+
+EXPERIENCE
+Frontend Engineer — Kestrel Retail
+2024.12 - Present
+• Fixed 9 WCAG 2.1 AA accessibility issues across the product
+• Rebuilt the checkout flow in React + TypeScript, lifting conversion by 23%
+• Introduced Playwright end-to-end tests covering 5 critical journeys
+
+Junior Frontend Developer — Driftwood Travel
+2023.02 - 2024.12
+• Migrated a large AngularJS app to Next.js incrementally
+• Created a Storybook design system of 9 components used by 6 teams
+• Improved Largest Contentful Paint from 4.1s to 1.5s via code splitting and image CDNs
+
+EDUCATION
+Degree in Computer Science — National University, 2023
+
+SKILLS
+HTML/CSS, frontend testing (Jest, Testing Library), TypeScript, Next.js

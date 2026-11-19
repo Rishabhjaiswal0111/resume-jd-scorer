@@ -1,0 +1,35 @@
+Senior SDET
+Northwind Labs · Manchester · Hybrid · Full-time
+
+About us
+Northwind Labs builds products for the e-commerce sector. We are a team of 40 people with offices in Manchester.
+
+About the role
+As our Senior SDET, you will track defects and quality metrics and design automated test suites for web and APIs, working closely with product and engineering.
+
+What you'll do
+• Track defects and quality metrics
+• Design automated test suites for web and APIs
+• Own regression and release testing
+• Build test frameworks and CI integration
+
+Requirements
+• 6+ years of experience in quality engineering
+• test automation (Selenium, Playwright or Cypress)
+• API testing (Postman, REST Assured)
+• a programming language (Java, Python or JavaScript)
+• test planning and defect tracking
+• Bachelor's degree in Computer Science or IT
+
+Preferred qualifications
+• CI integration (Jenkins, GitHub Actions)
+• BDD (Cucumber)
+
+Nice to have
+• ISTQB certification
+• mobile testing (Appium)
+
+What we offer
+Competitive salary, health cover, learning budget, 25 days leave.
+
+We are an equal opportunity employer. We do not discriminate on the basis of race, religion, colour, national origin, gender, sexual orientation, age, marital status or disability.

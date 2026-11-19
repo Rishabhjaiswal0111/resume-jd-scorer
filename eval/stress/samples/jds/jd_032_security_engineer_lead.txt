@@ -1,0 +1,43 @@
+Promoted · Easy Apply · 213 applicants · Posted 3 days ago
+Apply now   Save   Share
+Salary: $95K/yr - $140K/yr (from job poster) · Full-time · Hybrid
+
+Security Engineering Lead
+Cedar & Pike · Singapore · Hybrid, 3 days in office · Full-time
+
+About us
+Cedar & Pike builds products for the banking sector. We are a team of 600 people with offices in Singapore.
+
+About the role
+As our Security Engineering Lead, you will run vulnerability management and penetration tests and respond to security incidents, working closely with operations.
+
+What you'll do
+• Run vulnerability management and penetration tests
+• Respond to security incidents
+• Run threat modelling with engineering teams
+• Support SOC 2 and ISO 27001 audits
+
+Qualifications
+- 8+ years of experience in security engineering, including at least 2 years leading a team or function
+- application or cloud security
+- vulnerability assessment and penetration testing
+- incident response
+- SIEM (Splunk, Sentinel or Elastic)
+- Degree in Computer Science, Cybersecurity or equivalent
+- SOC 2 / ISO 27001
+- AWS security services
+- threat modelling
+
+Bonus points if you have
+- bug bounty experience
+
+What we offer
+Competitive salary, health cover, learning budget, 25 days leave.
+
+We are an equal opportunity employer. We do not discriminate on the basis of race, religion, colour, national origin, gender, sexual orientation, age, marital status or disability.
+
+Show more
+Set alert for similar jobs
+See how you compare to 213 applicants. Try Premium for free
+Report this job
+People also viewed: Senior Analyst, Data Lead

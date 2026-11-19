@@ -1,0 +1,37 @@
+Mobile Engineering Lead
+Driftwood Travel · Singapore · Hybrid, 3 days in office · Full-time
+
+About us
+Driftwood Travel builds products for the banking sector. We are a team of 600 people with offices in Singapore.
+
+About the role
+As our Mobile Engineering Lead, you will work with backend teams on APIs and write unit and UI tests, working closely with senior leadership.
+
+What you'll do
+• Work with backend teams on APIs
+• Write unit and UI tests
+• Ship releases through the App Store and Play Store
+• Own app performance and crash rate
+
+Requirements
+• 8+ years of experience in mobile development, including at least 2 years leading a team or function
+• Swift (iOS) or Kotlin (Android)
+• mobile app architecture (MVVM)
+• publishing to App Store / Play Store
+• Bachelor's degree in a technical field
+
+Preferred qualifications
+• offline-first data
+• SwiftUI or Jetpack Compose
+• CI for mobile (Fastlane)
+
+Nice to have
+• accessibility on mobile
+
+Good to know
+You must be legally authorised to work in Singapore without visa sponsorship.
+
+What we offer
+Competitive salary, health cover, learning budget, 25 days leave.
+
+We are an equal opportunity employer. We do not discriminate on the basis of race, religion, colour, national origin, gender, sexual orientation, age, marital status or disability.

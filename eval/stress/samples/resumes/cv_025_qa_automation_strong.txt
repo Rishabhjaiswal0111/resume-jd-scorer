@@ -1,0 +1,30 @@
+Elena Haddad
+Senior SDET · 10 years in quality engineering
+Pune · haddad.64@examplemail.com · +91 368 973 3142 · linkedin.com/in/haddad-628
+
+SUMMARY
+Senior SDET · 10 years in quality engineering. Known for stakeholder management, communication. Experienced in test automation (Selenium, Playwright, Cypress), API testing (Postman, REST Assured), a programming language (Java, Python, JavaScript).
+
+EXPERIENCE
+Senior SDET — Northwind Labs
+Mar 2023 – Present
+• Reduced escaped defects by 31% with risk-based test planning
+• Automated 2 API tests with REST Assured
+
+QA Automation Engineer — Oakhaven Hospital
+Aug 2019 – Mar 2023
+• Built a Playwright framework with 40 automated end-to-end tests running in CI
+• Ran JMeter load tests that found a connection-pool leak before launch
+
+QA Engineer — Wrenfield Capital
+Jan 2016 – Aug 2019
+• Cut regression cycle from 5 days to 3 hours
+
+EDUCATION
+Bachelor's degree in Computer Science — City College, 2016
+
+SKILLS
+test automation (Selenium, Playwright, Cypress), API testing (Postman, REST Assured), a programming language (Java, Python, JavaScript), test planning and defect tracking, CI integration (Jenkins, GitHub Actions), performance testing (JMeter, k6), BDD (Cucumber), mobile testing (Appium)
+
+CERTIFICATIONS
+ISTQB Foundation Level

@@ -11,6 +11,7 @@ Strategy (validated against tests/fixtures/pdfs, see test_extract.py):
 
 import io
 import re
+import threading
 import unicodedata
 from dataclasses import dataclass
 
@@ -70,7 +71,18 @@ def _meaningful_chars(text: str) -> int:
     return sum(1 for ch in text if not ch.isspace())
 
 
+# PDFium is not thread-safe (pypdfium2 docs), and extraction runs in worker threads, so
+# concurrent uploads crashed the process with a segfault (found by the stress tests).
+# Extraction is milliseconds per PDF, so serializing it costs nothing noticeable.
+_PDFIUM_LOCK = threading.Lock()
+
+
 def _pdfium_pages(data: bytes) -> list[str]:
+    with _PDFIUM_LOCK:
+        return _pdfium_pages_unlocked(data)
+
+
+def _pdfium_pages_unlocked(data: bytes) -> list[str]:
     doc = pdfium.PdfDocument(data)
     try:
         pages: list[str] = []

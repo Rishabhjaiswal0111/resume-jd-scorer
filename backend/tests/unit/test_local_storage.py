@@ -27,3 +27,12 @@ async def test_healthcheck_creates_root(tmp_path: Path) -> None:
     root = tmp_path / "new-root"
     await LocalStorage(root).healthcheck()
     assert root.is_dir()
+
+
+async def test_concurrent_puts_of_the_same_key(tmp_path: Path) -> None:
+    import asyncio
+
+    storage = LocalStorage(tmp_path)
+    await asyncio.gather(*(storage.put("docs/a.txt", b"same") for _ in range(20)))
+    assert await storage.get("docs/a.txt") == b"same"
+    assert [p.name for p in (tmp_path / "docs").iterdir()] == ["a.txt"]  # no temp leftovers

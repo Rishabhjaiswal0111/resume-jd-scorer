@@ -1,0 +1,39 @@
+Frontend Tech Lead
+Saffron Kitchens · Pune · Hybrid, 3 days in office · Full-time
+
+About us
+Saffron Kitchens builds products for the travel booking sector. We are a team of 600 people with offices in Pune.
+
+About the role
+As our Frontend Tech Lead, you will own the component library and design system and ensure accessibility (WCAG 2.1 AA), working closely with clients.
+
+What you'll do
+• Own the component library and design system
+• Ensure accessibility (WCAG 2.1 AA)
+• Write unit and end-to-end tests
+• Partner with designers on interaction details
+• Improve Core Web Vitals and page performance
+
+Requirements
+• 8+ years of experience in frontend engineering, including at least 2 years leading a team or function
+• React
+• TypeScript
+• HTML/CSS
+• frontend testing (Jest, Testing Library)
+• Degree in Computer Science or a related field, or equivalent practical experience
+
+Preferred qualifications
+• GraphQL
+• Next.js
+
+Nice to have
+• design tools (Figma)
+• React Native
+
+Good to know
+This role is hybrid, 3 days in office in Pune; relocation support is available. Please state your notice period when applying.
+
+What we offer
+Competitive salary, health cover, learning budget, 25 days leave.
+
+We are an equal opportunity employer. We do not discriminate on the basis of race, religion, colour, national origin, gender, sexual orientation, age, marital status or disability.

@@ -1,0 +1,38 @@
+Senior Data Engineer
+Everpeak Insurance · Sydney · Fully on-site · Full-time
+
+About us
+Everpeak Insurance builds products for the adtech sector. We are a team of 40 people with offices in Sydney.
+
+About the role
+As our Senior Data Engineer, you will own data quality checks and SLAs and optimise Spark jobs and warehouse cost, working closely with clients.
+
+What you'll do
+• Own data quality checks and SLAs
+• Optimise Spark jobs and warehouse cost
+• Orchestrate jobs with Airflow
+• Model data in the warehouse for analytics
+
+Qualifications
+- 6+ years of experience in data engineering
+- SQL
+- Python
+- Apache Spark
+- data warehousing (Snowflake, BigQuery or Redshift)
+- Bachelor's in Computer Science, Engineering, Statistics or similar
+- Airflow
+- Kafka
+- data modelling (Kimball)
+
+Bonus points if you have
+- Databricks
+- data governance tooling
+- Terraform
+
+Good to know
+You must be legally authorised to work in Australia without visa sponsorship.
+
+What we offer
+Competitive salary, health cover, learning budget, 25 days leave.
+
+We are an equal opportunity employer. We do not discriminate on the basis of race, religion, colour, national origin, gender, sexual orientation, age, marital status or disability.

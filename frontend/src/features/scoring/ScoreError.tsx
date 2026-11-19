@@ -9,7 +9,7 @@ const FRIENDLY: Record<string, string> = {
   RUBRIC_EMPTY: 'No requirements were found in the job description.',
   LLM_NOT_CONFIGURED: 'No LLM is configured. Add an API key to .env.',
   LLM_RESPONSE_PENDING:
-    'Manual mode: the prompt was saved for a person (or Claude Code session) to answer. Retry once the answer file is written.',
+    'Still waiting for the manual answer after ~15 minutes. Ask Claude Code to answer the pending prompt (make pending), then click Retry.',
 }
 
 export function ScoreError({ error, onRetry }: { error: Error; onRetry: () => void }) {

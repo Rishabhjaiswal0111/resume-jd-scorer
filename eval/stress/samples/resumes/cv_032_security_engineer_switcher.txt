@@ -1,0 +1,29 @@
+Ethan Sutherland
+Senior Site Reliability Engineer moving into security engineering
+London · sutherland.37@examplemail.com · +44 654 115 9614 · linkedin.com/in/sutherland-210
+
+SUMMARY
+Senior Site Reliability Engineer moving into security engineering. Known for communication, stakeholder management. Looking to bring site reliability engineering experience into security engineering.
+
+EXPERIENCE
+Senior Site Reliability Engineer — Wrenfield Capital
+Aug 2023 – Present
+• Reduced AWS spend by 31% with rightsizing and spot instances
+• Ran 80 production Kubernetes clusters on EKS with 99.95% availability
+• Built Prometheus/Grafana dashboards and SLO alerts for 4 services
+• Side project: completed a certificate course in security engineering and practised application or cloud security
+
+DevOps Engineer — Copperline Telecom
+May 2020 – Aug 2023
+• Codified all infrastructure in Terraform modules (3 modules)
+• Cut deploy time from 45 to 30 minutes with GitHub Actions and ArgoCD
+• Led 60 post-incident reviews and drove the follow-up actions
+
+EDUCATION
+Degree in Computer Science — Institute of Technology, 2020
+
+SKILLS
+Kubernetes, Terraform, AWS, GCP, CI/CD (GitHub Actions, GitLab CI, Jenkins), Linux, application
+
+CERTIFICATIONS
+Certified Kubernetes Administrator (CKA)

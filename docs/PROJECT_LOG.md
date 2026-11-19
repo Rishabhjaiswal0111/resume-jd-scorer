@@ -29,6 +29,70 @@ Related docs: [PLAN.md](PLAN.md) (roadmap) · [scoring-spec.md](scoring-spec.md)
 
 ## Timeline (newest first)
 
+### 2026-11-18 · Manual mode without the Retry button; `make start`; PDFium crash fix (uncommitted)
+- **What:**
+  - **`make start` / `make stop` / `make pending`:** one command starts Docker, Postgres, migrations, the API and the web app, waits until each one actually responds, then opens the browser.
+  - **Manual mode no longer shows an error:** the page shows "Waiting for the answer (Step 1 of 2: reading the job description / Step 2 of 2: grading the resume)" and retries by itself, for about 15 min.
+  - **The server waits for the answer file:** each request waits up to 20 s (`MANUAL_LLM_WAIT_SECONDS`), so retries don't create a failed run every few seconds.
+  - **`scripts/wait-pending.sh`** lets a Claude Code session notice new prompts and answer them.
+  - **PDFium extraction is serialised with a lock.**
+- **Why:**
+  - You keep manual mode and found the Retry error confusing.
+  - A new concurrency test showed PDFium segfaults when two uploads extract at the same time. PDFium is not thread-safe, so in production that would crash the whole API process.
+- **Checked:**
+  - Backend: 156 tests, 3 runs in a row. The new thread test segfaults 3/3 on the old extractor.
+  - Frontend: 17 tests.
+  - Live: a new score waited 20 s and then returned pending for `jd_parse`; `make start` was ready in 5 s; stop and start worked.
+
+### 2026-11-17 · Fixes from the stress test (uncommitted)
+- **What:** fixed everything the stress test found, plus three more problems found while fixing and re-testing. Full reasoning: [ADR-0007](adr/0007-stress-test-fixes.md).
+  - **No DB transaction during LLM calls:** concurrent new JDs no longer starve the pool.
+  - **Per-JD lock and savepoint:** one parse per JD, no unique-constraint crash.
+  - **Savepoints on document insert:** a concurrent upload of the same file no longer crashes.
+  - **Unique temp files in local storage.**
+  - **PII "certain or nothing":** fixes dates, Ruby/Sydney/Austin, title-as-name, Unicode names and emails, and spaced amounts.
+  - **`evaluate.v3`** puts today's date in the prompt.
+  - **One Anthropic client per process,** and migration **0003** adds `llm_calls.cache_write_tokens`.
+  - **Passed avoid-criteria are no longer listed as strengths.**
+  - **Skima scrubber:** a patch and spec are in `eval/stress/skima_patch/`, not applied.
+- **Why:** you asked for the simplest justifiable fixes, with the decisions remembered. Each fix is the smallest change that removes the failure; no new infrastructure was added.
+- **Checked:**
+  - Backend: 154 tests (25 new); ruff, format and mypy clean.
+  - The concurrency tests fail or hang against the old code.
+  - Concurrency on the default pool: 80/80 requests succeed (before: 15 → 0).
+  - Same JD in parallel: 5/5 succeed with 1 parse (before: 1/5 and 5 parses).
+  - Full scale: 1,560/1,560 pairs completed; the old failing pool-5 setup now gives 312/312 (before: 72/312).
+  - PII: 0/104 resumes wrong (before: 16).
+  - Session-graded sample: the right candidate is ranked first in 13/13 roles.
+  - Summary and recruiter review: [eval/stress/FINAL_SUMMARY.md](../eval/stress/FINAL_SUMMARY.md).
+- **Open:**
+  - A real Haiku run (needs an API key).
+  - The recruiter UI recommendations in FINAL_SUMMARY §4.
+  - Applying the Skima patch.
+  - Commit.
+
+### 2026-11-17 · Stress test suite and code review (uncommitted)
+- **What:** `eval/stress/` includes:
+  - a deterministic corpus generator: 104 JDs and 104 resume PDFs across tech, non-tech, manager, MBA, design and teaching roles, with edge cases
+  - a harness that runs the real `ScoringService` against an isolated `jdscorer_stress` database
+  - a concurrency probe
+  - a report builder
+
+  Findings are in [eval/stress/REPORT.md](../eval/stress/REPORT.md).
+- **Why:** you asked for a full review and a stress test across many role types, with repeated runs.
+- **Checked:**
+  - 5 full-scale runs (312 pairs each) with an offline keyword stand-in for the model: 1,560/1,560 completed, and every replay was identical.
+  - A 36-pair sample run through the real prompts via `manual/claude-session`.
+  - 129 backend tests still pass.
+- **Found:**
+  - DB pool starvation: 15 concurrent first-time requests all fail.
+  - A same-JD race: `IntegrityError` on `uq_rubrics_jd_document_id_version`.
+  - 6 PII redaction bugs (dotted dates become `[PHONE]`; first names that are also skills or places, such as Ruby or Sydney, are erased; accented names leak; job titles get taken as names). 16 of 104 resumes are affected.
+  - The evaluate prompt has no current date.
+- **Open:**
+  - No real Haiku run yet, because there is no API key, so model run-to-run variance is unmeasured. The commands are in the report.
+  - None of the bugs above are fixed yet.
+
 ### 2026-11-14 · Client-ready polish (`2e68454`)
 - **What:** Inter font, a logo mark, drag-and-drop upload areas, an honest "Analysing the match" state, and a "How it works" strip. The result became a scorecard: a summary with counts, Strengths / Concerns, Questions for the screening call, and requirements grouped by type with colour-coded rating icons. Points, weights and run id moved into a collapsed "Scoring details". The API status shows only when the service is down.
 - **Why:** to make the app demoable to clients. The patterns follow hiring scorecards (key takeaways, strengths / concerns, per-attribute colour-coded ratings with evidence, questions for the next round) and clean SaaS UIs (whitespace, one accent colour, Inter). Sources are listed in [design-system.md](design-system.md).

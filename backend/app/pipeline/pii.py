@@ -1,12 +1,20 @@
 """Strip direct identifiers from resume text before it reaches an LLM (PLAN.md §11.8).
 
 Removes emails, URLs (incl. bare linkedin.com/... and github.com/...), phone numbers and a
-best-effort candidate name (a 2-4 word name-like line at the top of the resume, plus any
-later occurrence of it). PURE: no I/O.
+best-effort candidate name. PURE: no I/O.
+
+Name (rules from the stress test, eval/stress/REPORT.md, ADR-0007):
+- Only the FIRST meaningful line is a candidate (after "Resume" / "CV" headings and a
+  "Name:" label). If it is not name-like, no name is redacted: guessing further down
+  erased job titles ("Registered Nurse") instead.
+- Unicode letters and lowercase particles count ("José Hernández", "Ana de la Cruz").
+- Only the FULL name is replaced (whole words). A lone first name is left alone: names
+  like Ruby, Sydney or Austin are also skills and places the scorer needs, and a first
+  name on its own is not a direct identifier once email, phone, URL and full name are gone.
 
 Deliberately conservative on phones: digit runs must look like phone numbers (7-15 digits,
-phone punctuation) so year ranges ("2018 - 2021"), metrics ("2k requests/second") and
-versions ("Python 3.12") survive.
+phone punctuation) so year ranges ("2018 - 2021", "2019.01 - 2021.12"), metrics
+("2k requests/second", "1 200 000 users") and versions ("Python 3.12") survive.
 """
 
 import re
@@ -23,7 +31,8 @@ NAME_TOKEN = "[CANDIDATE]"  # noqa: S105
 # only location signal; the number itself is removed. No separator => code is ambiguous.
 _COUNTRY_CODE = re.compile(r"^\+(\d{1,3})[\s(.-]")
 
-_EMAIL = re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}")
+# \w is Unicode-aware: "müller@..." is removed whole, not left as "mü[EMAIL]".
+_EMAIL = re.compile(r"[\w.%+'-]+@[\w-]+(?:\.[\w-]+)*\.[^\W\d_]{2,}")
 _URL = re.compile(
     r"""(?ix)
     \b(?:https?://|www\.)\S+
@@ -33,9 +42,48 @@ _URL = re.compile(
 )
 # Phone candidates: optional +, then digits with spaces / dots / dashes / parentheses.
 _PHONE_CANDIDATE = re.compile(r"(?<![\w.])\+?\(?\d[\d\s().-]{5,}\d(?![\w.])")
-_YEAR_RANGE = re.compile(r"^\(?(19|20)\d{2}\)?\s*[-\u2013]\s*\(?(19|20)\d{2}\)?$")
-_NAME_WORD = re.compile(r"^[A-Z][a-zA-Z'\u2019-]+$|^[A-Z]\.$")
-_NAME_SCAN_LINES = 5
+# A date: 2019, 2019.01, 2019/01, 01.2019, 01/2019. Ranges of these are not phones.
+_DATE_PART = re.compile(r"^\(?(?:(?:19|20)\d{2}(?:[./]\d{1,2})?|\d{1,2}[./](?:19|20)\d{2})\)?$")
+_DATE_RANGE_SEP = re.compile(r"\s*[-\u2013]\s*")
+# Digits grouped by spaces in thousands/lakhs ("1 200 000", "12 00 000"): an amount, not
+# a phone. Phones end in a 4+ digit group or start with "+" / "(".
+_GROUPED_AMOUNT = re.compile(r"^\d{1,3}(?: \d{2,3})+$")
+_AMOUNT_LAST_GROUP = 3
+# One word of a name: a capitalised Unicode word ("José", "O'Neil", "Mary-Jane"), an
+# initial ("J." or "Ó"), or a lowercase particle.
+_NAME_WORD = re.compile(r"^[^\W\d_][^\W\d_'\u2019-]*\.?$")
+_PARTICLES = frozenset(
+    [
+        "de",
+        "la",
+        "del",
+        "della",
+        "da",
+        "das",
+        "do",
+        "dos",
+        "di",
+        "du",
+        "van",
+        "von",
+        "der",
+        "den",
+        "ten",
+        "ter",
+        "le",
+        "bin",
+        "binti",
+        "al",
+        "el",
+        "y",
+        "e",
+    ]
+)
+_NAME_LABEL = re.compile(r"^(?:candidate\s+)?name\s*:\s*", re.IGNORECASE)
+# Headings that may sit above the name; skipped when looking for the first real line.
+_HEADINGS = frozenset(["resume", "résumé", "cv", "curriculum vitae", "biodata"])
+# Text after one of these on the name line is a title or contact detail, not the name.
+_NAME_LINE_SPLIT = re.compile(r"\s*(?:[|,\u00b7\u2022]|\s[-\u2013\u2014]\s)\s*")
 # A top line containing any of these is a title/heading, not a person's name.
 _NOT_NAME_WORDS = frozenset(
     [
@@ -105,18 +153,40 @@ def _is_phone(candidate: str) -> bool:
     if not 7 <= len(digits) <= 15:
         return False
     stripped = candidate.strip()
-    return not _YEAR_RANGE.match(stripped)
+    parts = _DATE_RANGE_SEP.split(stripped)
+    if len(parts) > 1 and all(_DATE_PART.match(p) for p in parts):
+        return False  # "2018 - 2021", "2019.01 - 2021.12"
+    # "1 200 000", "12 00 000" are amounts.
+    is_amount = bool(_GROUPED_AMOUNT.match(stripped)) and (
+        len(stripped.rsplit(" ", 1)[1]) == _AMOUNT_LAST_GROUP
+    )
+    return not is_amount
+
+
+def _is_name_word(word: str) -> bool:
+    if word in _PARTICLES:
+        return True
+    return bool(_NAME_WORD.match(word)) and word[0].isupper()
 
 
 def _find_name(text: str) -> str | None:
-    for line in text.split("\n")[:_NAME_SCAN_LINES]:
-        words = line.strip().split()
+    """The name is the first meaningful line, or nothing (never a guess further down)."""
+    for raw in text.split("\n"):
+        line = raw.strip()
+        if not line or line.lower().strip(" :") in _HEADINGS:
+            continue
+        line = _NAME_LABEL.sub("", line)
+        line = _NAME_LINE_SPLIT.split(line, maxsplit=1)[0].strip()
+        words = line.split()
+        capitalised = [w for w in words if w not in _PARTICLES]
         if (
-            2 <= len(words) <= 4
-            and all(_NAME_WORD.match(w) for w in words)
+            2 <= len(words) <= 5
+            and len(capitalised) >= 2
+            and all(_is_name_word(w) for w in words)
             and not any(w.lower().strip(".") in _NOT_NAME_WORDS for w in words)
         ):
-            return " ".join(words)
+            return line
+        return None
     return None
 
 
@@ -142,12 +212,10 @@ def redact(text: str) -> Redaction:
 
     name = _find_name(text)
     if name:
-        text, n = re.subn(re.escape(name), NAME_TOKEN, text)
+        # Full name only, whole words, any case ("PRIYA SHARMA" in a header, "Priya Sharma"
+        # in a signature). See the module docstring for why a lone first name is kept.
+        pattern = r"(?<!\w)" + r"\s+".join(re.escape(w) for w in name.split()) + r"(?!\w)"
+        text, n = re.subn(pattern, NAME_TOKEN, text, flags=re.IGNORECASE)
         counts["name"] += n
-        # Also catch the first name alone (e.g. "Jordan led ..."), only when capitalized word.
-        first = name.split()[0]
-        if len(first) > 2:
-            text, n = re.subn(rf"\b{re.escape(first)}\b", NAME_TOKEN, text)
-            counts["name"] += n
 
     return Redaction(text=text, counts=counts)

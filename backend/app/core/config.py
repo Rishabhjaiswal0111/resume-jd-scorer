@@ -64,6 +64,10 @@ class Settings(BaseSettings):
     openrouter_data_collection: Literal["allow", "deny"] = "deny"
     # manual/<name>: prompts are written here and answers are read back (no API, $0).
     manual_llm_dir: Path = Path("./var/manual_llm")
+    # How long one request waits for the answer file before returning LLM_RESPONSE_PENDING.
+    # The UI retries pending requests itself, so a short wait just avoids a failed run row
+    # every few seconds while the answer is being written.
+    manual_llm_wait_seconds: float = 20.0
 
     # --- scoring (PLAN.md §7) ---
     # Engine 1.1.0: off by default; knock-out criteria replace the flat -30 penalty.

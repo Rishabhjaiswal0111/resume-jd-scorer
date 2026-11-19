@@ -1,0 +1,45 @@
+Promoted · Easy Apply · 213 applicants · Posted 3 days ago
+Apply now   Save   Share
+Salary: $95K/yr - $140K/yr (from job poster) · Full-time · Hybrid
+
+QA Lead
+Riverstone Partners · Austin, TX · Hybrid, 3 days in office · Full-time
+
+About us
+Riverstone Partners builds products for the insurance sector. We are a team of 40 people with offices in Austin, TX.
+
+About the role
+As our QA Lead, you will own regression and release testing and work with developers on testability, working closely with senior leadership.
+
+What you'll do
+• Own regression and release testing
+• Work with developers on testability
+• Track defects and quality metrics
+• Design automated test suites for web and APIs
+
+Requirements
+• 8+ years of experience in quality engineering, including at least 2 years leading a team or function
+• test automation (Selenium, Playwright or Cypress)
+• API testing (Postman, REST Assured)
+• a programming language (Java, Python or JavaScript)
+• test planning and defect tracking
+• Bachelor's degree in Computer Science or IT
+
+Preferred qualifications
+• BDD (Cucumber)
+• CI integration (Jenkins, GitHub Actions)
+
+Nice to have
+• mobile testing (Appium)
+• ISTQB certification
+
+What we offer
+Competitive salary, health cover, learning budget, 25 days leave.
+
+We are an equal opportunity employer. We do not discriminate on the basis of race, religion, colour, national origin, gender, sexual orientation, age, marital status or disability.
+
+Show more
+Set alert for similar jobs
+See how you compare to 213 applicants. Try Premium for free
+Report this job
+People also viewed: Senior Analyst, Data Lead

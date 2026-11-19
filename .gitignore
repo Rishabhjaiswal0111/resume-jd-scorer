@@ -31,3 +31,6 @@ var/
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Raw stress-test results (regenerable with eval/stress/run_stress.py; reports are committed)
+eval/stress/results/*/results.jsonl

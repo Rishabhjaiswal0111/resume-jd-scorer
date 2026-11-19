@@ -1,0 +1,39 @@
+Senior Machine Learning Engineer
+Harbor Health · London · Fully on-site · Full-time
+
+About us
+Harbor Health builds products for the recommendations sector. We are a team of 40 people with offices in London.
+
+About the role
+As our Senior Machine Learning Engineer, you will fine-tune and serve LLMs and work with product on ML-powered features, working closely with product and engineering.
+
+What you'll do
+• Fine-tune and serve LLMs
+• Work with product on ML-powered features
+• Run A/B tests and offline evaluation
+• Monitor model drift and performance
+• Build feature pipelines
+• Train, evaluate and deploy ML models to production
+
+Qualifications
+- 6+ years of experience in machine learning
+- Python
+- machine learning (scikit-learn, XGBoost)
+- deep learning (PyTorch or TensorFlow)
+- deploying models to production
+- Master's or PhD in Computer Science, Statistics or a related quantitative field
+- experiment design / A/B testing
+- LLM fine-tuning
+- MLOps (MLflow, Kubeflow, SageMaker)
+
+Bonus points if you have
+- Spark
+
+Good to know
+You must be legally authorised to work in the United Kingdom without visa sponsorship.
+This role is fully on-site in London; relocation support is available. Please state your notice period when applying.
+
+What we offer
+Competitive salary, health cover, learning budget, 25 days leave.
+
+We are an equal opportunity employer. We do not discriminate on the basis of race, religion, colour, national origin, gender, sexual orientation, age, marital status or disability.

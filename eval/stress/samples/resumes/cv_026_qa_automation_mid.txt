@@ -1,0 +1,26 @@
+Sofia Haddad
+QA Automation Engineer with 4 years of experience
+Austin, TX · haddad.10@examplemail.com · +1 587 687 7640 · linkedin.com/in/haddad-560
+
+SUMMARY
+QA Automation Engineer with 4 years of experience. Known for stakeholder management, communication. Experienced in a programming language (Java, Python, JavaScript), test planning and defect tracking, test automation (Selenium, Playwright, Cypress).
+
+EXPERIENCE
+QA Automation Engineer — Pinecrest Schools
+Nov 2024 – Present
+• Ran JMeter load tests that found a connection-pool leak before launch
+• Built a Playwright framework with 6 automated end-to-end tests running in CI
+
+QA Engineer — Harbor Health
+Nov 2022 – Nov 2024
+• Cut regression cycle from 5 days to 3 hours
+• Reduced escaped defects by 39% with risk-based test planning
+
+EDUCATION
+Bachelor's degree in Computer Science — Institute of Technology, 2022
+
+SKILLS
+a programming language (Java, Python, JavaScript), test planning and defect tracking, test automation (Selenium, Playwright, Cypress), CI integration (Jenkins, GitHub Actions)
+
+CERTIFICATIONS
+ISTQB Foundation Level

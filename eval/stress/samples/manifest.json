@@ -1,0 +1,5894 @@
+{
+ "seed": 20261117,
+ "generated_for": "2026-11",
+ "jds": [
+  {
+   "id": "jd_001",
+   "profile": "backend_python",
+   "category": "tech",
+   "level": "junior",
+   "path": "jds/jd_001_backend_python_junior.txt",
+   "format": "structured",
+   "tags": [],
+   "meta": {
+    "title": "Junior Backend Engineer",
+    "company": "Riverstone Partners",
+    "city": "Bengaluru",
+    "country": "India"
+   }
+  },
+  {
+   "id": "jd_002",
+   "profile": "backend_python",
+   "category": "tech",
+   "level": "mid",
+   "path": "jds/jd_002_backend_python_mid.pdf",
+   "format": "pdf",
+   "tags": [
+    "relocation_notice"
+   ],
+   "meta": {
+    "title": "Backend Engineer",
+    "company": "Everpeak Insurance",
+    "city": "Bengaluru",
+    "country": "India"
+   }
+  },
+  {
+   "id": "jd_003",
+   "profile": "backend_python",
+   "category": "tech",
+   "level": "senior",
+   "path": "jds/jd_003_backend_python_senior.txt",
+   "format": "structured",
+   "tags": [
+    "work_authorization",
+    "relocation_notice"
+   ],
+   "meta": {
+    "title": "Senior Backend Engineer",
+    "company": "Copperline Telecom",
+    "city": "Singapore",
+    "country": "Singapore"
+   }
+  },
+  {
+   "id": "jd_004",
+   "profile": "backend_python",
+   "category": "tech",
+   "level": "lead",
+   "path": "jds/jd_004_backend_python_lead.pdf",
+   "format": "pdf",
+   "tags": [
+    "relocation_notice"
+   ],
+   "meta": {
+    "title": "Lead Backend Engineer",
+    "company": "Oakhaven Hospital",
+    "city": "Bengaluru",
+    "country": "India"
+   }
+  },
+  {
+   "id": "jd_005",
+   "profile": "frontend_react",
+   "category": "tech",
+   "level": "junior",
+   "path": "jds/jd_005_frontend_react_junior.txt",
+   "format": "structured",
+   "tags": [],
+   "meta": {
+    "title": "Junior Frontend Developer",
+    "company": "Wrenfield Capital",
+    "city": "New York, NY",
+    "country": "the United States"
+   }
+  },
+  {
+   "id": "jd_006",
+   "profile": "frontend_react",
+   "category": "tech",
+   "level": "mid",
+   "path": "jds/jd_006_frontend_react_mid.txt",
+   "format": "structured",
+   "tags": [
+    "work_authorization",
+    "relocation_notice"
+   ],
+   "meta": {
+    "title": "Frontend Engineer",
+    "company": "Helix Robotics",
+    "city": "Singapore",
+    "country": "Singapore"
+   }
+  },
+  {
+   "id": "jd_007",
+   "profile": "frontend_react",
+   "category": "tech",
+   "level": "senior",
+   "path": "jds/jd_007_frontend_react_senior.txt",
+   "format": "structured",
+   "tags": [
+    "discriminatory_requirement"
+   ],
+   "meta": {
+    "title": "Senior Frontend Engineer",
+    "company": "Larkspur Logistics",
+    "city": "Singapore",
+    "country": "Singapore"
+   }
+  },
+  {
+   "id": "jd_008",
+   "profile": "frontend_react",
+   "category": "tech",
+   "level": "lead",
+   "path": "jds/jd_008_frontend_react_lead.txt",
+   "format": "structured",
+   "tags": [
+    "relocation_notice"
+   ],
+   "meta": {
+    "title": "Frontend Tech Lead",
+    "company": "Saffron Kitchens",
+    "city": "Pune",
+    "country": "India"
+   }
+  },
+  {
+   "id": "jd_009",
+   "profile": "data_engineer",
+   "category": "tech",
+   "level": "junior",
+   "path": "jds/jd_009_data_engineer_junior.pdf",
+   "format": "pdf",
+   "tags": [
+    "relocation_notice"
+   ],
+   "meta": {
+    "title": "Junior Data Engineer",
+    "company": "Copperline Telecom",
+    "city": "Sydney",
+    "country": "Australia"
+   }
+  },
+  {
+   "id": "jd_010",
+   "profile": "data_engineer",
+   "category": "tech",
+   "level": "mid",
+   "path": "jds/jd_010_data_engineer_mid.pdf",
+   "format": "pdf",
+   "tags": [],
+   "meta": {
+    "title": "Data Engineer",
+    "company": "Cedar & Pike",
+    "city": "Berlin",
+    "country": "Germany"
+   }
+  },
+  {
+   "id": "jd_011",
+   "profile": "data_engineer",
+   "category": "tech",
+   "level": "senior",
+   "path": "jds/jd_011_data_engineer_senior.txt",
+   "format": "structured",
+   "tags": [
+    "work_authorization"
+   ],
+   "meta": {
+    "title": "Senior Data Engineer",
+    "company": "Everpeak Insurance",
+    "city": "Sydney",
+    "country": "Australia"
+   }
+  },
+  {
+   "id": "jd_012",
+   "profile": "data_engineer",
+   "category": "tech",
+   "level": "lead",
+   "path": "jds/jd_012_data_engineer_lead.txt",
+   "format": "portal_paste",
+   "tags": [
+    "work_authorization"
+   ],
+   "meta": {
+    "title": "Lead Data Engineer",
+    "company": "Harbor Health",
+    "city": "New York, NY",
+    "country": "the United States"
+   }
+  },
+  {
+   "id": "jd_013",
+   "profile": "ml_engineer",
+   "category": "tech",
+   "level": "junior",
+   "path": "jds/jd_013_ml_engineer_junior.txt",
+   "format": "structured",
+   "tags": [],
+   "meta": {
+    "title": "Junior ML Engineer",
+    "company": "Tidewater Bank",
+    "city": "London",
+    "country": "the United Kingdom"
+   }
+  },
+  {
+   "id": "jd_014",
+   "profile": "ml_engineer",
+   "category": "tech",
+   "level": "mid",
+   "path": "jds/jd_014_ml_engineer_mid.pdf",
+   "format": "pdf",
+   "tags": [
+    "work_authorization",
+    "travel"
+   ],
+   "meta": {
+    "title": "Machine Learning Engineer",
+    "company": "Thistle Security",
+    "city": "New York, NY",
+    "country": "the United States"
+   }
+  },
+  {
+   "id": "jd_015",
+   "profile": "ml_engineer",
+   "category": "tech",
+   "level": "senior",
+   "path": "jds/jd_015_ml_engineer_senior.txt",
+   "format": "structured",
+   "tags": [
+    "work_authorization",
+    "relocation_notice"
+   ],
+   "meta": {
+    "title": "Senior Machine Learning Engineer",
+    "company": "Harbor Health",
+    "city": "London",
+    "country": "the United Kingdom"
+   }
+  },
+  {
+   "id": "jd_016",
+   "profile": "ml_engineer",
+   "category": "tech",
+   "level": "lead",
+   "path": "jds/jd_016_ml_engineer_lead.txt",
+   "format": "prose",
+   "tags": [
+    "relocation_notice"
+   ],
+   "meta": {
+    "title": "Staff ML Engineer",
+    "company": "Parallax Games",
+    "city": "Bengaluru",
+    "country": "India"
+   }
+  },
+  {
+   "id": "jd_017",
+   "profile": "devops_sre",
+   "category": "tech",
+   "level": "junior",
+   "path": "jds/jd_017_devops_sre_junior.pdf",
+   "format": "pdf",
+   "tags": [
+    "travel"
+   ],
+   "meta": {
+    "title": "Junior DevOps Engineer",
+    "company": "Meridian Consulting",
+    "city": "London",
+    "country": "the United Kingdom"
+   }
+  },
+  {
+   "id": "jd_018",
+   "profile": "devops_sre",
+   "category": "tech",
+   "level": "mid",
+   "path": "jds/jd_018_devops_sre_mid.txt",
+   "format": "portal_paste",
+   "tags": [],
+   "meta": {
+    "title": "DevOps Engineer",
+    "company": "Vantage Mobility",
+    "city": "London",
+    "country": "the United Kingdom"
+   }
+  },
+  {
+   "id": "jd_019",
+   "profile": "devops_sre",
+   "category": "tech",
+   "level": "senior",
+   "path": "jds/jd_019_devops_sre_senior.pdf",
+   "format": "pdf",
+   "tags": [],
+   "meta": {
+    "title": "Senior Site Reliability Engineer",
+    "company": "Tidewater Bank",
+    "city": "Manchester",
+    "country": "the United Kingdom"
+   }
+  },
+  {
+   "id": "jd_020",
+   "profile": "devops_sre",
+   "category": "tech",
+   "level": "lead",
+   "path": "jds/jd_020_devops_sre_lead.pdf",
+   "format": "pdf",
+   "tags": [
+    "relocation_notice"
+   ],
+   "meta": {
+    "title": "Lead SRE",
+    "company": "Vantage Mobility",
+    "city": "Austin, TX",
+    "country": "the United States"
+   }
+  },
+  {
+   "id": "jd_021",
+   "profile": "mobile_dev",
+   "category": "tech",
+   "level": "junior",
+   "path": "jds/jd_021_mobile_dev_junior.txt",
+   "format": "prose",
+   "tags": [
+    "work_authorization"
+   ],
+   "meta": {
+    "title": "Junior Mobile Developer",
+    "company": "Orbital Freight",
+    "city": "London",
+    "country": "the United Kingdom"
+   }
+  },
+  {
+   "id": "jd_022",
+   "profile": "mobile_dev",
+   "category": "tech",
+   "level": "mid",
+   "path": "jds/jd_022_mobile_dev_mid.txt",
+   "format": "portal_paste",
+   "tags": [
+    "work_authorization",
+    "relocation_notice"
+   ],
+   "meta": {
+    "title": "Mobile Engineer",
+    "company": "Thistle Security",
+    "city": "New York, NY",
+    "country": "the United States"
+   }
+  },
+  {
+   "id": "jd_023",
+   "profile": "mobile_dev",
+   "category": "tech",
+   "level": "senior",
+   "path": "jds/jd_023_mobile_dev_senior.txt",
+   "format": "prose",
+   "tags": [
+    "relocation_notice",
+    "travel",
+    "jd_prompt_injection"
+   ],
+   "meta": {
+    "title": "Senior Mobile Engineer",
+    "company": "Thistle Security",
+    "city": "Manchester",
+    "country": "the United Kingdom"
+   }
+  },
+  {
+   "id": "jd_024",
+   "profile": "mobile_dev",
+   "category": "tech",
+   "level": "lead",
+   "path": "jds/jd_024_mobile_dev_lead.txt",
+   "format": "structured",
+   "tags": [
+    "work_authorization"
+   ],
+   "meta": {
+    "title": "Mobile Engineering Lead",
+    "company": "Driftwood Travel",
+    "city": "Singapore",
+    "country": "Singapore"
+   }
+  },
+  {
+   "id": "jd_025",
+   "profile": "qa_automation",
+   "category": "tech",
+   "level": "junior",
+   "path": "jds/jd_025_qa_automation_junior.txt",
+   "format": "structured",
+   "tags": [
+    "relocation_notice"
+   ],
+   "meta": {
+    "title": "QA Engineer",
+    "company": "Kestrel Retail",
+    "city": "Pune",
+    "country": "India"
+   }
+  },
+  {
+   "id": "jd_026",
+   "profile": "qa_automation",
+   "category": "tech",
+   "level": "mid",
+   "path": "jds/jd_026_qa_automation_mid.txt",
+   "format": "prose",
+   "tags": [
+    "work_authorization"
+   ],
+   "meta": {
+    "title": "QA Automation Engineer",
+    "company": "Granite Works",
+    "city": "Toronto",
+    "country": "Canada"
+   }
+  },
+  {
+   "id": "jd_027",
+   "profile": "qa_automation",
+   "category": "tech",
+   "level": "senior",
+   "path": "jds/jd_027_qa_automation_senior.txt",
+   "format": "structured",
+   "tags": [],
+   "meta": {
+    "title": "Senior SDET",
+    "company": "Northwind Labs",
+    "city": "Manchester",
+    "country": "the United Kingdom"
+   }
+  },
+  {
+   "id": "jd_028",
+   "profile": "qa_automation",
+   "category": "tech",
+   "level": "lead",
+   "path": "jds/jd_028_qa_automation_lead.txt",
+   "format": "portal_paste",
+   "tags": [],
+   "meta": {
+    "title": "QA Lead",
+    "company": "Riverstone Partners",
+    "city": "Austin, TX",
+    "country": "the United States"
+   }
+  },
+  {
+   "id": "jd_029",
+   "profile": "security_engineer",
+   "category": "tech",
+   "level": "junior",
+   "path": "jds/jd_029_security_engineer_junior.pdf",
+   "format": "pdf",
+   "tags": [
+    "relocation_notice"
+   ],
+   "meta": {
+    "title": "Security Analyst",
+    "company": "Orbital Freight",
+    "city": "Pune",
+    "country": "India"
+   }
+  },
+  {
+   "id": "jd_030",
+   "profile": "security_engineer",
+   "category": "tech",
+   "level": "mid",
+   "path": "jds/jd_030_security_engineer_mid.txt",
+   "format": "structured",
+   "tags": [
+    "work_authorization",
+    "relocation_notice"
+   ],
+   "meta": {
+    "title": "Security Engineer",
+    "company": "Foxglove Pharma",
+    "city": "Bengaluru",
+    "country": "India"
+   }
+  },
+  {
+   "id": "jd_031",
+   "profile": "security_engineer",
+   "category": "tech",
+   "level": "senior",
+   "path": "jds/jd_031_security_engineer_senior.txt",
+   "format": "structured",
+   "tags": [
+    "work_authorization"
+   ],
+   "meta": {
+    "title": "Senior Security Engineer",
+    "company": "Maple Grid Energy",
+    "city": "Singapore",
+    "country": "Singapore"
+   }
+  },
+  {
+   "id": "jd_032",
+   "profile": "security_engineer",
+   "category": "tech",
+   "level": "lead",
+   "path": "jds/jd_032_security_engineer_lead.txt",
+   "format": "portal_paste",
+   "tags": [],
+   "meta": {
+    "title": "Security Engineering Lead",
+    "company": "Cedar & Pike",
+    "city": "Singapore",
+    "country": "Singapore"
+   }
+  },
+  {
+   "id": "jd_033",
+   "profile": "sales_ae",
+   "category": "non_tech",
+   "level": "junior",
+   "path": "jds/jd_033_sales_ae_junior.txt",
+   "format": "structured",
+   "tags": [],
+   "meta": {
+    "title": "Sales Development Representative",
+    "company": "Harbor Health",
+    "city": "Manchester",
+    "country": "the United Kingdom"
+   }
+  },
+  {
+   "id": "jd_034",
+   "profile": "sales_ae",
+   "category": "non_tech",
+   "level": "mid",
+   "path": "jds/jd_034_sales_ae_mid.txt",
+   "format": "prose",
+   "tags": [
+    "work_authorization"
+   ],
+   "meta": {
+    "title": "Account Executive",
+    "company": "Pinecrest Schools",
+    "city": "Sydney",
+    "country": "Australia"
+   }
+  },
+  {
+   "id": "jd_035",
+   "profile": "sales_ae",
+   "category": "non_tech",
+   "level": "senior",
+   "path": "jds/jd_035_sales_ae_senior.txt",
+   "format": "portal_paste",
+   "tags": [],
+   "meta": {
+    "title": "Senior Account Executive",
+    "company": "Oakhaven Hospital",
+    "city": "Singapore",
+    "country": "Singapore"
+   }
+  },
+  {
+   "id": "jd_036",
+   "profile": "sales_ae",
+   "category": "non_tech",
+   "level": "lead",
+   "path": "jds/jd_036_sales_ae_lead.txt",
+   "format": "portal_paste",
+   "tags": [],
+   "meta": {
+    "title": "Enterprise Sales Lead",
+    "company": "Kestrel Retail",
+    "city": "Berlin",
+    "country": "Germany"
+   }
+  },
+  {
+   "id": "jd_037",
+   "profile": "digital_marketing",
+   "category": "non_tech",
+   "level": "junior",
+   "path": "jds/jd_037_digital_marketing_junior.txt",
+   "format": "structured",
+   "tags": [
+    "travel"
+   ],
+   "meta": {
+    "title": "Marketing Coordinator",
+    "company": "Maple Grid Energy",
+    "city": "Singapore",
+    "country": "Singapore"
+   }
+  },
+  {
+   "id": "jd_038",
+   "profile": "digital_marketing",
+   "category": "non_tech",
+   "level": "mid",
+   "path": "jds/jd_038_digital_marketing_mid.txt",
+   "format": "structured",
+   "tags": [],
+   "meta": {
+    "title": "Digital Marketing Specialist",
+    "company": "Kestrel Retail",
+    "city": "London",
+    "country": "the United Kingdom"
+   }
+  },
+  {
+   "id": "jd_039",
+   "profile": "digital_marketing",
+   "category": "non_tech",
+   "level": "senior",
+   "path": "jds/jd_039_digital_marketing_senior.pdf",
+   "format": "pdf",
+   "tags": [
+    "relocation_notice"
+   ],
+   "meta": {
+    "title": "Senior Digital Marketing Manager",
+    "company": "Juniper Learning",
+    "city": "Toronto",
+    "country": "Canada"
+   }
+  },
+  {
+   "id": "jd_040",
+   "profile": "digital_marketing",
+   "category": "non_tech",
+   "level": "lead",
+   "path": "jds/jd_040_digital_marketing_lead.txt",
+   "format": "structured",
+   "tags": [],
+   "meta": {
+    "title": "Head of Growth Marketing",
+    "company": "Juniper Learning",
+    "city": "Bengaluru",
+    "country": "India"
+   }
+  },
+  {
+   "id": "jd_041",
+   "profile": "hr_recruiter",
+   "category": "non_tech",
+   "level": "junior",
+   "path": "jds/jd_041_hr_recruiter_junior.txt",
+   "format": "prose",
+   "tags": [
+    "discriminatory_requirement"
+   ],
+   "meta": {
+    "title": "Recruiting Coordinator",
+    "company": "Wrenfield Capital",
+    "city": "Toronto",
+    "country": "Canada"
+   }
+  },
+  {
+   "id": "jd_042",
+   "profile": "hr_recruiter",
+   "category": "non_tech",
+   "level": "mid",
+   "path": "jds/jd_042_hr_recruiter_mid.txt",
+   "format": "prose",
+   "tags": [],
+   "meta": {
+    "title": "Talent Acquisition Specialist",
+    "company": "Tidewater Bank",
+    "city": "Sydney",
+    "country": "Australia"
+   }
+  },
+  {
+   "id": "jd_043",
+   "profile": "hr_recruiter",
+   "category": "non_tech",
+   "level": "senior",
+   "path": "jds/jd_043_hr_recruiter_senior.txt",
+   "format": "structured",
+   "tags": [],
+   "meta": {
+    "title": "Senior Technical Recruiter",
+    "company": "Pinecrest Schools",
+    "city": "Pune",
+    "country": "India"
+   }
+  },
+  {
+   "id": "jd_044",
+   "profile": "hr_recruiter",
+   "category": "non_tech",
+   "level": "lead",
+   "path": "jds/jd_044_hr_recruiter_lead.txt",
+   "format": "structured",
+   "tags": [],
+   "meta": {
+    "title": "Talent Acquisition Lead",
+    "company": "Granite Works",
+    "city": "Bengaluru",
+    "country": "India"
+   }
+  },
+  {
+   "id": "jd_045",
+   "profile": "accountant",
+   "category": "non_tech",
+   "level": "junior",
+   "path": "jds/jd_045_accountant_junior.txt",
+   "format": "prose",
+   "tags": [],
+   "meta": {
+    "title": "Junior Accountant",
+    "company": "Larkspur Logistics",
+    "city": "Bengaluru",
+    "country": "India"
+   }
+  },
+  {
+   "id": "jd_046",
+   "profile": "accountant",
+   "category": "non_tech",
+   "level": "mid",
+   "path": "jds/jd_046_accountant_mid.txt",
+   "format": "prose",
+   "tags": [
+    "work_authorization",
+    "relocation_notice",
+    "travel"
+   ],
+   "meta": {
+    "title": "Staff Accountant",
+    "company": "Tidewater Bank",
+    "city": "Sydney",
+    "country": "Australia"
+   }
+  },
+  {
+   "id": "jd_047",
+   "profile": "accountant",
+   "category": "non_tech",
+   "level": "senior",
+   "path": "jds/jd_047_accountant_senior.txt",
+   "format": "structured",
+   "tags": [],
+   "meta": {
+    "title": "Senior Accountant",
+    "company": "Pinecrest Schools",
+    "city": "Singapore",
+    "country": "Singapore"
+   }
+  },
+  {
+   "id": "jd_048",
+   "profile": "accountant",
+   "category": "non_tech",
+   "level": "lead",
+   "path": "jds/jd_048_accountant_lead.txt",
+   "format": "structured",
+   "tags": [
+    "relocation_notice"
+   ],
+   "meta": {
+    "title": "Accounting Manager",
+    "company": "Ironleaf Foods",
+    "city": "Austin, TX",
+    "country": "the United States"
+   }
+  },
+  {
+   "id": "jd_049",
+   "profile": "customer_support",
+   "category": "non_tech",
+   "level": "junior",
+   "path": "jds/jd_049_customer_support_junior.pdf",
+   "format": "pdf",
+   "tags": [
+    "relocation_notice"
+   ],
+   "meta": {
+    "title": "Customer Support Associate",
+    "company": "Meridian Consulting",
+    "city": "Toronto",
+    "country": "Canada"
+   }
+  },
+  {
+   "id": "jd_050",
+   "profile": "customer_support",
+   "category": "non_tech",
+   "level": "mid",
+   "path": "jds/jd_050_customer_support_mid.pdf",
+   "format": "pdf",
+   "tags": [
+    "work_authorization",
+    "travel"
+   ],
+   "meta": {
+    "title": "Customer Support Specialist",
+    "company": "Solstice Media",
+    "city": "Bengaluru",
+    "country": "India"
+   }
+  },
+  {
+   "id": "jd_051",
+   "profile": "customer_support",
+   "category": "non_tech",
+   "level": "senior",
+   "path": "jds/jd_051_customer_support_senior.txt",
+   "format": "structured",
+   "tags": [],
+   "meta": {
+    "title": "Senior Customer Success Manager",
+    "company": "Riverstone Partners",
+    "city": "New York, NY",
+    "country": "the United States"
+   }
+  },
+  {
+   "id": "jd_052",
+   "profile": "customer_support",
+   "category": "non_tech",
+   "level": "lead",
+   "path": "jds/jd_052_customer_support_lead.txt",
+   "format": "structured",
+   "tags": [],
+   "meta": {
+    "title": "Customer Support Team Lead",
+    "company": "Lumen Analytics",
+    "city": "London",
+    "country": "the United Kingdom"
+   }
+  },
+  {
+   "id": "jd_053",
+   "profile": "content_writer",
+   "category": "non_tech",
+   "level": "junior",
+   "path": "jds/jd_053_content_writer_junior.txt",
+   "format": "portal_paste",
+   "tags": [
+    "travel"
+   ],
+   "meta": {
+    "title": "Content Writer",
+    "company": "Harbor Health",
+    "city": "Austin, TX",
+    "country": "the United States"
+   }
+  },
+  {
+   "id": "jd_054",
+   "profile": "content_writer",
+   "category": "non_tech",
+   "level": "mid",
+   "path": "jds/jd_054_content_writer_mid.txt",
+   "format": "structured",
+   "tags": [],
+   "meta": {
+    "title": "Content Marketing Specialist",
+    "company": "Quarry Software",
+    "city": "Berlin",
+    "country": "Germany"
+   }
+  },
+  {
+   "id": "jd_055",
+   "profile": "content_writer",
+   "category": "non_tech",
+   "level": "senior",
+   "path": "jds/jd_055_content_writer_senior.txt",
+   "format": "prose",
+   "tags": [],
+   "meta": {
+    "title": "Senior Content Strategist",
+    "company": "Solstice Media",
+    "city": "Manchester",
+    "country": "the United Kingdom"
+   }
+  },
+  {
+   "id": "jd_056",
+   "profile": "content_writer",
+   "category": "non_tech",
+   "level": "lead",
+   "path": "jds/jd_056_content_writer_lead.txt",
+   "format": "portal_paste",
+   "tags": [
+    "work_authorization",
+    "relocation_notice"
+   ],
+   "meta": {
+    "title": "Head of Content",
+    "company": "Foxglove Pharma",
+    "city": "Austin, TX",
+    "country": "the United States"
+   }
+  },
+  {
+   "id": "jd_057",
+   "profile": "registered_nurse",
+   "category": "non_tech",
+   "level": "junior",
+   "path": "jds/jd_057_registered_nurse_junior.txt",
+   "format": "prose",
+   "tags": [
+    "license_knockout",
+    "work_authorization",
+    "relocation_notice"
+   ],
+   "meta": {
+    "title": "Graduate Nurse",
+    "company": "Larkspur Logistics",
+    "city": "New York, NY",
+    "country": "the United States"
+   }
+  },
+  {
+   "id": "jd_058",
+   "profile": "registered_nurse",
+   "category": "non_tech",
+   "level": "mid",
+   "path": "jds/jd_058_registered_nurse_mid.txt",
+   "format": "structured",
+   "tags": [
+    "license_knockout",
+    "relocation_notice",
+    "travel"
+   ],
+   "meta": {
+    "title": "Registered Nurse",
+    "company": "Solstice Media",
+    "city": "Sydney",
+    "country": "Australia"
+   }
+  },
+  {
+   "id": "jd_059",
+   "profile": "registered_nurse",
+   "category": "non_tech",
+   "level": "senior",
+   "path": "jds/jd_059_registered_nurse_senior.txt",
+   "format": "portal_paste",
+   "tags": [
+    "license_knockout"
+   ],
+   "meta": {
+    "title": "Senior Registered Nurse",
+    "company": "Oakhaven Hospital",
+    "city": "Singapore",
+    "country": "Singapore"
+   }
+  },
+  {
+   "id": "jd_060",
+   "profile": "registered_nurse",
+   "category": "non_tech",
+   "level": "lead",
+   "path": "jds/jd_060_registered_nurse_lead.txt",
+   "format": "portal_paste",
+   "tags": [
+    "license_knockout",
+    "work_authorization",
+    "relocation_notice"
+   ],
+   "meta": {
+    "title": "Nurse Unit Manager",
+    "company": "Saffron Kitchens",
+    "city": "New York, NY",
+    "country": "the United States"
+   }
+  },
+  {
+   "id": "jd_061",
+   "profile": "supply_chain",
+   "category": "non_tech",
+   "level": "junior",
+   "path": "jds/jd_061_supply_chain_junior.txt",
+   "format": "prose",
+   "tags": [],
+   "meta": {
+    "title": "Supply Chain Coordinator",
+    "company": "Cedar & Pike",
+    "city": "Berlin",
+    "country": "Germany"
+   }
+  },
+  {
+   "id": "jd_062",
+   "profile": "supply_chain",
+   "category": "non_tech",
+   "level": "mid",
+   "path": "jds/jd_062_supply_chain_mid.txt",
+   "format": "structured",
+   "tags": [],
+   "meta": {
+    "title": "Supply Chain Analyst",
+    "company": "Granite Works",
+    "city": "Austin, TX",
+    "country": "the United States"
+   }
+  },
+  {
+   "id": "jd_063",
+   "profile": "supply_chain",
+   "category": "non_tech",
+   "level": "senior",
+   "path": "jds/jd_063_supply_chain_senior.txt",
+   "format": "structured",
+   "tags": [],
+   "meta": {
+    "title": "Senior Supply Chain Planner",
+    "company": "Kestrel Retail",
+    "city": "Bengaluru",
+    "country": "India"
+   }
+  },
+  {
+   "id": "jd_064",
+   "profile": "supply_chain",
+   "category": "non_tech",
+   "level": "lead",
+   "path": "jds/jd_064_supply_chain_lead.txt",
+   "format": "structured",
+   "tags": [
+    "travel"
+   ],
+   "meta": {
+    "title": "Supply Chain Lead",
+    "company": "Helix Robotics",
+    "city": "Pune",
+    "country": "India"
+   }
+  },
+  {
+   "id": "jd_065",
+   "profile": "engineering_manager",
+   "category": "manager",
+   "level": "junior",
+   "path": "jds/jd_065_engineering_manager_junior.txt",
+   "format": "structured",
+   "tags": [],
+   "meta": {
+    "title": "Engineering Team Lead",
+    "company": "Juniper Learning",
+    "city": "Manchester",
+    "country": "the United Kingdom"
+   }
+  },
+  {
+   "id": "jd_066",
+   "profile": "engineering_manager",
+   "category": "manager",
+   "level": "mid",
+   "path": "jds/jd_066_engineering_manager_mid.pdf",
+   "format": "pdf",
+   "tags": [
+    "relocation_notice"
+   ],
+   "meta": {
+    "title": "Engineering Manager",
+    "company": "Juniper Learning",
+    "city": "Sydney",
+    "country": "Australia"
+   }
+  },
+  {
+   "id": "jd_067",
+   "profile": "engineering_manager",
+   "category": "manager",
+   "level": "senior",
+   "path": "jds/jd_067_engineering_manager_senior.txt",
+   "format": "structured",
+   "tags": [
+    "work_authorization"
+   ],
+   "meta": {
+    "title": "Senior Engineering Manager",
+    "company": "Solstice Media",
+    "city": "Singapore",
+    "country": "Singapore"
+   }
+  },
+  {
+   "id": "jd_068",
+   "profile": "engineering_manager",
+   "category": "manager",
+   "level": "lead",
+   "path": "jds/jd_068_engineering_manager_lead.txt",
+   "format": "structured",
+   "tags": [
+    "relocation_notice"
+   ],
+   "meta": {
+    "title": "Director of Engineering",
+    "company": "Maple Grid Energy",
+    "city": "Singapore",
+    "country": "Singapore"
+   }
+  },
+  {
+   "id": "jd_069",
+   "profile": "product_manager",
+   "category": "manager",
+   "level": "junior",
+   "path": "jds/jd_069_product_manager_junior.txt",
+   "format": "structured",
+   "tags": [
+    "relocation_notice"
+   ],
+   "meta": {
+    "title": "Associate Product Manager",
+    "company": "Vantage Mobility",
+    "city": "Austin, TX",
+    "country": "the United States"
+   }
+  },
+  {
+   "id": "jd_070",
+   "profile": "product_manager",
+   "category": "manager",
+   "level": "mid",
+   "path": "jds/jd_070_product_manager_mid.txt",
+   "format": "portal_paste",
+   "tags": [
+    "relocation_notice",
+    "travel"
+   ],
+   "meta": {
+    "title": "Product Manager",
+    "company": "Tidewater Bank",
+    "city": "New York, NY",
+    "country": "the United States"
+   }
+  },
+  {
+   "id": "jd_071",
+   "profile": "product_manager",
+   "category": "manager",
+   "level": "senior",
+   "path": "jds/jd_071_product_manager_senior.txt",
+   "format": "prose",
+   "tags": [],
+   "meta": {
+    "title": "Senior Product Manager",
+    "company": "Kestrel Retail",
+    "city": "Singapore",
+    "country": "Singapore"
+   }
+  },
+  {
+   "id": "jd_072",
+   "profile": "product_manager",
+   "category": "manager",
+   "level": "lead",
+   "path": "jds/jd_072_product_manager_lead.pdf",
+   "format": "pdf",
+   "tags": [
+    "work_authorization"
+   ],
+   "meta": {
+    "title": "Group Product Manager",
+    "company": "Everpeak Insurance",
+    "city": "New York, NY",
+    "country": "the United States"
+   }
+  },
+  {
+   "id": "jd_073",
+   "profile": "project_manager",
+   "category": "manager",
+   "level": "junior",
+   "path": "jds/jd_073_project_manager_junior.txt",
+   "format": "prose",
+   "tags": [
+    "work_authorization",
+    "relocation_notice"
+   ],
+   "meta": {
+    "title": "Project Coordinator",
+    "company": "Wrenfield Capital",
+    "city": "Sydney",
+    "country": "Australia"
+   }
+  },
+  {
+   "id": "jd_074",
+   "profile": "project_manager",
+   "category": "manager",
+   "level": "mid",
+   "path": "jds/jd_074_project_manager_mid.pdf",
+   "format": "pdf",
+   "tags": [
+    "work_authorization",
+    "relocation_notice"
+   ],
+   "meta": {
+    "title": "Project Manager",
+    "company": "Maple Grid Energy",
+    "city": "London",
+    "country": "the United Kingdom"
+   }
+  },
+  {
+   "id": "jd_075",
+   "profile": "project_manager",
+   "category": "manager",
+   "level": "senior",
+   "path": "jds/jd_075_project_manager_senior.txt",
+   "format": "portal_paste",
+   "tags": [
+    "relocation_notice"
+   ],
+   "meta": {
+    "title": "Senior Project Manager",
+    "company": "Thistle Security",
+    "city": "Pune",
+    "country": "India"
+   }
+  },
+  {
+   "id": "jd_076",
+   "profile": "project_manager",
+   "category": "manager",
+   "level": "lead",
+   "path": "jds/jd_076_project_manager_lead.txt",
+   "format": "portal_paste",
+   "tags": [],
+   "meta": {
+    "title": "Program Manager",
+    "company": "Vantage Mobility",
+    "city": "Berlin",
+    "country": "Germany"
+   }
+  },
+  {
+   "id": "jd_077",
+   "profile": "operations_manager",
+   "category": "manager",
+   "level": "junior",
+   "path": "jds/jd_077_operations_manager_junior.txt",
+   "format": "structured",
+   "tags": [
+    "discriminatory_requirement"
+   ],
+   "meta": {
+    "title": "Operations Supervisor",
+    "company": "Northwind Labs",
+    "city": "Toronto",
+    "country": "Canada"
+   }
+  },
+  {
+   "id": "jd_078",
+   "profile": "operations_manager",
+   "category": "manager",
+   "level": "mid",
+   "path": "jds/jd_078_operations_manager_mid.txt",
+   "format": "structured",
+   "tags": [
+    "work_authorization",
+    "relocation_notice"
+   ],
+   "meta": {
+    "title": "Operations Manager",
+    "company": "Riverstone Partners",
+    "city": "Manchester",
+    "country": "the United Kingdom"
+   }
+  },
+  {
+   "id": "jd_079",
+   "profile": "operations_manager",
+   "category": "manager",
+   "level": "senior",
+   "path": "jds/jd_079_operations_manager_senior.txt",
+   "format": "structured",
+   "tags": [],
+   "meta": {
+    "title": "Senior Operations Manager",
+    "company": "Tidewater Bank",
+    "city": "Singapore",
+    "country": "Singapore"
+   }
+  },
+  {
+   "id": "jd_080",
+   "profile": "operations_manager",
+   "category": "manager",
+   "level": "lead",
+   "path": "jds/jd_080_operations_manager_lead.txt",
+   "format": "prose",
+   "tags": [],
+   "meta": {
+    "title": "Head of Operations",
+    "company": "Northwind Labs",
+    "city": "Austin, TX",
+    "country": "the United States"
+   }
+  },
+  {
+   "id": "jd_081",
+   "profile": "management_consultant",
+   "category": "mba",
+   "level": "junior",
+   "path": "jds/jd_081_management_consultant_junior.txt",
+   "format": "prose",
+   "tags": [
+    "work_authorization",
+    "must_avoid"
+   ],
+   "meta": {
+    "title": "Business Analyst (Consulting)",
+    "company": "Foxglove Pharma",
+    "city": "Sydney",
+    "country": "Australia"
+   }
+  },
+  {
+   "id": "jd_082",
+   "profile": "management_consultant",
+   "category": "mba",
+   "level": "mid",
+   "path": "jds/jd_082_management_consultant_mid.pdf",
+   "format": "pdf",
+   "tags": [
+    "work_authorization",
+    "must_avoid"
+   ],
+   "meta": {
+    "title": "Consultant",
+    "company": "Oakhaven Hospital",
+    "city": "Bengaluru",
+    "country": "India"
+   }
+  },
+  {
+   "id": "jd_083",
+   "profile": "management_consultant",
+   "category": "mba",
+   "level": "senior",
+   "path": "jds/jd_083_management_consultant_senior.txt",
+   "format": "structured",
+   "tags": [
+    "relocation_notice",
+    "must_avoid"
+   ],
+   "meta": {
+    "title": "Senior Consultant",
+    "company": "Ironleaf Foods",
+    "city": "Pune",
+    "country": "India"
+   }
+  },
+  {
+   "id": "jd_084",
+   "profile": "management_consultant",
+   "category": "mba",
+   "level": "lead",
+   "path": "jds/jd_084_management_consultant_lead.txt",
+   "format": "prose",
+   "tags": [
+    "must_avoid"
+   ],
+   "meta": {
+    "title": "Engagement Manager",
+    "company": "Bluefin Systems",
+    "city": "Pune",
+    "country": "India"
+   }
+  },
+  {
+   "id": "jd_085",
+   "profile": "strategy_bizops",
+   "category": "mba",
+   "level": "junior",
+   "path": "jds/jd_085_strategy_bizops_junior.txt",
+   "format": "portal_paste",
+   "tags": [],
+   "meta": {
+    "title": "Business Operations Analyst",
+    "company": "Ironleaf Foods",
+    "city": "Toronto",
+    "country": "Canada"
+   }
+  },
+  {
+   "id": "jd_086",
+   "profile": "strategy_bizops",
+   "category": "mba",
+   "level": "mid",
+   "path": "jds/jd_086_strategy_bizops_mid.txt",
+   "format": "structured",
+   "tags": [],
+   "meta": {
+    "title": "Strategy & Operations Associate",
+    "company": "Quarry Software",
+    "city": "Singapore",
+    "country": "Singapore"
+   }
+  },
+  {
+   "id": "jd_087",
+   "profile": "strategy_bizops",
+   "category": "mba",
+   "level": "senior",
+   "path": "jds/jd_087_strategy_bizops_senior.pdf",
+   "format": "pdf",
+   "tags": [
+    "work_authorization"
+   ],
+   "meta": {
+    "title": "Senior Strategy Manager",
+    "company": "Pinecrest Schools",
+    "city": "London",
+    "country": "the United Kingdom"
+   }
+  },
+  {
+   "id": "jd_088",
+   "profile": "strategy_bizops",
+   "category": "mba",
+   "level": "lead",
+   "path": "jds/jd_088_strategy_bizops_lead.txt",
+   "format": "portal_paste",
+   "tags": [
+    "jd_prompt_injection"
+   ],
+   "meta": {
+    "title": "Head of Strategy & Business Operations",
+    "company": "Pinecrest Schools",
+    "city": "Sydney",
+    "country": "Australia"
+   }
+  },
+  {
+   "id": "jd_089",
+   "profile": "finance_ib",
+   "category": "mba",
+   "level": "junior",
+   "path": "jds/jd_089_finance_ib_junior.txt",
+   "format": "portal_paste",
+   "tags": [
+    "work_authorization"
+   ],
+   "meta": {
+    "title": "Investment Banking Analyst",
+    "company": "Everpeak Insurance",
+    "city": "London",
+    "country": "the United Kingdom"
+   }
+  },
+  {
+   "id": "jd_090",
+   "profile": "finance_ib",
+   "category": "mba",
+   "level": "mid",
+   "path": "jds/jd_090_finance_ib_mid.txt",
+   "format": "structured",
+   "tags": [
+    "relocation_notice"
+   ],
+   "meta": {
+    "title": "Investment Banking Associate",
+    "company": "Lumen Analytics",
+    "city": "London",
+    "country": "the United Kingdom"
+   }
+  },
+  {
+   "id": "jd_091",
+   "profile": "finance_ib",
+   "category": "mba",
+   "level": "senior",
+   "path": "jds/jd_091_finance_ib_senior.txt",
+   "format": "structured",
+   "tags": [
+    "relocation_notice",
+    "travel"
+   ],
+   "meta": {
+    "title": "Vice President, Investment Banking",
+    "company": "Vantage Mobility",
+    "city": "Austin, TX",
+    "country": "the United States"
+   }
+  },
+  {
+   "id": "jd_092",
+   "profile": "finance_ib",
+   "category": "mba",
+   "level": "lead",
+   "path": "jds/jd_092_finance_ib_lead.txt",
+   "format": "structured",
+   "tags": [],
+   "meta": {
+    "title": "Director, Corporate Development",
+    "company": "Parallax Games",
+    "city": "Pune",
+    "country": "India"
+   }
+  },
+  {
+   "id": "jd_093",
+   "profile": "brand_manager",
+   "category": "mba",
+   "level": "junior",
+   "path": "jds/jd_093_brand_manager_junior.txt",
+   "format": "structured",
+   "tags": [
+    "work_authorization"
+   ],
+   "meta": {
+    "title": "Assistant Brand Manager",
+    "company": "Ironleaf Foods",
+    "city": "Sydney",
+    "country": "Australia"
+   }
+  },
+  {
+   "id": "jd_094",
+   "profile": "brand_manager",
+   "category": "mba",
+   "level": "mid",
+   "path": "jds/jd_094_brand_manager_mid.txt",
+   "format": "structured",
+   "tags": [
+    "relocation_notice"
+   ],
+   "meta": {
+    "title": "Brand Manager",
+    "company": "Larkspur Logistics",
+    "city": "Manchester",
+    "country": "the United Kingdom"
+   }
+  },
+  {
+   "id": "jd_095",
+   "profile": "brand_manager",
+   "category": "mba",
+   "level": "senior",
+   "path": "jds/jd_095_brand_manager_senior.txt",
+   "format": "portal_paste",
+   "tags": [
+    "work_authorization"
+   ],
+   "meta": {
+    "title": "Senior Brand Manager",
+    "company": "Everpeak Insurance",
+    "city": "Toronto",
+    "country": "Canada"
+   }
+  },
+  {
+   "id": "jd_096",
+   "profile": "brand_manager",
+   "category": "mba",
+   "level": "lead",
+   "path": "jds/jd_096_brand_manager_lead.pdf",
+   "format": "pdf",
+   "tags": [],
+   "meta": {
+    "title": "Marketing Director (Brand)",
+    "company": "Everpeak Insurance",
+    "city": "New York, NY",
+    "country": "the United States"
+   }
+  },
+  {
+   "id": "jd_097",
+   "profile": "ux_designer",
+   "category": "other",
+   "level": "junior",
+   "path": "jds/jd_097_ux_designer_junior.txt",
+   "format": "structured",
+   "tags": [
+    "work_authorization",
+    "travel"
+   ],
+   "meta": {
+    "title": "Junior Product Designer",
+    "company": "Meridian Consulting",
+    "city": "Austin, TX",
+    "country": "the United States"
+   }
+  },
+  {
+   "id": "jd_098",
+   "profile": "ux_designer",
+   "category": "other",
+   "level": "mid",
+   "path": "jds/jd_098_ux_designer_mid.pdf",
+   "format": "pdf",
+   "tags": [],
+   "meta": {
+    "title": "Product Designer",
+    "company": "Nimbus Cloud",
+    "city": "Singapore",
+    "country": "Singapore"
+   }
+  },
+  {
+   "id": "jd_099",
+   "profile": "ux_designer",
+   "category": "other",
+   "level": "senior",
+   "path": "jds/jd_099_ux_designer_senior.txt",
+   "format": "structured",
+   "tags": [],
+   "meta": {
+    "title": "Senior Product Designer",
+    "company": "Wrenfield Capital",
+    "city": "Toronto",
+    "country": "Canada"
+   }
+  },
+  {
+   "id": "jd_100",
+   "profile": "ux_designer",
+   "category": "other",
+   "level": "lead",
+   "path": "jds/jd_100_ux_designer_lead.txt",
+   "format": "portal_paste",
+   "tags": [
+    "travel"
+   ],
+   "meta": {
+    "title": "Design Lead",
+    "company": "Copperline Telecom",
+    "city": "New York, NY",
+    "country": "the United States"
+   }
+  },
+  {
+   "id": "jd_101",
+   "profile": "teacher",
+   "category": "other",
+   "level": "junior",
+   "path": "jds/jd_101_teacher_junior.txt",
+   "format": "structured",
+   "tags": [
+    "license_knockout",
+    "work_authorization",
+    "relocation_notice"
+   ],
+   "meta": {
+    "title": "Teaching Assistant",
+    "company": "Juniper Learning",
+    "city": "Manchester",
+    "country": "the United Kingdom"
+   }
+  },
+  {
+   "id": "jd_102",
+   "profile": "teacher",
+   "category": "other",
+   "level": "mid",
+   "path": "jds/jd_102_teacher_mid.txt",
+   "format": "structured",
+   "tags": [
+    "license_knockout"
+   ],
+   "meta": {
+    "title": "Secondary Math Teacher",
+    "company": "Ironleaf Foods",
+    "city": "New York, NY",
+    "country": "the United States"
+   }
+  },
+  {
+   "id": "jd_103",
+   "profile": "teacher",
+   "category": "other",
+   "level": "senior",
+   "path": "jds/jd_103_teacher_senior.txt",
+   "format": "structured",
+   "tags": [
+    "license_knockout"
+   ],
+   "meta": {
+    "title": "Senior Math Teacher",
+    "company": "Saffron Kitchens",
+    "city": "Pune",
+    "country": "India"
+   }
+  },
+  {
+   "id": "jd_104",
+   "profile": "teacher",
+   "category": "other",
+   "level": "lead",
+   "path": "jds/jd_104_teacher_lead.pdf",
+   "format": "pdf",
+   "tags": [
+    "license_knockout",
+    "relocation_notice"
+   ],
+   "meta": {
+    "title": "Head of Mathematics Department",
+    "company": "Quarry Software",
+    "city": "Sydney",
+    "country": "Australia"
+   }
+  }
+ ],
+ "resumes": [
+  {
+   "id": "cv_001",
+   "profile": "backend_python",
+   "category": "tech",
+   "level": "strong",
+   "path": "resumes/cv_001_backend_python_strong.pdf",
+   "format": "pdf",
+   "tags": [
+    "name_skill_collision"
+   ],
+   "meta": {
+    "name": "Ruby Castellanos",
+    "city": "Sydney",
+    "years": 8.6,
+    "source_profile": "backend_python"
+   }
+  },
+  {
+   "id": "cv_002",
+   "profile": "backend_python",
+   "category": "tech",
+   "level": "mid",
+   "path": "resumes/cv_002_backend_python_mid.pdf",
+   "format": "pdf",
+   "tags": [
+    "sparse"
+   ],
+   "meta": {
+    "name": "Isla Okoye",
+    "city": "Sydney",
+    "years": 4.5,
+    "source_profile": "backend_python"
+   }
+  },
+  {
+   "id": "cv_003",
+   "profile": "backend_python",
+   "category": "tech",
+   "level": "junior",
+   "path": "resumes/cv_003_backend_python_junior.pdf",
+   "format": "pdf",
+   "tags": [],
+   "meta": {
+    "name": "Mateo Lindqvist",
+    "city": "New York, NY",
+    "years": 0.9,
+    "source_profile": "backend_python"
+   }
+  },
+  {
+   "id": "cv_004",
+   "profile": "backend_python",
+   "category": "tech",
+   "level": "switcher",
+   "path": "resumes/cv_004_backend_python_switcher.pdf",
+   "format": "pdf",
+   "tags": [],
+   "meta": {
+    "name": "Tomas Achterberg",
+    "city": "London",
+    "years": 6.7,
+    "source_profile": "data_engineer"
+   }
+  },
+  {
+   "id": "cv_005",
+   "profile": "frontend_react",
+   "category": "tech",
+   "level": "strong",
+   "path": "resumes/cv_005_frontend_react_strong.pdf",
+   "format": "pdf",
+   "tags": [],
+   "meta": {
+    "name": "Maya Delgado",
+    "city": "Pune",
+    "years": 8.3,
+    "source_profile": "frontend_react"
+   }
+  },
+  {
+   "id": "cv_006",
+   "profile": "frontend_react",
+   "category": "tech",
+   "level": "mid",
+   "path": "resumes/cv_006_frontend_react_mid.pdf",
+   "format": "pdf",
+   "tags": [
+    "dotted_dates",
+    "labelled_name"
+   ],
+   "meta": {
+    "name": "Kwame Okoye",
+    "city": "Austin, TX",
+    "years": 3.8,
+    "source_profile": "frontend_react"
+   }
+  },
+  {
+   "id": "cv_007",
+   "profile": "frontend_react",
+   "category": "tech",
+   "level": "junior",
+   "path": "resumes/cv_007_frontend_react_junior.pdf",
+   "format": "pdf",
+   "tags": [
+    "accented_or_particle_name",
+    "prompt_injection"
+   ],
+   "meta": {
+    "name": "Ana de la Cruz",
+    "city": "Manchester",
+    "years": 0.7,
+    "source_profile": "frontend_react"
+   }
+  },
+  {
+   "id": "cv_008",
+   "profile": "frontend_react",
+   "category": "tech",
+   "level": "switcher",
+   "path": "resumes/cv_008_frontend_react_switcher.pdf",
+   "format": "pdf",
+   "tags": [],
+   "meta": {
+    "name": "Lucas Iyer",
+    "city": "Toronto",
+    "years": 5.1,
+    "source_profile": "ux_designer"
+   }
+  },
+  {
+   "id": "cv_009",
+   "profile": "data_engineer",
+   "category": "tech",
+   "level": "strong",
+   "path": "resumes/cv_009_data_engineer_strong.pdf",
+   "format": "pdf",
+   "tags": [
+    "long_multipage"
+   ],
+   "meta": {
+    "name": "Marcus Haddad",
+    "city": "New York, NY",
+    "years": 9.9,
+    "source_profile": "data_engineer"
+   }
+  },
+  {
+   "id": "cv_010",
+   "profile": "data_engineer",
+   "category": "tech",
+   "level": "mid",
+   "path": "resumes/cv_010_data_engineer_mid.pdf",
+   "format": "pdf",
+   "tags": [],
+   "meta": {
+    "name": "Amara Okoye",
+    "city": "Austin, TX",
+    "years": 4.9,
+    "source_profile": "data_engineer"
+   }
+  },
+  {
+   "id": "cv_011",
+   "profile": "data_engineer",
+   "category": "tech",
+   "level": "junior",
+   "path": "resumes/cv_011_data_engineer_junior.pdf",
+   "format": "pdf",
+   "tags": [
+    "name_place_collision"
+   ],
+   "meta": {
+    "name": "Sydney Okafor",
+    "city": "Sydney",
+    "years": 0.7,
+    "source_profile": "data_engineer"
+   }
+  },
+  {
+   "id": "cv_012",
+   "profile": "data_engineer",
+   "category": "tech",
+   "level": "switcher",
+   "path": "resumes/cv_012_data_engineer_switcher.pdf",
+   "format": "pdf",
+   "tags": [],
+   "meta": {
+    "name": "Lucas Novak",
+    "city": "Pune",
+    "years": 6.0,
+    "source_profile": "backend_python"
+   }
+  },
+  {
+   "id": "cv_013",
+   "profile": "ml_engineer",
+   "category": "tech",
+   "level": "strong",
+   "path": "resumes/cv_013_ml_engineer_strong.pdf",
+   "format": "pdf",
+   "tags": [],
+   "meta": {
+    "name": "Nora Hughes",
+    "city": "Toronto",
+    "years": 8.3,
+    "source_profile": "ml_engineer"
+   }
+  },
+  {
+   "id": "cv_014",
+   "profile": "ml_engineer",
+   "category": "tech",
+   "level": "mid",
+   "path": "resumes/cv_014_ml_engineer_mid.pdf",
+   "format": "pdf",
+   "tags": [],
+   "meta": {
+    "name": "Elena Mehta",
+    "city": "Bengaluru",
+    "years": 4.3,
+    "source_profile": "ml_engineer"
+   }
+  },
+  {
+   "id": "cv_015",
+   "profile": "ml_engineer",
+   "category": "tech",
+   "level": "junior",
+   "path": "resumes/cv_015_ml_engineer_junior.pdf",
+   "format": "two_column_pdf",
+   "tags": [
+    "name_place_collision",
+    "two_column"
+   ],
+   "meta": {
+    "name": "Austin Mbeki",
+    "city": "Austin, TX",
+    "years": 0.5,
+    "source_profile": "ml_engineer"
+   }
+  },
+  {
+   "id": "cv_016",
+   "profile": "ml_engineer",
+   "category": "tech",
+   "level": "switcher",
+   "path": "resumes/cv_016_ml_engineer_switcher.pdf",
+   "format": "pdf",
+   "tags": [
+    "keyword_stuffed"
+   ],
+   "meta": {
+    "name": "Sofia Novak",
+    "city": "Bengaluru",
+    "years": 5.1,
+    "source_profile": "data_engineer"
+   }
+  },
+  {
+   "id": "cv_017",
+   "profile": "devops_sre",
+   "category": "tech",
+   "level": "strong",
+   "path": "resumes/cv_017_devops_sre_strong.pdf",
+   "format": "pdf",
+   "tags": [
+    "employment_gap",
+    "long_multipage"
+   ],
+   "meta": {
+    "name": "Elena Iyer",
+    "city": "Austin, TX",
+    "years": 10.9,
+    "source_profile": "devops_sre"
+   }
+  },
+  {
+   "id": "cv_018",
+   "profile": "devops_sre",
+   "category": "tech",
+   "level": "mid",
+   "path": "resumes/cv_018_devops_sre_mid.pdf",
+   "format": "pdf",
+   "tags": [],
+   "meta": {
+    "name": "Maya Sutherland",
+    "city": "Bengaluru",
+    "years": 3.8,
+    "source_profile": "devops_sre"
+   }
+  },
+  {
+   "id": "cv_019",
+   "profile": "devops_sre",
+   "category": "tech",
+   "level": "junior",
+   "path": "resumes/cv_019_devops_sre_junior.pdf",
+   "format": "pdf",
+   "tags": [],
+   "meta": {
+    "name": "Lucas Mehta",
+    "city": "London",
+    "years": 0.7,
+    "source_profile": "devops_sre"
+   }
+  },
+  {
+   "id": "cv_020",
+   "profile": "devops_sre",
+   "category": "tech",
+   "level": "switcher",
+   "path": "resumes/cv_020_devops_sre_switcher.pdf",
+   "format": "pdf",
+   "tags": [],
+   "meta": {
+    "name": "Owen Brennan",
+    "city": "Austin, TX",
+    "years": 6.9,
+    "source_profile": "backend_python"
+   }
+  },
+  {
+   "id": "cv_021",
+   "profile": "mobile_dev",
+   "category": "tech",
+   "level": "strong",
+   "path": "resumes/cv_021_mobile_dev_strong.pdf",
+   "format": "pdf",
+   "tags": [],
+   "meta": {
+    "name": "Yuki Delgado",
+    "city": "Berlin",
+    "years": 8.8,
+    "source_profile": "mobile_dev"
+   }
+  },
+  {
+   "id": "cv_022",
+   "profile": "mobile_dev",
+   "category": "tech",
+   "level": "mid",
+   "path": "resumes/cv_022_mobile_dev_mid.pdf",
+   "format": "two_column_pdf",
+   "tags": [
+    "two_column"
+   ],
+   "meta": {
+    "name": "Felix Fischer",
+    "city": "Sydney",
+    "years": 4.8,
+    "source_profile": "mobile_dev"
+   }
+  },
+  {
+   "id": "cv_023",
+   "profile": "mobile_dev",
+   "category": "tech",
+   "level": "junior",
+   "path": "resumes/cv_023_mobile_dev_junior.pdf",
+   "format": "pdf",
+   "tags": [],
+   "meta": {
+    "name": "Felix Brennan",
+    "city": "Berlin",
+    "years": 0.8,
+    "source_profile": "mobile_dev"
+   }
+  },
+  {
+   "id": "cv_024",
+   "profile": "mobile_dev",
+   "category": "tech",
+   "level": "switcher",
+   "path": "resumes/cv_024_mobile_dev_switcher.pdf",
+   "format": "pdf",
+   "tags": [],
+   "meta": {
+    "name": "Fatima Delgado",
+    "city": "Toronto",
+    "years": 6.2,
+    "source_profile": "frontend_react"
+   }
+  },
+  {
+   "id": "cv_025",
+   "profile": "qa_automation",
+   "category": "tech",
+   "level": "strong",
+   "path": "resumes/cv_025_qa_automation_strong.pdf",
+   "format": "pdf",
+   "tags": [],
+   "meta": {
+    "name": "Elena Haddad",
+    "city": "Pune",
+    "years": 10.8,
+    "source_profile": "qa_automation"
+   }
+  },
+  {
+   "id": "cv_026",
+   "profile": "qa_automation",
+   "category": "tech",
+   "level": "mid",
+   "path": "resumes/cv_026_qa_automation_mid.pdf",
+   "format": "pdf",
+   "tags": [],
+   "meta": {
+    "name": "Sofia Haddad",
+    "city": "Austin, TX",
+    "years": 4.0,
+    "source_profile": "qa_automation"
+   }
+  },
+  {
+   "id": "cv_027",
+   "profile": "qa_automation",
+   "category": "tech",
+   "level": "junior",
+   "path": "resumes/cv_027_qa_automation_junior.pdf",
+   "format": "pdf",
+   "tags": [],
+   "meta": {
+    "name": "Sofia Hughes",
+    "city": "Pune",
+    "years": 1.2,
+    "source_profile": "qa_automation"
+   }
+  },
+  {
+   "id": "cv_028",
+   "profile": "qa_automation",
+   "category": "tech",
+   "level": "switcher",
+   "path": "resumes/cv_028_qa_automation_switcher.pdf",
+   "format": "pdf",
+   "tags": [],
+   "meta": {
+    "name": "Mei Holloway",
+    "city": "Manchester",
+    "years": 5.7,
+    "source_profile": "backend_python"
+   }
+  },
+  {
+   "id": "cv_029",
+   "profile": "security_engineer",
+   "category": "tech",
+   "level": "strong",
+   "path": "resumes/cv_029_security_engineer_strong.pdf",
+   "format": "pdf",
+   "tags": [],
+   "meta": {
+    "name": "Mei Kaur",
+    "city": "Manchester",
+    "years": 9.8,
+    "source_profile": "security_engineer"
+   }
+  },
+  {
+   "id": "cv_030",
+   "profile": "security_engineer",
+   "category": "tech",
+   "level": "mid",
+   "path": "resumes/cv_030_security_engineer_mid.pdf",
+   "format": "two_column_pdf",
+   "tags": [
+    "two_column"
+   ],
+   "meta": {
+    "name": "Ananya Whitaker",
+    "city": "Austin, TX",
+    "years": 4.8,
+    "source_profile": "security_engineer"
+   }
+  },
+  {
+   "id": "cv_031",
+   "profile": "security_engineer",
+   "category": "tech",
+   "level": "junior",
+   "path": "resumes/cv_031_security_engineer_junior.pdf",
+   "format": "pdf",
+   "tags": [],
+   "meta": {
+    "name": "Hana Nguyen",
+    "city": "Berlin",
+    "years": 1.0,
+    "source_profile": "security_engineer"
+   }
+  },
+  {
+   "id": "cv_032",
+   "profile": "security_engineer",
+   "category": "tech",
+   "level": "switcher",
+   "path": "resumes/cv_032_security_engineer_switcher.pdf",
+   "format": "pdf",
+   "tags": [],
+   "meta": {
+    "name": "Ethan Sutherland",
+    "city": "London",
+    "years": 6.5,
+    "source_profile": "devops_sre"
+   }
+  },
+  {
+   "id": "cv_033",
+   "profile": "sales_ae",
+   "category": "non_tech",
+   "level": "strong",
+   "path": "resumes/cv_033_sales_ae_strong.pdf",
+   "format": "pdf",
+   "tags": [],
+   "meta": {
+    "name": "Kwame Novak",
+    "city": "London",
+    "years": 8.3,
+    "source_profile": "sales_ae"
+   }
+  },
+  {
+   "id": "cv_034",
+   "profile": "sales_ae",
+   "category": "non_tech",
+   "level": "mid",
+   "path": "resumes/cv_034_sales_ae_mid.pdf",
+   "format": "pdf",
+   "tags": [],
+   "meta": {
+    "name": "Hana Novak",
+    "city": "Bengaluru",
+    "years": 4.2,
+    "source_profile": "sales_ae"
+   }
+  },
+  {
+   "id": "cv_035",
+   "profile": "sales_ae",
+   "category": "non_tech",
+   "level": "junior",
+   "path": "resumes/cv_035_sales_ae_junior.pdf",
+   "format": "pdf",
+   "tags": [
+    "accented_or_particle_name"
+   ],
+   "meta": {
+    "name": "José Hernández",
+    "city": "Berlin",
+    "years": 1.1,
+    "source_profile": "sales_ae"
+   }
+  },
+  {
+   "id": "cv_036",
+   "profile": "sales_ae",
+   "category": "non_tech",
+   "level": "switcher",
+   "path": "resumes/cv_036_sales_ae_switcher.pdf",
+   "format": "pdf",
+   "tags": [],
+   "meta": {
+    "name": "Ravi Barros",
+    "city": "New York, NY",
+    "years": 5.2,
+    "source_profile": "digital_marketing"
+   }
+  },
+  {
+   "id": "cv_037",
+   "profile": "digital_marketing",
+   "category": "non_tech",
+   "level": "strong",
+   "path": "resumes/cv_037_digital_marketing_strong.pdf",
+   "format": "pdf",
+   "tags": [
+    "employment_gap",
+    "long_multipage"
+   ],
+   "meta": {
+    "name": "Liam Petrov",
+    "city": "Toronto",
+    "years": 10.6,
+    "source_profile": "digital_marketing"
+   }
+  },
+  {
+   "id": "cv_038",
+   "profile": "digital_marketing",
+   "category": "non_tech",
+   "level": "mid",
+   "path": "resumes/cv_038_digital_marketing_mid.pdf",
+   "format": "pdf",
+   "tags": [],
+   "meta": {
+    "name": "Mateo Whitaker",
+    "city": "Manchester",
+    "years": 4.8,
+    "source_profile": "digital_marketing"
+   }
+  },
+  {
+   "id": "cv_039",
+   "profile": "digital_marketing",
+   "category": "non_tech",
+   "level": "junior",
+   "path": "resumes/cv_039_digital_marketing_junior.pdf",
+   "format": "pdf",
+   "tags": [],
+   "meta": {
+    "name": "Priya Tanaka",
+    "city": "Bengaluru",
+    "years": 0.6,
+    "source_profile": "digital_marketing"
+   }
+  },
+  {
+   "id": "cv_040",
+   "profile": "digital_marketing",
+   "category": "non_tech",
+   "level": "switcher",
+   "path": "resumes/cv_040_digital_marketing_switcher.pdf",
+   "format": "pdf",
+   "tags": [],
+   "meta": {
+    "name": "Isla Kowal",
+    "city": "Toronto",
+    "years": 5.0,
+    "source_profile": "content_writer"
+   }
+  },
+  {
+   "id": "cv_041",
+   "profile": "hr_recruiter",
+   "category": "non_tech",
+   "level": "strong",
+   "path": "resumes/cv_041_hr_recruiter_strong.pdf",
+   "format": "pdf",
+   "tags": [],
+   "meta": {
+    "name": "Maya Achterberg",
+    "city": "Singapore",
+    "years": 8.2,
+    "source_profile": "hr_recruiter"
+   }
+  },
+  {
+   "id": "cv_042",
+   "profile": "hr_recruiter",
+   "category": "non_tech",
+   "level": "mid",
+   "path": "resumes/cv_042_hr_recruiter_mid.pdf",
+   "format": "two_column_pdf",
+   "tags": [
+    "labelled_name",
+    "two_column"
+   ],
+   "meta": {
+    "name": "Amara Petrov",
+    "city": "Manchester",
+    "years": 4.1,
+    "source_profile": "hr_recruiter"
+   }
+  },
+  {
+   "id": "cv_043",
+   "profile": "hr_recruiter",
+   "category": "non_tech",
+   "level": "junior",
+   "path": "resumes/cv_043_hr_recruiter_junior.pdf",
+   "format": "pdf",
+   "tags": [],
+   "meta": {
+    "name": "Marcus Whitaker",
+    "city": "Austin, TX",
+    "years": 0.7,
+    "source_profile": "hr_recruiter"
+   }
+  },
+  {
+   "id": "cv_044",
+   "profile": "hr_recruiter",
+   "category": "non_tech",
+   "level": "switcher",
+   "path": "resumes/cv_044_hr_recruiter_switcher.pdf",
+   "format": "pdf",
+   "tags": [],
+   "meta": {
+    "name": "Ingrid Kowal",
+    "city": "Sydney",
+    "years": 6.9,
+    "source_profile": "sales_ae"
+   }
+  },
+  {
+   "id": "cv_045",
+   "profile": "accountant",
+   "category": "non_tech",
+   "level": "strong",
+   "path": "resumes/cv_045_accountant_strong.pdf",
+   "format": "pdf",
+   "tags": [],
+   "meta": {
+    "name": "Mei Iyer",
+    "city": "Singapore",
+    "years": 9.2,
+    "source_profile": "accountant"
+   }
+  },
+  {
+   "id": "cv_046",
+   "profile": "accountant",
+   "category": "non_tech",
+   "level": "mid",
+   "path": "resumes/cv_046_accountant_mid.pdf",
+   "format": "pdf",
+   "tags": [],
+   "meta": {
+    "name": "Noah Thornton",
+    "city": "Singapore",
+    "years": 3.7,
+    "source_profile": "accountant"
+   }
+  },
+  {
+   "id": "cv_047",
+   "profile": "accountant",
+   "category": "non_tech",
+   "level": "junior",
+   "path": "resumes/cv_047_accountant_junior.pdf",
+   "format": "pdf",
+   "tags": [],
+   "meta": {
+    "name": "Nora Thornton",
+    "city": "Singapore",
+    "years": 0.9,
+    "source_profile": "accountant"
+   }
+  },
+  {
+   "id": "cv_048",
+   "profile": "accountant",
+   "category": "non_tech",
+   "level": "switcher",
+   "path": "resumes/cv_048_accountant_switcher.pdf",
+   "format": "two_column_pdf",
+   "tags": [
+    "two_column"
+   ],
+   "meta": {
+    "name": "Ingrid Castillo",
+    "city": "Singapore",
+    "years": 6.6,
+    "source_profile": "finance_ib"
+   }
+  },
+  {
+   "id": "cv_049",
+   "profile": "customer_support",
+   "category": "non_tech",
+   "level": "strong",
+   "path": "resumes/cv_049_customer_support_strong.pdf",
+   "format": "pdf",
+   "tags": [
+    "accented_or_particle_name",
+    "dotted_dates"
+   ],
+   "meta": {
+    "name": "Björn Åkesson",
+    "city": "Toronto",
+    "years": 8.4,
+    "source_profile": "customer_support"
+   }
+  },
+  {
+   "id": "cv_050",
+   "profile": "customer_support",
+   "category": "non_tech",
+   "level": "mid",
+   "path": "resumes/cv_050_customer_support_mid.pdf",
+   "format": "pdf",
+   "tags": [],
+   "meta": {
+    "name": "Aarav Brennan",
+    "city": "Singapore",
+    "years": 4.1,
+    "source_profile": "customer_support"
+   }
+  },
+  {
+   "id": "cv_051",
+   "profile": "customer_support",
+   "category": "non_tech",
+   "level": "junior",
+   "path": "resumes/cv_051_customer_support_junior.pdf",
+   "format": "two_column_pdf",
+   "tags": [
+    "prompt_injection",
+    "two_column"
+   ],
+   "meta": {
+    "name": "Daniel Fischer",
+    "city": "Bengaluru",
+    "years": 1.0,
+    "source_profile": "customer_support"
+   }
+  },
+  {
+   "id": "cv_052",
+   "profile": "customer_support",
+   "category": "non_tech",
+   "level": "switcher",
+   "path": "resumes/cv_052_customer_support_switcher.pdf",
+   "format": "pdf",
+   "tags": [],
+   "meta": {
+    "name": "Tomas Nkemelu",
+    "city": "Austin, TX",
+    "years": 5.5,
+    "source_profile": "sales_ae"
+   }
+  },
+  {
+   "id": "cv_053",
+   "profile": "content_writer",
+   "category": "non_tech",
+   "level": "strong",
+   "path": "resumes/cv_053_content_writer_strong.pdf",
+   "format": "pdf",
+   "tags": [],
+   "meta": {
+    "name": "Leah Haddad",
+    "city": "Pune",
+    "years": 10.1,
+    "source_profile": "content_writer"
+   }
+  },
+  {
+   "id": "cv_054",
+   "profile": "content_writer",
+   "category": "non_tech",
+   "level": "mid",
+   "path": "resumes/cv_054_content_writer_mid.pdf",
+   "format": "two_column_pdf",
+   "tags": [
+    "dotted_dates",
+    "two_column"
+   ],
+   "meta": {
+    "name": "Leah Thornton",
+    "city": "Bengaluru",
+    "years": 3.8,
+    "source_profile": "content_writer"
+   }
+  },
+  {
+   "id": "cv_055",
+   "profile": "content_writer",
+   "category": "non_tech",
+   "level": "junior",
+   "path": "resumes/cv_055_content_writer_junior.pdf",
+   "format": "pdf",
+   "tags": [],
+   "meta": {
+    "name": "Felix Tanaka",
+    "city": "Berlin",
+    "years": 1.0,
+    "source_profile": "content_writer"
+   }
+  },
+  {
+   "id": "cv_056",
+   "profile": "content_writer",
+   "category": "non_tech",
+   "level": "switcher",
+   "path": "resumes/cv_056_content_writer_switcher.pdf",
+   "format": "pdf",
+   "tags": [
+    "keyword_stuffed"
+   ],
+   "meta": {
+    "name": "Lucas Rao",
+    "city": "New York, NY",
+    "years": 5.0,
+    "source_profile": "digital_marketing"
+   }
+  },
+  {
+   "id": "cv_057",
+   "profile": "registered_nurse",
+   "category": "non_tech",
+   "level": "strong",
+   "path": "resumes/cv_057_registered_nurse_strong.pdf",
+   "format": "pdf",
+   "tags": [
+    "dotted_dates"
+   ],
+   "meta": {
+    "name": "Chloe Mensah",
+    "city": "Pune",
+    "years": 8.2,
+    "source_profile": "registered_nurse"
+   }
+  },
+  {
+   "id": "cv_058",
+   "profile": "registered_nurse",
+   "category": "non_tech",
+   "level": "mid",
+   "path": "resumes/cv_058_registered_nurse_mid.pdf",
+   "format": "pdf",
+   "tags": [],
+   "meta": {
+    "name": "Mei Fischer",
+    "city": "London",
+    "years": 3.7,
+    "source_profile": "registered_nurse"
+   }
+  },
+  {
+   "id": "cv_059",
+   "profile": "registered_nurse",
+   "category": "non_tech",
+   "level": "junior",
+   "path": "resumes/cv_059_registered_nurse_junior.pdf",
+   "format": "two_column_pdf",
+   "tags": [
+    "two_column"
+   ],
+   "meta": {
+    "name": "Yuki Brennan",
+    "city": "Manchester",
+    "years": 0.9,
+    "source_profile": "registered_nurse"
+   }
+  },
+  {
+   "id": "cv_060",
+   "profile": "registered_nurse",
+   "category": "non_tech",
+   "level": "switcher",
+   "path": "resumes/cv_060_registered_nurse_switcher.pdf",
+   "format": "two_column_pdf",
+   "tags": [
+    "license_missing",
+    "two_column"
+   ],
+   "meta": {
+    "name": "Kofi Iyer",
+    "city": "Manchester",
+    "years": 6.8,
+    "source_profile": "customer_support"
+   }
+  },
+  {
+   "id": "cv_061",
+   "profile": "supply_chain",
+   "category": "non_tech",
+   "level": "strong",
+   "path": "resumes/cv_061_supply_chain_strong.pdf",
+   "format": "pdf",
+   "tags": [],
+   "meta": {
+    "name": "Chloe Castillo",
+    "city": "Sydney",
+    "years": 8.8,
+    "source_profile": "supply_chain"
+   }
+  },
+  {
+   "id": "cv_062",
+   "profile": "supply_chain",
+   "category": "non_tech",
+   "level": "mid",
+   "path": "resumes/cv_062_supply_chain_mid.pdf",
+   "format": "pdf",
+   "tags": [],
+   "meta": {
+    "name": "Maya Okoye",
+    "city": "Toronto",
+    "years": 4.3,
+    "source_profile": "supply_chain"
+   }
+  },
+  {
+   "id": "cv_063",
+   "profile": "supply_chain",
+   "category": "non_tech",
+   "level": "junior",
+   "path": "resumes/cv_063_supply_chain_junior.pdf",
+   "format": "pdf",
+   "tags": [
+    "prompt_injection"
+   ],
+   "meta": {
+    "name": "Noah Haddad",
+    "city": "New York, NY",
+    "years": 0.6,
+    "source_profile": "supply_chain"
+   }
+  },
+  {
+   "id": "cv_064",
+   "profile": "supply_chain",
+   "category": "non_tech",
+   "level": "switcher",
+   "path": "resumes/cv_064_supply_chain_switcher.pdf",
+   "format": "pdf",
+   "tags": [],
+   "meta": {
+    "name": "Mateo Okoye",
+    "city": "Singapore",
+    "years": 6.2,
+    "source_profile": "operations_manager"
+   }
+  },
+  {
+   "id": "cv_065",
+   "profile": "engineering_manager",
+   "category": "manager",
+   "level": "strong",
+   "path": "resumes/cv_065_engineering_manager_strong.pdf",
+   "format": "pdf",
+   "tags": [],
+   "meta": {
+    "name": "Tomas Rao",
+    "city": "Toronto",
+    "years": 9.1,
+    "source_profile": "engineering_manager"
+   }
+  },
+  {
+   "id": "cv_066",
+   "profile": "engineering_manager",
+   "category": "manager",
+   "level": "mid",
+   "path": "resumes/cv_066_engineering_manager_mid.pdf",
+   "format": "two_column_pdf",
+   "tags": [
+    "sparse",
+    "two_column"
+   ],
+   "meta": {
+    "name": "Aarav Castillo",
+    "city": "New York, NY",
+    "years": 5.0,
+    "source_profile": "engineering_manager"
+   }
+  },
+  {
+   "id": "cv_067",
+   "profile": "engineering_manager",
+   "category": "manager",
+   "level": "junior",
+   "path": "resumes/cv_067_engineering_manager_junior.pdf",
+   "format": "pdf",
+   "tags": [],
+   "meta": {
+    "name": "Ravi Mensah",
+    "city": "Toronto",
+    "years": 1.0,
+    "source_profile": "engineering_manager"
+   }
+  },
+  {
+   "id": "cv_068",
+   "profile": "engineering_manager",
+   "category": "manager",
+   "level": "switcher",
+   "path": "resumes/cv_068_engineering_manager_switcher.pdf",
+   "format": "pdf",
+   "tags": [
+    "accented_or_particle_name"
+   ],
+   "meta": {
+    "name": "Pieter van der Berg",
+    "city": "Sydney",
+    "years": 5.5,
+    "source_profile": "backend_python"
+   }
+  },
+  {
+   "id": "cv_069",
+   "profile": "product_manager",
+   "category": "manager",
+   "level": "strong",
+   "path": "resumes/cv_069_product_manager_strong.pdf",
+   "format": "two_column_pdf",
+   "tags": [
+    "long_multipage",
+    "two_column"
+   ],
+   "meta": {
+    "name": "Mateo Kowal",
+    "city": "Singapore",
+    "years": 9.8,
+    "source_profile": "product_manager"
+   }
+  },
+  {
+   "id": "cv_070",
+   "profile": "product_manager",
+   "category": "manager",
+   "level": "mid",
+   "path": "resumes/cv_070_product_manager_mid.pdf",
+   "format": "pdf",
+   "tags": [],
+   "meta": {
+    "name": "Kofi Sutherland",
+    "city": "Pune",
+    "years": 5.1,
+    "source_profile": "product_manager"
+   }
+  },
+  {
+   "id": "cv_071",
+   "profile": "product_manager",
+   "category": "manager",
+   "level": "junior",
+   "path": "resumes/cv_071_product_manager_junior.pdf",
+   "format": "pdf",
+   "tags": [
+    "keyword_stuffed"
+   ],
+   "meta": {
+    "name": "Fatima Okoye",
+    "city": "New York, NY",
+    "years": 0.6,
+    "source_profile": "product_manager"
+   }
+  },
+  {
+   "id": "cv_072",
+   "profile": "product_manager",
+   "category": "manager",
+   "level": "switcher",
+   "path": "resumes/cv_072_product_manager_switcher.pdf",
+   "format": "pdf",
+   "tags": [],
+   "meta": {
+    "name": "Isla Achterberg",
+    "city": "Singapore",
+    "years": 6.3,
+    "source_profile": "project_manager"
+   }
+  },
+  {
+   "id": "cv_073",
+   "profile": "project_manager",
+   "category": "manager",
+   "level": "strong",
+   "path": "resumes/cv_073_project_manager_strong.pdf",
+   "format": "two_column_pdf",
+   "tags": [
+    "two_column"
+   ],
+   "meta": {
+    "name": "Marcus Fischer",
+    "city": "Berlin",
+    "years": 10.2,
+    "source_profile": "project_manager"
+   }
+  },
+  {
+   "id": "cv_074",
+   "profile": "project_manager",
+   "category": "manager",
+   "level": "mid",
+   "path": "resumes/cv_074_project_manager_mid.pdf",
+   "format": "pdf",
+   "tags": [],
+   "meta": {
+    "name": "Owen Rao",
+    "city": "London",
+    "years": 3.7,
+    "source_profile": "project_manager"
+   }
+  },
+  {
+   "id": "cv_075",
+   "profile": "project_manager",
+   "category": "manager",
+   "level": "junior",
+   "path": "resumes/cv_075_project_manager_junior.pdf",
+   "format": "pdf",
+   "tags": [],
+   "meta": {
+    "name": "Leah Rao",
+    "city": "Bengaluru",
+    "years": 0.7,
+    "source_profile": "project_manager"
+   }
+  },
+  {
+   "id": "cv_076",
+   "profile": "project_manager",
+   "category": "manager",
+   "level": "switcher",
+   "path": "resumes/cv_076_project_manager_switcher.pdf",
+   "format": "pdf",
+   "tags": [
+    "accented_or_particle_name"
+   ],
+   "meta": {
+    "name": "Renée Lefèvre",
+    "city": "New York, NY",
+    "years": 6.2,
+    "source_profile": "operations_manager"
+   }
+  },
+  {
+   "id": "cv_077",
+   "profile": "operations_manager",
+   "category": "manager",
+   "level": "strong",
+   "path": "resumes/cv_077_operations_manager_strong.pdf",
+   "format": "pdf",
+   "tags": [],
+   "meta": {
+    "name": "Hana Adeyemi",
+    "city": "Berlin",
+    "years": 8.5,
+    "source_profile": "operations_manager"
+   }
+  },
+  {
+   "id": "cv_078",
+   "profile": "operations_manager",
+   "category": "manager",
+   "level": "mid",
+   "path": "resumes/cv_078_operations_manager_mid.pdf",
+   "format": "pdf",
+   "tags": [],
+   "meta": {
+    "name": "Kofi Brennan",
+    "city": "Manchester",
+    "years": 4.3,
+    "source_profile": "operations_manager"
+   }
+  },
+  {
+   "id": "cv_079",
+   "profile": "operations_manager",
+   "category": "manager",
+   "level": "junior",
+   "path": "resumes/cv_079_operations_manager_junior.pdf",
+   "format": "pdf",
+   "tags": [
+    "keyword_stuffed"
+   ],
+   "meta": {
+    "name": "Sofia Adeyemi",
+    "city": "Manchester",
+    "years": 0.8,
+    "source_profile": "operations_manager"
+   }
+  },
+  {
+   "id": "cv_080",
+   "profile": "operations_manager",
+   "category": "manager",
+   "level": "switcher",
+   "path": "resumes/cv_080_operations_manager_switcher.pdf",
+   "format": "pdf",
+   "tags": [],
+   "meta": {
+    "name": "Lucas Nguyen",
+    "city": "Austin, TX",
+    "years": 6.2,
+    "source_profile": "supply_chain"
+   }
+  },
+  {
+   "id": "cv_081",
+   "profile": "management_consultant",
+   "category": "mba",
+   "level": "strong",
+   "path": "resumes/cv_081_management_consultant_strong.pdf",
+   "format": "pdf",
+   "tags": [
+    "long_multipage"
+   ],
+   "meta": {
+    "name": "Yuki Petrov",
+    "city": "Bengaluru",
+    "years": 10.0,
+    "source_profile": "management_consultant"
+   }
+  },
+  {
+   "id": "cv_082",
+   "profile": "management_consultant",
+   "category": "mba",
+   "level": "mid",
+   "path": "resumes/cv_082_management_consultant_mid.pdf",
+   "format": "pdf",
+   "tags": [
+    "sparse"
+   ],
+   "meta": {
+    "name": "Ananya Brennan",
+    "city": "Sydney",
+    "years": 4.2,
+    "source_profile": "management_consultant"
+   }
+  },
+  {
+   "id": "cv_083",
+   "profile": "management_consultant",
+   "category": "mba",
+   "level": "junior",
+   "path": "resumes/cv_083_management_consultant_junior.pdf",
+   "format": "two_column_pdf",
+   "tags": [
+    "two_column"
+   ],
+   "meta": {
+    "name": "Isla Mensah",
+    "city": "Singapore",
+    "years": 0.9,
+    "source_profile": "management_consultant"
+   }
+  },
+  {
+   "id": "cv_084",
+   "profile": "management_consultant",
+   "category": "mba",
+   "level": "switcher",
+   "path": "resumes/cv_084_management_consultant_switcher.pdf",
+   "format": "pdf",
+   "tags": [],
+   "meta": {
+    "name": "Mateo Nguyen",
+    "city": "London",
+    "years": 5.2,
+    "source_profile": "strategy_bizops"
+   }
+  },
+  {
+   "id": "cv_085",
+   "profile": "strategy_bizops",
+   "category": "mba",
+   "level": "strong",
+   "path": "resumes/cv_085_strategy_bizops_strong.pdf",
+   "format": "pdf",
+   "tags": [
+    "employment_gap"
+   ],
+   "meta": {
+    "name": "Tomas Thornton",
+    "city": "Pune",
+    "years": 8.6,
+    "source_profile": "strategy_bizops"
+   }
+  },
+  {
+   "id": "cv_086",
+   "profile": "strategy_bizops",
+   "category": "mba",
+   "level": "mid",
+   "path": "resumes/cv_086_strategy_bizops_mid.pdf",
+   "format": "two_column_pdf",
+   "tags": [
+    "two_column"
+   ],
+   "meta": {
+    "name": "Elena Kowal",
+    "city": "Sydney",
+    "years": 4.8,
+    "source_profile": "strategy_bizops"
+   }
+  },
+  {
+   "id": "cv_087",
+   "profile": "strategy_bizops",
+   "category": "mba",
+   "level": "junior",
+   "path": "resumes/cv_087_strategy_bizops_junior.pdf",
+   "format": "pdf",
+   "tags": [
+    "keyword_stuffed"
+   ],
+   "meta": {
+    "name": "Mateo Varga",
+    "city": "Manchester",
+    "years": 1.2,
+    "source_profile": "strategy_bizops"
+   }
+  },
+  {
+   "id": "cv_088",
+   "profile": "strategy_bizops",
+   "category": "mba",
+   "level": "switcher",
+   "path": "resumes/cv_088_strategy_bizops_switcher.pdf",
+   "format": "pdf",
+   "tags": [
+    "accented_or_particle_name"
+   ],
+   "meta": {
+    "name": "Zoë Müller",
+    "city": "Austin, TX",
+    "years": 6.6,
+    "source_profile": "management_consultant"
+   }
+  },
+  {
+   "id": "cv_089",
+   "profile": "finance_ib",
+   "category": "mba",
+   "level": "strong",
+   "path": "resumes/cv_089_finance_ib_strong.pdf",
+   "format": "pdf",
+   "tags": [],
+   "meta": {
+    "name": "Daniel Whitaker",
+    "city": "Singapore",
+    "years": 10.8,
+    "source_profile": "finance_ib"
+   }
+  },
+  {
+   "id": "cv_090",
+   "profile": "finance_ib",
+   "category": "mba",
+   "level": "mid",
+   "path": "resumes/cv_090_finance_ib_mid.pdf",
+   "format": "pdf",
+   "tags": [],
+   "meta": {
+    "name": "Kofi Mensah",
+    "city": "New York, NY",
+    "years": 3.9,
+    "source_profile": "finance_ib"
+   }
+  },
+  {
+   "id": "cv_091",
+   "profile": "finance_ib",
+   "category": "mba",
+   "level": "junior",
+   "path": "resumes/cv_091_finance_ib_junior.pdf",
+   "format": "pdf",
+   "tags": [],
+   "meta": {
+    "name": "Aarav Holloway",
+    "city": "Singapore",
+    "years": 0.5,
+    "source_profile": "finance_ib"
+   }
+  },
+  {
+   "id": "cv_092",
+   "profile": "finance_ib",
+   "category": "mba",
+   "level": "switcher",
+   "path": "resumes/cv_092_finance_ib_switcher.pdf",
+   "format": "pdf",
+   "tags": [],
+   "meta": {
+    "name": "Mei Sutherland",
+    "city": "Toronto",
+    "years": 6.6,
+    "source_profile": "accountant"
+   }
+  },
+  {
+   "id": "cv_093",
+   "profile": "brand_manager",
+   "category": "mba",
+   "level": "strong",
+   "path": "resumes/cv_093_brand_manager_strong.pdf",
+   "format": "pdf",
+   "tags": [
+    "employment_gap"
+   ],
+   "meta": {
+    "name": "Noah Sutherland",
+    "city": "Singapore",
+    "years": 10.2,
+    "source_profile": "brand_manager"
+   }
+  },
+  {
+   "id": "cv_094",
+   "profile": "brand_manager",
+   "category": "mba",
+   "level": "mid",
+   "path": "resumes/cv_094_brand_manager_mid.pdf",
+   "format": "pdf",
+   "tags": [
+    "accented_or_particle_name"
+   ],
+   "meta": {
+    "name": "Siobhán Ó Briain",
+    "city": "Austin, TX",
+    "years": 4.0,
+    "source_profile": "brand_manager"
+   }
+  },
+  {
+   "id": "cv_095",
+   "profile": "brand_manager",
+   "category": "mba",
+   "level": "junior",
+   "path": "resumes/cv_095_brand_manager_junior.pdf",
+   "format": "pdf",
+   "tags": [],
+   "meta": {
+    "name": "Leah Kaur",
+    "city": "Singapore",
+    "years": 0.9,
+    "source_profile": "brand_manager"
+   }
+  },
+  {
+   "id": "cv_096",
+   "profile": "brand_manager",
+   "category": "mba",
+   "level": "switcher",
+   "path": "resumes/cv_096_brand_manager_switcher.pdf",
+   "format": "pdf",
+   "tags": [
+    "prompt_injection"
+   ],
+   "meta": {
+    "name": "Owen Holloway",
+    "city": "Toronto",
+    "years": 6.2,
+    "source_profile": "digital_marketing"
+   }
+  },
+  {
+   "id": "cv_097",
+   "profile": "ux_designer",
+   "category": "other",
+   "level": "strong",
+   "path": "resumes/cv_097_ux_designer_strong.pdf",
+   "format": "pdf",
+   "tags": [
+    "dotted_dates"
+   ],
+   "meta": {
+    "name": "Owen Petrov",
+    "city": "Sydney",
+    "years": 10.3,
+    "source_profile": "ux_designer"
+   }
+  },
+  {
+   "id": "cv_098",
+   "profile": "ux_designer",
+   "category": "other",
+   "level": "mid",
+   "path": "resumes/cv_098_ux_designer_mid.pdf",
+   "format": "two_column_pdf",
+   "tags": [
+    "dotted_dates",
+    "two_column"
+   ],
+   "meta": {
+    "name": "Amara Castillo",
+    "city": "Manchester",
+    "years": 4.7,
+    "source_profile": "ux_designer"
+   }
+  },
+  {
+   "id": "cv_099",
+   "profile": "ux_designer",
+   "category": "other",
+   "level": "junior",
+   "path": "resumes/cv_099_ux_designer_junior.pdf",
+   "format": "pdf",
+   "tags": [],
+   "meta": {
+    "name": "Kwame Kaur",
+    "city": "Toronto",
+    "years": 0.8,
+    "source_profile": "ux_designer"
+   }
+  },
+  {
+   "id": "cv_100",
+   "profile": "ux_designer",
+   "category": "other",
+   "level": "switcher",
+   "path": "resumes/cv_100_ux_designer_switcher.pdf",
+   "format": "pdf",
+   "tags": [
+    "prompt_injection"
+   ],
+   "meta": {
+    "name": "Fatima Kaur",
+    "city": "London",
+    "years": 6.5,
+    "source_profile": "frontend_react"
+   }
+  },
+  {
+   "id": "cv_101",
+   "profile": "teacher",
+   "category": "other",
+   "level": "strong",
+   "path": "resumes/cv_101_teacher_strong.pdf",
+   "format": "pdf",
+   "tags": [],
+   "meta": {
+    "name": "Aarav Hughes",
+    "city": "New York, NY",
+    "years": 10.8,
+    "source_profile": "teacher"
+   }
+  },
+  {
+   "id": "cv_102",
+   "profile": "teacher",
+   "category": "other",
+   "level": "mid",
+   "path": "resumes/cv_102_teacher_mid.pdf",
+   "format": "pdf",
+   "tags": [],
+   "meta": {
+    "name": "Chloe Adeyemi",
+    "city": "Toronto",
+    "years": 3.7,
+    "source_profile": "teacher"
+   }
+  },
+  {
+   "id": "cv_103",
+   "profile": "teacher",
+   "category": "other",
+   "level": "junior",
+   "path": "resumes/cv_103_teacher_junior.pdf",
+   "format": "pdf",
+   "tags": [
+    "keyword_stuffed"
+   ],
+   "meta": {
+    "name": "Elena Varga",
+    "city": "London",
+    "years": 0.7,
+    "source_profile": "teacher"
+   }
+  },
+  {
+   "id": "cv_104",
+   "profile": "teacher",
+   "category": "other",
+   "level": "switcher",
+   "path": "resumes/cv_104_teacher_switcher.pdf",
+   "format": "pdf",
+   "tags": [
+    "license_missing",
+    "prompt_injection"
+   ],
+   "meta": {
+    "name": "Priya Lindqvist",
+    "city": "London",
+    "years": 5.2,
+    "source_profile": "customer_support"
+   }
+  }
+ ],
+ "pairs": [
+  {
+   "pair_id": "jd_097__cv_099",
+   "jd": "jd_097",
+   "resume": "cv_099",
+   "kind": "match",
+   "resume_variant": "junior",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_100__cv_101",
+   "jd": "jd_100",
+   "resume": "cv_101",
+   "kind": "same_category",
+   "resume_variant": "strong",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_077__cv_019",
+   "jd": "jd_077",
+   "resume": "cv_019",
+   "kind": "cross_category",
+   "resume_variant": "junior",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_007__cv_005",
+   "jd": "jd_007",
+   "resume": "cv_005",
+   "kind": "match",
+   "resume_variant": "strong",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_027__cv_095",
+   "jd": "jd_027",
+   "resume": "cv_095",
+   "kind": "cross_category",
+   "resume_variant": "junior",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_085__cv_087",
+   "jd": "jd_085",
+   "resume": "cv_087",
+   "kind": "match",
+   "resume_variant": "junior",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_018__cv_018",
+   "jd": "jd_018",
+   "resume": "cv_018",
+   "kind": "match",
+   "resume_variant": "mid",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_066__cv_066",
+   "jd": "jd_066",
+   "resume": "cv_066",
+   "kind": "match",
+   "resume_variant": "mid",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_091__cv_089",
+   "jd": "jd_091",
+   "resume": "cv_089",
+   "kind": "match",
+   "resume_variant": "strong",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_042__cv_023",
+   "jd": "jd_042",
+   "resume": "cv_023",
+   "kind": "cross_category",
+   "resume_variant": "junior",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_076__cv_070",
+   "jd": "jd_076",
+   "resume": "cv_070",
+   "kind": "same_category",
+   "resume_variant": "mid",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_035__cv_004",
+   "jd": "jd_035",
+   "resume": "cv_004",
+   "kind": "cross_category",
+   "resume_variant": "switcher",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_035__cv_033",
+   "jd": "jd_035",
+   "resume": "cv_033",
+   "kind": "match",
+   "resume_variant": "strong",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_054__cv_018",
+   "jd": "jd_054",
+   "resume": "cv_018",
+   "kind": "cross_category",
+   "resume_variant": "mid",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_049__cv_082",
+   "jd": "jd_049",
+   "resume": "cv_082",
+   "kind": "cross_category",
+   "resume_variant": "mid",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_023__cv_080",
+   "jd": "jd_023",
+   "resume": "cv_080",
+   "kind": "cross_category",
+   "resume_variant": "switcher",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_027__cv_025",
+   "jd": "jd_027",
+   "resume": "cv_025",
+   "kind": "match",
+   "resume_variant": "strong",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_022__cv_040",
+   "jd": "jd_022",
+   "resume": "cv_040",
+   "kind": "cross_category",
+   "resume_variant": "switcher",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_012__cv_012",
+   "jd": "jd_012",
+   "resume": "cv_012",
+   "kind": "match",
+   "resume_variant": "switcher",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_007__cv_034",
+   "jd": "jd_007",
+   "resume": "cv_034",
+   "kind": "cross_category",
+   "resume_variant": "mid",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_031__cv_021",
+   "jd": "jd_031",
+   "resume": "cv_021",
+   "kind": "same_category",
+   "resume_variant": "strong",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_065__cv_074",
+   "jd": "jd_065",
+   "resume": "cv_074",
+   "kind": "same_category",
+   "resume_variant": "mid",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_058__cv_049",
+   "jd": "jd_058",
+   "resume": "cv_049",
+   "kind": "same_category",
+   "resume_variant": "strong",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_008__cv_030",
+   "jd": "jd_008",
+   "resume": "cv_030",
+   "kind": "same_category",
+   "resume_variant": "mid",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_027__cv_013",
+   "jd": "jd_027",
+   "resume": "cv_013",
+   "kind": "same_category",
+   "resume_variant": "strong",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_036__cv_036",
+   "jd": "jd_036",
+   "resume": "cv_036",
+   "kind": "match",
+   "resume_variant": "switcher",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_102__cv_102",
+   "jd": "jd_102",
+   "resume": "cv_102",
+   "kind": "match",
+   "resume_variant": "mid",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_059__cv_084",
+   "jd": "jd_059",
+   "resume": "cv_084",
+   "kind": "cross_category",
+   "resume_variant": "switcher",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_096__cv_081",
+   "jd": "jd_096",
+   "resume": "cv_081",
+   "kind": "same_category",
+   "resume_variant": "strong",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_053__cv_102",
+   "jd": "jd_053",
+   "resume": "cv_102",
+   "kind": "cross_category",
+   "resume_variant": "mid",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_069__cv_077",
+   "jd": "jd_069",
+   "resume": "cv_077",
+   "kind": "same_category",
+   "resume_variant": "strong",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_033__cv_035",
+   "jd": "jd_033",
+   "resume": "cv_035",
+   "kind": "match",
+   "resume_variant": "junior",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_093__cv_095",
+   "jd": "jd_093",
+   "resume": "cv_095",
+   "kind": "match",
+   "resume_variant": "junior",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_062__cv_062",
+   "jd": "jd_062",
+   "resume": "cv_062",
+   "kind": "match",
+   "resume_variant": "mid",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_038__cv_038",
+   "jd": "jd_038",
+   "resume": "cv_038",
+   "kind": "match",
+   "resume_variant": "mid",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_029__cv_031",
+   "jd": "jd_029",
+   "resume": "cv_031",
+   "kind": "match",
+   "resume_variant": "junior",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_074__cv_065",
+   "jd": "jd_074",
+   "resume": "cv_065",
+   "kind": "same_category",
+   "resume_variant": "strong",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_102__cv_064",
+   "jd": "jd_102",
+   "resume": "cv_064",
+   "kind": "cross_category",
+   "resume_variant": "switcher",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_058__cv_058",
+   "jd": "jd_058",
+   "resume": "cv_058",
+   "kind": "match",
+   "resume_variant": "mid",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_101__cv_098",
+   "jd": "jd_101",
+   "resume": "cv_098",
+   "kind": "same_category",
+   "resume_variant": "mid",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_068__cv_015",
+   "jd": "jd_068",
+   "resume": "cv_015",
+   "kind": "cross_category",
+   "resume_variant": "junior",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_042__cv_042",
+   "jd": "jd_042",
+   "resume": "cv_042",
+   "kind": "match",
+   "resume_variant": "mid",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_063__cv_061",
+   "jd": "jd_063",
+   "resume": "cv_061",
+   "kind": "match",
+   "resume_variant": "strong",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_043__cv_054",
+   "jd": "jd_043",
+   "resume": "cv_054",
+   "kind": "same_category",
+   "resume_variant": "mid",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_079__cv_077",
+   "jd": "jd_079",
+   "resume": "cv_077",
+   "kind": "match",
+   "resume_variant": "strong",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_031__cv_045",
+   "jd": "jd_031",
+   "resume": "cv_045",
+   "kind": "cross_category",
+   "resume_variant": "strong",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_048__cv_073",
+   "jd": "jd_048",
+   "resume": "cv_073",
+   "kind": "cross_category",
+   "resume_variant": "strong",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_025__cv_005",
+   "jd": "jd_025",
+   "resume": "cv_005",
+   "kind": "same_category",
+   "resume_variant": "strong",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_024__cv_054",
+   "jd": "jd_024",
+   "resume": "cv_054",
+   "kind": "cross_category",
+   "resume_variant": "mid",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_063__cv_096",
+   "jd": "jd_063",
+   "resume": "cv_096",
+   "kind": "cross_category",
+   "resume_variant": "switcher",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_039__cv_037",
+   "jd": "jd_039",
+   "resume": "cv_037",
+   "kind": "match",
+   "resume_variant": "strong",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_034__cv_058",
+   "jd": "jd_034",
+   "resume": "cv_058",
+   "kind": "same_category",
+   "resume_variant": "mid",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_052__cv_104",
+   "jd": "jd_052",
+   "resume": "cv_104",
+   "kind": "cross_category",
+   "resume_variant": "switcher",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_013__cv_059",
+   "jd": "jd_013",
+   "resume": "cv_059",
+   "kind": "cross_category",
+   "resume_variant": "junior",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_084__cv_064",
+   "jd": "jd_084",
+   "resume": "cv_064",
+   "kind": "cross_category",
+   "resume_variant": "switcher",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_068__cv_068",
+   "jd": "jd_068",
+   "resume": "cv_068",
+   "kind": "match",
+   "resume_variant": "switcher",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_040__cv_042",
+   "jd": "jd_040",
+   "resume": "cv_042",
+   "kind": "same_category",
+   "resume_variant": "mid",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_036__cv_045",
+   "jd": "jd_036",
+   "resume": "cv_045",
+   "kind": "same_category",
+   "resume_variant": "strong",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_018__cv_046",
+   "jd": "jd_018",
+   "resume": "cv_046",
+   "kind": "cross_category",
+   "resume_variant": "mid",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_048__cv_048",
+   "jd": "jd_048",
+   "resume": "cv_048",
+   "kind": "match",
+   "resume_variant": "switcher",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_005__cv_083",
+   "jd": "jd_005",
+   "resume": "cv_083",
+   "kind": "cross_category",
+   "resume_variant": "junior",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_087__cv_027",
+   "jd": "jd_087",
+   "resume": "cv_027",
+   "kind": "cross_category",
+   "resume_variant": "junior",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_050__cv_025",
+   "jd": "jd_050",
+   "resume": "cv_025",
+   "kind": "cross_category",
+   "resume_variant": "strong",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_061__cv_063",
+   "jd": "jd_061",
+   "resume": "cv_063",
+   "kind": "match",
+   "resume_variant": "junior",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_047__cv_097",
+   "jd": "jd_047",
+   "resume": "cv_097",
+   "kind": "cross_category",
+   "resume_variant": "strong",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_016__cv_016",
+   "jd": "jd_016",
+   "resume": "cv_016",
+   "kind": "match",
+   "resume_variant": "switcher",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_104__cv_054",
+   "jd": "jd_104",
+   "resume": "cv_054",
+   "kind": "cross_category",
+   "resume_variant": "mid",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_089__cv_072",
+   "jd": "jd_089",
+   "resume": "cv_072",
+   "kind": "cross_category",
+   "resume_variant": "switcher",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_098__cv_098",
+   "jd": "jd_098",
+   "resume": "cv_098",
+   "kind": "match",
+   "resume_variant": "mid",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_072__cv_046",
+   "jd": "jd_072",
+   "resume": "cv_046",
+   "kind": "cross_category",
+   "resume_variant": "mid",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_071__cv_069",
+   "jd": "jd_071",
+   "resume": "cv_069",
+   "kind": "match",
+   "resume_variant": "strong",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_098__cv_102",
+   "jd": "jd_098",
+   "resume": "cv_102",
+   "kind": "same_category",
+   "resume_variant": "mid",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_061__cv_058",
+   "jd": "jd_061",
+   "resume": "cv_058",
+   "kind": "same_category",
+   "resume_variant": "mid",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_045__cv_054",
+   "jd": "jd_045",
+   "resume": "cv_054",
+   "kind": "same_category",
+   "resume_variant": "mid",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_011__cv_067",
+   "jd": "jd_011",
+   "resume": "cv_067",
+   "kind": "cross_category",
+   "resume_variant": "junior",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_026__cv_026",
+   "jd": "jd_026",
+   "resume": "cv_026",
+   "kind": "match",
+   "resume_variant": "mid",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_029__cv_010",
+   "jd": "jd_029",
+   "resume": "cv_010",
+   "kind": "same_category",
+   "resume_variant": "mid",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_096__cv_077",
+   "jd": "jd_096",
+   "resume": "cv_077",
+   "kind": "cross_category",
+   "resume_variant": "strong",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_015__cv_013",
+   "jd": "jd_015",
+   "resume": "cv_013",
+   "kind": "match",
+   "resume_variant": "strong",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_028__cv_070",
+   "jd": "jd_028",
+   "resume": "cv_070",
+   "kind": "cross_category",
+   "resume_variant": "mid",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_050__cv_050",
+   "jd": "jd_050",
+   "resume": "cv_050",
+   "kind": "match",
+   "resume_variant": "mid",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_067__cv_065",
+   "jd": "jd_067",
+   "resume": "cv_065",
+   "kind": "match",
+   "resume_variant": "strong",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_009__cv_021",
+   "jd": "jd_009",
+   "resume": "cv_021",
+   "kind": "same_category",
+   "resume_variant": "strong",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_037__cv_039",
+   "jd": "jd_037",
+   "resume": "cv_039",
+   "kind": "match",
+   "resume_variant": "junior",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_009__cv_011",
+   "jd": "jd_009",
+   "resume": "cv_011",
+   "kind": "match",
+   "resume_variant": "junior",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_030__cv_077",
+   "jd": "jd_030",
+   "resume": "cv_077",
+   "kind": "cross_category",
+   "resume_variant": "strong",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_082__cv_082",
+   "jd": "jd_082",
+   "resume": "cv_082",
+   "kind": "match",
+   "resume_variant": "mid",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_013__cv_015",
+   "jd": "jd_013",
+   "resume": "cv_015",
+   "kind": "match",
+   "resume_variant": "junior",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_095__cv_024",
+   "jd": "jd_095",
+   "resume": "cv_024",
+   "kind": "cross_category",
+   "resume_variant": "switcher",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_088__cv_093",
+   "jd": "jd_088",
+   "resume": "cv_093",
+   "kind": "same_category",
+   "resume_variant": "strong",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_086__cv_089",
+   "jd": "jd_086",
+   "resume": "cv_089",
+   "kind": "same_category",
+   "resume_variant": "strong",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_021__cv_023",
+   "jd": "jd_021",
+   "resume": "cv_023",
+   "kind": "match",
+   "resume_variant": "junior",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_101__cv_033",
+   "jd": "jd_101",
+   "resume": "cv_033",
+   "kind": "cross_category",
+   "resume_variant": "strong",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_023__cv_021",
+   "jd": "jd_023",
+   "resume": "cv_021",
+   "kind": "match",
+   "resume_variant": "strong",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_033__cv_050",
+   "jd": "jd_033",
+   "resume": "cv_050",
+   "kind": "same_category",
+   "resume_variant": "mid",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_073__cv_075",
+   "jd": "jd_073",
+   "resume": "cv_075",
+   "kind": "match",
+   "resume_variant": "junior",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_005__cv_007",
+   "jd": "jd_005",
+   "resume": "cv_007",
+   "kind": "match",
+   "resume_variant": "junior",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_061__cv_080",
+   "jd": "jd_061",
+   "resume": "cv_080",
+   "kind": "cross_category",
+   "resume_variant": "switcher",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_043__cv_103",
+   "jd": "jd_043",
+   "resume": "cv_103",
+   "kind": "cross_category",
+   "resume_variant": "junior",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_071__cv_089",
+   "jd": "jd_071",
+   "resume": "cv_089",
+   "kind": "cross_category",
+   "resume_variant": "strong",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_032__cv_013",
+   "jd": "jd_032",
+   "resume": "cv_013",
+   "kind": "same_category",
+   "resume_variant": "strong",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_074__cv_074",
+   "jd": "jd_074",
+   "resume": "cv_074",
+   "kind": "match",
+   "resume_variant": "mid",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_044__cv_053",
+   "jd": "jd_044",
+   "resume": "cv_053",
+   "kind": "same_category",
+   "resume_variant": "strong",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_029__cv_056",
+   "jd": "jd_029",
+   "resume": "cv_056",
+   "kind": "cross_category",
+   "resume_variant": "switcher",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_042__cv_062",
+   "jd": "jd_042",
+   "resume": "cv_062",
+   "kind": "same_category",
+   "resume_variant": "mid",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_092__cv_086",
+   "jd": "jd_092",
+   "resume": "cv_086",
+   "kind": "same_category",
+   "resume_variant": "mid",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_038__cv_050",
+   "jd": "jd_038",
+   "resume": "cv_050",
+   "kind": "same_category",
+   "resume_variant": "mid",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_099__cv_097",
+   "jd": "jd_099",
+   "resume": "cv_097",
+   "kind": "match",
+   "resume_variant": "strong",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_021__cv_013",
+   "jd": "jd_021",
+   "resume": "cv_013",
+   "kind": "same_category",
+   "resume_variant": "strong",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_011__cv_009",
+   "jd": "jd_011",
+   "resume": "cv_009",
+   "kind": "match",
+   "resume_variant": "strong",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_095__cv_082",
+   "jd": "jd_095",
+   "resume": "cv_082",
+   "kind": "same_category",
+   "resume_variant": "mid",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_085__cv_090",
+   "jd": "jd_085",
+   "resume": "cv_090",
+   "kind": "same_category",
+   "resume_variant": "mid",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_052__cv_052",
+   "jd": "jd_052",
+   "resume": "cv_052",
+   "kind": "match",
+   "resume_variant": "switcher",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_019__cv_076",
+   "jd": "jd_019",
+   "resume": "cv_076",
+   "kind": "cross_category",
+   "resume_variant": "switcher",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_025__cv_027",
+   "jd": "jd_025",
+   "resume": "cv_027",
+   "kind": "match",
+   "resume_variant": "junior",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_089__cv_091",
+   "jd": "jd_089",
+   "resume": "cv_091",
+   "kind": "match",
+   "resume_variant": "junior",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_046__cv_046",
+   "jd": "jd_046",
+   "resume": "cv_046",
+   "kind": "match",
+   "resume_variant": "mid",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_087__cv_085",
+   "jd": "jd_087",
+   "resume": "cv_085",
+   "kind": "match",
+   "resume_variant": "strong",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_062__cv_018",
+   "jd": "jd_062",
+   "resume": "cv_018",
+   "kind": "cross_category",
+   "resume_variant": "mid",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_095__cv_093",
+   "jd": "jd_095",
+   "resume": "cv_093",
+   "kind": "match",
+   "resume_variant": "strong",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_038__cv_103",
+   "jd": "jd_038",
+   "resume": "cv_103",
+   "kind": "cross_category",
+   "resume_variant": "junior",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_044__cv_044",
+   "jd": "jd_044",
+   "resume": "cv_044",
+   "kind": "match",
+   "resume_variant": "switcher",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_055__cv_053",
+   "jd": "jd_055",
+   "resume": "cv_053",
+   "kind": "match",
+   "resume_variant": "strong",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_023__cv_001",
+   "jd": "jd_023",
+   "resume": "cv_001",
+   "kind": "same_category",
+   "resume_variant": "strong",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_072__cv_072",
+   "jd": "jd_072",
+   "resume": "cv_072",
+   "kind": "match",
+   "resume_variant": "switcher",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_053__cv_055",
+   "jd": "jd_053",
+   "resume": "cv_055",
+   "kind": "match",
+   "resume_variant": "junior",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_026__cv_014",
+   "jd": "jd_026",
+   "resume": "cv_014",
+   "kind": "same_category",
+   "resume_variant": "mid",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_011__cv_026",
+   "jd": "jd_011",
+   "resume": "cv_026",
+   "kind": "same_category",
+   "resume_variant": "mid",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_052__cv_042",
+   "jd": "jd_052",
+   "resume": "cv_042",
+   "kind": "same_category",
+   "resume_variant": "mid",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_004__cv_029",
+   "jd": "jd_004",
+   "resume": "cv_029",
+   "kind": "same_category",
+   "resume_variant": "strong",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_005__cv_009",
+   "jd": "jd_005",
+   "resume": "cv_009",
+   "kind": "same_category",
+   "resume_variant": "strong",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_056__cv_023",
+   "jd": "jd_056",
+   "resume": "cv_023",
+   "kind": "cross_category",
+   "resume_variant": "junior",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_054__cv_061",
+   "jd": "jd_054",
+   "resume": "cv_061",
+   "kind": "same_category",
+   "resume_variant": "strong",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_060__cv_060",
+   "jd": "jd_060",
+   "resume": "cv_060",
+   "kind": "match",
+   "resume_variant": "switcher",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_003__cv_010",
+   "jd": "jd_003",
+   "resume": "cv_010",
+   "kind": "same_category",
+   "resume_variant": "mid",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_097__cv_041",
+   "jd": "jd_097",
+   "resume": "cv_041",
+   "kind": "cross_category",
+   "resume_variant": "strong",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_075__cv_064",
+   "jd": "jd_075",
+   "resume": "cv_064",
+   "kind": "cross_category",
+   "resume_variant": "switcher",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_049__cv_038",
+   "jd": "jd_049",
+   "resume": "cv_038",
+   "kind": "same_category",
+   "resume_variant": "mid",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_037__cv_049",
+   "jd": "jd_037",
+   "resume": "cv_049",
+   "kind": "same_category",
+   "resume_variant": "strong",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_041__cv_007",
+   "jd": "jd_041",
+   "resume": "cv_007",
+   "kind": "cross_category",
+   "resume_variant": "junior",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_069__cv_071",
+   "jd": "jd_069",
+   "resume": "cv_071",
+   "kind": "match",
+   "resume_variant": "junior",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_079__cv_073",
+   "jd": "jd_079",
+   "resume": "cv_073",
+   "kind": "same_category",
+   "resume_variant": "strong",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_004__cv_070",
+   "jd": "jd_004",
+   "resume": "cv_070",
+   "kind": "cross_category",
+   "resume_variant": "mid",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_087__cv_094",
+   "jd": "jd_087",
+   "resume": "cv_094",
+   "kind": "same_category",
+   "resume_variant": "mid",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_056__cv_041",
+   "jd": "jd_056",
+   "resume": "cv_041",
+   "kind": "same_category",
+   "resume_variant": "strong",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_066__cv_077",
+   "jd": "jd_066",
+   "resume": "cv_077",
+   "kind": "same_category",
+   "resume_variant": "strong",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_020__cv_029",
+   "jd": "jd_020",
+   "resume": "cv_029",
+   "kind": "same_category",
+   "resume_variant": "strong",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_040__cv_007",
+   "jd": "jd_040",
+   "resume": "cv_007",
+   "kind": "cross_category",
+   "resume_variant": "junior",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_060__cv_007",
+   "jd": "jd_060",
+   "resume": "cv_007",
+   "kind": "cross_category",
+   "resume_variant": "junior",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_065__cv_067",
+   "jd": "jd_065",
+   "resume": "cv_067",
+   "kind": "match",
+   "resume_variant": "junior",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_028__cv_028",
+   "jd": "jd_028",
+   "resume": "cv_028",
+   "kind": "match",
+   "resume_variant": "switcher",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_014__cv_025",
+   "jd": "jd_014",
+   "resume": "cv_025",
+   "kind": "same_category",
+   "resume_variant": "strong",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_016__cv_026",
+   "jd": "jd_016",
+   "resume": "cv_026",
+   "kind": "same_category",
+   "resume_variant": "mid",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_051__cv_049",
+   "jd": "jd_051",
+   "resume": "cv_049",
+   "kind": "match",
+   "resume_variant": "strong",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_086__cv_006",
+   "jd": "jd_086",
+   "resume": "cv_006",
+   "kind": "cross_category",
+   "resume_variant": "mid",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_083__cv_089",
+   "jd": "jd_083",
+   "resume": "cv_089",
+   "kind": "same_category",
+   "resume_variant": "strong",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_070__cv_070",
+   "jd": "jd_070",
+   "resume": "cv_070",
+   "kind": "match",
+   "resume_variant": "mid",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_025__cv_039",
+   "jd": "jd_025",
+   "resume": "cv_039",
+   "kind": "cross_category",
+   "resume_variant": "junior",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_093__cv_090",
+   "jd": "jd_093",
+   "resume": "cv_090",
+   "kind": "same_category",
+   "resume_variant": "mid",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_081__cv_098",
+   "jd": "jd_081",
+   "resume": "cv_098",
+   "kind": "cross_category",
+   "resume_variant": "mid",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_066__cv_019",
+   "jd": "jd_066",
+   "resume": "cv_019",
+   "kind": "cross_category",
+   "resume_variant": "junior",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_097__cv_101",
+   "jd": "jd_097",
+   "resume": "cv_101",
+   "kind": "same_category",
+   "resume_variant": "strong",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_082__cv_094",
+   "jd": "jd_082",
+   "resume": "cv_094",
+   "kind": "same_category",
+   "resume_variant": "mid",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_054__cv_054",
+   "jd": "jd_054",
+   "resume": "cv_054",
+   "kind": "match",
+   "resume_variant": "mid",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_008__cv_008",
+   "jd": "jd_008",
+   "resume": "cv_008",
+   "kind": "match",
+   "resume_variant": "switcher",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_073__cv_039",
+   "jd": "jd_073",
+   "resume": "cv_039",
+   "kind": "cross_category",
+   "resume_variant": "junior",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_007__cv_009",
+   "jd": "jd_007",
+   "resume": "cv_009",
+   "kind": "same_category",
+   "resume_variant": "strong",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_103__cv_101",
+   "jd": "jd_103",
+   "resume": "cv_101",
+   "kind": "match",
+   "resume_variant": "strong",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_062__cv_057",
+   "jd": "jd_062",
+   "resume": "cv_057",
+   "kind": "same_category",
+   "resume_variant": "strong",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_069__cv_038",
+   "jd": "jd_069",
+   "resume": "cv_038",
+   "kind": "cross_category",
+   "resume_variant": "mid",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_094__cv_094",
+   "jd": "jd_094",
+   "resume": "cv_094",
+   "kind": "match",
+   "resume_variant": "mid",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_098__cv_021",
+   "jd": "jd_098",
+   "resume": "cv_021",
+   "kind": "cross_category",
+   "resume_variant": "strong",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_010__cv_063",
+   "jd": "jd_010",
+   "resume": "cv_063",
+   "kind": "cross_category",
+   "resume_variant": "junior",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_086__cv_086",
+   "jd": "jd_086",
+   "resume": "cv_086",
+   "kind": "match",
+   "resume_variant": "mid",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_064__cv_013",
+   "jd": "jd_064",
+   "resume": "cv_013",
+   "kind": "cross_category",
+   "resume_variant": "strong",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_022__cv_013",
+   "jd": "jd_022",
+   "resume": "cv_013",
+   "kind": "same_category",
+   "resume_variant": "strong",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_059__cv_057",
+   "jd": "jd_059",
+   "resume": "cv_057",
+   "kind": "match",
+   "resume_variant": "strong",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_010__cv_010",
+   "jd": "jd_010",
+   "resume": "cv_010",
+   "kind": "match",
+   "resume_variant": "mid",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_099__cv_102",
+   "jd": "jd_099",
+   "resume": "cv_102",
+   "kind": "same_category",
+   "resume_variant": "mid",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_065__cv_013",
+   "jd": "jd_065",
+   "resume": "cv_013",
+   "kind": "cross_category",
+   "resume_variant": "strong",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_083__cv_102",
+   "jd": "jd_083",
+   "resume": "cv_102",
+   "kind": "cross_category",
+   "resume_variant": "mid",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_075__cv_065",
+   "jd": "jd_075",
+   "resume": "cv_065",
+   "kind": "same_category",
+   "resume_variant": "strong",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_103__cv_097",
+   "jd": "jd_103",
+   "resume": "cv_097",
+   "kind": "same_category",
+   "resume_variant": "strong",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_058__cv_090",
+   "jd": "jd_058",
+   "resume": "cv_090",
+   "kind": "cross_category",
+   "resume_variant": "mid",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_041__cv_043",
+   "jd": "jd_041",
+   "resume": "cv_043",
+   "kind": "match",
+   "resume_variant": "junior",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_048__cv_054",
+   "jd": "jd_048",
+   "resume": "cv_054",
+   "kind": "same_category",
+   "resume_variant": "mid",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_033__cv_013",
+   "jd": "jd_033",
+   "resume": "cv_013",
+   "kind": "cross_category",
+   "resume_variant": "strong",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_024__cv_029",
+   "jd": "jd_024",
+   "resume": "cv_029",
+   "kind": "same_category",
+   "resume_variant": "strong",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_085__cv_031",
+   "jd": "jd_085",
+   "resume": "cv_031",
+   "kind": "cross_category",
+   "resume_variant": "junior",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_021__cv_042",
+   "jd": "jd_021",
+   "resume": "cv_042",
+   "kind": "cross_category",
+   "resume_variant": "mid",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_059__cv_050",
+   "jd": "jd_059",
+   "resume": "cv_050",
+   "kind": "same_category",
+   "resume_variant": "mid",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_019__cv_017",
+   "jd": "jd_019",
+   "resume": "cv_017",
+   "kind": "match",
+   "resume_variant": "strong",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_055__cv_033",
+   "jd": "jd_055",
+   "resume": "cv_033",
+   "kind": "same_category",
+   "resume_variant": "strong",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_080__cv_070",
+   "jd": "jd_080",
+   "resume": "cv_070",
+   "kind": "same_category",
+   "resume_variant": "mid",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_043__cv_041",
+   "jd": "jd_043",
+   "resume": "cv_041",
+   "kind": "match",
+   "resume_variant": "strong",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_022__cv_022",
+   "jd": "jd_022",
+   "resume": "cv_022",
+   "kind": "match",
+   "resume_variant": "mid",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_094__cv_081",
+   "jd": "jd_094",
+   "resume": "cv_081",
+   "kind": "same_category",
+   "resume_variant": "strong",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_092__cv_056",
+   "jd": "jd_092",
+   "resume": "cv_056",
+   "kind": "cross_category",
+   "resume_variant": "switcher",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_047__cv_045",
+   "jd": "jd_047",
+   "resume": "cv_045",
+   "kind": "match",
+   "resume_variant": "strong",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_002__cv_002",
+   "jd": "jd_002",
+   "resume": "cv_002",
+   "kind": "match",
+   "resume_variant": "mid",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_034__cv_034",
+   "jd": "jd_034",
+   "resume": "cv_034",
+   "kind": "match",
+   "resume_variant": "mid",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_078__cv_078",
+   "jd": "jd_078",
+   "resume": "cv_078",
+   "kind": "match",
+   "resume_variant": "mid",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_012__cv_066",
+   "jd": "jd_012",
+   "resume": "cv_066",
+   "kind": "cross_category",
+   "resume_variant": "mid",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_034__cv_029",
+   "jd": "jd_034",
+   "resume": "cv_029",
+   "kind": "cross_category",
+   "resume_variant": "strong",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_070__cv_056",
+   "jd": "jd_070",
+   "resume": "cv_056",
+   "kind": "cross_category",
+   "resume_variant": "switcher",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_009__cv_061",
+   "jd": "jd_009",
+   "resume": "cv_061",
+   "kind": "cross_category",
+   "resume_variant": "strong",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_001__cv_003",
+   "jd": "jd_001",
+   "resume": "cv_003",
+   "kind": "match",
+   "resume_variant": "junior",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_080__cv_083",
+   "jd": "jd_080",
+   "resume": "cv_083",
+   "kind": "cross_category",
+   "resume_variant": "junior",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_017__cv_019",
+   "jd": "jd_017",
+   "resume": "cv_019",
+   "kind": "match",
+   "resume_variant": "junior",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_031__cv_029",
+   "jd": "jd_031",
+   "resume": "cv_029",
+   "kind": "match",
+   "resume_variant": "strong",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_068__cv_077",
+   "jd": "jd_068",
+   "resume": "cv_077",
+   "kind": "same_category",
+   "resume_variant": "strong",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_078__cv_066",
+   "jd": "jd_078",
+   "resume": "cv_066",
+   "kind": "same_category",
+   "resume_variant": "mid",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_090__cv_100",
+   "jd": "jd_090",
+   "resume": "cv_100",
+   "kind": "cross_category",
+   "resume_variant": "switcher",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_035__cv_058",
+   "jd": "jd_035",
+   "resume": "cv_058",
+   "kind": "same_category",
+   "resume_variant": "mid",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_057__cv_042",
+   "jd": "jd_057",
+   "resume": "cv_042",
+   "kind": "same_category",
+   "resume_variant": "mid",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_084__cv_084",
+   "jd": "jd_084",
+   "resume": "cv_084",
+   "kind": "match",
+   "resume_variant": "switcher",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_047__cv_038",
+   "jd": "jd_047",
+   "resume": "cv_038",
+   "kind": "same_category",
+   "resume_variant": "mid",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_008__cv_035",
+   "jd": "jd_008",
+   "resume": "cv_035",
+   "kind": "cross_category",
+   "resume_variant": "junior",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_019__cv_026",
+   "jd": "jd_019",
+   "resume": "cv_026",
+   "kind": "same_category",
+   "resume_variant": "mid",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_089__cv_086",
+   "jd": "jd_089",
+   "resume": "cv_086",
+   "kind": "same_category",
+   "resume_variant": "mid",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_101__cv_103",
+   "jd": "jd_101",
+   "resume": "cv_103",
+   "kind": "match",
+   "resume_variant": "junior",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_046__cv_087",
+   "jd": "jd_046",
+   "resume": "cv_087",
+   "kind": "cross_category",
+   "resume_variant": "junior",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_099__cv_066",
+   "jd": "jd_099",
+   "resume": "cv_066",
+   "kind": "cross_category",
+   "resume_variant": "mid",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_045__cv_102",
+   "jd": "jd_045",
+   "resume": "cv_102",
+   "kind": "cross_category",
+   "resume_variant": "mid",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_104__cv_098",
+   "jd": "jd_104",
+   "resume": "cv_098",
+   "kind": "same_category",
+   "resume_variant": "mid",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_002__cv_014",
+   "jd": "jd_002",
+   "resume": "cv_014",
+   "kind": "same_category",
+   "resume_variant": "mid",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_039__cv_007",
+   "jd": "jd_039",
+   "resume": "cv_007",
+   "kind": "cross_category",
+   "resume_variant": "junior",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_063__cv_050",
+   "jd": "jd_063",
+   "resume": "cv_050",
+   "kind": "same_category",
+   "resume_variant": "mid",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_067__cv_088",
+   "jd": "jd_067",
+   "resume": "cv_088",
+   "kind": "cross_category",
+   "resume_variant": "switcher",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_072__cv_077",
+   "jd": "jd_072",
+   "resume": "cv_077",
+   "kind": "same_category",
+   "resume_variant": "strong",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_020__cv_020",
+   "jd": "jd_020",
+   "resume": "cv_020",
+   "kind": "match",
+   "resume_variant": "switcher",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_096__cv_096",
+   "jd": "jd_096",
+   "resume": "cv_096",
+   "kind": "match",
+   "resume_variant": "switcher",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_092__cv_092",
+   "jd": "jd_092",
+   "resume": "cv_092",
+   "kind": "match",
+   "resume_variant": "switcher",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_073__cv_069",
+   "jd": "jd_073",
+   "resume": "cv_069",
+   "kind": "same_category",
+   "resume_variant": "strong",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_100__cv_100",
+   "jd": "jd_100",
+   "resume": "cv_100",
+   "kind": "match",
+   "resume_variant": "switcher",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_020__cv_055",
+   "jd": "jd_020",
+   "resume": "cv_055",
+   "kind": "cross_category",
+   "resume_variant": "junior",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_077__cv_065",
+   "jd": "jd_077",
+   "resume": "cv_065",
+   "kind": "same_category",
+   "resume_variant": "strong",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_083__cv_081",
+   "jd": "jd_083",
+   "resume": "cv_081",
+   "kind": "match",
+   "resume_variant": "strong",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_006__cv_083",
+   "jd": "jd_006",
+   "resume": "cv_083",
+   "kind": "cross_category",
+   "resume_variant": "junior",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_070__cv_065",
+   "jd": "jd_070",
+   "resume": "cv_065",
+   "kind": "same_category",
+   "resume_variant": "strong",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_100__cv_025",
+   "jd": "jd_100",
+   "resume": "cv_025",
+   "kind": "cross_category",
+   "resume_variant": "strong",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_093__cv_104",
+   "jd": "jd_093",
+   "resume": "cv_104",
+   "kind": "cross_category",
+   "resume_variant": "switcher",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_012__cv_030",
+   "jd": "jd_012",
+   "resume": "cv_030",
+   "kind": "same_category",
+   "resume_variant": "mid",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_050__cv_033",
+   "jd": "jd_050",
+   "resume": "cv_033",
+   "kind": "same_category",
+   "resume_variant": "strong",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_084__cv_089",
+   "jd": "jd_084",
+   "resume": "cv_089",
+   "kind": "same_category",
+   "resume_variant": "strong",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_091__cv_046",
+   "jd": "jd_091",
+   "resume": "cv_046",
+   "kind": "cross_category",
+   "resume_variant": "mid",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_057__cv_071",
+   "jd": "jd_057",
+   "resume": "cv_071",
+   "kind": "cross_category",
+   "resume_variant": "junior",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_053__cv_045",
+   "jd": "jd_053",
+   "resume": "cv_045",
+   "kind": "same_category",
+   "resume_variant": "strong",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_046__cv_041",
+   "jd": "jd_046",
+   "resume": "cv_041",
+   "kind": "same_category",
+   "resume_variant": "strong",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_037__cv_011",
+   "jd": "jd_037",
+   "resume": "cv_011",
+   "kind": "cross_category",
+   "resume_variant": "junior",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_017__cv_034",
+   "jd": "jd_017",
+   "resume": "cv_034",
+   "kind": "cross_category",
+   "resume_variant": "mid",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_082__cv_059",
+   "jd": "jd_082",
+   "resume": "cv_059",
+   "kind": "cross_category",
+   "resume_variant": "junior",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_057__cv_059",
+   "jd": "jd_057",
+   "resume": "cv_059",
+   "kind": "match",
+   "resume_variant": "junior",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_040__cv_040",
+   "jd": "jd_040",
+   "resume": "cv_040",
+   "kind": "match",
+   "resume_variant": "switcher",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_081__cv_083",
+   "jd": "jd_081",
+   "resume": "cv_083",
+   "kind": "match",
+   "resume_variant": "junior",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_010__cv_005",
+   "jd": "jd_010",
+   "resume": "cv_005",
+   "kind": "same_category",
+   "resume_variant": "strong",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_003__cv_001",
+   "jd": "jd_003",
+   "resume": "cv_001",
+   "kind": "match",
+   "resume_variant": "strong",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_041__cv_053",
+   "jd": "jd_041",
+   "resume": "cv_053",
+   "kind": "same_category",
+   "resume_variant": "strong",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_094__cv_078",
+   "jd": "jd_094",
+   "resume": "cv_078",
+   "kind": "cross_category",
+   "resume_variant": "mid",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_075__cv_073",
+   "jd": "jd_075",
+   "resume": "cv_073",
+   "kind": "match",
+   "resume_variant": "strong",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_004__cv_004",
+   "jd": "jd_004",
+   "resume": "cv_004",
+   "kind": "match",
+   "resume_variant": "switcher",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_016__cv_073",
+   "jd": "jd_016",
+   "resume": "cv_073",
+   "kind": "cross_category",
+   "resume_variant": "strong",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_013__cv_009",
+   "jd": "jd_013",
+   "resume": "cv_009",
+   "kind": "same_category",
+   "resume_variant": "strong",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_080__cv_080",
+   "jd": "jd_080",
+   "resume": "cv_080",
+   "kind": "match",
+   "resume_variant": "switcher",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_064__cv_033",
+   "jd": "jd_064",
+   "resume": "cv_033",
+   "kind": "same_category",
+   "resume_variant": "strong",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_055__cv_005",
+   "jd": "jd_055",
+   "resume": "cv_005",
+   "kind": "cross_category",
+   "resume_variant": "strong",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_102__cv_097",
+   "jd": "jd_102",
+   "resume": "cv_097",
+   "kind": "same_category",
+   "resume_variant": "strong",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_018__cv_006",
+   "jd": "jd_018",
+   "resume": "cv_006",
+   "kind": "same_category",
+   "resume_variant": "mid",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_002__cv_070",
+   "jd": "jd_002",
+   "resume": "cv_070",
+   "kind": "cross_category",
+   "resume_variant": "mid",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_001__cv_051",
+   "jd": "jd_001",
+   "resume": "cv_051",
+   "kind": "cross_category",
+   "resume_variant": "junior",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_056__cv_056",
+   "jd": "jd_056",
+   "resume": "cv_056",
+   "kind": "match",
+   "resume_variant": "switcher",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_014__cv_060",
+   "jd": "jd_014",
+   "resume": "cv_060",
+   "kind": "cross_category",
+   "resume_variant": "switcher",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_003__cv_057",
+   "jd": "jd_003",
+   "resume": "cv_057",
+   "kind": "cross_category",
+   "resume_variant": "strong",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_001__cv_025",
+   "jd": "jd_001",
+   "resume": "cv_025",
+   "kind": "same_category",
+   "resume_variant": "strong",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_091__cv_093",
+   "jd": "jd_091",
+   "resume": "cv_093",
+   "kind": "same_category",
+   "resume_variant": "strong",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_060__cv_038",
+   "jd": "jd_060",
+   "resume": "cv_038",
+   "kind": "same_category",
+   "resume_variant": "mid",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_015__cv_041",
+   "jd": "jd_015",
+   "resume": "cv_041",
+   "kind": "cross_category",
+   "resume_variant": "strong",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_090__cv_086",
+   "jd": "jd_090",
+   "resume": "cv_086",
+   "kind": "same_category",
+   "resume_variant": "mid",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_090__cv_090",
+   "jd": "jd_090",
+   "resume": "cv_090",
+   "kind": "match",
+   "resume_variant": "mid",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_076__cv_076",
+   "jd": "jd_076",
+   "resume": "cv_076",
+   "kind": "match",
+   "resume_variant": "switcher",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_076__cv_037",
+   "jd": "jd_076",
+   "resume": "cv_037",
+   "kind": "cross_category",
+   "resume_variant": "strong",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_103__cv_009",
+   "jd": "jd_103",
+   "resume": "cv_009",
+   "kind": "cross_category",
+   "resume_variant": "strong",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_088__cv_024",
+   "jd": "jd_088",
+   "resume": "cv_024",
+   "kind": "cross_category",
+   "resume_variant": "switcher",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_051__cv_062",
+   "jd": "jd_051",
+   "resume": "cv_062",
+   "kind": "same_category",
+   "resume_variant": "mid",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_006__cv_029",
+   "jd": "jd_006",
+   "resume": "cv_029",
+   "kind": "same_category",
+   "resume_variant": "strong",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_030__cv_030",
+   "jd": "jd_030",
+   "resume": "cv_030",
+   "kind": "match",
+   "resume_variant": "mid",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_030__cv_026",
+   "jd": "jd_030",
+   "resume": "cv_026",
+   "kind": "same_category",
+   "resume_variant": "mid",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_024__cv_024",
+   "jd": "jd_024",
+   "resume": "cv_024",
+   "kind": "match",
+   "resume_variant": "switcher",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_017__cv_030",
+   "jd": "jd_017",
+   "resume": "cv_030",
+   "kind": "same_category",
+   "resume_variant": "mid",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_015__cv_018",
+   "jd": "jd_015",
+   "resume": "cv_018",
+   "kind": "same_category",
+   "resume_variant": "mid",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_079__cv_053",
+   "jd": "jd_079",
+   "resume": "cv_053",
+   "kind": "cross_category",
+   "resume_variant": "strong",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_014__cv_014",
+   "jd": "jd_014",
+   "resume": "cv_014",
+   "kind": "match",
+   "resume_variant": "mid",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_067__cv_073",
+   "jd": "jd_067",
+   "resume": "cv_073",
+   "kind": "same_category",
+   "resume_variant": "strong",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_044__cv_096",
+   "jd": "jd_044",
+   "resume": "cv_096",
+   "kind": "cross_category",
+   "resume_variant": "switcher",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_045__cv_047",
+   "jd": "jd_045",
+   "resume": "cv_047",
+   "kind": "match",
+   "resume_variant": "junior",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_032__cv_090",
+   "jd": "jd_032",
+   "resume": "cv_090",
+   "kind": "cross_category",
+   "resume_variant": "mid",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_049__cv_051",
+   "jd": "jd_049",
+   "resume": "cv_051",
+   "kind": "match",
+   "resume_variant": "junior",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_081__cv_086",
+   "jd": "jd_081",
+   "resume": "cv_086",
+   "kind": "same_category",
+   "resume_variant": "mid",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_088__cv_088",
+   "jd": "jd_088",
+   "resume": "cv_088",
+   "kind": "match",
+   "resume_variant": "switcher",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_064__cv_064",
+   "jd": "jd_064",
+   "resume": "cv_064",
+   "kind": "match",
+   "resume_variant": "switcher",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_074__cv_012",
+   "jd": "jd_074",
+   "resume": "cv_012",
+   "kind": "cross_category",
+   "resume_variant": "switcher",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_078__cv_022",
+   "jd": "jd_078",
+   "resume": "cv_022",
+   "kind": "cross_category",
+   "resume_variant": "mid",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_006__cv_006",
+   "jd": "jd_006",
+   "resume": "cv_006",
+   "kind": "match",
+   "resume_variant": "mid",
+   "jd_level": "mid"
+  },
+  {
+   "pair_id": "jd_104__cv_104",
+   "jd": "jd_104",
+   "resume": "cv_104",
+   "kind": "match",
+   "resume_variant": "switcher",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_071__cv_073",
+   "jd": "jd_071",
+   "resume": "cv_073",
+   "kind": "same_category",
+   "resume_variant": "strong",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_032__cv_032",
+   "jd": "jd_032",
+   "resume": "cv_032",
+   "kind": "match",
+   "resume_variant": "switcher",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_077__cv_079",
+   "jd": "jd_077",
+   "resume": "cv_079",
+   "kind": "match",
+   "resume_variant": "junior",
+   "jd_level": "junior"
+  },
+  {
+   "pair_id": "jd_036__cv_083",
+   "jd": "jd_036",
+   "resume": "cv_083",
+   "kind": "cross_category",
+   "resume_variant": "junior",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_051__cv_098",
+   "jd": "jd_051",
+   "resume": "cv_098",
+   "kind": "cross_category",
+   "resume_variant": "mid",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_028__cv_013",
+   "jd": "jd_028",
+   "resume": "cv_013",
+   "kind": "same_category",
+   "resume_variant": "strong",
+   "jd_level": "lead"
+  },
+  {
+   "pair_id": "jd_039__cv_053",
+   "jd": "jd_039",
+   "resume": "cv_053",
+   "kind": "same_category",
+   "resume_variant": "strong",
+   "jd_level": "senior"
+  },
+  {
+   "pair_id": "jd_026__cv_034",
+   "jd": "jd_026",
+   "resume": "cv_034",
+   "kind": "cross_category",
+   "resume_variant": "mid",
+   "jd_level": "mid"
+  }
+ ]
+}

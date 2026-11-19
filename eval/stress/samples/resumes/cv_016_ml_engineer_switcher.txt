@@ -1,0 +1,26 @@
+Sofia Novak
+Senior Data Engineer moving into machine learning
+Bengaluru · novak.73@examplemail.com · +91 384 617 3315 · linkedin.com/in/novak-965
+
+SUMMARY
+Senior Data Engineer moving into machine learning. Known for stakeholder management, communication. Looking to bring data engineering experience into machine learning.
+
+EXPERIENCE
+Senior Data Engineer — Juniper Learning
+Apr 2024 – Present
+• Streamed clickstream events through Kafka into BigQuery with under 5 minute latency
+• Rewrote 60 legacy SQL jobs as dbt models with tests and documentation
+• Introduced Great Expectations data-quality checks on 70 critical tables
+• Side project: completed a certificate course in machine learning and practised Python
+
+Data Engineer — Bluefin Systems
+Oct 2021 – Apr 2024
+• Set up Airflow DAGs with SLAs and alerting for 80 daily feeds
+• Built Spark pipelines processing 3 TB/day into Snowflake
+• Cut warehouse spend by 17% by partitioning and clustering large tables
+
+EDUCATION
+Bachelor's in Computer Science, Engineering, Statistics — Institute of Technology, 2020
+
+SKILLS
+SQL, Python, Apache Spark, data warehousing (Snowflake, BigQuery, Redshift), machine learning (scikit-learn, XGBoost), deep learning (PyTorch or TensorFlow), deploying models to production, MLOps (MLflow, Kubeflow, SageMaker), LLM fine-tuning, experiment design / A/B testing, published research, Spark, vector databases

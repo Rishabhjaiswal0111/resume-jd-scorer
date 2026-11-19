@@ -1,0 +1,48 @@
+{
+ "latency_s": 3.0,
+ "db_pool_size": 5,
+ "levels": [
+  {
+   "concurrent_requests": 5,
+   "seconds": 6.2,
+   "outcomes": {
+    "completed": 5
+   }
+  },
+  {
+   "concurrent_requests": 10,
+   "seconds": 6.2,
+   "outcomes": {
+    "completed": 10
+   }
+  },
+  {
+   "concurrent_requests": 15,
+   "seconds": 6.3,
+   "outcomes": {
+    "completed": 15
+   }
+  },
+  {
+   "concurrent_requests": 20,
+   "seconds": 6.5,
+   "outcomes": {
+    "completed": 20
+   }
+  },
+  {
+   "concurrent_requests": 40,
+   "seconds": 6.6,
+   "outcomes": {
+    "completed": 40
+   }
+  },
+  {
+   "concurrent_requests": 80,
+   "seconds": 7.1,
+   "outcomes": {
+    "completed": 80
+   }
+  }
+ ]
+}

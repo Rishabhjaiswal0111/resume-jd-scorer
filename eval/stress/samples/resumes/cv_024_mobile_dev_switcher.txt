@@ -1,0 +1,26 @@
+Fatima Delgado
+Senior Frontend Engineer moving into mobile development
+Toronto · delgado.82@examplemail.com · +1 782 536 8847 · linkedin.com/in/delgado-298
+
+SUMMARY
+Senior Frontend Engineer moving into mobile development. Known for stakeholder management, communication. Looking to bring frontend engineering experience into mobile development.
+
+EXPERIENCE
+Senior Frontend Engineer — Solstice Media
+Oct 2023 – Present
+• Improved Largest Contentful Paint from 4.1s to 1.50s via code splitting and image CDNs
+• Migrated a large AngularJS app to Next.js incrementally
+• Created a Storybook design system of 2 components used by 6 teams
+• Side project: completed a certificate course in mobile development and practised Swift (iOS) or Kotlin (Android)
+
+Frontend Engineer — Driftwood Travel
+Sep 2020 – Oct 2023
+• Fixed 30 WCAG 2.1 AA accessibility issues across the product
+• Introduced Playwright end-to-end tests covering 90 critical journeys
+• Rebuilt the checkout flow in React + TypeScript, lifting conversion by 34%
+
+EDUCATION
+Degree in Computer Science — Institute of Technology, 2020
+
+SKILLS
+React, TypeScript, HTML/CSS, frontend testing (Jest, Testing Library), Swift (iOS)

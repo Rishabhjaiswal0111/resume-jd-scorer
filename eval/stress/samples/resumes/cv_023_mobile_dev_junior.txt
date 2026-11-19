@@ -1,0 +1,18 @@
+Felix Brennan
+Recent graduate seeking a Junior Mobile Developer role
+Berlin · brennan.53@examplemail.com · +49 598 569 3446 · linkedin.com/in/brennan-763
+
+SUMMARY
+Recent graduate seeking a Junior Mobile Developer role. Known for stakeholder management, communication. Experienced in Swift (iOS), mobile app architecture (MVVM), REST/GraphQL APIs.
+
+EXPERIENCE
+Junior Mobile Developer (Intern) — Nimbus Cloud
+Jan 2026 – Present
+• Assisted senior colleagues to own app performance and crash rate
+• Project: applied Swift (iOS) or Kotlin (Android) and publishing to App Store / Play Store in a social media capstone
+
+EDUCATION
+Bachelor's degree in a technical field — State University, 2025
+
+SKILLS
+Swift (iOS), mobile app architecture (MVVM), REST/GraphQL APIs

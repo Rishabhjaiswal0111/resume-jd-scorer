@@ -1,0 +1,25 @@
+Elena Mehta
+Machine Learning Engineer with 4 years of experience
+Bengaluru · mehta.76@examplemail.com · +91 546 691 4074 · linkedin.com/in/mehta-928
+
+SUMMARY
+Machine Learning Engineer with 4 years of experience. Known for stakeholder management, communication. Experienced in deep learning (PyTorch, TensorFlow), machine learning (scikit-learn, XGBoost), Python.
+
+EXPERIENCE
+Machine Learning Engineer — Driftwood Travel
+Sep 2024 – Present
+• Trained a PyTorch two-tower recommender serving 70M users daily
+• Set up drift monitoring and automated retraining on SageMaker
+• Fine-tuned an open-weights LLM for support-ticket triage with 33% accuracy
+
+Junior ML Engineer — Nimbus Cloud
+Jul 2022 – Sep 2024
+• Built an MLflow-based model registry and CI for 6 production models
+• Deployed a fraud model (XGBoost) that cut chargebacks by 15%
+• Designed A/B tests for ranking changes, lifting CTR by 34%
+
+EDUCATION
+Master's — City College, 2021
+
+SKILLS
+deep learning (PyTorch, TensorFlow), machine learning (scikit-learn, XGBoost), Python, LLM fine-tuning

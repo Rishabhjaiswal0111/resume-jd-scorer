@@ -1,0 +1,41 @@
+Junior Data Engineer
+Copperline Telecom · Sydney · Remote within the country · Full-time
+
+About us
+Copperline Telecom builds products for the adtech sector. We are a team of 3000 people with offices in Sydney.
+
+About the role
+As our Junior Data Engineer, you will own data quality checks and SLAs and build batch and streaming pipelines, working closely with operations.
+
+What you'll do
+• Own data quality checks and SLAs
+• Build batch and streaming pipelines
+• Optimise Spark jobs and warehouse cost
+• Orchestrate jobs with Airflow
+• Model data in the warehouse for analytics
+
+Requirements
+• 0-2 years of experience in data engineering
+• SQL
+• Python
+• Apache Spark
+• data warehousing (Snowflake, BigQuery or Redshift)
+• Bachelor's in Computer Science, Engineering, Statistics or similar
+
+Preferred qualifications
+• Kafka
+• data modelling (Kimball)
+• AWS or GCP
+• dbt
+• Airflow
+
+Nice to have
+• Terraform
+
+Good to know
+This role is remote within the country in Sydney; relocation support is available. Please state your notice period when applying.
+
+What we offer
+Competitive salary, health cover, learning budget, 25 days leave.
+
+We are an equal opportunity employer. We do not discriminate on the basis of race, religion, colour, national origin, gender, sexual orientation, age, marital status or disability.

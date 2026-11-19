@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 
 import { PageHeader } from '@/components/ui/page-header'
-import { useScoreRun, type ScoreInput } from '@/features/scoring/api'
+import { isManualPending, pendingStep, useScoreRun, type ScoreInput } from '@/features/scoring/api'
 import { HowItWorks } from '@/features/scoring/HowItWorks'
 import { RunResult } from '@/features/scoring/RunResult'
 import { ScoreError } from '@/features/scoring/ScoreError'
@@ -32,7 +32,13 @@ export function HomePage() {
       />
       <ScoreForm onSubmit={submit} pending={scoring.isPending} />
       {scoring.isIdle && <HowItWorks />}
-      {scoring.isPending && <ScoringProgress />}
+      {scoring.isPending && (
+        <ScoringProgress
+          waitingFor={
+            isManualPending(scoring.failureReason) ? pendingStep(scoring.failureReason) : undefined
+          }
+        />
+      )}
       {scoring.isError && lastInput && (
         <ScoreError error={scoring.error} onRetry={() => scoring.mutate(lastInput)} />
       )}

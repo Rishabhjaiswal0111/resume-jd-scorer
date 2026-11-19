@@ -1,0 +1,29 @@
+Ruby Castellanos
+Senior Backend Engineer · 8 years in backend engineering
+Sydney · castellanos.65@examplemail.com · +61 745 187 1960 · linkedin.com/in/castellanos-865
+
+SUMMARY
+Senior Backend Engineer · 8 years in backend engineering. Known for communication, stakeholder management. Experienced in Python, REST API design, PostgreSQL.
+
+EXPERIENCE
+Senior Backend Engineer — Parallax Games
+Dec 2023 – Present
+• Raised test coverage from 40% to 90% with pytest and contract tests
+• Led on-call rotation and reduced incidents by 45% through better alerting
+• Maintained internal tooling written in Ruby and Ruby on Rails
+
+Backend Engineer — Granite Works
+Feb 2021 – Dec 2023
+• Cut p95 API latency by 24% by adding Redis caching and fixing N+1 queries in PostgreSQL
+• Built a payments reconciliation service in Python/FastAPI handling 6k transactions per day
+
+Junior Backend Engineer — Thistle Security
+Apr 2018 – Feb 2021
+• Migrated a Django monolith's billing module to a standalone service on AWS ECS
+• Designed Kafka consumers for order events with idempotent processing
+
+EDUCATION
+Bachelor's degree in Computer Science — Institute of Technology, 2018
+
+SKILLS
+Python, REST API design, PostgreSQL, automated testing (pytest), FastAPI, AWS, Docker, Redis, event-driven systems (Kafka), Kubernetes, Ruby

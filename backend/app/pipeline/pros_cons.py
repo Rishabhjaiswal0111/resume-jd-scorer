@@ -1,6 +1,9 @@
 """Derive pros / cons from graded criteria (PLAN.md §7.5). PURE: no I/O.
 
 - Full Pass reasoning -> pros; Partial Pass / Fail -> cons.
+- A passed avoid-criterion (must_avoid / may_avoid: the red flag is absent) is neither: the
+  absence of a red flag is not a strength a recruiter wants listed (it already counts in
+  the score). A failed one (red flag present) is still a con.
 - Holistic summaries -> cons if their level carries a cap, else pros.
 - Unknown (verify-in-screening) criteria are neither; they become screening questions.
 - Sorted by operator (must_have first), then importance (high first), then rubric order.
@@ -18,6 +21,7 @@ _OPERATOR_RANK = {op: i for i, op in enumerate(OPERATORS)}
 _IMPORTANCE_RANK = {"high": 0, "normal": 1}
 # Holistic items sort before criteria: they are the headline of the assessment.
 _HOLISTIC_RANK = -1
+_AVOID = frozenset({"must_avoid", "may_avoid"})
 
 
 @dataclass(frozen=True)
@@ -66,6 +70,8 @@ def derive_pros_cons(
 
     for i, s in enumerate(scored):
         if s.outcome == "Unknown":  # not a pro or a con: it is a screening question
+            continue
+        if s.operator in _AVOID and s.outcome == "Full Pass":
             continue
         point = Point(
             text=reasoning.get(s.key, ""),

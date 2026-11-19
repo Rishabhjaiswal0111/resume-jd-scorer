@@ -80,3 +80,19 @@ def test_as_json_round_trip() -> None:
         "outcome": "Clear",
     }
     assert [c["source"] for c in cons] == ["role_overlap"]
+
+
+def test_absent_red_flag_is_not_a_strength_but_a_present_one_is_a_concern() -> None:
+    rubric = [
+        crit("c_skill", "must_have"),
+        crit("c_avoid_a", "must_avoid"),
+        crit("c_avoid_b", "must_avoid"),
+    ]
+    results = [
+        res("c_skill", "Full Pass"),
+        res("c_avoid_a", "Full Pass", "not_evidenced"),  # red flag absent
+        res("c_avoid_b", "Fail", "evidenced"),  # red flag present
+    ]
+    pc = run(rubric, results, "Strong", "Clear")
+    assert [p.source for p in pc.pros] == ["role_overlap", "core_requirement", "c_skill"]
+    assert [c.source for c in pc.cons] == ["c_avoid_b"]

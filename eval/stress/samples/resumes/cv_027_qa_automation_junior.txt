@@ -1,0 +1,18 @@
+Sofia Hughes
+Recent graduate seeking a QA Engineer role
+Pune · hughes.99@examplemail.com · +91 661 428 7816 · linkedin.com/in/hughes-817
+
+SUMMARY
+Recent graduate seeking a QA Engineer role. Known for stakeholder management, communication. Experienced in API testing (Postman, REST Assured), test planning and defect tracking, performance testing (JMeter, k6).
+
+EXPERIENCE
+QA Engineer — Larkspur Logistics
+Sep 2025 – Present
+• Assisted senior colleagues to build test frameworks and CI integration
+• Project: applied test automation (Selenium, Playwright or Cypress) and test planning and defect tracking in a insurance capstone
+
+EDUCATION
+Bachelor's degree in Computer Science — Institute of Technology, 2024
+
+SKILLS
+API testing (Postman, REST Assured), test planning and defect tracking, performance testing (JMeter, k6)

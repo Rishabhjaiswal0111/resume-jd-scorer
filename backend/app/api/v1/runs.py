@@ -1,5 +1,6 @@
 """Scoring endpoints (HTTP only: parse, delegate, shape)."""
 
+from functools import lru_cache
 from uuid import UUID
 
 from fastapi import APIRouter, Depends, File, Form, Query, UploadFile
@@ -18,13 +19,18 @@ from app.storage import get_storage
 router = APIRouter(tags=["runs"])
 
 
+@lru_cache
+def get_llm_client() -> LLMClient:
+    """One LLM client per process, so its HTTP connection pool is reused across requests.
+    Closed in the app lifespan."""
+    settings = get_settings()
+    return LLMClient(settings, get_sessionmaker(), get_storage())
+
+
 def get_scoring_service() -> ScoringService:
     """Overridable in tests via app.dependency_overrides."""
     settings = get_settings()
-    sessionmaker, storage = get_sessionmaker(), get_storage()
-    return ScoringService(
-        settings, sessionmaker, storage, LLMClient(settings, sessionmaker, storage)
-    )
+    return ScoringService(settings, get_sessionmaker(), get_storage(), get_llm_client())
 
 
 async def _read_pdf(upload: UploadFile, settings: Settings) -> PdfInput:

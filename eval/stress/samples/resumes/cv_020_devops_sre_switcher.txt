@@ -1,0 +1,26 @@
+Owen Brennan
+Senior Backend Engineer moving into site reliability engineering
+Austin, TX · brennan.59@examplemail.com · +1 640 716 9825 · linkedin.com/in/brennan-687
+
+SUMMARY
+Senior Backend Engineer moving into site reliability engineering. Known for communication, stakeholder management. Looking to bring backend engineering experience into site reliability engineering.
+
+EXPERIENCE
+Senior Backend Engineer — Kestrel Retail
+May 2023 – Present
+• Cut p95 API latency by 26% by adding Redis caching and fixing N+1 queries in PostgreSQL
+• Led on-call rotation and reduced incidents by 29% through better alerting
+• Designed Kafka consumers for order events with idempotent processing
+• Side project: completed a certificate course in site reliability engineering and practised Kubernetes
+
+Backend Engineer — Orbital Freight
+Dec 2019 – May 2023
+• Raised test coverage from 40% to 79% with pytest and contract tests
+• Migrated a Django monolith's billing module to a standalone service on AWS ECS
+• Built a payments reconciliation service in Python/FastAPI handling 4k transactions per day
+
+EDUCATION
+Bachelor's degree in Computer Science — Institute of Technology, 2020
+
+SKILLS
+Python, REST API design, PostgreSQL, automated testing (pytest), Kubernetes

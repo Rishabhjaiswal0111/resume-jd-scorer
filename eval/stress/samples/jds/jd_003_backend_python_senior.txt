@@ -1,0 +1,43 @@
+Senior Backend Engineer
+Copperline Telecom · Singapore · Fully on-site · Full-time
+
+About us
+Copperline Telecom builds products for the fintech payments sector. We are a team of 120 people with offices in Singapore.
+
+About the role
+As our Senior Backend Engineer, you will own services end to end from design to on-call and write automated tests and review code, working closely with product and engineering.
+
+What you'll do
+• Own services end to end from design to on-call
+• Write automated tests and review code
+• Model data in PostgreSQL and tune slow queries
+• Improve reliability and observability of services
+• Mentor engineers and run design reviews
+• Design and build REST and gRPC APIs in Python
+
+Qualifications
+- 6+ years of experience in backend engineering
+- Python
+- REST API design
+- PostgreSQL
+- automated testing (pytest)
+- Bachelor's degree in Computer Science or equivalent experience
+- event-driven systems (Kafka)
+- Docker
+- AWS
+- FastAPI or Django
+- Redis
+
+Bonus points if you have
+- open-source contributions
+- Kubernetes
+- Go
+
+Good to know
+You must be legally authorised to work in Singapore without visa sponsorship.
+This role is fully on-site in Singapore; relocation support is available. Please state your notice period when applying.
+
+What we offer
+Competitive salary, health cover, learning budget, 25 days leave.
+
+We are an equal opportunity employer. We do not discriminate on the basis of race, religion, colour, national origin, gender, sexual orientation, age, marital status or disability.

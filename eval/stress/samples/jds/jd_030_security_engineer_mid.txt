@@ -1,0 +1,38 @@
+Security Engineer
+Foxglove Pharma · Bengaluru · Fully on-site · Full-time
+
+About us
+Foxglove Pharma builds products for the healthcare sector. We are a team of 120 people with offices in Bengaluru.
+
+About the role
+As our Security Engineer, you will run vulnerability management and penetration tests and respond to security incidents, working closely with operations.
+
+What you'll do
+• Run vulnerability management and penetration tests
+• Respond to security incidents
+• Build detection rules in the SIEM
+• Secure cloud infrastructure
+
+Qualifications
+- 3+ years of experience in security engineering
+- application or cloud security
+- vulnerability assessment and penetration testing
+- incident response
+- SIEM (Splunk, Sentinel or Elastic)
+- Degree in Computer Science, Cybersecurity or equivalent
+- AWS security services
+- Python scripting
+- SOC 2 / ISO 27001
+
+Bonus points if you have
+- OSCP
+- bug bounty experience
+
+Good to know
+You must be legally authorised to work in India without visa sponsorship.
+This role is fully on-site in Bengaluru; relocation support is available. Please state your notice period when applying.
+
+What we offer
+Competitive salary, health cover, learning budget, 25 days leave.
+
+We are an equal opportunity employer. We do not discriminate on the basis of race, religion, colour, national origin, gender, sexual orientation, age, marital status or disability.

@@ -1,0 +1,40 @@
+Junior DevOps Engineer
+Meridian Consulting · London · Fully on-site · Full-time
+
+About us
+Meridian Consulting builds products for the SaaS sector. We are a team of 3000 people with offices in London.
+
+About the role
+As our Junior DevOps Engineer, you will improve cloud cost efficiency and build CI/CD pipelines, working closely with product and engineering.
+
+What you'll do
+• Improve cloud cost efficiency
+• Build CI/CD pipelines
+• Run and scale Kubernetes clusters
+• Own monitoring, alerting and incident response
+• Manage infrastructure as code
+
+Qualifications
+- 0-2 years of experience in site reliability engineering
+- Kubernetes
+- Terraform
+- AWS, GCP or Azure
+- CI/CD (GitHub Actions, GitLab CI or Jenkins)
+- Linux
+- Degree in Computer Science or equivalent experience
+- incident management
+- Prometheus / Grafana
+- Helm
+- Python or Go scripting
+
+Bonus points if you have
+- service mesh (Istio)
+- CKA certification
+
+Good to know
+Up to 30% travel to client sites is expected.
+
+What we offer
+Competitive salary, health cover, learning budget, 25 days leave.
+
+We are an equal opportunity employer. We do not discriminate on the basis of race, religion, colour, national origin, gender, sexual orientation, age, marital status or disability.

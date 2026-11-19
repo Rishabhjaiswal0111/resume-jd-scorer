@@ -1,0 +1,18 @@
+Hana Nguyen
+Recent graduate seeking a Security Analyst role
+Berlin · nguyen.99@examplemail.com · +49 811 204 3436 · linkedin.com/in/nguyen-465
+
+SUMMARY
+Recent graduate seeking a Security Analyst role. Known for stakeholder management, communication. Experienced in vulnerability assessment and penetration testing, application, Python scripting.
+
+EXPERIENCE
+Security Analyst (Intern) — Lumen Analytics
+Nov 2025 – Present
+• Assisted senior colleagues to secure cloud infrastructure
+• Project: applied application or cloud security and SIEM (Splunk, Sentinel or Elastic) in a banking capstone
+
+EDUCATION
+Degree in Computer Science, Cybersecurity — Institute of Technology, 2025
+
+SKILLS
+vulnerability assessment and penetration testing, application, Python scripting

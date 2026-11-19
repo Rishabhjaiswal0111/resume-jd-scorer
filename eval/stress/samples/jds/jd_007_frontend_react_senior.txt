@@ -1,0 +1,39 @@
+Senior Frontend Engineer
+Larkspur Logistics · Singapore · Hybrid, 3 days in office · Full-time
+
+About us
+Larkspur Logistics builds products for the travel booking sector. We are a team of 120 people with offices in Singapore.
+
+About the role
+As our Senior Frontend Engineer, you will build responsive web UIs in React and TypeScript and partner with designers on interaction details, working closely with product and engineering.
+
+What you'll do
+• Build responsive web UIs in React and TypeScript
+• Partner with designers on interaction details
+• Improve Core Web Vitals and page performance
+• Ensure accessibility (WCAG 2.1 AA)
+• Write unit and end-to-end tests
+
+Requirements
+• 6+ years of experience in frontend engineering
+• React
+• TypeScript
+• HTML/CSS
+• frontend testing (Jest, Testing Library)
+• Degree in Computer Science or a related field, or equivalent practical experience
+• Must be a native English speaker born in the country
+
+Preferred qualifications
+• Next.js
+• GraphQL
+• web performance optimisation
+• accessibility (WCAG)
+• Storybook
+
+Nice to have
+• Node.js
+
+What we offer
+Competitive salary, health cover, learning budget, 25 days leave.
+
+We are an equal opportunity employer. We do not discriminate on the basis of race, religion, colour, national origin, gender, sexual orientation, age, marital status or disability.

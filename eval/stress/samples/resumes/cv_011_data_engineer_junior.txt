@@ -1,0 +1,18 @@
+Sydney Okafor
+Recent graduate seeking a Junior Data Engineer role
+Sydney · okafor.57@examplemail.com · +61 586 359 7271 · linkedin.com/in/okafor-775
+
+SUMMARY
+Recent graduate seeking a Junior Data Engineer role. Known for stakeholder management, communication. Experienced in Apache Spark, data warehousing (Snowflake, BigQuery, Redshift), Kafka.
+
+EXPERIENCE
+Junior Data Engineer (Intern) — Ironleaf Foods
+Mar 2026 – Present
+• Assisted senior colleagues to own data quality checks and SLAs
+• Project: applied SQL and data warehousing (Snowflake, BigQuery or Redshift) in a adtech capstone
+
+EDUCATION
+Bachelor's in Computer Science, Engineering, Statistics — State University, 2025
+
+SKILLS
+Apache Spark, data warehousing (Snowflake, BigQuery, Redshift), Kafka

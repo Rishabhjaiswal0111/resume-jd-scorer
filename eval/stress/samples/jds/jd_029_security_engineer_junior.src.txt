@@ -1,0 +1,42 @@
+Security Analyst
+Orbital Freight · Pune · Fully on-site · Full-time
+
+About us
+Orbital Freight builds products for the government contracting sector. We are a team of 40 people with offices in Pune.
+
+About the role
+As our Security Analyst, you will respond to security incidents and secure cloud infrastructure, working closely with product and engineering.
+
+What you'll do
+• Respond to security incidents
+• Secure cloud infrastructure
+• Run vulnerability management and penetration tests
+• Support SOC 2 and ISO 27001 audits
+• Build detection rules in the SIEM
+• Run threat modelling with engineering teams
+
+Requirements
+• 0-2 years of experience in security engineering
+• application or cloud security
+• vulnerability assessment and penetration testing
+• incident response
+• SIEM (Splunk, Sentinel or Elastic)
+• Degree in Computer Science, Cybersecurity or equivalent
+
+Preferred qualifications
+• threat modelling
+• Python scripting
+• SOC 2 / ISO 27001
+• AWS security services
+
+Nice to have
+• OSCP
+• bug bounty experience
+
+Good to know
+This role is fully on-site in Pune; relocation support is available. Please state your notice period when applying.
+
+What we offer
+Competitive salary, health cover, learning budget, 25 days leave.
+
+We are an equal opportunity employer. We do not discriminate on the basis of race, religion, colour, national origin, gender, sexual orientation, age, marital status or disability.

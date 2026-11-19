@@ -1,6 +1,7 @@
 """Local-disk storage for development."""
 
 import asyncio
+import uuid
 from pathlib import Path
 
 
@@ -19,7 +20,9 @@ class LocalStorage:
 
         def _write() -> None:
             path.parent.mkdir(parents=True, exist_ok=True)
-            tmp = path.with_suffix(path.suffix + ".tmp")
+            # Unique temp name: two concurrent writers of the same key (the same file uploaded
+            # twice at once) must not share, and then lose, one temp file.
+            tmp = path.with_suffix(f"{path.suffix}.{uuid.uuid4().hex}.tmp")
             tmp.write_bytes(data)
             tmp.replace(path)  # atomic on the same filesystem
 

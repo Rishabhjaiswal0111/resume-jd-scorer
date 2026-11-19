@@ -1,0 +1,39 @@
+Backend Engineer
+Everpeak Insurance · Bengaluru · Hybrid, 3 days in office · Full-time
+
+About us
+Everpeak Insurance builds products for the B2B SaaS sector. We are a team of 600 people with offices in Bengaluru.
+
+About the role
+As our Backend Engineer, you will design and build REST and gRPC APIs in Python and work with product to scope features, working closely with senior leadership.
+
+What you'll do
+• Design and build REST and gRPC APIs in Python
+• Work with product to scope features
+• Model data in PostgreSQL and tune slow queries
+• Own services end to end from design to on-call
+• Write automated tests and review code
+
+Requirements
+• 3+ years of experience in backend engineering
+• Python
+• REST API design
+• PostgreSQL
+• automated testing (pytest)
+• Bachelor's degree in Computer Science or equivalent experience
+
+Preferred qualifications
+• FastAPI or Django
+• event-driven systems (Kafka)
+• Redis
+
+Nice to have
+• Kubernetes
+
+Good to know
+This role is hybrid, 3 days in office in Bengaluru; relocation support is available. Please state your notice period when applying.
+
+What we offer
+Competitive salary, health cover, learning budget, 25 days leave.
+
+We are an equal opportunity employer. We do not discriminate on the basis of race, religion, colour, national origin, gender, sexual orientation, age, marital status or disability.

@@ -125,3 +125,13 @@ def test_pdf_without_pages(monkeypatch: pytest.MonkeyPatch) -> None:
     monkeypatch.setattr(extract_module, "_pdfium_pages", lambda _: [])
     with pytest.raises(PdfUnreadableError, match="no pages"):
         extract_pdf(load("resume_single.pdf"), max_pages=20)
+
+
+def test_concurrent_extraction_does_not_crash() -> None:
+    """PDFium is not thread-safe; uploads extract in worker threads (asyncio.to_thread)."""
+    from concurrent.futures import ThreadPoolExecutor
+
+    data = (PDFS / "resume_two_column.pdf").read_bytes()
+    with ThreadPoolExecutor(max_workers=16) as pool:
+        texts = list(pool.map(lambda _: extract_pdf(data, max_pages=20).text, range(64)))
+    assert len(set(texts)) == 1

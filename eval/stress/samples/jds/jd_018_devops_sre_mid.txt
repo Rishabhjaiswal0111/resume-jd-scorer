@@ -1,0 +1,49 @@
+Promoted · Easy Apply · 213 applicants · Posted 3 days ago
+Apply now   Save   Share
+Salary: $95K/yr - $140K/yr (from job poster) · Full-time · Hybrid
+
+DevOps Engineer
+Vantage Mobility · London · Hybrid · Full-time
+
+About us
+Vantage Mobility builds products for the SaaS sector. We are a team of 600 people with offices in London.
+
+About the role
+As our DevOps Engineer, you will manage infrastructure as code and build CI/CD pipelines, working closely with senior leadership.
+
+What you'll do
+• Manage infrastructure as code
+• Build CI/CD pipelines
+• Own monitoring, alerting and incident response
+• Drive SLOs and post-incident reviews
+
+Requirements
+• 3+ years of experience in site reliability engineering
+• Kubernetes
+• Terraform
+• AWS, GCP or Azure
+• CI/CD (GitHub Actions, GitLab CI or Jenkins)
+• Linux
+• Degree in Computer Science or equivalent experience
+
+Preferred qualifications
+• Prometheus / Grafana
+• incident management
+• Helm
+• Python or Go scripting
+
+Nice to have
+• chaos engineering
+• CKA certification
+• service mesh (Istio)
+
+What we offer
+Competitive salary, health cover, learning budget, 25 days leave.
+
+We are an equal opportunity employer. We do not discriminate on the basis of race, religion, colour, national origin, gender, sexual orientation, age, marital status or disability.
+
+Show more
+Set alert for similar jobs
+See how you compare to 213 applicants. Try Premium for free
+Report this job
+People also viewed: Senior Analyst, Data Lead

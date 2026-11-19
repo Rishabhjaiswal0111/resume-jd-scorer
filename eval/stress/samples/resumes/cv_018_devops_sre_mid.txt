@@ -1,0 +1,28 @@
+Maya Sutherland
+DevOps Engineer with 3 years of experience
+Bengaluru · sutherland.20@examplemail.com · +91 614 263 5654 · linkedin.com/in/sutherland-178
+
+SUMMARY
+DevOps Engineer with 3 years of experience. Known for communication, stakeholder management. Experienced in Kubernetes, AWS, GCP, Terraform.
+
+EXPERIENCE
+DevOps Engineer — Granite Works
+Dec 2024 – Present
+• Ran 80 production Kubernetes clusters on EKS with 99.95% availability
+• Codified all infrastructure in Terraform modules (30 modules)
+• Built Prometheus/Grafana dashboards and SLO alerts for 9 services
+
+Junior DevOps Engineer — Helix Robotics
+Feb 2023 – Dec 2024
+• Led 4 post-incident reviews and drove the follow-up actions
+• Cut deploy time from 45 to 3 minutes with GitHub Actions and ArgoCD
+• Reduced AWS spend by 29% with rightsizing and spot instances
+
+EDUCATION
+Degree in Computer Science — Institute of Technology, 2022
+
+SKILLS
+Kubernetes, AWS, GCP, Terraform, CI/CD (GitHub Actions, GitLab CI, Jenkins), Helm
+
+CERTIFICATIONS
+Certified Kubernetes Administrator (CKA)

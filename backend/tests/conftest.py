@@ -109,6 +109,7 @@ async def db(
     monkeypatch.setenv("STORAGE_LOCAL_ROOT", str(tmp_path / "storage"))
     monkeypatch.setenv("OPENROUTER_API_KEY", "sk-or-test")
     monkeypatch.setenv("LLM_RETRY_BASE_SECONDS", "0")
+    monkeypatch.setenv("MANUAL_LLM_WAIT_SECONDS", "0")
     for cached in (get_settings, get_storage, get_engine, get_sessionmaker):
         cached.cache_clear()
     try:

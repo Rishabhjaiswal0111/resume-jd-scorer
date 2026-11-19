@@ -1,0 +1,48 @@
+Promoted · Easy Apply · 213 applicants · Posted 3 days ago
+Apply now   Save   Share
+Salary: $95K/yr - $140K/yr (from job poster) · Full-time · Hybrid
+
+Lead Data Engineer
+Harbor Health · New York, NY · Hybrid · Full-time
+
+About us
+Harbor Health builds products for the insurance sector. We are a team of 3000 people with offices in New York, NY.
+
+About the role
+As our Lead Data Engineer, you will model data in the warehouse for analytics and own data quality checks and SLAs, working closely with clients.
+
+What you'll do
+• Model data in the warehouse for analytics
+• Own data quality checks and SLAs
+• Partner with analysts and data scientists
+• Optimise Spark jobs and warehouse cost
+
+Requirements
+• 8+ years of experience in data engineering, including at least 2 years leading a team or function
+• SQL
+• Python
+• Apache Spark
+• data warehousing (Snowflake, BigQuery or Redshift)
+• Bachelor's in Computer Science, Engineering, Statistics or similar
+
+Preferred qualifications
+• dbt
+• Kafka
+
+Nice to have
+• data governance tooling
+• Terraform
+
+Good to know
+You must be legally authorised to work in the United States without visa sponsorship.
+
+What we offer
+Competitive salary, health cover, learning budget, 25 days leave.
+
+We are an equal opportunity employer. We do not discriminate on the basis of race, religion, colour, national origin, gender, sexual orientation, age, marital status or disability.
+
+Show more
+Set alert for similar jobs
+See how you compare to 213 applicants. Try Premium for free
+Report this job
+People also viewed: Senior Analyst, Data Lead

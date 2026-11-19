@@ -1,0 +1,26 @@
+Mei Holloway
+Senior Backend Engineer moving into quality engineering
+Manchester · holloway.24@examplemail.com · +44 263 487 2356 · linkedin.com/in/holloway-316
+
+SUMMARY
+Senior Backend Engineer moving into quality engineering. Known for communication, stakeholder management. Looking to bring backend engineering experience into quality engineering.
+
+EXPERIENCE
+Senior Backend Engineer — Maple Grid Energy
+Jan 2024 – Present
+• Cut p95 API latency by 38% by adding Redis caching and fixing N+1 queries in PostgreSQL
+• Designed Kafka consumers for order events with idempotent processing
+• Migrated a Django monolith's billing module to a standalone service on AWS ECS
+• Side project: completed a certificate course in quality engineering and practised test automation (Selenium, Playwright or Cypress)
+
+Backend Engineer — Tidewater Bank
+Mar 2021 – Jan 2024
+• Raised test coverage from 40% to 77% with pytest and contract tests
+• Led on-call rotation and reduced incidents by 12% through better alerting
+• Built a payments reconciliation service in Python/FastAPI handling 8k transactions per day
+
+EDUCATION
+Bachelor's degree in Computer Science — National University, 2020
+
+SKILLS
+Python, REST API design, PostgreSQL, automated testing (pytest), test automation (Selenium, Playwright, Cypress)

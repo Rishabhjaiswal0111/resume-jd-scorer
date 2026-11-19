@@ -62,11 +62,13 @@ async def ingest_pdf(
         is_scanned=extraction.is_scanned,
     )
     try:
-        await documents_repo.insert(session, document)
+        # Savepoint, not a full rollback on conflict: rollback() would expire every object
+        # in the request's session (the run, the JD document) and crash the next access.
+        async with session.begin_nested():
+            await documents_repo.insert(session, document)
         await session.commit()
     except IntegrityError:
         # Same file uploaded concurrently: the other insert won; use its row.
-        await session.rollback()
         winner = await documents_repo.get_by_hash(session, kind, sha256)
         if winner is None:  # pragma: no cover - would mean the unique constraint lied
             raise
@@ -121,10 +123,10 @@ async def ingest_text(session: AsyncSession, storage: Storage, *, kind: str, tex
         is_scanned=False,
     )
     try:
-        await documents_repo.insert(session, document)
+        async with session.begin_nested():  # see ingest_pdf
+            await documents_repo.insert(session, document)
         await session.commit()
     except IntegrityError:
-        await session.rollback()
         winner = await documents_repo.get_by_hash(session, kind, sha256)
         if winner is None:  # pragma: no cover
             raise

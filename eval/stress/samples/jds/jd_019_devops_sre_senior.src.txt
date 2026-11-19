@@ -1,0 +1,34 @@
+Senior Site Reliability Engineer
+Tidewater Bank · Manchester · Hybrid, 3 days in office · Full-time
+
+About us
+Tidewater Bank builds products for the SaaS sector. We are a team of 120 people with offices in Manchester.
+
+About the role
+As our Senior Site Reliability Engineer, you will build CI/CD pipelines and drive SLOs and post-incident reviews, working closely with operations.
+
+What you'll do
+• Build CI/CD pipelines
+• Drive SLOs and post-incident reviews
+• Improve cloud cost efficiency
+• Manage infrastructure as code
+
+Qualifications
+- 6+ years of experience in site reliability engineering
+- Kubernetes
+- Terraform
+- AWS, GCP or Azure
+- CI/CD (GitHub Actions, GitLab CI or Jenkins)
+- Linux
+- Degree in Computer Science or equivalent experience
+- Python or Go scripting
+- incident management
+- Helm
+
+Bonus points if you have
+- CKA certification
+
+What we offer
+Competitive salary, health cover, learning budget, 25 days leave.
+
+We are an equal opportunity employer. We do not discriminate on the basis of race, religion, colour, national origin, gender, sexual orientation, age, marital status or disability.

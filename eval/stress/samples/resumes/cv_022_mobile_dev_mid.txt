@@ -1,0 +1,23 @@
+Felix Fischer
+Mobile Engineer with 4 years of experience
+Sydney · fischer.28@examplemail.com · +61 797 433 4295 · linkedin.com/in/fischer-106
+
+SUMMARY
+Mobile Engineer with 4 years of experience. Known for communication, stakeholder management. Experienced in mobile app architecture (MVVM), Swift (iOS), offline-first data.
+
+EXPERIENCE
+Mobile Engineer — Harbor Health
+Jun 2024 – Present
+• Rewrote onboarding in Jetpack Compose, raising activation by 13%
+• Shipped 4 releases of a 4.7-star iOS app (Swift, SwiftUI) with 2M installs
+
+Junior Mobile Developer — Parallax Games
+Jan 2022 – Jun 2024
+• Cut Android crash rate by 32% using Crashlytics and Kotlin coroutines
+• Automated builds and store releases with Fastlane
+
+EDUCATION
+Bachelor's degree in a technical field — Institute of Technology, 2022
+
+SKILLS
+mobile app architecture (MVVM), Swift (iOS), offline-first data

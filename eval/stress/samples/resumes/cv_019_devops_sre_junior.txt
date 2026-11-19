@@ -1,0 +1,18 @@
+Lucas Mehta
+Recent graduate seeking a Junior DevOps Engineer role
+London · mehta.29@examplemail.com · +44 918 534 4999 · linkedin.com/in/mehta-158
+
+SUMMARY
+Recent graduate seeking a Junior DevOps Engineer role. Known for stakeholder management, communication. Experienced in CI/CD (GitHub Actions, GitLab CI, Jenkins), AWS, GCP, incident management.
+
+EXPERIENCE
+Junior DevOps Engineer — Lumen Analytics
+Mar 2026 – Present
+• Assisted senior colleagues to drive SLOs and post-incident reviews
+• Project: applied Kubernetes and Linux in a cloud gaming capstone
+
+EDUCATION
+Degree in Computer Science — State University, 2025
+
+SKILLS
+CI/CD (GitHub Actions, GitLab CI, Jenkins), AWS, GCP, incident management

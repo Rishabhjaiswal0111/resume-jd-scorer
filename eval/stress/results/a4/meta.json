@@ -1,0 +1,19 @@
+{
+ "label": "a4",
+ "model": "offline-fake",
+ "effort": "medium",
+ "rubrics": "reused from a1",
+ "concurrency": 16,
+ "pairs": 312,
+ "completed": 312,
+ "ingest_errors": {},
+ "rubric_errors": {},
+ "rubric_cost_usd": 0.0,
+ "scoring_cost_usd": 0.1442726,
+ "rubric_seconds": 0.1,
+ "total_seconds": 7.4,
+ "replay": {
+  "checked": 312,
+  "mismatches": []
+ }
+}

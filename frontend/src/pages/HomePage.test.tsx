@@ -148,7 +148,7 @@ describe('HomePage scoring flow', () => {
     expect(within(table).getByText(/knock-out/)).toBeInTheDocument()
   })
 
-  it('explains manual-mode pending and retries the same files', async () => {
+  it('waits through manual-mode pending and continues without a click', async () => {
     const fetchMock = vi
       .fn()
       .mockResolvedValueOnce(
@@ -158,6 +158,7 @@ describe('HomePage scoring flow', () => {
               code: 'LLM_RESPONSE_PENDING',
               message: 'Waiting for an answer',
               request_id: 'req-1',
+              details: { purpose: 'evaluate' },
             },
           },
           503,
@@ -169,9 +170,9 @@ describe('HomePage scoring flow', () => {
     chooseFiles()
     fireEvent.click(screen.getByRole('button', { name: 'Score' }))
 
-    expect(await screen.findByRole('alert')).toHaveTextContent(/Manual mode/)
-    fireEvent.click(screen.getByRole('button', { name: 'Retry' }))
-    expect(await screen.findByText('89')).toBeInTheDocument()
+    expect(await screen.findByText(/Step 2 of 2: grading the resume/)).toBeInTheDocument()
+    expect(screen.queryByRole('alert')).toBeNull() // a wait, not an error
+    expect(await screen.findByText('89', {}, { timeout: 4000 })).toBeInTheDocument()
     expect(fetchMock).toHaveBeenCalledTimes(2)
   })
 })

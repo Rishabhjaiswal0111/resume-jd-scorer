@@ -1,0 +1,18 @@
+Austin Mbeki
+Recent graduate seeking a Junior ML Engineer role
+Austin, TX · mbeki.55@examplemail.com · +1 804 184 6179 · linkedin.com/in/mbeki-841
+
+SUMMARY
+Recent graduate seeking a Junior ML Engineer role. Known for communication, stakeholder management. Experienced in deep learning (PyTorch, TensorFlow), machine learning (scikit-learn, XGBoost), MLOps (MLflow, Kubeflow, SageMaker).
+
+EXPERIENCE
+Junior ML Engineer — Tidewater Bank
+May 2026 – Present
+• Assisted senior colleagues to work with product on ML-powered features
+• Project: applied Python and deploying models to production in a search ranking capstone
+
+EDUCATION
+Master's — State University, 2025
+
+SKILLS
+deep learning (PyTorch, TensorFlow), machine learning (scikit-learn, XGBoost), MLOps (MLflow, Kubeflow, SageMaker)

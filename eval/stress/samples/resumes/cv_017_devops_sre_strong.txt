@@ -1,0 +1,79 @@
+Elena Iyer
+Senior Site Reliability Engineer · 10 years in site reliability engineering
+Austin, TX · iyer.84@examplemail.com · +1 853 132 2632 · linkedin.com/in/iyer-365
+
+SUMMARY
+Senior Site Reliability Engineer · 10 years in site reliability engineering. Known for communication, stakeholder management. Experienced in Kubernetes, Terraform, AWS, GCP.
+
+EXPERIENCE
+Senior Site Reliability Engineer — Lumen Analytics
+Feb 2023 – Present
+• Built Prometheus/Grafana dashboards and SLO alerts for 2 services
+• Cut deploy time from 45 to 30 minutes with GitHub Actions and ArgoCD
+
+DevOps Engineer — Meridian Consulting
+Jul 2017 – Feb 2021
+• Reduced AWS spend by 21% with rightsizing and spot instances
+• Codified all infrastructure in Terraform modules (40 modules)
+
+Junior DevOps Engineer — Juniper Learning
+Dec 2013 – Jul 2017
+• Led 40 post-incident reviews and drove the follow-up actions
+• Ran 9 production Kubernetes clusters on EKS with 99.95% availability
+
+Junior DevOps Engineer — Quarry Software
+Jun 2013 – Dec 2015
+• Ran 90 production Kubernetes clusters on EKS with 99.95% availability. Build ci/cd pipelines with measurable results across several quarters.
+• Codified all infrastructure in Terraform modules (2 modules). Build ci/cd pipelines with measurable results across several quarters.
+• Cut deploy time from 45 to 30 minutes with GitHub Actions and ArgoCD. Drive slos and post-incident reviews with measurable results across several quarters.
+• Built Prometheus/Grafana dashboards and SLO alerts for 80 services. Improve cloud cost efficiency with measurable results across several quarters.
+• Led 2 post-incident reviews and drove the follow-up actions. Build ci/cd pipelines with measurable results across several quarters.
+• Reduced AWS spend by 18% with rightsizing and spot instances. Run and scale kubernetes clusters with measurable results across several quarters.
+
+Junior DevOps Engineer — Larkspur Logistics
+Dec 2010 – Jun 2013
+• Ran 80 production Kubernetes clusters on EKS with 99.95% availability. Drive slos and post-incident reviews with measurable results across several quarters.
+• Codified all infrastructure in Terraform modules (90 modules). Run and scale kubernetes clusters with measurable results across several quarters.
+• Cut deploy time from 45 to 8 minutes with GitHub Actions and ArgoCD. Improve cloud cost efficiency with measurable results across several quarters.
+• Built Prometheus/Grafana dashboards and SLO alerts for 90 services. Build ci/cd pipelines with measurable results across several quarters.
+• Led 80 post-incident reviews and drove the follow-up actions. Build ci/cd pipelines with measurable results across several quarters.
+• Reduced AWS spend by 25% with rightsizing and spot instances. Manage infrastructure as code with measurable results across several quarters.
+
+Junior DevOps Engineer — Pinecrest Schools
+Jun 2008 – Dec 2010
+• Ran 20 production Kubernetes clusters on EKS with 99.95% availability. Drive slos and post-incident reviews with measurable results across several quarters.
+• Codified all infrastructure in Terraform modules (60 modules). Improve cloud cost efficiency with measurable results across several quarters.
+• Cut deploy time from 45 to 80 minutes with GitHub Actions and ArgoCD. Build ci/cd pipelines with measurable results across several quarters.
+• Built Prometheus/Grafana dashboards and SLO alerts for 6 services. Run and scale kubernetes clusters with measurable results across several quarters.
+• Led 50 post-incident reviews and drove the follow-up actions. Drive slos and post-incident reviews with measurable results across several quarters.
+• Reduced AWS spend by 20% with rightsizing and spot instances. Improve cloud cost efficiency with measurable results across several quarters.
+
+Junior DevOps Engineer — Harbor Health
+Dec 2005 – Jun 2008
+• Ran 5 production Kubernetes clusters on EKS with 99.95% availability. Manage infrastructure as code with measurable results across several quarters.
+• Codified all infrastructure in Terraform modules (2 modules). Run and scale kubernetes clusters with measurable results across several quarters.
+• Cut deploy time from 45 to 5 minutes with GitHub Actions and ArgoCD. Build ci/cd pipelines with measurable results across several quarters.
+• Built Prometheus/Grafana dashboards and SLO alerts for 80 services. Own monitoring, alerting and incident response with measurable results across several quarters.
+• Led 6 post-incident reviews and drove the follow-up actions. Improve cloud cost efficiency with measurable results across several quarters.
+• Reduced AWS spend by 12% with rightsizing and spot instances. Build ci/cd pipelines with measurable results across several quarters.
+
+Junior DevOps Engineer — Maple Grid Energy
+Jun 2003 – Dec 2005
+• Ran 60 production Kubernetes clusters on EKS with 99.95% availability. Own monitoring, alerting and incident response with measurable results across several quarters.
+• Codified all infrastructure in Terraform modules (60 modules). Drive slos and post-incident reviews with measurable results across several quarters.
+• Cut deploy time from 45 to 9 minutes with GitHub Actions and ArgoCD. Run and scale kubernetes clusters with measurable results across several quarters.
+• Built Prometheus/Grafana dashboards and SLO alerts for 8 services. Improve cloud cost efficiency with measurable results across several quarters.
+• Led 3 post-incident reviews and drove the follow-up actions. Build ci/cd pipelines with measurable results across several quarters.
+• Reduced AWS spend by 45% with rightsizing and spot instances. Drive slos and post-incident reviews with measurable results across several quarters.
+
+Career break (2 years): family caregiving.
+
+EDUCATION
+Degree in Computer Science — Institute of Technology, 2015
+
+SKILLS
+Kubernetes, Terraform, AWS, GCP, CI/CD (GitHub Actions, GitLab CI, Jenkins), Linux, Prometheus / Grafana, Helm, Python, incident management, service mesh (Istio)
+
+CERTIFICATIONS
+Certified Kubernetes Administrator (CKA)
+AWS Solutions Architect Associate

@@ -1,0 +1,39 @@
+Lead SRE
+Vantage Mobility · Austin, TX · Fully on-site · Full-time
+
+About us
+Vantage Mobility builds products for the banking sector. We are a team of 3000 people with offices in Austin, TX.
+
+About the role
+As our Lead SRE, you will build CI/CD pipelines and drive SLOs and post-incident reviews, working closely with senior leadership.
+
+What you'll do
+• Build CI/CD pipelines
+• Drive SLOs and post-incident reviews
+• Improve cloud cost efficiency
+• Run and scale Kubernetes clusters
+• Manage infrastructure as code
+
+Qualifications
+- 8+ years of experience in site reliability engineering, including at least 2 years leading a team or function
+- Kubernetes
+- Terraform
+- AWS, GCP or Azure
+- CI/CD (GitHub Actions, GitLab CI or Jenkins)
+- Linux
+- Degree in Computer Science or equivalent experience
+- Prometheus / Grafana
+- incident management
+
+Bonus points if you have
+- chaos engineering
+- service mesh (Istio)
+- CKA certification
+
+Good to know
+This role is fully on-site in Austin, TX; relocation support is available. Please state your notice period when applying.
+
+What we offer
+Competitive salary, health cover, learning budget, 25 days leave.
+
+We are an equal opportunity employer. We do not discriminate on the basis of race, religion, colour, national origin, gender, sexual orientation, age, marital status or disability.

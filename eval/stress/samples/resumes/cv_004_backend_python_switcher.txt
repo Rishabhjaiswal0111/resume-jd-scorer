@@ -1,0 +1,26 @@
+Tomas Achterberg
+Senior Data Engineer moving into backend engineering
+London · achterberg.14@examplemail.com · +44 877 141 9737 · linkedin.com/in/achterberg-647
+
+SUMMARY
+Senior Data Engineer moving into backend engineering. Known for stakeholder management, communication. Looking to bring data engineering experience into backend engineering.
+
+EXPERIENCE
+Senior Data Engineer — Quarry Software
+Jul 2023 – Present
+• Rewrote 60 legacy SQL jobs as dbt models with tests and documentation
+• Built Spark pipelines processing 30 TB/day into Snowflake
+• Set up Airflow DAGs with SLAs and alerting for 7 daily feeds
+• Side project: completed a certificate course in backend engineering and practised Python
+
+Data Engineer — Maple Grid Energy
+Mar 2020 – Jul 2023
+• Introduced Great Expectations data-quality checks on 8 critical tables
+• Streamed clickstream events through Kafka into BigQuery with under 5 minute latency
+• Cut warehouse spend by 35% by partitioning and clustering large tables
+
+EDUCATION
+Bachelor's in Computer Science, Engineering, Statistics — State University, 2019
+
+SKILLS
+SQL, Python, Apache Spark, data warehousing (Snowflake, BigQuery, Redshift)

@@ -1,0 +1,40 @@
+Machine Learning Engineer
+Thistle Security · New York, NY · Hybrid · Full-time
+
+About us
+Thistle Security builds products for the computer vision sector. We are a team of 40 people with offices in New York, NY.
+
+About the role
+As our Machine Learning Engineer, you will build feature pipelines and monitor model drift and performance, working closely with clients.
+
+What you'll do
+• Build feature pipelines
+• Monitor model drift and performance
+• Run A/B tests and offline evaluation
+• Train, evaluate and deploy ML models to production
+• Fine-tune and serve LLMs
+
+Qualifications
+- 3+ years of experience in machine learning
+- Python
+- machine learning (scikit-learn, XGBoost)
+- deep learning (PyTorch or TensorFlow)
+- deploying models to production
+- Master's or PhD in Computer Science, Statistics or a related quantitative field
+- MLOps (MLflow, Kubeflow, SageMaker)
+- LLM fine-tuning
+- experiment design / A/B testing
+
+Bonus points if you have
+- vector databases
+- published research
+- Spark
+
+Good to know
+You must be legally authorised to work in the United States without visa sponsorship.
+Up to 30% travel to client sites is expected.
+
+What we offer
+Competitive salary, health cover, learning budget, 25 days leave.
+
+We are an equal opportunity employer. We do not discriminate on the basis of race, religion, colour, national origin, gender, sexual orientation, age, marital status or disability.

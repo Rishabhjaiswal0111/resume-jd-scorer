@@ -99,6 +99,75 @@ def test_title_line_is_not_taken_as_a_name(first_line: str) -> None:
     assert result.counts["name"] == 0
 
 
-def test_name_after_title_line_is_found() -> None:
-    result = redact("Resume\nAlex Morgan\nAlex built APIs")
-    assert result.text == "Resume\n[CANDIDATE]\n[CANDIDATE] built APIs"
+def test_name_after_heading_line_is_found() -> None:
+    # A lone first name is deliberately kept (ADR-0007): it is often also a skill or place.
+    result = redact("Resume\nAlex Morgan\nAlex built APIs. Alex Morgan, 2024")
+    assert result.text == "Resume\n[CANDIDATE]\nAlex built APIs. [CANDIDATE], 2024"
+
+
+# --- regressions found by the stress test (eval/stress/REPORT.md) -------------------------
+
+
+@pytest.mark.parametrize(
+    "keep",
+    [
+        "2019.01 - 2021.12",
+        "01.2018 - 06.2022",
+        "2019/01 - 2021/12",
+        "2023.05 - Present",
+        "1 200 000 transactions",
+        "CTC 12 00 000 INR",
+    ],
+)
+def test_dates_and_amounts_are_not_phones(keep: str) -> None:
+    result = redact(f"Worked {keep} here")
+    assert result.text == f"Worked {keep} here"
+    assert result.counts["phone"] == 0
+
+
+@pytest.mark.parametrize(
+    ("first_line", "body"),
+    [
+        ("Ruby Castellanos", "Ruby on Rails, Ruby and Python"),
+        ("Sydney Okafor", "Based in Sydney, Australia"),
+        ("Austin Mbeki", "Austin, TX"),
+    ],
+)
+def test_first_name_that_is_a_skill_or_place_survives(first_line: str, body: str) -> None:
+    result = redact(f"{first_line}\n{body}")
+    assert result.text == f"[CANDIDATE]\n{body}"
+
+
+@pytest.mark.parametrize(
+    "name",
+    [
+        "José Hernández",
+        "Zoë Müller",
+        "Siobhán Ó Briain",
+        "Björn Åkesson",
+        "Ana de la Cruz",
+        "Pieter van der Berg",
+        "PRIYA SHARMA",
+    ],
+)
+def test_unicode_and_particle_names_are_redacted(name: str) -> None:
+    result = redact(f"{name}\nBackend engineer\nSigned, {name}")
+    assert result.text == "[CANDIDATE]\nBackend engineer\nSigned, [CANDIDATE]"
+
+
+def test_labelled_name_and_name_with_title_on_the_same_line() -> None:
+    assert redact("Name: Priya Sharma\nNurse").text == "Name: [CANDIDATE]\nNurse"
+    assert redact("Jordan Avery | Backend Engineer").text == "[CANDIDATE] | Backend Engineer"
+
+
+@pytest.mark.parametrize("title", ["Registered Nurse", "Growth Hacker", "Built APIs"])
+def test_title_under_an_unrecognised_name_is_never_taken_as_the_name(title: str) -> None:
+    # First line is not name-like (an email) -> no name at all, rather than a wrong guess.
+    text = f"jose@example.com\n{title}\n{title} license"
+    result = redact(text)
+    assert result.text == f"[EMAIL]\n{title}\n{title} license"
+    assert result.counts["name"] == 0
+
+
+def test_unicode_email_is_removed_whole() -> None:
+    assert redact("Mail müller.12@examplemail.com now").text == "Mail [EMAIL] now"

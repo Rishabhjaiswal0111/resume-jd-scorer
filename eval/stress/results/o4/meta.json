@@ -1,0 +1,19 @@
+{
+ "label": "o4",
+ "model": "offline-fake",
+ "effort": "medium",
+ "rubrics": "reused from o1",
+ "concurrency": 8,
+ "pairs": 312,
+ "completed": 312,
+ "ingest_errors": {},
+ "rubric_errors": {},
+ "rubric_cost_usd": 0.0,
+ "scoring_cost_usd": 0.143608,
+ "rubric_seconds": 0.1,
+ "total_seconds": 7.1,
+ "replay": {
+  "checked": 312,
+  "mismatches": []
+ }
+}

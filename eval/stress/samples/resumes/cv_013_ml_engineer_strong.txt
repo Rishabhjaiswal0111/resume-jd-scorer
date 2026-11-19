@@ -1,0 +1,28 @@
+Nora Hughes
+Senior Machine Learning Engineer · 8 years in machine learning
+Toronto · hughes.20@examplemail.com · +1 308 471 6917 · linkedin.com/in/hughes-926
+
+SUMMARY
+Senior Machine Learning Engineer · 8 years in machine learning. Known for stakeholder management, communication. Experienced in Python, machine learning (scikit-learn, XGBoost), deep learning (PyTorch, TensorFlow).
+
+EXPERIENCE
+Senior Machine Learning Engineer — Pinecrest Schools
+Jan 2024 – Present
+• Deployed a fraud model (XGBoost) that cut chargebacks by 27%
+• Built an MLflow-based model registry and CI for 90 production models
+
+Machine Learning Engineer — Kestrel Retail
+Apr 2021 – Jan 2024
+• Fine-tuned an open-weights LLM for support-ticket triage with 14% accuracy
+• Designed A/B tests for ranking changes, lifting CTR by 33%
+
+Junior ML Engineer — Bluefin Systems
+Jul 2018 – Apr 2021
+• Trained a PyTorch two-tower recommender serving 80M users daily
+• Set up drift monitoring and automated retraining on SageMaker
+
+EDUCATION
+Master's — City College, 2018
+
+SKILLS
+Python, machine learning (scikit-learn, XGBoost), deep learning (PyTorch, TensorFlow), deploying models to production, MLOps (MLflow, Kubeflow, SageMaker), SQL, LLM fine-tuning, experiment design / A/B testing, vector databases

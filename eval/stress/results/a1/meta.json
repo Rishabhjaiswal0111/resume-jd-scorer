@@ -1,0 +1,19 @@
+{
+ "label": "a1",
+ "model": "offline-fake",
+ "effort": "medium",
+ "rubrics": "fresh",
+ "concurrency": 16,
+ "pairs": 312,
+ "completed": 312,
+ "ingest_errors": {},
+ "rubric_errors": {},
+ "rubric_cost_usd": 0.0580883,
+ "scoring_cost_usd": 0.1442726,
+ "rubric_seconds": 1.0,
+ "total_seconds": 8.3,
+ "replay": {
+  "checked": 312,
+  "mismatches": []
+ }
+}

@@ -1,0 +1,43 @@
+Frontend Engineer
+Helix Robotics · Singapore · Hybrid · Full-time
+
+About us
+Helix Robotics builds products for the travel booking sector. We are a team of 40 people with offices in Singapore.
+
+About the role
+As our Frontend Engineer, you will improve Core Web Vitals and page performance and partner with designers on interaction details, working closely with product and engineering.
+
+What you'll do
+• Improve Core Web Vitals and page performance
+• Partner with designers on interaction details
+• Own the component library and design system
+• Write unit and end-to-end tests
+
+Requirements
+• 3+ years of experience in frontend engineering
+• React
+• TypeScript
+• HTML/CSS
+• frontend testing (Jest, Testing Library)
+• Degree in Computer Science or a related field, or equivalent practical experience
+
+Preferred qualifications
+• Storybook
+• web performance optimisation
+• GraphQL
+• Next.js
+• accessibility (WCAG)
+
+Nice to have
+• design tools (Figma)
+• React Native
+• Node.js
+
+Good to know
+You must be legally authorised to work in Singapore without visa sponsorship.
+This role is hybrid in Singapore; relocation support is available. Please state your notice period when applying.
+
+What we offer
+Competitive salary, health cover, learning budget, 25 days leave.
+
+We are an equal opportunity employer. We do not discriminate on the basis of race, religion, colour, national origin, gender, sexual orientation, age, marital status or disability.

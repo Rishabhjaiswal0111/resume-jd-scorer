@@ -1,0 +1,28 @@
+Maya Delgado
+Senior Frontend Engineer · 8 years in frontend engineering
+Pune · delgado.74@examplemail.com · +91 780 542 7489 · linkedin.com/in/delgado-950
+
+SUMMARY
+Senior Frontend Engineer · 8 years in frontend engineering. Known for stakeholder management, communication. Experienced in React, TypeScript, HTML/CSS.
+
+EXPERIENCE
+Senior Frontend Engineer — Thistle Security
+Jan 2024 – Present
+• Migrated a large AngularJS app to Next.js incrementally
+• Rebuilt the checkout flow in React + TypeScript, lifting conversion by 23%
+
+Frontend Engineer — Everpeak Insurance
+Apr 2021 – Jan 2024
+• Introduced Playwright end-to-end tests covering 4 critical journeys
+• Improved Largest Contentful Paint from 4.1s to 1.8s via code splitting and image CDNs
+
+Junior Frontend Developer — Nimbus Cloud
+Jul 2018 – Apr 2021
+• Fixed 80 WCAG 2.1 AA accessibility issues across the product
+• Created a Storybook design system of 5 components used by 6 teams
+
+EDUCATION
+Degree in Computer Science — National University, 2017
+
+SKILLS
+React, TypeScript, HTML/CSS, frontend testing (Jest, Testing Library), Next.js, GraphQL, accessibility (WCAG), web performance optimisation, Storybook, design tools (Figma)

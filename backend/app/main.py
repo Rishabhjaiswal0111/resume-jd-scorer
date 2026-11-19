@@ -22,6 +22,10 @@ async def lifespan(_: FastAPI) -> AsyncIterator[None]:
     settings = get_settings()
     log.info("startup", env=settings.app_env, version=__version__)
     yield
+    from app.api.v1.runs import get_llm_client
+
+    if get_llm_client.cache_info().currsize:
+        await get_llm_client().aclose()
     await dispose_engine()
     log.info("shutdown")
 

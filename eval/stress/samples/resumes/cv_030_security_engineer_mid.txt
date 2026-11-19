@@ -1,0 +1,26 @@
+Ananya Whitaker
+Security Engineer with 4 years of experience
+Austin, TX · whitaker.64@examplemail.com · +1 593 290 6385 · linkedin.com/in/whitaker-710
+
+SUMMARY
+Security Engineer with 4 years of experience. Known for stakeholder management, communication. Experienced in incident response, application, vulnerability assessment and penetration testing.
+
+EXPERIENCE
+Security Engineer — Solstice Media
+Jun 2024 – Present
+• Prepared evidence for a SOC 2 Type II audit with zero exceptions
+• Led response to a credential-stuffing incident affecting 5k accounts
+
+Security Analyst — Nimbus Cloud
+Jan 2022 – Jun 2024
+• Ran 40 penetration tests on web apps and APIs, fixing all critical findings
+• Hardened AWS accounts with GuardDuty, SCPs and least-privilege IAM
+
+EDUCATION
+Degree in Computer Science, Cybersecurity — State University, 2021
+
+SKILLS
+incident response, application, vulnerability assessment and penetration testing, AWS security services
+
+CERTIFICATIONS
+OSCP

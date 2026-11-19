@@ -1,0 +1,37 @@
+QA Engineer
+Kestrel Retail · Pune · Hybrid, 3 days in office · Full-time
+
+About us
+Kestrel Retail builds products for the telecom sector. We are a team of 3000 people with offices in Pune.
+
+About the role
+As our QA Engineer, you will track defects and quality metrics and work with developers on testability, working closely with operations.
+
+What you'll do
+• Track defects and quality metrics
+• Work with developers on testability
+• Own regression and release testing
+• Design automated test suites for web and APIs
+
+Qualifications
+- 0-2 years of experience in quality engineering
+- test automation (Selenium, Playwright or Cypress)
+- API testing (Postman, REST Assured)
+- a programming language (Java, Python or JavaScript)
+- test planning and defect tracking
+- Bachelor's degree in Computer Science or IT
+- BDD (Cucumber)
+- performance testing (JMeter, k6)
+- CI integration (Jenkins, GitHub Actions)
+
+Bonus points if you have
+- ISTQB certification
+- mobile testing (Appium)
+
+Good to know
+This role is hybrid, 3 days in office in Pune; relocation support is available. Please state your notice period when applying.
+
+What we offer
+Competitive salary, health cover, learning budget, 25 days leave.
+
+We are an equal opportunity employer. We do not discriminate on the basis of race, religion, colour, national origin, gender, sexual orientation, age, marital status or disability.

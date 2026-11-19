@@ -1,0 +1,38 @@
+Senior Security Engineer
+Maple Grid Energy · Singapore · Fully on-site · Full-time
+
+About us
+Maple Grid Energy builds products for the banking sector. We are a team of 600 people with offices in Singapore.
+
+About the role
+As our Senior Security Engineer, you will build detection rules in the SIEM and run vulnerability management and penetration tests, working closely with product and engineering.
+
+What you'll do
+• Build detection rules in the SIEM
+• Run vulnerability management and penetration tests
+• Support SOC 2 and ISO 27001 audits
+• Respond to security incidents
+• Run threat modelling with engineering teams
+
+Requirements
+• 6+ years of experience in security engineering
+• application or cloud security
+• vulnerability assessment and penetration testing
+• incident response
+• SIEM (Splunk, Sentinel or Elastic)
+• Degree in Computer Science, Cybersecurity or equivalent
+
+Preferred qualifications
+• SOC 2 / ISO 27001
+• Python scripting
+
+Nice to have
+• OSCP
+
+Good to know
+You must be legally authorised to work in Singapore without visa sponsorship.
+
+What we offer
+Competitive salary, health cover, learning budget, 25 days leave.
+
+We are an equal opportunity employer. We do not discriminate on the basis of race, religion, colour, national origin, gender, sexual orientation, age, marital status or disability.

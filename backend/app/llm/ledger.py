@@ -60,6 +60,7 @@ class Ledger:
             call.cached_input_tokens = usage["cached_input_tokens"]
             call.output_tokens = usage["output_tokens"]
             call.reasoning_tokens = usage["reasoning_tokens"]
+            call.cache_write_tokens = usage["cache_write_tokens"]
         if price is not None:
             call.model_price_id = price["model_price_id"]
             call.price_input_per_m = price["input_per_m"]

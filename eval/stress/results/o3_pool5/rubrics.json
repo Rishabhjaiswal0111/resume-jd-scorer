@@ -1,0 +1,3731 @@
+{
+ "jd_012": {
+  "rubric_id": "f72625e9-d9f1-4a19-9e71-628470cdd9eb",
+  "title": "Promoted · Easy Apply · 213 applicants · Posted 3 days ago",
+  "core_requirement": "8+ years of experience in data engineering, including at least 2 years leading a team or function",
+  "criteria": [
+   {
+    "key": "c_8_years_of_experience",
+    "name": "8+ years of experience in data engineering, including at least 2 years leading a team or function",
+    "group": "",
+    "values": [
+     "data",
+     "engineering",
+     "function",
+     "leading",
+     "team"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "high",
+    "source_excerpt": "8+ years of experience in data engineering, including at least 2 years leading a team or function",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_sql",
+    "name": "SQL",
+    "group": "",
+    "values": [
+     "sql"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "high",
+    "source_excerpt": "SQL",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_python",
+    "name": "Python",
+    "group": "",
+    "values": [
+     "python"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "Python",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_apache_spark",
+    "name": "Apache Spark",
+    "group": "",
+    "values": [
+     "apache",
+     "spark"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "Apache Spark",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_data_warehousing_snowflake_bigquery",
+    "name": "data warehousing (Snowflake, BigQuery or Redshift)",
+    "group": "",
+    "values": [
+     "bigquery",
+     "data",
+     "redshift",
+     "snowflake",
+     "warehousing"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "data warehousing (Snowflake, BigQuery or Redshift)",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_bachelor_s_in_computer",
+    "name": "Bachelor's in Computer Science, Engineering, Statistics or similar",
+    "group": "",
+    "values": [
+     "computer",
+     "engineering",
+     "science",
+     "statistics"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "Bachelor's in Computer Science, Engineering, Statistics or similar",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_dbt",
+    "name": "dbt",
+    "group": "",
+    "values": [
+     "dbt"
+    ],
+    "knockout": false,
+    "operator": "preferred",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "dbt",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_kafka",
+    "name": "Kafka",
+    "group": "",
+    "values": [
+     "kafka"
+    ],
+    "knockout": false,
+    "operator": "preferred",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "Kafka",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_data_governance_tooling",
+    "name": "data governance tooling",
+    "group": "",
+    "values": [
+     "data",
+     "governance",
+     "tooling"
+    ],
+    "knockout": false,
+    "operator": "nice_to_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "data governance tooling",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_terraform",
+    "name": "Terraform",
+    "group": "",
+    "values": [
+     "terraform"
+    ],
+    "knockout": false,
+    "operator": "nice_to_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "Terraform",
+    "verify_in_screening": false
+   }
+  ],
+  "cost_usd": 0.0005712
+ },
+ "jd_008": {
+  "rubric_id": "ea50b69c-adb3-41e1-a4c6-47a05875d7c7",
+  "title": "Frontend Tech Lead",
+  "core_requirement": "8+ years of experience in frontend engineering, including at least 2 years leading a team or function",
+  "criteria": [
+   {
+    "key": "c_8_years_of_experience",
+    "name": "8+ years of experience in frontend engineering, including at least 2 years leading a team or function",
+    "group": "",
+    "values": [
+     "engineering",
+     "frontend",
+     "function",
+     "leading",
+     "team"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "high",
+    "source_excerpt": "8+ years of experience in frontend engineering, including at least 2 years leading a team or function",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_react",
+    "name": "React",
+    "group": "",
+    "values": [
+     "react"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "high",
+    "source_excerpt": "React",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_typescript",
+    "name": "TypeScript",
+    "group": "",
+    "values": [
+     "typescript"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "TypeScript",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_html_css",
+    "name": "HTML/CSS",
+    "group": "",
+    "values": [
+     "css",
+     "html"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "HTML/CSS",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_frontend_testing_jest_testing",
+    "name": "frontend testing (Jest, Testing Library)",
+    "group": "",
+    "values": [
+     "frontend",
+     "jest",
+     "library",
+     "testing"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "frontend testing (Jest, Testing Library)",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_degree_in_computer_science",
+    "name": "Degree in Computer Science or a related field, or equivalent practical experience",
+    "group": "",
+    "values": [
+     "computer",
+     "practical",
+     "science"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "Degree in Computer Science or a related field, or equivalent practical experience",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_graphql",
+    "name": "GraphQL",
+    "group": "",
+    "values": [
+     "graphql"
+    ],
+    "knockout": false,
+    "operator": "preferred",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "GraphQL",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_next_js",
+    "name": "Next.js",
+    "group": "",
+    "values": [
+     "next.js"
+    ],
+    "knockout": false,
+    "operator": "preferred",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "Next.js",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_design_tools_figma",
+    "name": "design tools (Figma)",
+    "group": "",
+    "values": [
+     "design",
+     "figma"
+    ],
+    "knockout": false,
+    "operator": "nice_to_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "design tools (Figma)",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_react_native",
+    "name": "React Native",
+    "group": "",
+    "values": [
+     "native",
+     "react"
+    ],
+    "knockout": false,
+    "operator": "nice_to_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "React Native",
+    "verify_in_screening": false
+   }
+  ],
+  "cost_usd": 0.0005604
+ },
+ "jd_007": {
+  "rubric_id": "6a26f72c-9965-4fa5-a04e-5ada7779c908",
+  "title": "Senior Frontend Engineer",
+  "core_requirement": "6+ years of experience in frontend engineering",
+  "criteria": [
+   {
+    "key": "c_6_years_of_experience",
+    "name": "6+ years of experience in frontend engineering",
+    "group": "",
+    "values": [
+     "engineering",
+     "frontend"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "high",
+    "source_excerpt": "6+ years of experience in frontend engineering",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_react",
+    "name": "React",
+    "group": "",
+    "values": [
+     "react"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "high",
+    "source_excerpt": "React",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_typescript",
+    "name": "TypeScript",
+    "group": "",
+    "values": [
+     "typescript"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "TypeScript",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_html_css",
+    "name": "HTML/CSS",
+    "group": "",
+    "values": [
+     "css",
+     "html"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "HTML/CSS",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_frontend_testing_jest_testing",
+    "name": "frontend testing (Jest, Testing Library)",
+    "group": "",
+    "values": [
+     "frontend",
+     "jest",
+     "library",
+     "testing"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "frontend testing (Jest, Testing Library)",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_degree_in_computer_science",
+    "name": "Degree in Computer Science or a related field, or equivalent practical experience",
+    "group": "",
+    "values": [
+     "computer",
+     "practical",
+     "science"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "Degree in Computer Science or a related field, or equivalent practical experience",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_must_be_a_native",
+    "name": "Must be a native English speaker born in the country",
+    "group": "",
+    "values": [
+     "born",
+     "country",
+     "english",
+     "must",
+     "native",
+     "speaker"
+    ],
+    "knockout": false,
+    "operator": "preferred",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "Must be a native English speaker born in the country",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_next_js",
+    "name": "Next.js",
+    "group": "",
+    "values": [
+     "next.js"
+    ],
+    "knockout": false,
+    "operator": "preferred",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "Next.js",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_graphql",
+    "name": "GraphQL",
+    "group": "",
+    "values": [
+     "graphql"
+    ],
+    "knockout": false,
+    "operator": "preferred",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "GraphQL",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_web_performance_optimisation",
+    "name": "web performance optimisation",
+    "group": "",
+    "values": [
+     "optimisation",
+     "performance",
+     "web"
+    ],
+    "knockout": false,
+    "operator": "preferred",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "web performance optimisation",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_accessibility_wcag",
+    "name": "accessibility (WCAG)",
+    "group": "",
+    "values": [
+     "accessibility",
+     "wcag"
+    ],
+    "knockout": false,
+    "operator": "preferred",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "accessibility (WCAG)",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_storybook",
+    "name": "Storybook",
+    "group": "",
+    "values": [
+     "storybook"
+    ],
+    "knockout": false,
+    "operator": "preferred",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "Storybook",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_node_js",
+    "name": "Node.js",
+    "group": "",
+    "values": [
+     "node.js"
+    ],
+    "knockout": false,
+    "operator": "nice_to_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "Node.js",
+    "verify_in_screening": false
+   }
+  ],
+  "cost_usd": 0.0006513
+ },
+ "jd_050": {
+  "rubric_id": "0c55ec04-94e8-4575-8ac4-49b61172e1ab",
+  "title": "Customer Support Specialist",
+  "core_requirement": "3+ years of experience in customer support",
+  "criteria": [
+   {
+    "key": "c_3_years_of_experience",
+    "name": "3+ years of experience in customer support",
+    "group": "",
+    "values": [
+     "customer",
+     "support"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "high",
+    "source_excerpt": "3+ years of experience in customer support",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_customer_support_or_success",
+    "name": "customer support or success experience",
+    "group": "",
+    "values": [
+     "customer",
+     "success",
+     "support"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "high",
+    "source_excerpt": "customer support or success experience",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_helpdesk_tools_zendesk_freshdesk",
+    "name": "helpdesk tools (Zendesk, Freshdesk or Intercom)",
+    "group": "",
+    "values": [
+     "freshdesk",
+     "helpdesk",
+     "intercom",
+     "zendesk"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "helpdesk tools (Zendesk, Freshdesk or Intercom)",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_excellent_written_communication",
+    "name": "excellent written communication",
+    "group": "",
+    "values": [
+     "communication",
+     "written"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "excellent written communication",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_high_school_diploma_required",
+    "name": "High school diploma required; degree a plus",
+    "group": "",
+    "values": [
+     "diploma",
+     "high",
+     "required",
+     "school"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "High school diploma required; degree a plus",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_knowledge_base_writing",
+    "name": "knowledge-base writing",
+    "group": "",
+    "values": [
+     "base",
+     "writing"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "knowledge-base writing",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_saas_support",
+    "name": "SaaS support",
+    "group": "",
+    "values": [
+     "saas",
+     "support"
+    ],
+    "knockout": false,
+    "operator": "preferred",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "SaaS support",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_sql_basics",
+    "name": "SQL basics",
+    "group": "",
+    "values": [
+     "basics",
+     "sql"
+    ],
+    "knockout": false,
+    "operator": "nice_to_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "SQL basics",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_second_language",
+    "name": "second language",
+    "group": "",
+    "values": [
+     "language",
+     "second"
+    ],
+    "knockout": false,
+    "operator": "nice_to_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "second language",
+    "verify_in_screening": false
+   }
+  ],
+  "cost_usd": 0.0005276
+ },
+ "jd_015": {
+  "rubric_id": "28c43a7d-5840-4f2b-84b7-19e5ccf37383",
+  "title": "Senior Machine Learning Engineer",
+  "core_requirement": "6+ years of experience in machine learning",
+  "criteria": [
+   {
+    "key": "c_6_years_of_experience",
+    "name": "6+ years of experience in machine learning",
+    "group": "",
+    "values": [
+     "learning",
+     "machine"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "high",
+    "source_excerpt": "6+ years of experience in machine learning",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_python",
+    "name": "Python",
+    "group": "",
+    "values": [
+     "python"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "high",
+    "source_excerpt": "Python",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_machine_learning_scikit_learn",
+    "name": "machine learning (scikit-learn, XGBoost)",
+    "group": "",
+    "values": [
+     "learn",
+     "learning",
+     "machine",
+     "scikit",
+     "xgboost"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "machine learning (scikit-learn, XGBoost)",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_deep_learning_pytorch_or",
+    "name": "deep learning (PyTorch or TensorFlow)",
+    "group": "",
+    "values": [
+     "deep",
+     "learning",
+     "pytorch",
+     "tensorflow"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "deep learning (PyTorch or TensorFlow)",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_deploying_models_to_production",
+    "name": "deploying models to production",
+    "group": "",
+    "values": [
+     "deploying",
+     "models",
+     "production"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "deploying models to production",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_master_s_or_phd",
+    "name": "Master's or PhD in Computer Science, Statistics or a related quantitative field",
+    "group": "",
+    "values": [
+     "computer",
+     "master",
+     "phd",
+     "quantitative",
+     "science",
+     "statistics"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "Master's or PhD in Computer Science, Statistics or a related quantitative field",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_experiment_design_a_b",
+    "name": "experiment design / A/B testing",
+    "group": "",
+    "values": [
+     "design",
+     "experiment",
+     "testing"
+    ],
+    "knockout": false,
+    "operator": "preferred",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "experiment design / A/B testing",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_llm_fine_tuning",
+    "name": "LLM fine-tuning",
+    "group": "",
+    "values": [
+     "fine",
+     "llm",
+     "tuning"
+    ],
+    "knockout": false,
+    "operator": "preferred",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "LLM fine-tuning",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_mlops_mlflow_kubeflow_sagemaker",
+    "name": "MLOps (MLflow, Kubeflow, SageMaker)",
+    "group": "",
+    "values": [
+     "kubeflow",
+     "mlflow",
+     "mlops",
+     "sagemaker"
+    ],
+    "knockout": false,
+    "operator": "preferred",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "MLOps (MLflow, Kubeflow, SageMaker)",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_spark",
+    "name": "Spark",
+    "group": "",
+    "values": [
+     "spark"
+    ],
+    "knockout": false,
+    "operator": "nice_to_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "Spark",
+    "verify_in_screening": false
+   }
+  ],
+  "cost_usd": 0.0005854
+ },
+ "jd_036": {
+  "rubric_id": "b8aa0890-d46a-45aa-8d03-2c103b9befc5",
+  "title": "Promoted · Easy Apply · 213 applicants · Posted 3 days ago",
+  "core_requirement": "8+ years of experience in B2B sales, including at least 2 years leading a team or function",
+  "criteria": [
+   {
+    "key": "c_8_years_of_experience",
+    "name": "8+ years of experience in B2B sales, including at least 2 years leading a team or function",
+    "group": "",
+    "values": [
+     "b2b",
+     "function",
+     "leading",
+     "sales",
+     "team"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "high",
+    "source_excerpt": "8+ years of experience in B2B sales, including at least 2 years leading a team or function",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_b2b_saas_sales",
+    "name": "B2B SaaS sales",
+    "group": "",
+    "values": [
+     "b2b",
+     "saas",
+     "sales"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "high",
+    "source_excerpt": "B2B SaaS sales",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_consistent_quota_attainment",
+    "name": "consistent quota attainment",
+    "group": "",
+    "values": [
+     "attainment",
+     "consistent",
+     "quota"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "consistent quota attainment",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_full_cycle_deal_management",
+    "name": "full-cycle deal management",
+    "group": "",
+    "values": [
+     "cycle",
+     "deal",
+     "full",
+     "management"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "full-cycle deal management",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_crm_salesforce",
+    "name": "CRM (Salesforce)",
+    "group": "",
+    "values": [
+     "crm",
+     "salesforce"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "CRM (Salesforce)",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_bachelor_s_degree_preferred",
+    "name": "Bachelor's degree preferred",
+    "group": "",
+    "values": [
+     "preferred"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "Bachelor's degree preferred",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_meddicc_or_similar_sales",
+    "name": "MEDDICC or similar sales methodology",
+    "group": "",
+    "values": [
+     "meddicc",
+     "methodology",
+     "sales"
+    ],
+    "knockout": false,
+    "operator": "preferred",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "MEDDICC or similar sales methodology",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_enterprise_or_mid_market",
+    "name": "enterprise or mid-market accounts",
+    "group": "",
+    "values": [
+     "accounts",
+     "enterprise",
+     "market",
+     "mid"
+    ],
+    "knockout": false,
+    "operator": "preferred",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "enterprise or mid-market accounts",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_experience_selling_to_hr",
+    "name": "experience selling to HR or IT buyers",
+    "group": "",
+    "values": [
+     "buyers",
+     "selling"
+    ],
+    "knockout": false,
+    "operator": "nice_to_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "experience selling to HR or IT buyers",
+    "verify_in_screening": false
+   }
+  ],
+  "cost_usd": 0.0005604
+ },
+ "jd_041": {
+  "rubric_id": "1c540d62-b66e-4671-9661-91783edd8712",
+  "title": "Recruiting Coordinator at Wrenfield Capital (Toronto, fully on-site). Wrenfield Capital builds products for the consulting firm sector. We are a team of 600 people with offices in Toronto. As our Recr",
+  "core_requirement": "0-2 years of experience in talent acquisition",
+  "criteria": [
+   {
+    "key": "c_0_2_years_of",
+    "name": "0-2 years of experience in talent acquisition",
+    "group": "",
+    "values": [
+     "acquisition",
+     "talent"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "high",
+    "source_excerpt": "0-2 years of experience in talent acquisition",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_full_cycle_recruiting",
+    "name": "full-cycle recruiting",
+    "group": "",
+    "values": [
+     "cycle",
+     "full",
+     "recruiting"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "high",
+    "source_excerpt": "full-cycle recruiting",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_sourcing_linkedin_recruiter_boolean",
+    "name": "sourcing (LinkedIn Recruiter, Boolean search)",
+    "group": "",
+    "values": [
+     "boolean",
+     "linkedin",
+     "recruiter",
+     "search",
+     "sourcing"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "sourcing (LinkedIn Recruiter, Boolean search)",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_applicant_tracking_systems_greenhouse",
+    "name": "applicant tracking systems (Greenhouse, Lever or Workday)",
+    "group": "",
+    "values": [
+     "applicant",
+     "greenhouse",
+     "lever",
+     "systems",
+     "tracking",
+     "workday"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "applicant tracking systems (Greenhouse, Lever or Workday)",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_bachelor_s_degree_in",
+    "name": "Bachelor's degree in Human Resources, Psychology or Business",
+    "group": "",
+    "values": [
+     "business",
+     "human",
+     "psychology",
+     "resources"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "Bachelor's degree in Human Resources, Psychology or Business",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_male_candidates_preferred_for",
+    "name": "Male candidates preferred for this role",
+    "group": "",
+    "values": [
+     "candidates",
+     "male",
+     "preferred",
+     "role",
+     "this"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "Male candidates preferred for this role",
+    "verify_in_screening": false
+   }
+  ],
+  "cost_usd": 0.0004656
+ },
+ "jd_043": {
+  "rubric_id": "cad980ba-3460-42a9-a1ed-23ab5afe266a",
+  "title": "Senior Technical Recruiter",
+  "core_requirement": "6+ years of experience in talent acquisition",
+  "criteria": [
+   {
+    "key": "c_6_years_of_experience",
+    "name": "6+ years of experience in talent acquisition",
+    "group": "",
+    "values": [
+     "acquisition",
+     "talent"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "high",
+    "source_excerpt": "6+ years of experience in talent acquisition",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_full_cycle_recruiting",
+    "name": "full-cycle recruiting",
+    "group": "",
+    "values": [
+     "cycle",
+     "full",
+     "recruiting"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "high",
+    "source_excerpt": "full-cycle recruiting",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_sourcing_linkedin_recruiter_boolean",
+    "name": "sourcing (LinkedIn Recruiter, Boolean search)",
+    "group": "",
+    "values": [
+     "boolean",
+     "linkedin",
+     "recruiter",
+     "search",
+     "sourcing"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "sourcing (LinkedIn Recruiter, Boolean search)",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_applicant_tracking_systems_greenhouse",
+    "name": "applicant tracking systems (Greenhouse, Lever or Workday)",
+    "group": "",
+    "values": [
+     "applicant",
+     "greenhouse",
+     "lever",
+     "systems",
+     "tracking",
+     "workday"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "applicant tracking systems (Greenhouse, Lever or Workday)",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_bachelor_s_degree_in",
+    "name": "Bachelor's degree in Human Resources, Psychology or Business",
+    "group": "",
+    "values": [
+     "business",
+     "human",
+     "psychology",
+     "resources"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "Bachelor's degree in Human Resources, Psychology or Business",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_employer_branding",
+    "name": "employer branding",
+    "group": "",
+    "values": [
+     "branding",
+     "employer"
+    ],
+    "knockout": false,
+    "operator": "preferred",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "employer branding",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_recruiting_metrics_and_reporting",
+    "name": "recruiting metrics and reporting",
+    "group": "",
+    "values": [
+     "metrics",
+     "recruiting",
+     "reporting"
+    ],
+    "knockout": false,
+    "operator": "preferred",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "recruiting metrics and reporting",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_technical_recruiting",
+    "name": "technical recruiting",
+    "group": "",
+    "values": [
+     "recruiting",
+     "technical"
+    ],
+    "knockout": false,
+    "operator": "preferred",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "technical recruiting",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_campus_hiring",
+    "name": "campus hiring",
+    "group": "",
+    "values": [
+     "campus",
+     "hiring"
+    ],
+    "knockout": false,
+    "operator": "nice_to_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "campus hiring",
+    "verify_in_screening": false
+   }
+  ],
+  "cost_usd": 0.0005541
+ },
+ "jd_042": {
+  "rubric_id": "444c53a4-d7e8-4d9c-af31-8b0f25034aa8",
+  "title": "Talent Acquisition Specialist at Tidewater Bank (Sydney, hybrid, 3 days in office). Tidewater Bank builds products for the healthcare network sector. We are a team of 600 people with offices in Sydney",
+  "core_requirement": "3+ years of experience in talent acquisition",
+  "criteria": [
+   {
+    "key": "c_3_years_of_experience",
+    "name": "3+ years of experience in talent acquisition",
+    "group": "",
+    "values": [
+     "acquisition",
+     "talent"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "high",
+    "source_excerpt": "3+ years of experience in talent acquisition",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_full_cycle_recruiting",
+    "name": "full-cycle recruiting",
+    "group": "",
+    "values": [
+     "cycle",
+     "full",
+     "recruiting"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "high",
+    "source_excerpt": "full-cycle recruiting",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_sourcing_linkedin_recruiter_boolean",
+    "name": "sourcing (LinkedIn Recruiter, Boolean search)",
+    "group": "",
+    "values": [
+     "boolean",
+     "linkedin",
+     "recruiter",
+     "search",
+     "sourcing"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "sourcing (LinkedIn Recruiter, Boolean search)",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_applicant_tracking_systems_greenhouse",
+    "name": "applicant tracking systems (Greenhouse, Lever or Workday)",
+    "group": "",
+    "values": [
+     "applicant",
+     "greenhouse",
+     "lever",
+     "systems",
+     "tracking",
+     "workday"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "applicant tracking systems (Greenhouse, Lever or Workday)",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_bachelor_s_degree_in",
+    "name": "Bachelor's degree in Human Resources, Psychology or Business",
+    "group": "",
+    "values": [
+     "business",
+     "human",
+     "psychology",
+     "resources"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "Bachelor's degree in Human Resources, Psychology or Business",
+    "verify_in_screening": false
+   }
+  ],
+  "cost_usd": 0.0004222
+ },
+ "jd_062": {
+  "rubric_id": "b1cf25b2-e7f8-47d1-9f04-9dca32f15459",
+  "title": "Supply Chain Analyst",
+  "core_requirement": "3+ years of experience in supply chain planning",
+  "criteria": [
+   {
+    "key": "c_3_years_of_experience",
+    "name": "3+ years of experience in supply chain planning",
+    "group": "",
+    "values": [
+     "chain",
+     "planning",
+     "supply"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "high",
+    "source_excerpt": "3+ years of experience in supply chain planning",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_demand_planning_or_inventory",
+    "name": "demand planning or inventory management",
+    "group": "",
+    "values": [
+     "demand",
+     "inventory",
+     "management",
+     "planning"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "high",
+    "source_excerpt": "demand planning or inventory management",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_excel_advanced",
+    "name": "Excel (advanced)",
+    "group": "",
+    "values": [
+     "advanced",
+     "excel"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "Excel (advanced)",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_erp_sap_or_oracle",
+    "name": "ERP (SAP or Oracle)",
+    "group": "",
+    "values": [
+     "erp",
+     "oracle",
+     "sap"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "ERP (SAP or Oracle)",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_bachelor_s_degree_in",
+    "name": "Bachelor's degree in Supply Chain, Operations or Engineering",
+    "group": "",
+    "values": [
+     "chain",
+     "engineering",
+     "operations",
+     "supply"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "Bachelor's degree in Supply Chain, Operations or Engineering",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_sql_or_power_bi",
+    "name": "SQL or Power BI",
+    "group": "",
+    "values": [
+     "power",
+     "sql"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "SQL or Power BI",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_s_op",
+    "name": "S&OP",
+    "group": "",
+    "values": [
+     "S&OP"
+    ],
+    "knockout": false,
+    "operator": "preferred",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "S&OP",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_supplier_management",
+    "name": "supplier management",
+    "group": "",
+    "values": [
+     "management",
+     "supplier"
+    ],
+    "knockout": false,
+    "operator": "preferred",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "supplier management",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_apics_cpim",
+    "name": "APICS CPIM",
+    "group": "",
+    "values": [
+     "apics",
+     "cpim"
+    ],
+    "knockout": false,
+    "operator": "nice_to_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "APICS CPIM",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_six_sigma",
+    "name": "Six Sigma",
+    "group": "",
+    "values": [
+     "sigma",
+     "six"
+    ],
+    "knockout": false,
+    "operator": "nice_to_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "Six Sigma",
+    "verify_in_screening": false
+   }
+  ],
+  "cost_usd": 0.0005388
+ },
+ "jd_064": {
+  "rubric_id": "77489b19-0c2d-48af-86af-9591e4f5e1b9",
+  "title": "Supply Chain Lead",
+  "core_requirement": "8+ years of experience in supply chain planning, including at least 2 years leading a team or function",
+  "criteria": [
+   {
+    "key": "c_8_years_of_experience",
+    "name": "8+ years of experience in supply chain planning, including at least 2 years leading a team or function",
+    "group": "",
+    "values": [
+     "chain",
+     "function",
+     "leading",
+     "planning",
+     "supply",
+     "team"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "high",
+    "source_excerpt": "8+ years of experience in supply chain planning, including at least 2 years leading a team or function",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_demand_planning_or_inventory",
+    "name": "demand planning or inventory management",
+    "group": "",
+    "values": [
+     "demand",
+     "inventory",
+     "management",
+     "planning"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "high",
+    "source_excerpt": "demand planning or inventory management",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_excel_advanced",
+    "name": "Excel (advanced)",
+    "group": "",
+    "values": [
+     "advanced",
+     "excel"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "Excel (advanced)",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_erp_sap_or_oracle",
+    "name": "ERP (SAP or Oracle)",
+    "group": "",
+    "values": [
+     "erp",
+     "oracle",
+     "sap"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "ERP (SAP or Oracle)",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_bachelor_s_degree_in",
+    "name": "Bachelor's degree in Supply Chain, Operations or Engineering",
+    "group": "",
+    "values": [
+     "chain",
+     "engineering",
+     "operations",
+     "supply"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "Bachelor's degree in Supply Chain, Operations or Engineering",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_sql_or_power_bi",
+    "name": "SQL or Power BI",
+    "group": "",
+    "values": [
+     "power",
+     "sql"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "SQL or Power BI",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_s_op",
+    "name": "S&OP",
+    "group": "",
+    "values": [
+     "S&OP"
+    ],
+    "knockout": false,
+    "operator": "preferred",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "S&OP",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_six_sigma",
+    "name": "Six Sigma",
+    "group": "",
+    "values": [
+     "sigma",
+     "six"
+    ],
+    "knockout": false,
+    "operator": "nice_to_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "Six Sigma",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_apics_cpim",
+    "name": "APICS CPIM",
+    "group": "",
+    "values": [
+     "apics",
+     "cpim"
+    ],
+    "knockout": false,
+    "operator": "nice_to_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "APICS CPIM",
+    "verify_in_screening": false
+   }
+  ],
+  "cost_usd": 0.0005278
+ },
+ "jd_063": {
+  "rubric_id": "4affc202-5a91-409f-89d2-b3388db9828c",
+  "title": "Senior Supply Chain Planner",
+  "core_requirement": "6+ years of experience in supply chain planning",
+  "criteria": [
+   {
+    "key": "c_6_years_of_experience",
+    "name": "6+ years of experience in supply chain planning",
+    "group": "",
+    "values": [
+     "chain",
+     "planning",
+     "supply"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "high",
+    "source_excerpt": "6+ years of experience in supply chain planning",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_demand_planning_or_inventory",
+    "name": "demand planning or inventory management",
+    "group": "",
+    "values": [
+     "demand",
+     "inventory",
+     "management",
+     "planning"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "high",
+    "source_excerpt": "demand planning or inventory management",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_excel_advanced",
+    "name": "Excel (advanced)",
+    "group": "",
+    "values": [
+     "advanced",
+     "excel"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "Excel (advanced)",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_erp_sap_or_oracle",
+    "name": "ERP (SAP or Oracle)",
+    "group": "",
+    "values": [
+     "erp",
+     "oracle",
+     "sap"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "ERP (SAP or Oracle)",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_bachelor_s_degree_in",
+    "name": "Bachelor's degree in Supply Chain, Operations or Engineering",
+    "group": "",
+    "values": [
+     "chain",
+     "engineering",
+     "operations",
+     "supply"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "Bachelor's degree in Supply Chain, Operations or Engineering",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_supplier_management",
+    "name": "supplier management",
+    "group": "",
+    "values": [
+     "management",
+     "supplier"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "supplier management",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_s_op",
+    "name": "S&OP",
+    "group": "",
+    "values": [
+     "S&OP"
+    ],
+    "knockout": false,
+    "operator": "preferred",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "S&OP",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_six_sigma",
+    "name": "Six Sigma",
+    "group": "",
+    "values": [
+     "sigma",
+     "six"
+    ],
+    "knockout": false,
+    "operator": "nice_to_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "Six Sigma",
+    "verify_in_screening": false
+   }
+  ],
+  "cost_usd": 0.000475
+ },
+ "jd_065": {
+  "rubric_id": "4669d6b0-854f-4586-b435-fe94ea24b76d",
+  "title": "Engineering Team Lead",
+  "core_requirement": "0-2 years of experience in engineering management",
+  "criteria": [
+   {
+    "key": "c_0_2_years_of",
+    "name": "0-2 years of experience in engineering management",
+    "group": "",
+    "values": [
+     "engineering",
+     "management"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "high",
+    "source_excerpt": "0-2 years of experience in engineering management",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_people_management_of_software",
+    "name": "people management of software engineers",
+    "group": "",
+    "values": [
+     "engineers",
+     "management",
+     "people",
+     "software"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "high",
+    "source_excerpt": "people management of software engineers",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_hands_on_software_engineering",
+    "name": "hands-on software engineering background",
+    "group": "",
+    "values": [
+     "background",
+     "engineering",
+     "hands",
+     "software"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "hands-on software engineering background",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_agile_delivery",
+    "name": "agile delivery",
+    "group": "",
+    "values": [
+     "agile",
+     "delivery"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "agile delivery",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_hiring_and_performance_management",
+    "name": "hiring and performance management",
+    "group": "",
+    "values": [
+     "hiring",
+     "management",
+     "performance"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "hiring and performance management",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_bachelor_s_degree_in",
+    "name": "Bachelor's degree in Computer Science or equivalent",
+    "group": "",
+    "values": [
+     "computer",
+     "science"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "Bachelor's degree in Computer Science or equivalent",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_managing_managers",
+    "name": "managing managers",
+    "group": "",
+    "values": [
+     "managers",
+     "managing"
+    ],
+    "knockout": false,
+    "operator": "preferred",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "managing managers",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_budget_ownership",
+    "name": "budget ownership",
+    "group": "",
+    "values": [
+     "budget",
+     "ownership"
+    ],
+    "knockout": false,
+    "operator": "preferred",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "budget ownership",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_distributed_systems",
+    "name": "distributed systems",
+    "group": "",
+    "values": [
+     "distributed",
+     "systems"
+    ],
+    "knockout": false,
+    "operator": "preferred",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "distributed systems",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_public_speaking",
+    "name": "public speaking",
+    "group": "",
+    "values": [
+     "public",
+     "speaking"
+    ],
+    "knockout": false,
+    "operator": "nice_to_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "public speaking",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_startup_experience",
+    "name": "startup experience",
+    "group": "",
+    "values": [
+     "startup"
+    ],
+    "knockout": false,
+    "operator": "nice_to_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "startup experience",
+    "verify_in_screening": false
+   }
+  ],
+  "cost_usd": 0.0006035
+ },
+ "jd_066": {
+  "rubric_id": "97f524fb-1e76-408c-8b00-e6021601224e",
+  "title": "Engineering Manager",
+  "core_requirement": "3+ years of experience in engineering management",
+  "criteria": [
+   {
+    "key": "c_3_years_of_experience",
+    "name": "3+ years of experience in engineering management",
+    "group": "",
+    "values": [
+     "engineering",
+     "management"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "high",
+    "source_excerpt": "3+ years of experience in engineering management",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_people_management_of_software",
+    "name": "people management of software engineers",
+    "group": "",
+    "values": [
+     "engineers",
+     "management",
+     "people",
+     "software"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "high",
+    "source_excerpt": "people management of software engineers",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_hands_on_software_engineering",
+    "name": "hands-on software engineering background",
+    "group": "",
+    "values": [
+     "background",
+     "engineering",
+     "hands",
+     "software"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "hands-on software engineering background",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_agile_delivery",
+    "name": "agile delivery",
+    "group": "",
+    "values": [
+     "agile",
+     "delivery"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "agile delivery",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_hiring_and_performance_management",
+    "name": "hiring and performance management",
+    "group": "",
+    "values": [
+     "hiring",
+     "management",
+     "performance"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "hiring and performance management",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_bachelor_s_degree_in",
+    "name": "Bachelor's degree in Computer Science or equivalent",
+    "group": "",
+    "values": [
+     "computer",
+     "science"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "Bachelor's degree in Computer Science or equivalent",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_budget_ownership",
+    "name": "budget ownership",
+    "group": "",
+    "values": [
+     "budget",
+     "ownership"
+    ],
+    "knockout": false,
+    "operator": "preferred",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "budget ownership",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_distributed_systems",
+    "name": "distributed systems",
+    "group": "",
+    "values": [
+     "distributed",
+     "systems"
+    ],
+    "knockout": false,
+    "operator": "preferred",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "distributed systems",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_startup_experience",
+    "name": "startup experience",
+    "group": "",
+    "values": [
+     "startup"
+    ],
+    "knockout": false,
+    "operator": "nice_to_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "startup experience",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_public_speaking",
+    "name": "public speaking",
+    "group": "",
+    "values": [
+     "public",
+     "speaking"
+    ],
+    "knockout": false,
+    "operator": "nice_to_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "public speaking",
+    "verify_in_screening": false
+   }
+  ],
+  "cost_usd": 0.0005701
+ },
+ "jd_067": {
+  "rubric_id": "e39171ff-8376-43b1-a7df-6cdaa8ed3d98",
+  "title": "Senior Engineering Manager",
+  "core_requirement": "6+ years of experience in engineering management",
+  "criteria": [
+   {
+    "key": "c_6_years_of_experience",
+    "name": "6+ years of experience in engineering management",
+    "group": "",
+    "values": [
+     "engineering",
+     "management"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "high",
+    "source_excerpt": "6+ years of experience in engineering management",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_people_management_of_software",
+    "name": "people management of software engineers",
+    "group": "",
+    "values": [
+     "engineers",
+     "management",
+     "people",
+     "software"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "high",
+    "source_excerpt": "people management of software engineers",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_hands_on_software_engineering",
+    "name": "hands-on software engineering background",
+    "group": "",
+    "values": [
+     "background",
+     "engineering",
+     "hands",
+     "software"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "hands-on software engineering background",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_agile_delivery",
+    "name": "agile delivery",
+    "group": "",
+    "values": [
+     "agile",
+     "delivery"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "agile delivery",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_hiring_and_performance_management",
+    "name": "hiring and performance management",
+    "group": "",
+    "values": [
+     "hiring",
+     "management",
+     "performance"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "hiring and performance management",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_bachelor_s_degree_in",
+    "name": "Bachelor's degree in Computer Science or equivalent",
+    "group": "",
+    "values": [
+     "computer",
+     "science"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "Bachelor's degree in Computer Science or equivalent",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_budget_ownership",
+    "name": "budget ownership",
+    "group": "",
+    "values": [
+     "budget",
+     "ownership"
+    ],
+    "knockout": false,
+    "operator": "preferred",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "budget ownership",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_distributed_systems",
+    "name": "distributed systems",
+    "group": "",
+    "values": [
+     "distributed",
+     "systems"
+    ],
+    "knockout": false,
+    "operator": "preferred",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "distributed systems",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_public_speaking",
+    "name": "public speaking",
+    "group": "",
+    "values": [
+     "public",
+     "speaking"
+    ],
+    "knockout": false,
+    "operator": "nice_to_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "public speaking",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_startup_experience",
+    "name": "startup experience",
+    "group": "",
+    "values": [
+     "startup"
+    ],
+    "knockout": false,
+    "operator": "nice_to_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "startup experience",
+    "verify_in_screening": false
+   }
+  ],
+  "cost_usd": 0.0005706
+ },
+ "jd_082": {
+  "rubric_id": "1b177180-89dc-4ee3-b829-5cb0cb2410b9",
+  "title": "Consultant",
+  "core_requirement": "3+ years of experience in management consulting",
+  "criteria": [
+   {
+    "key": "c_3_years_of_experience",
+    "name": "3+ years of experience in management consulting",
+    "group": "",
+    "values": [
+     "consulting",
+     "management"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "high",
+    "source_excerpt": "3+ years of experience in management consulting",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_mba_from_a_top",
+    "name": "MBA from a top program or top-tier consulting experience",
+    "group": "",
+    "values": [
+     "consulting",
+     "from",
+     "mba",
+     "program",
+     "tier",
+     "top"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "high",
+    "source_excerpt": "MBA from a top program or top-tier consulting experience",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_structured_problem_solving",
+    "name": "structured problem solving",
+    "group": "",
+    "values": [
+     "problem",
+     "solving",
+     "structured"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "structured problem solving",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_financial_and_excel_modelling",
+    "name": "financial and Excel modelling",
+    "group": "",
+    "values": [
+     "excel",
+     "financial",
+     "modelling"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "financial and Excel modelling",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_executive_communication_powerpoint",
+    "name": "executive communication (PowerPoint)",
+    "group": "",
+    "values": [
+     "communication",
+     "executive",
+     "powerpoint"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "executive communication (PowerPoint)",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_mba_or_equivalent_advanced",
+    "name": "MBA or equivalent advanced degree",
+    "group": "",
+    "values": [
+     "advanced",
+     "mba"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "MBA or equivalent advanced degree",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_team_leadership",
+    "name": "team leadership",
+    "group": "",
+    "values": [
+     "leadership",
+     "team"
+    ],
+    "knockout": false,
+    "operator": "preferred",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "team leadership",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_industry_expertise",
+    "name": "industry expertise",
+    "group": "",
+    "values": [
+     "expertise",
+     "industry"
+    ],
+    "knockout": false,
+    "operator": "preferred",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "industry expertise",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_second_language",
+    "name": "second language",
+    "group": "",
+    "values": [
+     "language",
+     "second"
+    ],
+    "knockout": false,
+    "operator": "nice_to_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "second language",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_data_tools_tableau_alteryx",
+    "name": "data tools (Tableau, Alteryx)",
+    "group": "",
+    "values": [
+     "alteryx",
+     "data",
+     "tableau"
+    ],
+    "knockout": false,
+    "operator": "nice_to_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "data tools (Tableau, Alteryx)",
+    "verify_in_screening": false
+   }
+  ],
+  "cost_usd": 0.0005749
+ },
+ "jd_083": {
+  "rubric_id": "92631880-c4ec-41c7-9293-d4b4d6e30365",
+  "title": "Senior Consultant",
+  "core_requirement": "6+ years of experience in management consulting",
+  "criteria": [
+   {
+    "key": "c_6_years_of_experience",
+    "name": "6+ years of experience in management consulting",
+    "group": "",
+    "values": [
+     "consulting",
+     "management"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "high",
+    "source_excerpt": "6+ years of experience in management consulting",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_mba_from_a_top",
+    "name": "MBA from a top program or top-tier consulting experience",
+    "group": "",
+    "values": [
+     "consulting",
+     "from",
+     "mba",
+     "program",
+     "tier",
+     "top"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "high",
+    "source_excerpt": "MBA from a top program or top-tier consulting experience",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_structured_problem_solving",
+    "name": "structured problem solving",
+    "group": "",
+    "values": [
+     "problem",
+     "solving",
+     "structured"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "structured problem solving",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_financial_and_excel_modelling",
+    "name": "financial and Excel modelling",
+    "group": "",
+    "values": [
+     "excel",
+     "financial",
+     "modelling"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "financial and Excel modelling",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_executive_communication_powerpoint",
+    "name": "executive communication (PowerPoint)",
+    "group": "",
+    "values": [
+     "communication",
+     "executive",
+     "powerpoint"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "executive communication (PowerPoint)",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_mba_or_equivalent_advanced",
+    "name": "MBA or equivalent advanced degree",
+    "group": "",
+    "values": [
+     "advanced",
+     "mba"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "MBA or equivalent advanced degree",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_industry_expertise",
+    "name": "industry expertise",
+    "group": "",
+    "values": [
+     "expertise",
+     "industry"
+    ],
+    "knockout": false,
+    "operator": "preferred",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "industry expertise",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_client_management",
+    "name": "client management",
+    "group": "",
+    "values": [
+     "client",
+     "management"
+    ],
+    "knockout": false,
+    "operator": "preferred",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "client management",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_second_language",
+    "name": "second language",
+    "group": "",
+    "values": [
+     "language",
+     "second"
+    ],
+    "knockout": false,
+    "operator": "nice_to_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "second language",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_data_tools_tableau_alteryx",
+    "name": "data tools (Tableau, Alteryx)",
+    "group": "",
+    "values": [
+     "alteryx",
+     "data",
+     "tableau"
+    ],
+    "knockout": false,
+    "operator": "nice_to_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "data tools (Tableau, Alteryx)",
+    "verify_in_screening": false
+   }
+  ],
+  "cost_usd": 0.000579
+ },
+ "jd_084": {
+  "rubric_id": "d8752eb3-fa37-4457-adf5-ec6240d40af5",
+  "title": "Engagement Manager at Bluefin Systems (Pune, hybrid). Bluefin Systems builds products for the strategy practice sector. We are a team of 3000 people with offices in Pune. As our Engagement Manager, yo",
+  "core_requirement": "8+ years of experience in management consulting, including at least 2 years leading a team or function",
+  "criteria": [
+   {
+    "key": "c_8_years_of_experience",
+    "name": "8+ years of experience in management consulting, including at least 2 years leading a team or function",
+    "group": "",
+    "values": [
+     "consulting",
+     "function",
+     "leading",
+     "management",
+     "team"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "high",
+    "source_excerpt": "8+ years of experience in management consulting, including at least 2 years leading a team or function",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_mba_from_a_top",
+    "name": "MBA from a top program or top-tier consulting experience",
+    "group": "",
+    "values": [
+     "consulting",
+     "from",
+     "mba",
+     "program",
+     "tier",
+     "top"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "high",
+    "source_excerpt": "MBA from a top program or top-tier consulting experience",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_structured_problem_solving",
+    "name": "structured problem solving",
+    "group": "",
+    "values": [
+     "problem",
+     "solving",
+     "structured"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "structured problem solving",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_financial_and_excel_modelling",
+    "name": "financial and Excel modelling",
+    "group": "",
+    "values": [
+     "excel",
+     "financial",
+     "modelling"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "financial and Excel modelling",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_executive_communication_powerpoint",
+    "name": "executive communication (PowerPoint)",
+    "group": "",
+    "values": [
+     "communication",
+     "executive",
+     "powerpoint"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "executive communication (PowerPoint)",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_mba_or_equivalent_advanced",
+    "name": "MBA or equivalent advanced degree",
+    "group": "",
+    "values": [
+     "advanced",
+     "mba"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "MBA or equivalent advanced degree",
+    "verify_in_screening": false
+   }
+  ],
+  "cost_usd": 0.0004743
+ },
+ "jd_086": {
+  "rubric_id": "9624ad2e-8523-4270-b6a2-89b03c0a6600",
+  "title": "Strategy & Operations Associate",
+  "core_requirement": "3+ years of experience in strategy and business operations",
+  "criteria": [
+   {
+    "key": "c_3_years_of_experience",
+    "name": "3+ years of experience in strategy and business operations",
+    "group": "",
+    "values": [
+     "business",
+     "operations",
+     "strategy"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "high",
+    "source_excerpt": "3+ years of experience in strategy and business operations",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_strategy_consulting_or_business",
+    "name": "strategy, consulting or business operations experience",
+    "group": "",
+    "values": [
+     "business",
+     "consulting",
+     "operations",
+     "strategy"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "high",
+    "source_excerpt": "strategy, consulting or business operations experience",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_financial_modelling",
+    "name": "financial modelling",
+    "group": "",
+    "values": [
+     "financial",
+     "modelling"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "financial modelling",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_sql_or_advanced_analytics",
+    "name": "SQL or advanced analytics",
+    "group": "",
+    "values": [
+     "advanced",
+     "analytics",
+     "sql"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "SQL or advanced analytics",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_cross_functional_project_leadership",
+    "name": "cross-functional project leadership",
+    "group": "",
+    "values": [
+     "cross",
+     "functional",
+     "leadership",
+     "project"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "cross-functional project leadership",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_bachelor_s_degree_required",
+    "name": "Bachelor's degree required; MBA preferred",
+    "group": "",
+    "values": [
+     "mba",
+     "preferred",
+     "required"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "Bachelor's degree required; MBA preferred",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_tech_or_startup_experience",
+    "name": "tech or startup experience",
+    "group": "",
+    "values": [
+     "startup",
+     "tech"
+    ],
+    "knockout": false,
+    "operator": "preferred",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "tech or startup experience",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_mba",
+    "name": "MBA",
+    "group": "",
+    "values": [
+     "mba"
+    ],
+    "knockout": false,
+    "operator": "preferred",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "MBA",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_investment_banking_background",
+    "name": "investment banking background",
+    "group": "",
+    "values": [
+     "background",
+     "banking",
+     "investment"
+    ],
+    "knockout": false,
+    "operator": "nice_to_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "investment banking background",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_python",
+    "name": "Python",
+    "group": "",
+    "values": [
+     "python"
+    ],
+    "knockout": false,
+    "operator": "nice_to_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "Python",
+    "verify_in_screening": false
+   }
+  ],
+  "cost_usd": 0.0005724
+ },
+ "jd_087": {
+  "rubric_id": "7ae82ed1-dec3-4e32-a712-1dde5353da1c",
+  "title": "Senior Strategy Manager",
+  "core_requirement": "6+ years of experience in strategy and business operations",
+  "criteria": [
+   {
+    "key": "c_6_years_of_experience",
+    "name": "6+ years of experience in strategy and business operations",
+    "group": "",
+    "values": [
+     "business",
+     "operations",
+     "strategy"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "high",
+    "source_excerpt": "6+ years of experience in strategy and business operations",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_strategy_consulting_or_business",
+    "name": "strategy, consulting or business operations experience",
+    "group": "",
+    "values": [
+     "business",
+     "consulting",
+     "operations",
+     "strategy"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "high",
+    "source_excerpt": "strategy, consulting or business operations experience",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_financial_modelling",
+    "name": "financial modelling",
+    "group": "",
+    "values": [
+     "financial",
+     "modelling"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "financial modelling",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_sql_or_advanced_analytics",
+    "name": "SQL or advanced analytics",
+    "group": "",
+    "values": [
+     "advanced",
+     "analytics",
+     "sql"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "SQL or advanced analytics",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_cross_functional_project_leadership",
+    "name": "cross-functional project leadership",
+    "group": "",
+    "values": [
+     "cross",
+     "functional",
+     "leadership",
+     "project"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "cross-functional project leadership",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_bachelor_s_degree_required",
+    "name": "Bachelor's degree required; MBA preferred",
+    "group": "",
+    "values": [
+     "mba",
+     "preferred",
+     "required"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "Bachelor's degree required; MBA preferred",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_okr_planning_processes",
+    "name": "OKR / planning processes",
+    "group": "",
+    "values": [
+     "okr",
+     "planning",
+     "processes"
+    ],
+    "knockout": false,
+    "operator": "preferred",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "OKR / planning processes",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_tech_or_startup_experience",
+    "name": "tech or startup experience",
+    "group": "",
+    "values": [
+     "startup",
+     "tech"
+    ],
+    "knockout": false,
+    "operator": "preferred",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "tech or startup experience",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_python",
+    "name": "Python",
+    "group": "",
+    "values": [
+     "python"
+    ],
+    "knockout": false,
+    "operator": "nice_to_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "Python",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_investment_banking_background",
+    "name": "investment banking background",
+    "group": "",
+    "values": [
+     "background",
+     "banking",
+     "investment"
+    ],
+    "knockout": false,
+    "operator": "nice_to_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "investment banking background",
+    "verify_in_screening": false
+   }
+  ],
+  "cost_usd": 0.0005845
+ },
+ "jd_085": {
+  "rubric_id": "d0c13132-0768-4c58-aae1-e6eb644ff32d",
+  "title": "Promoted · Easy Apply · 213 applicants · Posted 3 days ago",
+  "core_requirement": "0-2 years of experience in strategy and business operations",
+  "criteria": [
+   {
+    "key": "c_0_2_years_of",
+    "name": "0-2 years of experience in strategy and business operations",
+    "group": "",
+    "values": [
+     "business",
+     "operations",
+     "strategy"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "high",
+    "source_excerpt": "0-2 years of experience in strategy and business operations",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_strategy_consulting_or_business",
+    "name": "strategy, consulting or business operations experience",
+    "group": "",
+    "values": [
+     "business",
+     "consulting",
+     "operations",
+     "strategy"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "high",
+    "source_excerpt": "strategy, consulting or business operations experience",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_financial_modelling",
+    "name": "financial modelling",
+    "group": "",
+    "values": [
+     "financial",
+     "modelling"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "financial modelling",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_sql_or_advanced_analytics",
+    "name": "SQL or advanced analytics",
+    "group": "",
+    "values": [
+     "advanced",
+     "analytics",
+     "sql"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "SQL or advanced analytics",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_cross_functional_project_leadership",
+    "name": "cross-functional project leadership",
+    "group": "",
+    "values": [
+     "cross",
+     "functional",
+     "leadership",
+     "project"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "cross-functional project leadership",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_bachelor_s_degree_required",
+    "name": "Bachelor's degree required; MBA preferred",
+    "group": "",
+    "values": [
+     "mba",
+     "preferred",
+     "required"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "Bachelor's degree required; MBA preferred",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_okr_planning_processes",
+    "name": "OKR / planning processes",
+    "group": "",
+    "values": [
+     "okr",
+     "planning",
+     "processes"
+    ],
+    "knockout": false,
+    "operator": "preferred",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "OKR / planning processes",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_tech_or_startup_experience",
+    "name": "tech or startup experience",
+    "group": "",
+    "values": [
+     "startup",
+     "tech"
+    ],
+    "knockout": false,
+    "operator": "preferred",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "tech or startup experience",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_mba",
+    "name": "MBA",
+    "group": "",
+    "values": [
+     "mba"
+    ],
+    "knockout": false,
+    "operator": "preferred",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "MBA",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_investment_banking_background",
+    "name": "investment banking background",
+    "group": "",
+    "values": [
+     "background",
+     "banking",
+     "investment"
+    ],
+    "knockout": false,
+    "operator": "nice_to_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "investment banking background",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_python",
+    "name": "Python",
+    "group": "",
+    "values": [
+     "python"
+    ],
+    "knockout": false,
+    "operator": "nice_to_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "Python",
+    "verify_in_screening": false
+   }
+  ],
+  "cost_usd": 0.000624
+ },
+ "jd_100": {
+  "rubric_id": "c377d1c7-cccd-4f51-a497-029b04b5b396",
+  "title": "Promoted · Easy Apply · 213 applicants · Posted 3 days ago",
+  "core_requirement": "8+ years of experience in product design, including at least 2 years leading a team or function",
+  "criteria": [
+   {
+    "key": "c_8_years_of_experience",
+    "name": "8+ years of experience in product design, including at least 2 years leading a team or function",
+    "group": "",
+    "values": [
+     "design",
+     "function",
+     "leading",
+     "product",
+     "team"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "high",
+    "source_excerpt": "8+ years of experience in product design, including at least 2 years leading a team or function",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_product_ux_design_for",
+    "name": "product/UX design for digital products",
+    "group": "",
+    "values": [
+     "design",
+     "digital",
+     "product",
+     "products"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "high",
+    "source_excerpt": "product/UX design for digital products",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_figma",
+    "name": "Figma",
+    "group": "",
+    "values": [
+     "figma"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "Figma",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_user_research_and_usability",
+    "name": "user research and usability testing",
+    "group": "",
+    "values": [
+     "research",
+     "testing",
+     "usability",
+     "user"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "user research and usability testing",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_a_portfolio_showing_end",
+    "name": "a portfolio showing end-to-end design process",
+    "group": "",
+    "values": [
+     "design",
+     "end",
+     "portfolio",
+     "process",
+     "showing"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "a portfolio showing end-to-end design process",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_degree_in_design_hci",
+    "name": "Degree in design, HCI or equivalent experience",
+    "group": "",
+    "values": [
+     "design",
+     "hci"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "Degree in design, HCI or equivalent experience",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_interaction_prototyping",
+    "name": "interaction prototyping",
+    "group": "",
+    "values": [
+     "interaction",
+     "prototyping"
+    ],
+    "knockout": false,
+    "operator": "preferred",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "interaction prototyping",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_design_systems",
+    "name": "design systems",
+    "group": "",
+    "values": [
+     "design",
+     "systems"
+    ],
+    "knockout": false,
+    "operator": "preferred",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "design systems",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_motion_design",
+    "name": "motion design",
+    "group": "",
+    "values": [
+     "design",
+     "motion"
+    ],
+    "knockout": false,
+    "operator": "nice_to_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "motion design",
+    "verify_in_screening": false
+   }
+  ],
+  "cost_usd": 0.0005612
+ },
+ "jd_102": {
+  "rubric_id": "6f3619c8-bf92-4444-91d7-e1d936a4803d",
+  "title": "Secondary Math Teacher",
+  "core_requirement": "3+ years of experience in teaching",
+  "criteria": [
+   {
+    "key": "c_3_years_of_experience",
+    "name": "3+ years of experience in teaching",
+    "group": "",
+    "values": [
+     "teaching"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "high",
+    "source_excerpt": "3+ years of experience in teaching",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_teaching_mathematics_at_secondary",
+    "name": "teaching mathematics at secondary level",
+    "group": "",
+    "values": [
+     "level",
+     "mathematics",
+     "secondary",
+     "teaching"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "high",
+    "source_excerpt": "teaching mathematics at secondary level",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_valid_teaching_certification",
+    "name": "valid teaching certification",
+    "group": "",
+    "values": [
+     "certification",
+     "teaching",
+     "valid"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "valid teaching certification",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_lesson_planning_and_assessment",
+    "name": "lesson planning and assessment",
+    "group": "",
+    "values": [
+     "assessment",
+     "lesson",
+     "planning"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "lesson planning and assessment",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_bachelor_s_degree_in",
+    "name": "Bachelor's degree in Mathematics or Education",
+    "group": "",
+    "values": [
+     "education",
+     "mathematics"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "Bachelor's degree in Mathematics or Education",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_a_valid_state_teaching",
+    "name": "A valid state teaching certificate in Mathematics (required; applications without it cannot be considered)",
+    "group": "",
+    "values": [
+     "applications",
+     "cannot",
+     "certificate",
+     "considered",
+     "mathematics",
+     "required",
+     "state",
+     "teaching"
+    ],
+    "knockout": true,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "A valid state teaching certificate in Mathematics (required; applications without it cannot be considered)",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_differentiated_instruction",
+    "name": "differentiated instruction",
+    "group": "",
+    "values": [
+     "differentiated",
+     "instruction"
+    ],
+    "knockout": false,
+    "operator": "preferred",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "differentiated instruction",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_classroom_technology_google_classroom",
+    "name": "classroom technology (Google Classroom)",
+    "group": "",
+    "values": [
+     "classroom",
+     "google",
+     "technology"
+    ],
+    "knockout": false,
+    "operator": "preferred",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "classroom technology (Google Classroom)",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_coaching_an_extracurricular_club",
+    "name": "coaching an extracurricular club",
+    "group": "",
+    "values": [
+     "club",
+     "coaching",
+     "extracurricular"
+    ],
+    "knockout": false,
+    "operator": "nice_to_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "coaching an extracurricular club",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_special_education_experience",
+    "name": "special-education experience",
+    "group": "",
+    "values": [
+     "education",
+     "special"
+    ],
+    "knockout": false,
+    "operator": "nice_to_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "special-education experience",
+    "verify_in_screening": false
+   }
+  ],
+  "cost_usd": 0.0006168
+ },
+ "jd_104": {
+  "rubric_id": "e57c2982-787c-4505-ae82-0887040ceac9",
+  "title": "Head of Mathematics Department",
+  "core_requirement": "8+ years of experience in teaching, including at least 2 years leading a team or function",
+  "criteria": [
+   {
+    "key": "c_8_years_of_experience",
+    "name": "8+ years of experience in teaching, including at least 2 years leading a team or function",
+    "group": "",
+    "values": [
+     "function",
+     "leading",
+     "teaching",
+     "team"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "high",
+    "source_excerpt": "8+ years of experience in teaching, including at least 2 years leading a team or function",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_teaching_mathematics_at_secondary",
+    "name": "teaching mathematics at secondary level",
+    "group": "",
+    "values": [
+     "level",
+     "mathematics",
+     "secondary",
+     "teaching"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "high",
+    "source_excerpt": "teaching mathematics at secondary level",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_valid_teaching_certification",
+    "name": "valid teaching certification",
+    "group": "",
+    "values": [
+     "certification",
+     "teaching",
+     "valid"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "valid teaching certification",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_lesson_planning_and_assessment",
+    "name": "lesson planning and assessment",
+    "group": "",
+    "values": [
+     "assessment",
+     "lesson",
+     "planning"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "lesson planning and assessment",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_bachelor_s_degree_in",
+    "name": "Bachelor's degree in Mathematics or Education",
+    "group": "",
+    "values": [
+     "education",
+     "mathematics"
+    ],
+    "knockout": false,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "Bachelor's degree in Mathematics or Education",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_a_valid_state_teaching",
+    "name": "A valid state teaching certificate in Mathematics (required; applications without it cannot be considered)",
+    "group": "",
+    "values": [
+     "applications",
+     "cannot",
+     "certificate",
+     "considered",
+     "mathematics",
+     "required",
+     "state",
+     "teaching"
+    ],
+    "knockout": true,
+    "operator": "must_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "A valid state teaching certificate in Mathematics (required; applications without it cannot be considered)",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_differentiated_instruction",
+    "name": "differentiated instruction",
+    "group": "",
+    "values": [
+     "differentiated",
+     "instruction"
+    ],
+    "knockout": false,
+    "operator": "preferred",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "differentiated instruction",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_ib_or_ap_curriculum",
+    "name": "IB or AP curriculum",
+    "group": "",
+    "values": [
+     "curriculum"
+    ],
+    "knockout": false,
+    "operator": "preferred",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "IB or AP curriculum",
+    "verify_in_screening": false
+   },
+   {
+    "key": "c_coaching_an_extracurricular_club",
+    "name": "coaching an extracurricular club",
+    "group": "",
+    "values": [
+     "club",
+     "coaching",
+     "extracurricular"
+    ],
+    "knockout": false,
+    "operator": "nice_to_have",
+    "attribute": "hard_skills",
+    "importance": "normal",
+    "source_excerpt": "coaching an extracurricular club",
+    "verify_in_screening": false
+   }
+  ],
+  "cost_usd": 0.0005976
+ }
+}

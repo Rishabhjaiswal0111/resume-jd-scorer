@@ -1,0 +1,19 @@
+{
+ "label": "t3",
+ "model": "manual/claude-session",
+ "effort": "medium",
+ "rubrics": "fresh",
+ "concurrency": 6,
+ "pairs": 39,
+ "completed": 39,
+ "ingest_errors": {},
+ "rubric_errors": {},
+ "rubric_cost_usd": 0.0,
+ "scoring_cost_usd": 0.0,
+ "rubric_seconds": 0.2,
+ "total_seconds": 1.0,
+ "replay": {
+  "checked": 39,
+  "mismatches": []
+ }
+}
