@@ -1,20 +1,31 @@
-import { createBrowserRouter } from 'react-router'
+import { createBrowserRouter, Navigate } from 'react-router'
 
-import { HistoryPage } from '@/pages/HistoryPage'
-import { HomePage } from '@/pages/HomePage'
+import { RequireAuth } from '@/features/auth/RequireAuth'
+import { CandidatePage } from '@/pages/CandidatePage'
+import { JobPage } from '@/pages/JobPage'
+import { JobsPage } from '@/pages/JobsPage'
+import { LoginPage } from '@/pages/LoginPage'
+import { NewJobPage } from '@/pages/NewJobPage'
 import { NotFoundPage } from '@/pages/NotFoundPage'
-import { RunPage } from '@/pages/RunPage'
+import { SearchPage } from '@/pages/SearchPage'
 
 import { Layout } from './Layout'
 
 export const router = createBrowserRouter([
+  { path: '/login', element: <LoginPage /> },
   {
-    element: <Layout />,
+    element: (
+      <RequireAuth>
+        <Layout />
+      </RequireAuth>
+    ),
     children: [
-      { path: '/', element: <HomePage /> },
-      { path: '/history', element: <HistoryPage /> },
-      { path: '/runs/:runId', element: <RunPage /> },
-      // Phase 3: /runs, /runs/:runId, /costs, /rubrics/:rubricId
+      { path: '/', element: <Navigate to="/jobs" replace /> },
+      { path: '/jobs', element: <JobsPage /> },
+      { path: '/jobs/new', element: <NewJobPage /> },
+      { path: '/jobs/:jobId', element: <JobPage /> },
+      { path: '/jobs/:jobId/candidates/:jobCandidateId', element: <CandidatePage /> },
+      { path: '/search', element: <SearchPage /> },
       { path: '*', element: <NotFoundPage /> },
     ],
   },

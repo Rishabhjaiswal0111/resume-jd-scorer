@@ -4,6 +4,7 @@ uv run python -m app.cli score JD.pdf RESUME.pdf [--model openrouter/...] [--jso
 uv run python -m app.cli replay RUN_ID
 uv run python -m app.cli prices sync [--model openrouter/...]
 uv run python -m app.cli prices list
+uv run python -m app.cli demo [--reset]
 """
 
 import argparse
@@ -164,6 +165,20 @@ async def _prices_list(_: argparse.Namespace) -> int:
     return 0
 
 
+async def _demo(args: argparse.Namespace) -> int:
+    from app.services import demo_service
+
+    settings = get_settings()
+    async with get_sessionmaker()() as session:
+        summary = await demo_service.seed(session, get_storage(), settings, reset=args.reset)
+    print(
+        f"Demo account ready: {settings.demo_email} / {settings.demo_password.get_secret_value()}\n"
+        f"  {summary.candidates} candidates in the database, {summary.jobs} jobs, "
+        f"{summary.queued} candidates on jobs (scored in the background by the running API)"
+    )
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="python -m app.cli", description="JD x Resume scorer")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -186,6 +201,10 @@ def build_parser() -> argparse.ArgumentParser:
     sync.add_argument("--model", default=None)
     sync.set_defaults(handler=_prices_sync)
     prices_sub.add_parser("list").set_defaults(handler=_prices_list)
+
+    demo = sub.add_parser("demo", help="create or refresh the demo account and its data")
+    demo.add_argument("--reset", action="store_true", help="delete the demo data first")
+    demo.set_defaults(handler=_demo)
     return parser
 
 

@@ -22,7 +22,7 @@ from sqlalchemy import (
     Text,
     UniqueConstraint,
 )
-from sqlalchemy.dialects.postgresql import JSONB
+from sqlalchemy.dialects.postgresql import JSONB, TSVECTOR
 from sqlalchemy.orm import Mapped, mapped_column
 
 from app.db.base import Base, TimestampMixin, UUIDPrimaryKeyMixin
@@ -216,12 +216,113 @@ class ModelPrice(UUIDPrimaryKeyMixin, TimestampMixin, Base):
     source_url: Mapped[str | None] = mapped_column(Text)
 
 
+# ---------------------------------------------------------------- accounts and workspace
+# (docs/plan-jobs-and-search.md). Ownership lives here; documents / rubrics / runs stay
+# content-addressed and shared, reached only through an owned job or candidate.
+
+JOB_STATUSES = ("pending", "parsing", "ready", "failed")
+JOB_CANDIDATE_STATUSES = ("queued", "scoring", "scored", "failed")
+JOB_CANDIDATE_SOURCES = ("upload", "search")
+
+
+class User(UUIDPrimaryKeyMixin, TimestampMixin, Base):
+    __tablename__ = "users"
+    __table_args__ = (UniqueConstraint("email", name="uq_users_email"),)
+
+    email: Mapped[str] = mapped_column(String(320))  # stored lower-case
+    name: Mapped[str] = mapped_column(Text)
+    password_hash: Mapped[str] = mapped_column(Text)
+    is_demo: Mapped[bool] = mapped_column(Boolean, default=False)
+
+
+class UserSession(UUIDPrimaryKeyMixin, TimestampMixin, Base):
+    """A signed-in browser. The cookie holds a random token; only its SHA-256 is stored."""
+
+    __tablename__ = "user_sessions"
+    __table_args__ = (UniqueConstraint("token_hash", name="uq_user_sessions_token_hash"),)
+
+    user_id: Mapped[uuid.UUID] = mapped_column(
+        ForeignKey("users.id", ondelete="CASCADE"), index=True
+    )
+    token_hash: Mapped[str] = mapped_column(String(64))
+    expires_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
+
+
+class Job(UUIDPrimaryKeyMixin, TimestampMixin, Base):
+    """A job description in someone's workspace. Parsed into a rubric in the background."""
+
+    __tablename__ = "jobs"
+    __table_args__ = (
+        UniqueConstraint("owner_id", "jd_document_id", name="uq_jobs_owner_id_jd_document_id"),
+        CheckConstraint(_in("status", JOB_STATUSES), name="status"),
+        Index("ix_jobs_owner_id_created_at", "owner_id", "created_at"),
+    )
+
+    owner_id: Mapped[uuid.UUID] = mapped_column(ForeignKey("users.id", ondelete="CASCADE"))
+    jd_document_id: Mapped[uuid.UUID] = mapped_column(ForeignKey("documents.id"))
+    title: Mapped[str] = mapped_column(Text)
+    status: Mapped[str] = mapped_column(String(16), default="pending", index=True)
+    rubric_id: Mapped[uuid.UUID | None] = mapped_column(ForeignKey("rubrics.id"))
+    error_code: Mapped[str | None] = mapped_column(String(64))
+    error_message: Mapped[str | None] = mapped_column(Text)
+    claimed_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+
+
+class Candidate(UUIDPrimaryKeyMixin, TimestampMixin, Base):
+    """A resume in someone's candidate database, searchable by its text."""
+
+    __tablename__ = "candidates"
+    __table_args__ = (
+        UniqueConstraint(
+            "owner_id", "resume_document_id", name="uq_candidates_owner_id_resume_document_id"
+        ),
+        Index("ix_candidates_search_vector", "search_vector", postgresql_using="gin"),
+        Index("ix_candidates_owner_id_created_at", "owner_id", "created_at"),
+    )
+
+    owner_id: Mapped[uuid.UUID] = mapped_column(ForeignKey("users.id", ondelete="CASCADE"))
+    resume_document_id: Mapped[uuid.UUID] = mapped_column(ForeignKey("documents.id"))
+    name: Mapped[str] = mapped_column(Text)
+    headline: Mapped[str | None] = mapped_column(Text)  # e.g. "Senior Backend Engineer · 8 years"
+    search_text: Mapped[str] = mapped_column(Text)
+    search_vector: Mapped[Any] = mapped_column(
+        TSVECTOR, Computed("to_tsvector('english', search_text)", persisted=True)
+    )
+
+
+class JobCandidate(UUIDPrimaryKeyMixin, TimestampMixin, Base):
+    """A candidate added to a job: queued -> scoring -> scored | failed."""
+
+    __tablename__ = "job_candidates"
+    __table_args__ = (
+        UniqueConstraint("job_id", "candidate_id", name="uq_job_candidates_job_id_candidate_id"),
+        CheckConstraint(_in("status", JOB_CANDIDATE_STATUSES), name="status"),
+        CheckConstraint(_in("source", JOB_CANDIDATE_SOURCES), name="source"),
+    )
+
+    job_id: Mapped[uuid.UUID] = mapped_column(ForeignKey("jobs.id", ondelete="CASCADE"), index=True)
+    candidate_id: Mapped[uuid.UUID] = mapped_column(
+        ForeignKey("candidates.id", ondelete="CASCADE"), index=True
+    )
+    status: Mapped[str] = mapped_column(String(16), default="queued", index=True)
+    source: Mapped[str] = mapped_column(String(16), default="upload")
+    run_id: Mapped[uuid.UUID | None] = mapped_column(ForeignKey("scoring_runs.id"), index=True)
+    error_code: Mapped[str | None] = mapped_column(String(64))
+    error_message: Mapped[str | None] = mapped_column(Text)
+    claimed_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+
+
 __all__ = [
     "Base",
+    "Candidate",
     "CriterionEvaluation",
     "Document",
+    "Job",
+    "JobCandidate",
     "LLMCall",
     "ModelPrice",
     "Rubric",
     "ScoringRun",
+    "User",
+    "UserSession",
 ]

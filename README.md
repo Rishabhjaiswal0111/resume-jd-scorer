@@ -32,9 +32,19 @@ make dev-web                  # UI  on http://localhost:5173  (in a second termi
 
 Open http://localhost:5173 — the header badge shows **API: ok** when the frontend can reach the backend.
 
-## Scoring a JD and a resume
+## Using the app
 
-Open http://localhost:5173, add the job description (upload a PDF, or switch to **Paste text** and paste it straight from a job portal), choose the resume PDF and press **Score**. The page shows the score and verdict, pros, cons, screening questions and every criterion with its points and reasoning. LLM cost is admin data: it is kept in the `llm_calls` ledger and shown by the CLI (`make score`), not on the page. The same flow is available from the terminal: `make score jd=JD.pdf resume=RESUME.pdf`.
+```bash
+make start   # Docker, Postgres, migrations, API and web; opens the browser
+make demo    # demo account demo@jdscorer.app / demo1234 with jobs and ~40 resumes (reset=1 to rebuild)
+```
+
+Sign in (the sign-in page has a **Use the demo account** button outside production).
+
+- **Jobs:** add a job description (PDF, or paste it from a job portal) and check the preview before adding it. Each job is a card that stays there. Inside a job, drop one or many resume PDFs: each becomes a candidate card that is scored in the background and ranked best first. Open a candidate for the scorecard next to the resume.
+- **Search:** every resume you upload goes into your candidate database. Search it by keywords or any pasted text (even a whole JD), see which terms matched and where, select people and **Add to job**: they are scored against that job like an upload. From a job, **Find in database** opens search with that job's requirements ready.
+
+Scoring runs in background workers inside the API process (Postgres is the queue), so uploads return at once and cards fill in. LLM cost is admin data: it is kept in the `llm_calls` ledger and shown by the CLI, not on the page. The pipeline is also available from the terminal: `make score jd=JD.pdf resume=RESUME.pdf`.
 
 Which model does the grading is set by `LLM_DEFAULT_MODEL` in `.env`:
 

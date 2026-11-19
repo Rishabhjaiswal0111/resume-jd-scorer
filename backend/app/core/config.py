@@ -69,6 +69,25 @@ class Settings(BaseSettings):
     # every few seconds while the answer is being written.
     manual_llm_wait_seconds: float = 20.0
 
+    # Background workers (docs/plan-jobs-and-search.md) wait this long for a manual answer:
+    # one long wait instead of a failed run row every manual_llm_wait_seconds.
+    manual_llm_background_wait_seconds: float = 900.0
+
+    # --- accounts ---
+    session_cookie_name: str = "jds_session"
+    session_days: int = 14
+    # Demo account created by `make demo` (and shown on the sign-in page in non-prod).
+    demo_email: str = "demo@jdscorer.app"
+    demo_password: SecretStr = SecretStr("demo1234")
+
+    # --- background scoring (Postgres-backed queue) ---
+    workers_enabled: bool = True
+    worker_concurrency: int = 3
+    worker_poll_seconds: float = 3.0
+    # A claim older than this is assumed dead (crash / restart) and handed out again. Must
+    # exceed the longest single job (manual wait + scoring).
+    worker_stale_claim_seconds: float = 1200.0
+
     # --- scoring (PLAN.md §7) ---
     # Engine 1.1.0: off by default; knock-out criteria replace the flat -30 penalty.
     scoring_hard_fail_penalty: bool = False

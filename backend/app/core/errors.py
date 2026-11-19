@@ -51,6 +51,18 @@ class ValidationFailedError(AppError):
     http_status = status.HTTP_422_UNPROCESSABLE_CONTENT
 
 
+class UnauthenticatedError(AppError):
+    """No valid session (missing, expired or signed-out cookie)."""
+
+    code = "UNAUTHENTICATED"
+    http_status = status.HTTP_401_UNAUTHORIZED
+
+
+class InvalidCredentialsError(AppError):
+    code = "INVALID_CREDENTIALS"
+    http_status = status.HTTP_401_UNAUTHORIZED
+
+
 # ---- Domain errors (PLAN.md §11.4) ----
 
 

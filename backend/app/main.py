@@ -13,6 +13,7 @@ from app.core.errors import register_error_handlers
 from app.core.logging import configure_logging, get_logger
 from app.core.middleware import REQUEST_ID_HEADER, RequestContextMiddleware
 from app.db.session import dispose_engine
+from app.services.worker import get_worker
 
 log = get_logger(__name__)
 
@@ -21,11 +22,14 @@ log = get_logger(__name__)
 async def lifespan(_: FastAPI) -> AsyncIterator[None]:
     settings = get_settings()
     log.info("startup", env=settings.app_env, version=__version__)
+    run_workers = settings.workers_enabled and settings.app_env != "test"
+    if run_workers:
+        get_worker().start()
     yield
-    from app.api.v1.runs import get_llm_client
-
-    if get_llm_client.cache_info().currsize:
-        await get_llm_client().aclose()
+    if get_worker.cache_info().currsize:
+        worker = get_worker()
+        await worker.stop()
+        await worker.client.aclose()
     await dispose_engine()
     log.info("shutdown")
 

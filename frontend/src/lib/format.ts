@@ -4,3 +4,10 @@ const dateTime = new Intl.DateTimeFormat(undefined, { dateStyle: 'medium', timeS
 export function formatDateTime(iso: string): string {
   return dateTime.format(new Date(iso))
 }
+
+const dateOnly = new Intl.DateTimeFormat(undefined, { dateStyle: 'medium' })
+
+/** "14 Nov 2026" in the viewer's locale. */
+export function formatDate(iso: string): string {
+  return dateOnly.format(new Date(iso))
+}

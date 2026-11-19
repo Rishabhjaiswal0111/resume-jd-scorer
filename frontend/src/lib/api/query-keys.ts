@@ -3,8 +3,13 @@
  * (features never import each other).
  */
 export const queryKeys = {
-  history: ['history'] as const,
-  jds: () => [...queryKeys.history, 'jds'] as const,
-  jdRuns: (jdDocumentId: string) => [...queryKeys.history, 'runs', jdDocumentId] as const,
-  run: (runId: string) => ['run', runId] as const,
+  me: ['auth', 'me'] as const,
+  demo: ['auth', 'demo'] as const,
+  jobs: ['jobs'] as const,
+  job: (jobId: string) => [...queryKeys.jobs, jobId] as const,
+  jobCandidates: (jobId: string) => [...queryKeys.jobs, jobId, 'candidates'] as const,
+  jobCandidate: (jobId: string, jobCandidateId: string) =>
+    [...queryKeys.jobs, jobId, 'candidates', jobCandidateId] as const,
+  candidates: ['candidates'] as const,
+  search: (q: string) => [...queryKeys.candidates, 'search', q] as const,
 }

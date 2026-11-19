@@ -9,7 +9,7 @@ PNPM     := pnpm --dir $(FRONTEND)
 
 .PHONY: help setup up down nuke logs ps migrate revision dev-api dev-web \
         lint format typecheck test test-api test-web check gen-api clean \
-        seed-prices score start stop pending
+        seed-prices score start stop pending demo
 
 help: ## Show this help
 	@grep -hE '^[a-zA-Z_-]+:.*?## ' $(MAKEFILE_LIST) | awk 'BEGIN{FS=":.*?## "}{printf "  \033[36m%-12s\033[0m %s\n",$$1,$$2}'
@@ -51,6 +51,9 @@ seed-prices: ## Load the current price for LLM_DEFAULT_MODEL into model_prices
 score: ## Score a pair from the CLI: make score jd=path/jd.pdf resume=path/resume.pdf
 	@test -n "$(jd)" -a -n "$(resume)" || (echo 'Usage: make score jd=JD.pdf resume=RESUME.pdf' && exit 1)
 	$(UV) run python -m app.cli score $(abspath $(jd)) $(abspath $(resume))
+
+demo: ## Create/refresh the demo account (demo@jdscorer.app / demo1234): make demo [reset=1]
+	$(UV) run python -m app.cli demo $(if $(reset),--reset,)
 
 # ---------- run the app ----------
 start: ## Start everything (Docker, Postgres, migrations, API, web), wait until ready, open the browser

@@ -45,6 +45,12 @@ Generic (`src/components/ui/`):
 | `FileDropzone` | every file input: drag and drop + keyboard/click fallback + file chip with remove |
 | `SegmentedControl` | 2-4 mutually exclusive options (e.g. PDF / Paste text) |
 | `Stat` | a labelled number in a `<dl>` (headline counts) |
+| `Input`, `Textarea` | every text field (same border, radius and focus ring) |
+| `Select` | a native `<select>` styled like `Input` (best on phones and screen readers) |
+| `FilesDropzone` | uploading one or many files at once; `compact` makes it a single row above a list |
+| `DocumentPreview` | a stored PDF shown inline with a PDF / Text switch and "Open original"; text by default below `md` (phones don't render PDFs inline) |
+| `Tabs` | page sections (underline tabs with optional counts); the caller renders the panel |
+| `HighlightedText` | search snippets: `\u0001…\u0002` markers become `<mark>`, never HTML |
 
 Score display (`src/components/score/`):
 
@@ -69,6 +75,10 @@ Brand (`src/components/brand/`): `Logo` (mark + name) in the header.
 - **Expandable groups:** a full-width button with `aria-expanded` and a rotating chevron.
 - **Loading / empty / error:** `Skeleton`s shaped like the content / `EmptyState` with an action / a one-line `role="alert"` message.
 - **Tables:** desktop table inside `overflow-x-auto`, plus a stacked card list for phones (`md:hidden` / `hidden md:block`).
+- **Cards grid:** collections people come back to (jobs) are a `md:grid-cols-2 lg:grid-cols-3` grid of link cards: title, a muted meta line, then a divided footer with status and counts.
+- **Background work:** an item being processed shows a `Badge tone="accent"` with a spinning `Loader2` ("Reading job description", "Scoring"); the list polls (~2.5 s) only while something is in progress, and stops on its own.
+- **Bulk actions:** checkboxes on rows plus a fixed bottom bar ("N selected", target, primary action); the bar becomes the confirmation with a link to the result.
+- **Destructive actions** are ghost icon buttons with an `aria-label` and a `window.confirm` naming what goes and what stays.
 - **Query keys** shared between features live in `src/lib/api/query-keys.ts`; dates go through `formatDateTime()` in `src/lib/format.ts`.
 
 Before adding a component, check this list; if something new is reusable, put it in `components/` and add it here.

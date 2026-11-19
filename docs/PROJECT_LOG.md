@@ -6,12 +6,13 @@ The running history of this project: each major change, the decision behind it, 
 
 Related docs: [PLAN.md](PLAN.md) (roadmap) · [scoring-spec.md](scoring-spec.md) (score math) · [design-system.md](design-system.md) (UI) · [adr/](adr/) (architecture decisions).
 
-## Where things stand (2026-11-14)
+## Where things stand (2026-11-19)
 
-- **Working end to end:** a JD (PDF or pasted text) and a resume PDF are turned into a score, verdict, strengths and concerns, screening questions and graded requirements. Results are saved and browsable in History.
-- **Branch:** everything is on `feat/phase-1-core-pipeline`; no pull request yet, so CI has not run on it.
-- **LLM:** the default model is Claude Haiku 5.5 (`anthropic/claude-haiku-5-5`). The local `.env` uses `manual/claude-session` (a Claude Code session answers the prompts) because there is no API key yet.
-- **Tests:** 129 backend + 17 frontend, all passing, stable over repeated runs.
+- **Working end to end:** sign in (or use the demo account), add jobs (PDF or pasted text, previewed first), drop many resumes on a job and watch them get scored in the background and ranked, open a candidate for the scorecard next to the resume, and search the whole resume database by keywords or pasted text, adding results to a job.
+- **Demo:** `make demo` creates `demo@jdscorer.app` / `demo1234` with 3 jobs, 40 synthetic resumes and 10 shortlisted candidates, scored through the real prompts (the local database also has a DevOps job added during testing).
+- **Branch:** `feat/phase-1-core-pipeline`; no pull request yet, so CI has not run on it.
+- **LLM:** default Claude Haiku 5.5; the local `.env` stays on `manual/claude-session` (this Claude Code session answers prompts).
+- **Tests:** 164 backend + 14 frontend, plus a Selenium walk-through of every page (desktop and a true 390 px phone viewport).
 
 ## Standing rules (how we work)
 
@@ -29,7 +30,28 @@ Related docs: [PLAN.md](PLAN.md) (roadmap) · [scoring-spec.md](scoring-spec.md)
 
 ## Timeline (newest first)
 
-### 2026-11-18 · Manual mode without the Retry button; `make start`; PDFium crash fix (uncommitted)
+### 2026-11-19 · Accounts, Jobs workspace, candidate search, demo account
+- **What:** plan in [plan-jobs-and-search.md](plan-jobs-and-search.md).
+  - **Accounts:** email + password sign-in, server-side sessions in Postgres (httpOnly cookie, only the token's SHA-256 stored, stdlib `scrypt` passwords). Every API call except health/auth needs a session; each account sees only its own data (another account gets 404).
+  - **Jobs:** cards that persist; new job with a live preview (the PDF itself or the pasted text); job page with Candidates / Job description tabs (requirements read from the JD next to the original); multi-resume upload with per-file errors; candidate page with the scorecard next to the resume; remove candidate, delete job, retry.
+  - **Background scoring with Postgres as the queue:** rows claimed with `FOR UPDATE SKIP LOCKED` by 3 worker coroutines in the API process; stale claims are re-queued; on shutdown a worker hands its row back at once. Manual mode waits up to 15 min per answer in workers. The UI polls only while something is in progress.
+  - **Search:** Postgres full-text search over each account's resumes (generated `tsvector` + GIN). OR-query of the terms, ranked by IDF-weighted share of terms matched; shows matched / missing terms and a highlighted snippet; select results and add them to a job, where they are scored; "Use job's requirements" turns a job into a query; resumes can be uploaded straight to the database.
+  - **Demo account:** `make demo` (synthetic `eval/stress` corpus; no real people).
+  - **Removed:** the one-shot Score page, History page and `/score`, `/jds`, `/runs` list endpoints (jobs replace them). Migration **0004**.
+- **Why:** you asked for a production-like product with a demo account: JDs kept as cards, many candidates per JD with details, and a search that finds the closest resumes and scores them against a job.
+- **Decisions:** Postgres sessions over JWT (revocable, no dependency); ownership only on the new tables so documents/rubrics stay deduplicated and cached; Postgres queue over Redis (durable, no new infra; the claim logic moves to Arq later); full-text search over embeddings (no embedding API or key, works in manual mode, explainable "matches 6 of 8 terms").
+- **Found and fixed while testing (real browser + real data):**
+  - **Search ranked everyone 100 %:** the "matched terms" subquery wasn't correlated, so it compared the query with *all* resumes' words. The Backend job's requirements put a Data Engineer first. Fixed (`.correlate`), with a test that fails on the old code; Ruby Castellanos (scored 97) is now first.
+  - **Restart left work stuck for 20 min:** a dev reload (or a deploy) cancelled workers mid-task. Now the claim is handed back on cancel; regression test, and seen live (`claim_released`).
+  - **Provisional job title was job-board noise** ("Promoted · Easy Apply · 213 applicants…"): 19 of the corpus's pasted JDs start that way. Now skips portal noise and trims run-on first lines.
+  - **Seed skipped two-column resumes** (15 of 104); **names wrapped by two-column PDFs** ("Name: Amara / Petrov") and **headlines cut mid-phrase** are rejoined for display.
+  - **Upload loop crashed (MissingGreenlet)** after a bad PDF: `rollback()` expired the user (the ADR-0007 pitfall); now commits instead.
+  - **Deleting a job refetched it (404).**
+  - Test-harness issues, not app bugs: Chrome's save-password bubble swallowed a click; headless Chrome can't go below 500 px wide, so phone checks now use device emulation at a true 390 px.
+- **Checked:** 164 backend tests (12 new API tests incl. account isolation, concurrent workers never taking the same row, shutdown hand-back), 14 frontend tests; Selenium: 41 desktop checks (auth, jobs, tabs, previews, uploads, search, add-to-job, remove, delete, sign-out), live update from Queued to a score without reload, and no horizontal scroll on 8 pages at 390 px. All 17 evaluations and 5 JD parses (demo + testing) were answered in this session through the real prompts; rankings are sensible (e.g. Backend: 97 / 75 / 38 / 38; DevOps: 92 / 87 / 40 / 40 / 30). One demo resume carries a prompt injection; it was ignored and scored 25.
+- **Open:** PII redaction still misses names wrapped over two lines by two-column PDFs (first name leaks to the model; the "certain or nothing" rule was left unchanged on purpose). Search can't tell `C++` from `C#`. Sign-up, password reset, teams/roles. Workers should move to their own process for production.
+
+### 2026-11-18 · Manual mode without the Retry button; `make start`; PDFium crash fix (`b233c3e`)
 - **What:**
   - **`make start` / `make stop` / `make pending`:** one command starts Docker, Postgres, migrations, the API and the web app, waits until each one actually responds, then opens the browser.
   - **Manual mode no longer shows an error:** the page shows "Waiting for the answer (Step 1 of 2: reading the job description / Step 2 of 2: grading the resume)" and retries by itself, for about 15 min.
@@ -44,7 +66,7 @@ Related docs: [PLAN.md](PLAN.md) (roadmap) · [scoring-spec.md](scoring-spec.md)
   - Frontend: 17 tests.
   - Live: a new score waited 20 s and then returned pending for `jd_parse`; `make start` was ready in 5 s; stop and start worked.
 
-### 2026-11-17 · Fixes from the stress test (uncommitted)
+### 2026-11-17 · Fixes from the stress test (`b233c3e`)
 - **What:** fixed everything the stress test found, plus three more problems found while fixing and re-testing. Full reasoning: [ADR-0007](adr/0007-stress-test-fixes.md).
   - **No DB transaction during LLM calls:** concurrent new JDs no longer starve the pool.
   - **Per-JD lock and savepoint:** one parse per JD, no unique-constraint crash.
@@ -71,7 +93,7 @@ Related docs: [PLAN.md](PLAN.md) (roadmap) · [scoring-spec.md](scoring-spec.md)
   - Applying the Skima patch.
   - Commit.
 
-### 2026-11-17 · Stress test suite and code review (uncommitted)
+### 2026-11-17 · Stress test suite and code review (`b233c3e`)
 - **What:** `eval/stress/` includes:
   - a deterministic corpus generator: 104 JDs and 104 resume PDFs across tech, non-tech, manager, MBA, design and teaching roles, with edge cases
   - a harness that runs the real `ScoringService` against an isolated `jdscorer_stress` database
@@ -171,5 +193,6 @@ Related docs: [PLAN.md](PLAN.md) (roadmap) · [scoring-spec.md](scoring-spec.md)
 - **Calibration:** collect 15–30 real JD/resume pairs with recruiter-expected scores (`eval/`, Phase 4) to tune weights and prompts.
 - **Points rounding:** per-criterion points are stored at 2 dp, so the scoring-details column can differ from the score by 0.01. Fixing it needs a migration.
 - **Cost in API responses:** user-facing responses still include cost; needs admin endpoints and auth (Phase 6).
-- **Demo data:** local History contains test duplicates and a real resume. Clear or seed it before a client demo.
-- **Vectors:** not needed for 1 JD × 1 resume scoring. Revisit only if we add search across large resume pools.
+- **Demo:** use `make demo` (synthetic data). Older one-shot runs remain in the database but are no longer shown anywhere.
+- **PII two-column names:** redact names wrapped over two lines (seen on cv_042).
+- **Semantic search:** keyword search is live; add embeddings (pgvector) behind the same endpoint if recruiters need synonym matching (React vs Vue).

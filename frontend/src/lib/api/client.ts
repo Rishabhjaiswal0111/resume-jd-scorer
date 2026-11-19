@@ -45,7 +45,7 @@ export async function apiFetch<T>(path: string, init: RequestInit = {}): Promise
     throw new ApiError({
       status: 0,
       code: 'NETWORK_ERROR',
-      message: 'Cannot reach the API. Is the backend running (make dev-api)?',
+      message: 'Cannot reach the server. Check your connection and try again.',
       requestId: null,
       details: cause,
     })
@@ -65,4 +65,9 @@ export async function apiFetch<T>(path: string, init: RequestInit = {}): Promise
     })
   }
   return body as T
+}
+
+/** True for a 404 from the API (missing, or not yours: the API doesn't tell them apart). */
+export function isNotFound(error: unknown): boolean {
+  return error instanceof ApiError && error.status === 404
 }

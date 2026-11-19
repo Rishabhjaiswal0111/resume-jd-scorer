@@ -190,6 +190,11 @@ def _find_name(text: str) -> str | None:
     return None
 
 
+def find_name(text: str) -> str | None:
+    """The candidate's name when the resume starts with it, else None (never a guess)."""
+    return _find_name(text)
+
+
 def redact(text: str) -> Redaction:
     counts = {"email": 0, "url": 0, "phone": 0, "name": 0}
 

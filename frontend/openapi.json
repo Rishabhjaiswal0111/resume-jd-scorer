@@ -1,7 +1,51 @@
 {
   "components": {
     "schemas": {
-      "Body_score_api_v1_score_post": {
+      "AddCandidatesResult": {
+        "description": "Per-file outcome of an upload: a bad PDF doesn't fail the whole batch.",
+        "properties": {
+          "added": {
+            "items": {
+              "$ref": "#/components/schemas/JobCandidateItem"
+            },
+            "title": "Added",
+            "type": "array"
+          },
+          "errors": {
+            "items": {
+              "$ref": "#/components/schemas/UploadError"
+            },
+            "title": "Errors",
+            "type": "array"
+          }
+        },
+        "required": [
+          "added",
+          "errors"
+        ],
+        "title": "AddCandidatesResult",
+        "type": "object"
+      },
+      "AddExistingRequest": {
+        "properties": {
+          "candidate_ids": {
+            "items": {
+              "format": "uuid",
+              "type": "string"
+            },
+            "maxItems": 100,
+            "minItems": 1,
+            "title": "Candidate Ids",
+            "type": "array"
+          }
+        },
+        "required": [
+          "candidate_ids"
+        ],
+        "title": "AddExistingRequest",
+        "type": "object"
+      },
+      "Body_create_job_api_v1_jobs_post": {
         "properties": {
           "jd": {
             "anyOf": [
@@ -27,8 +71,59 @@
             ],
             "description": "Job description as pasted text",
             "title": "Jd Text"
+          }
+        },
+        "title": "Body_create_job_api_v1_jobs_post",
+        "type": "object"
+      },
+      "Body_upload_candidates_api_v1_candidates_post": {
+        "properties": {
+          "resumes": {
+            "description": "One or more resume PDFs",
+            "items": {
+              "contentMediaType": "application/octet-stream",
+              "type": "string"
+            },
+            "title": "Resumes",
+            "type": "array"
+          }
+        },
+        "required": [
+          "resumes"
+        ],
+        "title": "Body_upload_candidates_api_v1_candidates_post",
+        "type": "object"
+      },
+      "Body_upload_job_candidates_api_v1_jobs__job_id__candidates_post": {
+        "properties": {
+          "resumes": {
+            "description": "One or more resume PDFs",
+            "items": {
+              "contentMediaType": "application/octet-stream",
+              "type": "string"
+            },
+            "title": "Resumes",
+            "type": "array"
+          }
+        },
+        "required": [
+          "resumes"
+        ],
+        "title": "Body_upload_job_candidates_api_v1_jobs__job_id__candidates_post",
+        "type": "object"
+      },
+      "CandidateBrief": {
+        "properties": {
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
           },
-          "model": {
+          "filename": {
+            "title": "Filename",
+            "type": "string"
+          },
+          "headline": {
             "anyOf": [
               {
                 "type": "string"
@@ -37,19 +132,92 @@
                 "type": "null"
               }
             ],
-            "title": "Model"
+            "title": "Headline"
           },
-          "resume": {
-            "contentMediaType": "application/octet-stream",
-            "description": "Resume PDF",
-            "title": "Resume",
+          "id": {
+            "format": "uuid",
+            "title": "Id",
+            "type": "string"
+          },
+          "name": {
+            "title": "Name",
             "type": "string"
           }
         },
         "required": [
-          "resume"
+          "id",
+          "name",
+          "headline",
+          "filename",
+          "created_at"
         ],
-        "title": "Body_score_api_v1_score_post",
+        "title": "CandidateBrief",
+        "type": "object"
+      },
+      "CandidateJobRef": {
+        "properties": {
+          "job_candidate_id": {
+            "format": "uuid",
+            "title": "Job Candidate Id",
+            "type": "string"
+          },
+          "job_id": {
+            "format": "uuid",
+            "title": "Job Id",
+            "type": "string"
+          },
+          "job_title": {
+            "title": "Job Title",
+            "type": "string"
+          },
+          "score": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Score"
+          },
+          "status": {
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "job_id",
+          "job_title",
+          "job_candidate_id",
+          "status",
+          "score"
+        ],
+        "title": "CandidateJobRef",
+        "type": "object"
+      },
+      "CandidateUploadResult": {
+        "properties": {
+          "added": {
+            "items": {
+              "$ref": "#/components/schemas/CandidateBrief"
+            },
+            "title": "Added",
+            "type": "array"
+          },
+          "errors": {
+            "items": {
+              "$ref": "#/components/schemas/UploadError"
+            },
+            "title": "Errors",
+            "type": "array"
+          }
+        },
+        "required": [
+          "added",
+          "errors"
+        ],
+        "title": "CandidateUploadResult",
         "type": "object"
       },
       "CostView": {
@@ -186,6 +354,25 @@
         "title": "CriterionView",
         "type": "object"
       },
+      "DemoInfo": {
+        "description": "Shown on the sign-in page outside prod so a visitor can try the product.",
+        "properties": {
+          "email": {
+            "title": "Email",
+            "type": "string"
+          },
+          "password": {
+            "title": "Password",
+            "type": "string"
+          }
+        },
+        "required": [
+          "email",
+          "password"
+        ],
+        "title": "DemoInfo",
+        "type": "object"
+      },
       "GroupAdjustment": {
         "properties": {
           "criteria": {
@@ -267,7 +454,287 @@
         "title": "Holistic",
         "type": "object"
       },
-      "JdHistoryItem": {
+      "JobCandidateDetail": {
+        "properties": {
+          "candidate": {
+            "$ref": "#/components/schemas/CandidateBrief"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "error_code": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error Code"
+          },
+          "error_message": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error Message"
+          },
+          "id": {
+            "format": "uuid",
+            "title": "Id",
+            "type": "string"
+          },
+          "job_id": {
+            "format": "uuid",
+            "title": "Job Id",
+            "type": "string"
+          },
+          "job_title": {
+            "title": "Job Title",
+            "type": "string"
+          },
+          "resume_text": {
+            "title": "Resume Text",
+            "type": "string"
+          },
+          "run": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/RunDetail"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "run_id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Run Id"
+          },
+          "score": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Score"
+          },
+          "source": {
+            "title": "Source",
+            "type": "string"
+          },
+          "status": {
+            "title": "Status",
+            "type": "string"
+          },
+          "summary": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Summary"
+          },
+          "verdict": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Verdict"
+          }
+        },
+        "required": [
+          "id",
+          "job_id",
+          "candidate",
+          "status",
+          "source",
+          "score",
+          "verdict",
+          "summary",
+          "error_code",
+          "error_message",
+          "run_id",
+          "created_at",
+          "job_title",
+          "resume_text",
+          "run"
+        ],
+        "title": "JobCandidateDetail",
+        "type": "object"
+      },
+      "JobCandidateItem": {
+        "properties": {
+          "candidate": {
+            "$ref": "#/components/schemas/CandidateBrief"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "error_code": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error Code"
+          },
+          "error_message": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error Message"
+          },
+          "id": {
+            "format": "uuid",
+            "title": "Id",
+            "type": "string"
+          },
+          "job_id": {
+            "format": "uuid",
+            "title": "Job Id",
+            "type": "string"
+          },
+          "run_id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Run Id"
+          },
+          "score": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Score"
+          },
+          "source": {
+            "title": "Source",
+            "type": "string"
+          },
+          "status": {
+            "title": "Status",
+            "type": "string"
+          },
+          "summary": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Summary"
+          },
+          "verdict": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Verdict"
+          }
+        },
+        "required": [
+          "id",
+          "job_id",
+          "candidate",
+          "status",
+          "source",
+          "score",
+          "verdict",
+          "summary",
+          "error_code",
+          "error_message",
+          "run_id",
+          "created_at"
+        ],
+        "title": "JobCandidateItem",
+        "type": "object"
+      },
+      "JobCounts": {
+        "properties": {
+          "failed": {
+            "title": "Failed",
+            "type": "integer"
+          },
+          "in_progress": {
+            "title": "In Progress",
+            "type": "integer"
+          },
+          "scored": {
+            "title": "Scored",
+            "type": "integer"
+          },
+          "strong": {
+            "title": "Strong",
+            "type": "integer"
+          },
+          "total": {
+            "title": "Total",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "total",
+          "scored",
+          "in_progress",
+          "failed",
+          "strong"
+        ],
+        "title": "JobCounts",
+        "type": "object"
+      },
+      "JobDetail": {
         "properties": {
           "best_score": {
             "anyOf": [
@@ -280,26 +747,84 @@
             ],
             "title": "Best Score"
           },
+          "core_requirement": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Core Requirement"
+          },
+          "counts": {
+            "$ref": "#/components/schemas/JobCounts"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "error_code": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error Code"
+          },
+          "error_message": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error Message"
+          },
           "filename": {
             "title": "Filename",
             "type": "string"
           },
-          "jd_document_id": {
+          "id": {
             "format": "uuid",
-            "title": "Jd Document Id",
+            "title": "Id",
             "type": "string"
           },
-          "last_scored_at": {
-            "format": "date-time",
-            "title": "Last Scored At",
+          "jd_text": {
+            "title": "Jd Text",
             "type": "string"
           },
-          "run_count": {
-            "title": "Run Count",
-            "type": "integer"
+          "requirements": {
+            "items": {
+              "$ref": "#/components/schemas/JobRequirement"
+            },
+            "title": "Requirements",
+            "type": "array"
+          },
+          "role_summary": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Role Summary"
           },
           "source": {
             "title": "Source",
+            "type": "string"
+          },
+          "status": {
+            "title": "Status",
             "type": "string"
           },
           "title": {
@@ -308,15 +833,151 @@
           }
         },
         "required": [
-          "jd_document_id",
+          "id",
           "title",
+          "status",
           "source",
           "filename",
-          "run_count",
+          "counts",
           "best_score",
-          "last_scored_at"
+          "created_at",
+          "error_code",
+          "error_message",
+          "role_summary",
+          "core_requirement",
+          "requirements",
+          "jd_text"
         ],
-        "title": "JdHistoryItem",
+        "title": "JobDetail",
+        "type": "object"
+      },
+      "JobRequirement": {
+        "properties": {
+          "attribute": {
+            "title": "Attribute",
+            "type": "string"
+          },
+          "importance": {
+            "title": "Importance",
+            "type": "string"
+          },
+          "key": {
+            "title": "Key",
+            "type": "string"
+          },
+          "knockout": {
+            "title": "Knockout",
+            "type": "boolean"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "operator": {
+            "title": "Operator",
+            "type": "string"
+          },
+          "values": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Values",
+            "type": "array"
+          },
+          "verify_in_screening": {
+            "title": "Verify In Screening",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "key",
+          "name",
+          "attribute",
+          "operator",
+          "importance",
+          "knockout",
+          "verify_in_screening",
+          "values"
+        ],
+        "title": "JobRequirement",
+        "type": "object"
+      },
+      "JobSummary": {
+        "properties": {
+          "best_score": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Best Score"
+          },
+          "counts": {
+            "$ref": "#/components/schemas/JobCounts"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "filename": {
+            "title": "Filename",
+            "type": "string"
+          },
+          "id": {
+            "format": "uuid",
+            "title": "Id",
+            "type": "string"
+          },
+          "source": {
+            "title": "Source",
+            "type": "string"
+          },
+          "status": {
+            "title": "Status",
+            "type": "string"
+          },
+          "title": {
+            "title": "Title",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "status",
+          "source",
+          "filename",
+          "counts",
+          "best_score",
+          "created_at"
+        ],
+        "title": "JobSummary",
+        "type": "object"
+      },
+      "LoginRequest": {
+        "properties": {
+          "email": {
+            "maxLength": 320,
+            "minLength": 3,
+            "title": "Email",
+            "type": "string"
+          },
+          "password": {
+            "maxLength": 200,
+            "minLength": 1,
+            "title": "Password",
+            "type": "string"
+          }
+        },
+        "required": [
+          "email",
+          "password"
+        ],
+        "title": "LoginRequest",
         "type": "object"
       },
       "Point": {
@@ -576,61 +1237,6 @@
         "title": "RunDetail",
         "type": "object"
       },
-      "RunHistoryItem": {
-        "properties": {
-          "created_at": {
-            "format": "date-time",
-            "title": "Created At",
-            "type": "string"
-          },
-          "id": {
-            "format": "uuid",
-            "title": "Id",
-            "type": "string"
-          },
-          "jd_document_id": {
-            "format": "uuid",
-            "title": "Jd Document Id",
-            "type": "string"
-          },
-          "resume_filename": {
-            "title": "Resume Filename",
-            "type": "string"
-          },
-          "score": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Score"
-          },
-          "verdict": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Verdict"
-          }
-        },
-        "required": [
-          "id",
-          "jd_document_id",
-          "resume_filename",
-          "score",
-          "verdict",
-          "created_at"
-        ],
-        "title": "RunHistoryItem",
-        "type": "object"
-      },
       "ScreeningQuestion": {
         "properties": {
           "key": {
@@ -652,6 +1258,148 @@
           "reasoning"
         ],
         "title": "ScreeningQuestion",
+        "type": "object"
+      },
+      "SearchHit": {
+        "properties": {
+          "candidate": {
+            "$ref": "#/components/schemas/CandidateBrief"
+          },
+          "jobs": {
+            "items": {
+              "$ref": "#/components/schemas/CandidateJobRef"
+            },
+            "title": "Jobs",
+            "type": "array"
+          },
+          "match": {
+            "title": "Match",
+            "type": "integer"
+          },
+          "snippet": {
+            "title": "Snippet",
+            "type": "string"
+          },
+          "terms": {
+            "items": {
+              "$ref": "#/components/schemas/SearchTerm"
+            },
+            "title": "Terms",
+            "type": "array"
+          }
+        },
+        "required": [
+          "candidate",
+          "match",
+          "terms",
+          "snippet",
+          "jobs"
+        ],
+        "title": "SearchHit",
+        "type": "object"
+      },
+      "SearchResult": {
+        "properties": {
+          "hits": {
+            "items": {
+              "$ref": "#/components/schemas/SearchHit"
+            },
+            "title": "Hits",
+            "type": "array"
+          },
+          "query": {
+            "title": "Query",
+            "type": "string"
+          },
+          "terms": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Terms",
+            "type": "array"
+          },
+          "total_candidates": {
+            "title": "Total Candidates",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "query",
+          "total_candidates",
+          "terms",
+          "hits"
+        ],
+        "title": "SearchResult",
+        "type": "object"
+      },
+      "SearchTerm": {
+        "properties": {
+          "matched": {
+            "title": "Matched",
+            "type": "boolean"
+          },
+          "term": {
+            "title": "Term",
+            "type": "string"
+          }
+        },
+        "required": [
+          "term",
+          "matched"
+        ],
+        "title": "SearchTerm",
+        "type": "object"
+      },
+      "UploadError": {
+        "properties": {
+          "code": {
+            "title": "Code",
+            "type": "string"
+          },
+          "filename": {
+            "title": "Filename",
+            "type": "string"
+          },
+          "message": {
+            "title": "Message",
+            "type": "string"
+          }
+        },
+        "required": [
+          "filename",
+          "code",
+          "message"
+        ],
+        "title": "UploadError",
+        "type": "object"
+      },
+      "UserView": {
+        "properties": {
+          "email": {
+            "title": "Email",
+            "type": "string"
+          },
+          "id": {
+            "format": "uuid",
+            "title": "Id",
+            "type": "string"
+          },
+          "is_demo": {
+            "title": "Is Demo",
+            "type": "boolean"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "email",
+          "name",
+          "is_demo"
+        ],
+        "title": "UserView",
         "type": "object"
       },
       "ValidationError": {
@@ -702,31 +1450,107 @@
   },
   "openapi": "3.1.0",
   "paths": {
-    "/api/v1/healthz": {
+    "/api/v1/auth/demo": {
       "get": {
-        "operationId": "healthz_api_v1_healthz_get",
+        "operationId": "demo_api_v1_auth_demo_get",
         "responses": {
           "200": {
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/HealthResponse"
+                  "$ref": "#/components/schemas/DemoInfo"
                 }
               }
             },
             "description": "Successful Response"
           }
         },
-        "summary": "Healthz",
+        "summary": "Demo",
         "tags": [
-          "health"
+          "auth"
         ]
       }
     },
-    "/api/v1/jds": {
+    "/api/v1/auth/login": {
+      "post": {
+        "operationId": "login_api_v1_auth_login_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserView"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Login",
+        "tags": [
+          "auth"
+        ]
+      }
+    },
+    "/api/v1/auth/logout": {
+      "post": {
+        "operationId": "logout_api_v1_auth_logout_post",
+        "responses": {
+          "204": {
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Logout",
+        "tags": [
+          "auth"
+        ]
+      }
+    },
+    "/api/v1/auth/me": {
       "get": {
-        "description": "JDs that have completed runs, most recently scored first.",
-        "operationId": "list_jds_api_v1_jds_get",
+        "operationId": "me_api_v1_auth_me_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserView"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Me",
+        "tags": [
+          "auth"
+        ]
+      }
+    },
+    "/api/v1/candidates": {
+      "get": {
+        "description": "Everyone in your database, newest first.",
+        "operationId": "list_candidates_api_v1_candidates_get",
         "parameters": [
           {
             "in": "query",
@@ -758,9 +1582,9 @@
               "application/json": {
                 "schema": {
                   "items": {
-                    "$ref": "#/components/schemas/JdHistoryItem"
+                    "$ref": "#/components/schemas/CandidateBrief"
                   },
-                  "title": "Response List Jds Api V1 Jds Get",
+                  "title": "Response List Candidates Api V1 Candidates Get",
                   "type": "array"
                 }
               }
@@ -778,9 +1602,687 @@
             "description": "Validation Error"
           }
         },
-        "summary": "List Jds",
+        "summary": "List Candidates",
         "tags": [
-          "runs"
+          "candidates"
+        ]
+      },
+      "post": {
+        "description": "Add resumes to your database without scoring them against a job.",
+        "operationId": "upload_candidates_api_v1_candidates_post",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/Body_upload_candidates_api_v1_candidates_post"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CandidateUploadResult"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Upload Candidates",
+        "tags": [
+          "candidates"
+        ]
+      }
+    },
+    "/api/v1/candidates/search": {
+      "get": {
+        "description": "Rank your resumes by keywords or any pasted text (e.g. a whole JD).",
+        "operationId": "search_candidates_api_v1_candidates_search_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "q",
+            "required": true,
+            "schema": {
+              "maxLength": 20000,
+              "minLength": 1,
+              "title": "Q",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 25,
+              "maximum": 100,
+              "minimum": 1,
+              "title": "Limit",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SearchResult"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Search Candidates",
+        "tags": [
+          "candidates"
+        ]
+      }
+    },
+    "/api/v1/candidates/{candidate_id}/resume": {
+      "get": {
+        "description": "The resume PDF, for the in-page preview.",
+        "operationId": "candidate_resume_api_v1_candidates__candidate_id__resume_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "candidate_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Candidate Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Candidate Resume",
+        "tags": [
+          "candidates"
+        ]
+      }
+    },
+    "/api/v1/healthz": {
+      "get": {
+        "operationId": "healthz_api_v1_healthz_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HealthResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Healthz",
+        "tags": [
+          "health"
+        ]
+      }
+    },
+    "/api/v1/jobs": {
+      "get": {
+        "operationId": "list_jobs_api_v1_jobs_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/JobSummary"
+                  },
+                  "title": "Response List Jobs Api V1 Jobs Get",
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "List Jobs",
+        "tags": [
+          "jobs"
+        ]
+      },
+      "post": {
+        "description": "Add a job from a PDF or pasted text. The same JD twice returns the existing job.",
+        "operationId": "create_job_api_v1_jobs_post",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/Body_create_job_api_v1_jobs_post"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JobDetail"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Create Job",
+        "tags": [
+          "jobs"
+        ]
+      }
+    },
+    "/api/v1/jobs/{job_id}": {
+      "delete": {
+        "operationId": "delete_job_api_v1_jobs__job_id__delete",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "job_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Job Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Delete Job",
+        "tags": [
+          "jobs"
+        ]
+      },
+      "get": {
+        "operationId": "get_job_api_v1_jobs__job_id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "job_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Job Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JobDetail"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Get Job",
+        "tags": [
+          "jobs"
+        ]
+      }
+    },
+    "/api/v1/jobs/{job_id}/candidates": {
+      "get": {
+        "description": "Scored best-first, then in progress, then failed.",
+        "operationId": "list_job_candidates_api_v1_jobs__job_id__candidates_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "job_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Job Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/JobCandidateItem"
+                  },
+                  "title": "Response List Job Candidates Api V1 Jobs  Job Id  Candidates Get",
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "List Job Candidates",
+        "tags": [
+          "jobs"
+        ]
+      },
+      "post": {
+        "description": "Upload resumes: each joins your database and is queued for scoring on this job.",
+        "operationId": "upload_job_candidates_api_v1_jobs__job_id__candidates_post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "job_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Job Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/Body_upload_job_candidates_api_v1_jobs__job_id__candidates_post"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AddCandidatesResult"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Upload Job Candidates",
+        "tags": [
+          "jobs"
+        ]
+      }
+    },
+    "/api/v1/jobs/{job_id}/candidates/existing": {
+      "post": {
+        "description": "Add candidates from your database (e.g. search results) and queue them for scoring.",
+        "operationId": "add_existing_candidates_api_v1_jobs__job_id__candidates_existing_post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "job_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Job Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddExistingRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/JobCandidateItem"
+                  },
+                  "title": "Response Add Existing Candidates Api V1 Jobs  Job Id  Candidates Existing Post",
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Add Existing Candidates",
+        "tags": [
+          "jobs"
+        ]
+      }
+    },
+    "/api/v1/jobs/{job_id}/candidates/{job_candidate_id}": {
+      "delete": {
+        "description": "Take the candidate off this job; they stay in your database.",
+        "operationId": "remove_job_candidate_api_v1_jobs__job_id__candidates__job_candidate_id__delete",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "job_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Job Id",
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "job_candidate_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Job Candidate Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Remove Job Candidate",
+        "tags": [
+          "jobs"
+        ]
+      },
+      "get": {
+        "operationId": "get_job_candidate_api_v1_jobs__job_id__candidates__job_candidate_id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "job_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Job Id",
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "job_candidate_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Job Candidate Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JobCandidateDetail"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Get Job Candidate",
+        "tags": [
+          "jobs"
+        ]
+      }
+    },
+    "/api/v1/jobs/{job_id}/candidates/{job_candidate_id}/retry": {
+      "post": {
+        "operationId": "retry_job_candidate_api_v1_jobs__job_id__candidates__job_candidate_id__retry_post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "job_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Job Id",
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "job_candidate_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Job Candidate Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Retry Job Candidate",
+        "tags": [
+          "jobs"
+        ]
+      }
+    },
+    "/api/v1/jobs/{job_id}/document": {
+      "get": {
+        "description": "The original JD (PDF, or the pasted text) for the in-page preview.",
+        "operationId": "job_document_api_v1_jobs__job_id__document_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "job_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Job Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Job Document",
+        "tags": [
+          "jobs"
+        ]
+      }
+    },
+    "/api/v1/jobs/{job_id}/retry": {
+      "post": {
+        "operationId": "retry_job_api_v1_jobs__job_id__retry_post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "job_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Job Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JobDetail"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Retry Job",
+        "tags": [
+          "jobs"
         ]
       }
     },
@@ -815,86 +2317,9 @@
         ]
       }
     },
-    "/api/v1/runs": {
-      "get": {
-        "description": "Completed runs, newest first; filter by JD with jd_document_id.",
-        "operationId": "list_runs_api_v1_runs_get",
-        "parameters": [
-          {
-            "in": "query",
-            "name": "jd_document_id",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "format": "uuid",
-                  "type": "string"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Jd Document Id"
-            }
-          },
-          {
-            "in": "query",
-            "name": "limit",
-            "required": false,
-            "schema": {
-              "default": 50,
-              "maximum": 200,
-              "minimum": 1,
-              "title": "Limit",
-              "type": "integer"
-            }
-          },
-          {
-            "in": "query",
-            "name": "offset",
-            "required": false,
-            "schema": {
-              "default": 0,
-              "minimum": 0,
-              "title": "Offset",
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "items": {
-                    "$ref": "#/components/schemas/RunHistoryItem"
-                  },
-                  "title": "Response List Runs Api V1 Runs Get",
-                  "type": "array"
-                }
-              }
-            },
-            "description": "Successful Response"
-          },
-          "422": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            },
-            "description": "Validation Error"
-          }
-        },
-        "summary": "List Runs",
-        "tags": [
-          "runs"
-        ]
-      }
-    },
     "/api/v1/runs/{run_id}": {
       "get": {
+        "description": "A run, if it belongs to one of your jobs.",
         "operationId": "get_run_api_v1_runs__run_id__get",
         "parameters": [
           {
@@ -931,48 +2356,6 @@
           }
         },
         "summary": "Get Run",
-        "tags": [
-          "runs"
-        ]
-      }
-    },
-    "/api/v1/score": {
-      "post": {
-        "description": "One-shot: a JD (PDF or pasted text) and a resume PDF -> the completed run.",
-        "operationId": "score_api_v1_score_post",
-        "requestBody": {
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "$ref": "#/components/schemas/Body_score_api_v1_score_post"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RunDetail"
-                }
-              }
-            },
-            "description": "Successful Response"
-          },
-          "422": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            },
-            "description": "Validation Error"
-          }
-        },
-        "summary": "Score",
         "tags": [
           "runs"
         ]
